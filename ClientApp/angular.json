@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "EHO-DBS": {
+    "IPA": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/EHO-DBS",
+            "outputPath": "dist/IPA",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "EHO-DBS:build"
+            "browserTarget": "IPA:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "EHO-DBS:build:production"
+              "browserTarget": "IPA:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "EHO-DBS:build"
+            "browserTarget": "IPA:build"
           }
         },
         "test": {
@@ -107,18 +107,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "EHO-DBS:serve"
+            "devServerTarget": "IPA:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "EHO-DBS:serve:production"
+              "devServerTarget": "IPA:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "EHO-DBS",
+  "defaultProject": "IPA",
   "cli": {
     "analytics": "6d8f70cb-91f6-495e-b32b-eaf1523a22bb"
   }
