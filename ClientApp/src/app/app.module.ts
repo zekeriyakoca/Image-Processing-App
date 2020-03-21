@@ -11,6 +11,7 @@ import { UrlSerializer } from '@angular/router';
 import { LowerCaseUrlSerializer } from './Core/loweCaseUrlSerializer';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
