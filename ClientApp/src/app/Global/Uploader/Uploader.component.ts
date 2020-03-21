@@ -1,5 +1,5 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
@@ -10,13 +10,13 @@ import { environment } from '../../../environments/environment';
 })
 export class UploaderComponent {
 
-  @ViewChild('labelImport',{static:true})
+  @ViewChild('labelImport', { static: true })
   labelImport: ElementRef;
 
   formImport: FormGroup;
   fileToUpload: File = null;
   progress: number;
-  message:string ;
+  message: string;
 
   constructor(private http: HttpClient) {
     this.formImport = new FormGroup({
@@ -34,7 +34,7 @@ export class UploaderComponent {
     this.labelImport.nativeElement.innerText = Array.from(files)
       .map(f => f.name)
       .join(', ');
-    
+
   }
 
   import(): void {
@@ -44,8 +44,9 @@ export class UploaderComponent {
 
     const formData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
- 
-    this.http.post(environment.backEndUrl, formData, {reportProgress: true, observe: 'events'})
+    const url = environment.backEndUrl + "/api/image/process";
+
+    this.http.post(url, formData, { reportProgress: true, observe: 'events' })
       .subscribe(event => {
         if (event.type === HttpEventType.UploadProgress)
           this.progress = Math.round(100 * event.loaded / event.total);
