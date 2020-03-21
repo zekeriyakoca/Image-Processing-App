@@ -41,6 +41,8 @@ namespace Gateaway
             });
       });
 
+      services.AddCache(Cache.Dtos.CachingServiceEnum.Redis);
+
       services.Configure<FormOptions>(o =>
       {
         o.ValueLengthLimit = int.MaxValue;

@@ -15,5 +15,9 @@
     <Folder Include="Resources\Images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cache\Cache.csproj" />
+  </ItemGroup>
+
 
 </Project>

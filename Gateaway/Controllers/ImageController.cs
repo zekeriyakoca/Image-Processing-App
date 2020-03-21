@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Cache.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,16 +17,19 @@ namespace Gateaway.Controllers
   [ApiController]
   public class ImageController : ControllerBase
   {
-    private readonly ILogger<ImageController> _logger;
+    private readonly ILogger<ImageController> Logger;
+    private readonly ICacheService CacheService;
 
-    public ImageController(ILogger<ImageController> logger)
+    public ImageController(ILogger<ImageController> logger, ICacheService cacheService)
     {
-      _logger = logger;
+      Logger = logger;
+      CacheService = cacheService;
     }
+
 
     [HttpPost, DisableRequestSizeLimit]
     [Route("process")]
-    public IActionResult Process() {
+    public async Task<IActionResult> Process() {
       
       try
       {
@@ -45,6 +49,11 @@ namespace Gateaway.Controllers
 
             var md5 = MD5.Create();
             string hashValue = Convert.ToBase64String(md5.ComputeHash(stream));
+
+            var value = await this.CacheService.GetValue<string>(hashValue);
+            if (string.IsNullOrWhiteSpace(value))
+               await this.CacheService.SetValue(hashValue, dbPath);
+
           }
           return Ok(new { dbPath });
         }
