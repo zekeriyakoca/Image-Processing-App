@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" /> 
+		<meta name="author" content="www.frebsite.nl" />
+
+		<title>dmenu</title>
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+		<script src="dist/jquery.dmenu.js"></script>
+		<link href="dist/jquery.dmenu.css" rel="stylesheet" />
+	</head>
+	<body>
+		
+
+		<h3>Options and classnames for the menu (NAV)</h3>
+		<table>
+			<thead>
+				<tr>
+					<td><em>Option</em></td>
+					<td><em>Classname</em></td>
+					<td><em>Description</em></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>dm-menu</td>
+					<td>(required)</td>
+				</tr>
+				<tr>
+					<td>menu.align</td>
+					<td>dm-menu_align-right[/-center/-justify]</td>
+					<td>Aligns the main items to the left, right, center or justify:<br />
+						<code>menu.align = false; // "right" / "center" / "justify"</code></td>
+				</tr>
+				<tr>
+					<td>menu.border</td>
+					<td>dm-menu_border</td>
+					<td>Adds a border (bottom) to the bottom of the menu.<br />
+						<code>menu.border = false; // true</code></td>
+				</tr>
+				<tr>
+					<td>menu.logo</td>
+					<td>dm-menu_logo</td>
+					<td>Styles a logo in the menu (if present).<br />
+						<code>menu.logo = true; // false</code></td>
+				</tr>
+				<tr>
+					<td>item.bg</td>
+					<td>dm-menu_item-bg</td>
+					<td>Adds a background to main items onHover.<br />
+						<code>items.bg = true; // false</code></td>
+				</tr>
+				<tr>
+					<td>item.border</td>
+					<td>dm-menu_item-border</td>
+					<td>Adds a border (bottom) to main items onHover.<br />
+						<code>items.border = false; // true</code></td>
+				</tr>
+				<tr>
+					<td>item.subindicator</td>
+					<td>dm-menu_item-subindicator</td>
+					<td>Adds a subindicator to main items.<br />
+						<code>items.subindicator = false; // true</code></td>
+				</tr>
+				<tr>
+					<td>submenu</td>
+					<td>dm-menu_submenu</td>
+					<td>Required for submenus.<br />
+						<code>submenus = {}; // false</code></td>
+				</tr>
+				<tr>
+					<td>submenu.arrow</td>
+					<td>dm-menu_submenu-arrow</td>
+					<td>Adds an arrow that points to the main item.<br />
+						<code>submenus.arrow = false; // true</code></td>
+				</tr>
+				<tr>
+					<td>submenu.border</td>
+					<td>dm-menu_submenu-border</td>
+					<td>Adds a border (top) to submenus.<br />
+						<code>submenus.border = false; // true</code></td>
+				</tr>
+				<tr>
+					<td>submenu.shadow</td>
+					<td>dm-menu_submenu-shadow</td>
+					<td>Adds a shadow to submenus.<br />
+						<code>submenus.shadow = true; // false</code></td>
+				</tr>
+				<tr>
+					<td>subitem.bg</td>
+					<td>dm-menu_subitem-bg</td>
+					<td>Adds a background to subitems onHover.<br />
+						<code>submenus. = true; // false</code></td>
+				</tr>
+				<tr>
+					<td>subitem.border</td>
+					<td>dm-menu_subitem-border</td>
+					<td>Adds a border between subitems.<br />
+						<code>subitems.border = true; // false</code></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<br />
+		<h3>Classnames for all items (NAV LI)</h3>
+		<table>
+			<thead>
+				<tr>
+					<td><em>Original</em></td>
+					<td><em>Refactored</em></td>
+					<td><em>Description</em></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Selected</td>
+					<td>dm-selected</td>
+					<td>Makes the item (and all parent items) appear "selected".</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<br />
+		<h3>Classnames for main items (NAV > UL > LI)</h3>
+		<table>
+			<thead>
+				<tr>
+					<td><em>Original</em></td>
+					<td><em>Refactored</em></td>
+					<td><em>Description</em></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>AlignRight</td>
+					<td>dm-item_align-right</td>
+					<td>Aligns a main item to the right.</td>
+				</tr>
+				<tr>
+					<td>IconHidden</td>
+					<td>dm-item_icon-hide</td>
+					<td>Uses the icon as a fallback for when the menu is too small for all items to fit.</td>
+				</tr>
+				<tr>
+					<td>SubmenuAlignRight</td>
+					<td>dm-item_submenu-align-right</td>
+					<td>Aligns the submenu to the right.<br />
+						<em>Note:</em> submenus are aligned automatically to fit within the viewport.</td>
+				</tr>
+				<tr>
+					<td>SubmenuFullwidth</td>
+					<td>dm-item_submenu-fullwidth</td>
+					<td>Makes the submenu fill up the full width of the menu.</td>
+				</tr>
+				<tr>
+					<td>SubmenuMega</td>
+					<td>dm-item_submenu-mega</td>
+					<td>Turns the submenu into a mega menu.</td>
+				</tr>
+				<tr>
+					<td>SubmenuTabs</td>
+					<td>dm-item_submenu-tabs</td>
+					<td>Turns the submenu into a tabs menu.<br />
+						<em>Note:</em> Works well with the class "dm-item_submenu-mega" on the subitems.</td>
+				</tr>
+			</tbody>
+		</table>
+		
+
+		<br />
+		<h3>Classnames for subitems (NAV LI LI)</h3>
+		<table>
+			<thead>
+				<tr>
+					<td><em>Original</em></td>
+					<td><em>Refactored</em></td>
+					<td><em>Description</em></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>SubmenuAlignRight</td>
+					<td>dm-subitem_submenu-align-right</td>
+					<td>Aligns the sub-submenu to the right.<br />
+						<em>Note:</em> sub-submenus are aligned automatically to fit within the viewport.</td>
+				</tr>
+				<tr>
+					<td>SubmenuInline</td>
+					<td>dm-subitem_submenu-inline</td>
+					<td>Makes the sub-submenu appear inline.</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</body>
+</html>

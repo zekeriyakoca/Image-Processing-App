@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+<title>Yukarý Doðru Kayan Ýçerik</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="jcarousellite.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery("#kayan_alan").jCarouselLite({
+        vertical: true, //dikey yapmak için
+        hoverPause:true, //üzerine gelince durasý için
+        visible: 3, //3 adet gösterilmesi için
+        auto:1500, //bekleme süresi
+        speed:1000, //hareket hýzý
+        btnPrev: "#onceki", //onceki yazi
+        btnNext: "#sonraki" //sonraki yazi
+    });
+});
+</script>
+<style>
+img {cursor: pointer}
+ul {list-style: none}
+</style>
+</head>
+<body>
+<div id="kayan_alan">
+    <ul>                  
+        <li>Yer Tutucu (PlaceHolder) Kullanýmý</li>
+        <li>Css ile Yuvarlak Köþeli Menü</li>
+        <li>GET ve POST Metodu</li>
+        <li>Session ve Cookie</li>
+        <li>Farklý Düþün</li>
+        <li>Baþarýlý Startup Kurmak</li>
+        <li>Sosyal Medya Tavan Yaptý</li>
+        <li>Html Optgroup Etiketi</li>
+        <li>Sosyal Medya ve Geleceði</li>         
+    </ul>
+</div>
+<div id="onceki"><img src="yukari.png" /></div>
+<div id="sonraki"><img src="asagi.png" /></div>
+</body>
+</html>
