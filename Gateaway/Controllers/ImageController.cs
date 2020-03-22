@@ -7,6 +7,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Cache.Interfaces;
+using EventBusRabbitMQ.Dtos;
+using EventBusRabbitMQ.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,12 +22,14 @@ namespace Gateaway.Controllers
     private readonly ILogger<ImageController> Logger;
     private readonly ICacheService CacheService;
 
-    public ImageController(ILogger<ImageController> logger, ICacheService cacheService)
+    public ImageController(ILogger<ImageController> logger, ICacheService cacheService, IEventBus eventBus)
     {
       Logger = logger;
       CacheService = cacheService;
+      EventBus = eventBus;
     }
 
+    public IEventBus EventBus { get; }
 
     [HttpPost, DisableRequestSizeLimit]
     [Route("process")]
@@ -52,7 +56,11 @@ namespace Gateaway.Controllers
 
             var value = await this.CacheService.GetValue<string>(hashValue);
             if (string.IsNullOrWhiteSpace(value))
-               await this.CacheService.SetValue(hashValue, dbPath);
+              await this.CacheService.SetValue(hashValue, dbPath);
+            else {
+              EventBus.Publish(new BaseQueueItem(), QueueNameEnum.ImageToCompress);
+            }
+            EventBus.Publish(new BaseQueueItem(), QueueNameEnum.ImageToCompress);
 
           }
           return Ok(new { dbPath });

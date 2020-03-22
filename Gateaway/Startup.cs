@@ -43,6 +43,8 @@ namespace Gateaway
 
       services.AddCache(Cache.Dtos.CachingServiceEnum.Redis);
 
+      services.AddEventBusRabbitMQ(Configuration);
+
       services.Configure<FormOptions>(o =>
       {
         o.ValueLengthLimit = int.MaxValue;

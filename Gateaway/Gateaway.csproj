@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cache\Cache.csproj" />
+    <ProjectReference Include="..\EventBusRabbitMQ\EventBusRabbitMQ.csproj" />
   </ItemGroup>
 
 
