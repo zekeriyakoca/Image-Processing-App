@@ -41,7 +41,7 @@ namespace EventBusRabbitMQ
       {
         throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
       }
-
+      _connection.CreateModel();
       return _connection.CreateModel();
     }
 

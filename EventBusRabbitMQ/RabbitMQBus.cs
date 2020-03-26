@@ -58,6 +58,8 @@ namespace EventBusRabbitMQ
       _logger.LogTrace("Declaring RabbitMQ initial queues");
 
       CreateQueue(QueueNameEnum.ImageToCompress, channel);
+      CreateQueue(QueueNameEnum.ImageReadyToMail, channel);
+      CreateQueue(QueueNameEnum.MailSent, channel);
     }
 
     public void CreateQueue(QueueNameEnum queueName, IModel channel)
@@ -96,13 +98,13 @@ namespace EventBusRabbitMQ
       return channel;
     }
 
-    public void Publish(BaseQueueItem item, QueueNameEnum queueName)
+    public void Publish(BaseQueueItemDto item, QueueNameEnum queueName, bool callingInsideSubscribe = false)
     {
-      if (!_persistentConnection.IsConnected)
+      if (!_persistentConnection.IsConnected || callingInsideSubscribe)
       {
         _persistentConnection.TryConnect();
       }
-
+      _persistentConnection.TryConnect();
       var policy = RetryPolicy.Handle<BrokerUnreachableException>()
           .Or<SocketException>()
           .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>

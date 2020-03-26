@@ -47,20 +47,21 @@ namespace Gateaway.Controllers
           var fullPath = Path.Combine(pathToSave, fileName);
           var dbPath = Path.Combine(folderName, fileName);
 
-          using (var stream = new FileStream(fullPath, FileMode.Create))
+          using (var stream = new MemoryStream())
           {
             file.CopyTo(stream);
-
+            var imageBase64  =Convert.ToBase64String(stream.ToArray());
             var md5 = MD5.Create();
             string hashValue = Convert.ToBase64String(md5.ComputeHash(stream));
-
+            var testMailAddress = "zekeriyakocairi@gmail.com";
+            ImageToProcessDto queueModel = new ImageToProcessDto() { Base64Image = imageBase64, ImageFileName = fileName, MailAddressToSend = testMailAddress , CacheKey = hashValue};
             var value = await this.CacheService.GetValue<string>(hashValue);
             if (string.IsNullOrWhiteSpace(value))
               await this.CacheService.SetValue(hashValue, dbPath);
             else {
-              EventBus.Publish(new BaseQueueItem(), QueueNameEnum.ImageToCompress);
+              //EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
             }
-            EventBus.Publish(new BaseQueueItem(), QueueNameEnum.ImageToCompress);
+            EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
 
           }
           return Ok(new { dbPath });

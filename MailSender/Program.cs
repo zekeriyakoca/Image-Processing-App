@@ -1,11 +1,10 @@
-﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Firebase;
-using Firebase.Interfaces;
-using System.Net.Http;
+using Mail;
+using Mail.Interfaces;
 
-namespace ImageProcessor
+namespace MailSender
 {
   public class Program
   {
@@ -17,11 +16,9 @@ namespace ImageProcessor
 
     private static IHostBuilder CreateHostedBuilder(string[] args)
     {
-
       return Host.CreateDefaultBuilder(args)
         .ConfigureAppConfiguration((hostContext, configApp) =>
         {
-
           configApp.AddJsonFile("appsettings.json", optional: true);
           configApp.AddJsonFile(
              $"appsettings.{hostContext.HostingEnvironment.EnvironmentName}.json",
@@ -30,9 +27,8 @@ namespace ImageProcessor
         .ConfigureServices((hostContext, services) =>
         {
           var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
-          services.AddScoped<HttpClient>();
-          services.AddScoped<IFirebaseService, FirebaseService>();
-          services.AddTransient<IImageProcessService, ImageProcessService>();
+          services.AddTransient<IMailSendingWorkerService, MailSendingWorkerService>();
+          services.AddTransient<IMailService, SendGridMailService>();
           services.AddHostedService<Worker>();
           services.AddEventBusRabbitMQ(configuration);
         });

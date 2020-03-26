@@ -4,17 +4,17 @@ using System.Text;
 
 namespace EventBusRabbitMQ.Dtos
 {
-  public class BaseQueueItem
+  public class BaseQueueItemDto
   {
-    public BaseQueueItem()
+    public BaseQueueItemDto()
     {
-      Id = new Guid();
+      Id = Guid.NewGuid();
       CreationDate = DateTime.UtcNow;
     }
-    public BaseQueueItem(Guid id, DateTime createDate)
+    public BaseQueueItemDto(Guid id)
     {
       Id = id;
-      CreationDate = createDate;
+      CreationDate = DateTime.UtcNow;
     }
     public Guid Id { get; set; }
     public DateTime CreationDate { get; set; }

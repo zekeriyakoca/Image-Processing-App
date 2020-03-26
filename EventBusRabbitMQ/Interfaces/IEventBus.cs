@@ -8,7 +8,7 @@ namespace EventBusRabbitMQ.Interfaces
 {
   public interface IEventBus
   {
-    void Publish(BaseQueueItem item, QueueNameEnum queueName);
+    void Publish(BaseQueueItemDto item, QueueNameEnum queueName, bool calledInsideSubscribe = false);
 
     void Subscribe(QueueNameEnum queueName, AsyncEventHandler<BasicDeliverEventArgs> onMessageReceived);
     void SendAck(BasicDeliverEventArgs eventArgs);
