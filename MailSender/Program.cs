@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Mail;
 using Mail.Interfaces;
+using Cache.Interfaces;
 
 namespace MailSender
 {
@@ -28,6 +29,7 @@ namespace MailSender
         {
           var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
           services.AddTransient<IMailSendingWorkerService, MailSendingWorkerService>();
+          services.AddCache(Cache.Dtos.CachingServiceEnum.Redis);
           services.AddTransient<IMailService, SendGridMailService>();
           services.AddHostedService<Worker>();
           services.AddEventBusRabbitMQ(configuration);

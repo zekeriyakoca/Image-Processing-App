@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Cache.Interfaces;
 using EventBusRabbitMQ.Dtos;
 using EventBusRabbitMQ.Interfaces;
 using Microsoft.Extensions.Hosting;
@@ -16,16 +17,17 @@ namespace MailSender
   {
     private readonly ILogger<Worker> logger;
 
-    public Worker(ILogger<Worker> logger, IEventBus eventBus, IMailSendingWorkerService mailSendingService)
+    public Worker(ILogger<Worker> logger, IEventBus eventBus, IMailSendingWorkerService mailSendingService, ICacheService cacheService)
     {
       this.logger = logger;
       EventBus = eventBus;
       MailSendingService = mailSendingService;
+      CacheService = cacheService;
     }
 
     public IEventBus EventBus { get; }
     public IMailSendingWorkerService MailSendingService { get; }
-
+    public ICacheService CacheService { get; }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -41,6 +43,8 @@ namespace MailSender
         try
         {
           var result = await MailSendingService.SendMail(queueModel.MailAddressToSend, queueModel.ImageUrl);
+
+          await this.CacheService.SetValue(queueModel.CacheKey, queueModel.ImageUrl);
 
           var mailSent = new MailSentDto() { Id = queueModel.Id, message ="Mail successfully sent." };
           EventBus.Publish(mailSent, QueueNameEnum.MailSent, true);

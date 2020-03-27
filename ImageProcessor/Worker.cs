@@ -49,7 +49,7 @@ namespace ImageProcessor
 
           var imageUrl = await FirebaseService.PutImage(new Bitmap(processedImage), $"{queueModel.ImageFileName}-{DateTime.Now}", "Processed");
 
-          var imageReadyToMail = new ImageReadyToMailDto() { Id = queueModel.Id, ImageUrl = imageUrl, MailAddressToSend = queueModel.MailAddressToSend };
+          var imageReadyToMail = new ImageReadyToMailDto() { Id = queueModel.Id, ImageUrl = imageUrl, MailAddressToSend = queueModel.MailAddressToSend ,CacheKey = queueModel.CacheKey};
           EventBus.Publish(imageReadyToMail, QueueNameEnum.ImageReadyToMail,true);
 
         }

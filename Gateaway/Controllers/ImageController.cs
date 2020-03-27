@@ -33,38 +33,38 @@ namespace Gateaway.Controllers
 
     [HttpPost, DisableRequestSizeLimit]
     [Route("process")]
-    public async Task<IActionResult> Process() {
-      
+    public async Task<IActionResult> Process()
+    {
+
       try
       {
         var file = Request.Form.Files[0];
-        var folderName = Path.Combine("Resources", "Images");
-        var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
 
         if (file.Length > 0)
         {
           var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-          var fullPath = Path.Combine(pathToSave, fileName);
-          var dbPath = Path.Combine(folderName, fileName);
 
           using (var stream = new MemoryStream())
           {
             file.CopyTo(stream);
-            var imageBase64  =Convert.ToBase64String(stream.ToArray());
-            var md5 = MD5.Create();
-            string hashValue = Convert.ToBase64String(md5.ComputeHash(stream));
-            var testMailAddress = "zekeriyakocairi@gmail.com";
-            ImageToProcessDto queueModel = new ImageToProcessDto() { Base64Image = imageBase64, ImageFileName = fileName, MailAddressToSend = testMailAddress , CacheKey = hashValue};
+            stream.Position = 0;
+            var byteArray = stream.ToArray();
+            var imageBase64 = Convert.ToBase64String(byteArray);
+            string hashValue = Convert.ToBase64String(MD5.Create().ComputeHash(byteArray));
+            var testMailAddress = "zekeriyakocairi@gmail.com"; 
+
+            ImageToProcessDto queueModel = new ImageToProcessDto() { Base64Image = imageBase64, ImageFileName = fileName, MailAddressToSend = testMailAddress, CacheKey = hashValue };
             var value = await this.CacheService.GetValue<string>(hashValue);
             if (string.IsNullOrWhiteSpace(value))
-              await this.CacheService.SetValue(hashValue, dbPath);
-            else {
-              //EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
+            {
+              EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
+              //Cache set will be done in MailSender Worker
+              //await this.CacheService.SetValue(hashValue, dbPath);
             }
-            EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
+            //EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
 
           }
-          return Ok(new { dbPath });
+          return Ok("your image is processing");
         }
         else
         {
