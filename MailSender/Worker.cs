@@ -16,6 +16,9 @@ namespace MailSender
   public class Worker : BackgroundService
   {
     private readonly ILogger<Worker> logger;
+    public readonly IEventBus EventBus;
+    public readonly IMailSendingWorkerService MailSendingService;
+    public readonly ICacheService CacheService;
 
     public Worker(ILogger<Worker> logger, IEventBus eventBus, IMailSendingWorkerService mailSendingService, ICacheService cacheService)
     {
@@ -25,15 +28,10 @@ namespace MailSender
       CacheService = cacheService;
     }
 
-    public IEventBus EventBus { get; }
-    public IMailSendingWorkerService MailSendingService { get; }
-    public ICacheService CacheService { get; }
-
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
       EventBus.Subscribe(QueueNameEnum.ImageReadyToMail, async (sender, eventArgs) =>
       {
-        var eventName = eventArgs.RoutingKey;
         ImageReadyToMailDto queueModel = JsonConvert.DeserializeObject<ImageReadyToMailDto>(Encoding.UTF8.GetString(eventArgs.Body));
         if (queueModel == null || string.IsNullOrWhiteSpace(queueModel.MailAddressToSend))
         {
@@ -43,10 +41,15 @@ namespace MailSender
         try
         {
           var result = await MailSendingService.SendMail(queueModel.MailAddressToSend, queueModel.ImageUrl);
+          if (!result) {
+            logger.LogError($"Unable to send mail to {queueModel.MailAddressToSend} for the image on url: {queueModel.ImageUrl}.");
+            //Proceeding...
+          }
 
+          //Save Image Url To Cache. This will be used in gateaway API to shortcut the process if an image already proccessed and exist in cache.
           await this.CacheService.SetValue(queueModel.CacheKey, queueModel.ImageUrl);
 
-          var mailSent = new MailSentDto() { Id = queueModel.Id, message ="Mail successfully sent." };
+          var mailSent = new MailSentDto() { Id = queueModel.Id, message = "Mail successfully sent." };
           EventBus.Publish(mailSent, QueueNameEnum.MailSent, true);
 
         }

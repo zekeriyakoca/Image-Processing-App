@@ -28,11 +28,14 @@ namespace MailSender
         .ConfigureServices((hostContext, services) =>
         {
           var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+
           services.AddTransient<IMailSendingWorkerService, MailSendingWorkerService>();
-          services.AddCache(Cache.Dtos.CachingServiceEnum.Redis);
           services.AddTransient<IMailService, SendGridMailService>();
-          services.AddHostedService<Worker>();
+
+          services.AddCache(Cache.Dtos.CachingServiceEnum.Redis);
           services.AddEventBusRabbitMQ(configuration);
+
+          services.AddHostedService<Worker>();
         });
 
     }

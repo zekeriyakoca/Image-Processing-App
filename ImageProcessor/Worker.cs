@@ -77,7 +77,7 @@ namespace ImageProcessor
     {
       var imageUrl = await FirebaseService.PutImage(new Bitmap(processedImage), $"{queueModel.ImageFileName}-{DateTime.Now}", "Processed");
 
-      var result = await FirebaseService.AddRecord(new { url = imageUrl }, $"images/{queueModel.CleanKey}.json");
+      var result = await FirebaseService.PutObject(new { url = imageUrl }, $"images/{queueModel.CleanKey}.json");
       if (!result)
         throw new Exception($"Unable to save imageUrl to Realtime Database. image id(cleanKey) :{queueModel.CleanKey}");
       return imageUrl;

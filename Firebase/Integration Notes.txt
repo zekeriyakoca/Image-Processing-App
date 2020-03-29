@@ -1,0 +1,10 @@
+﻿*** Mail application using this class library should include following Json data in appsettings.*.json
+
+{
+	"Firebase":{
+			"Url:"FIREBASE BASE URL",
+			"BucketName": "FOLDER NAME TO SAVE IMAGES IN"
+	}
+}
+
+*** You should Inject "HttpClient" to DI Container to use this Service via DI.

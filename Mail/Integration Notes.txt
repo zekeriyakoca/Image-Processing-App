@@ -1,0 +1,10 @@
+﻿
+*** Mail application using this class library should include following Json data in appsettings.*.json
+
+{
+	"Mail":{
+		"SendGrid":{
+			"ApiKey:"YOUR SENDGRID API KEY"
+		}
+	}
+}

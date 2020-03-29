@@ -36,7 +36,6 @@ namespace Gateaway.Controllers
     [Route("process")]
     public async Task<IActionResult> Process()
     {
-
       try
       {
         var file = Request.Form.Files[0];
@@ -55,16 +54,14 @@ namespace Gateaway.Controllers
             var testMailAddress = "zekeriyakocairi@gmail.com"; 
 
             ImageToProcessDto queueModel = new ImageToProcessDto() { Base64Image = imageBase64, ImageFileName = fileName, MailAddressToSend = testMailAddress, CacheKey = hashValue };
-            var value = await this.CacheService.GetValue<string>(hashValue);
+            var imageUrlPreviouslyProcessed = await this.CacheService.GetValue<string>(hashValue);
 
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrWhiteSpace(imageUrlPreviouslyProcessed))
             {
               EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
-              //Cache set will be done in MailSender Worker
-              //await this.CacheService.SetValue(hashValue, dbPath);
               return Ok(JsonConvert.SerializeObject(queueModel.CleanKey));
             }
-            return Ok(JsonConvert.SerializeObject(value));
+            return Ok(JsonConvert.SerializeObject(imageUrlPreviouslyProcessed));
           }
         }
         else

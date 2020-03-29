@@ -28,10 +28,17 @@ namespace MailSender
       StringBuilder body = new StringBuilder();
       body.Append("You can download your image from the following link : ");
       body.Append(imageUrl);
-      var result = await MailService.SendMessage(apiKey, fromMail, fromName, toList, subject, body.ToString(), "", "");
-      if (result)
-        return true;
-      return false;
+
+      try
+      {
+        var isSuccess = await MailService.SendMessage(apiKey, fromMail, fromName, toList, subject, body.ToString(), "", "");
+        return isSuccess;
+      }
+      catch 
+      {
+        return false;
+      }
+
     }
 
   }
