@@ -1,0 +1,11 @@
+{
+    "name": "Image-Proc",
+    "short_name": "Image-Proc",
+    "theme_color": "#1976d2",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "gsm_sender_id": "103953800507"
+  }
+  

@@ -879,7 +879,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} platformLocation
        */
       function Location(platformStrategy, platformLocation) {
-        var _this = this;
+        var _this2 = this;
 
         _classCallCheck(this, Location);
 
@@ -906,8 +906,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (ev) {
-          _this._subject.emit({
-            'url': _this.path(true),
+          _this2._subject.emit({
+            'url': _this2.path(true),
             'pop': true,
             'state': ev.state,
             'type': ev.type
@@ -1063,7 +1063,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onUrlChange",
         value: function onUrlChange(fn) {
-          var _this2 = this;
+          var _this3 = this;
 
           this._urlChangeListeners.push(fn);
 
@@ -1073,7 +1073,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (v) {
-            _this2._notifyUrlChangeListeners(v.url, v.state);
+            _this3._notifyUrlChangeListeners(v.url, v.state);
           });
         }
         /**
@@ -1268,19 +1268,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} _baseHref
        */
       function HashLocationStrategy(_platformLocation, _baseHref) {
-        var _this3;
+        var _this4;
 
         _classCallCheck(this, HashLocationStrategy);
 
-        _this3 = _possibleConstructorReturn(this, _getPrototypeOf(HashLocationStrategy).call(this));
-        _this3._platformLocation = _platformLocation;
-        _this3._baseHref = '';
+        _this4 = _possibleConstructorReturn(this, _getPrototypeOf(HashLocationStrategy).call(this));
+        _this4._platformLocation = _platformLocation;
+        _this4._baseHref = '';
 
         if (_baseHref != null) {
-          _this3._baseHref = _baseHref;
+          _this4._baseHref = _baseHref;
         }
 
-        return _this3;
+        return _this4;
       }
       /**
        * @param {?} fn
@@ -1460,23 +1460,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} href
        */
       function PathLocationStrategy(_platformLocation, href) {
-        var _this4;
+        var _this5;
 
         _classCallCheck(this, PathLocationStrategy);
 
-        _this4 = _possibleConstructorReturn(this, _getPrototypeOf(PathLocationStrategy).call(this));
-        _this4._platformLocation = _platformLocation;
+        _this5 = _possibleConstructorReturn(this, _getPrototypeOf(PathLocationStrategy).call(this));
+        _this5._platformLocation = _platformLocation;
 
         if (href == null) {
-          href = _this4._platformLocation.getBaseHrefFromDOM();
+          href = _this5._platformLocation.getBaseHrefFromDOM();
         }
 
         if (href == null) {
           throw new Error("No base href set. Please provide a value for the APP_BASE_HREF token or add a base element to the document.");
         }
 
-        _this4._baseHref = href;
-        return _this4;
+        _this5._baseHref = href;
+        return _this5;
       }
       /**
        * @param {?} fn
@@ -4266,14 +4266,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} deprecatedPluralFn
        */
       function NgLocaleLocalization(locale, deprecatedPluralFn) {
-        var _this5;
+        var _this6;
 
         _classCallCheck(this, NgLocaleLocalization);
 
-        _this5 = _possibleConstructorReturn(this, _getPrototypeOf(NgLocaleLocalization).call(this));
-        _this5.locale = locale;
-        _this5.deprecatedPluralFn = deprecatedPluralFn;
-        return _this5;
+        _this6 = _possibleConstructorReturn(this, _getPrototypeOf(NgLocaleLocalization).call(this));
+        _this6.locale = locale;
+        _this6.deprecatedPluralFn = deprecatedPluralFn;
+        return _this6;
       }
       /**
        * @param {?} value
@@ -5385,7 +5385,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_applyKeyValueChanges",
         value: function _applyKeyValueChanges(changes) {
-          var _this6 = this;
+          var _this7 = this;
 
           changes.forEachAddedItem(
           /**
@@ -5393,7 +5393,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this6._toggleClass(record.key, record.currentValue);
+            return _this7._toggleClass(record.key, record.currentValue);
           });
           changes.forEachChangedItem(
           /**
@@ -5401,7 +5401,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this6._toggleClass(record.key, record.currentValue);
+            return _this7._toggleClass(record.key, record.currentValue);
           });
           changes.forEachRemovedItem(
           /**
@@ -5410,7 +5410,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (record) {
             if (record.previousValue) {
-              _this6._toggleClass(record.key, false);
+              _this7._toggleClass(record.key, false);
             }
           });
         }
@@ -5423,7 +5423,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_applyIterableChanges",
         value: function _applyIterableChanges(changes) {
-          var _this7 = this;
+          var _this8 = this;
 
           changes.forEachAddedItem(
           /**
@@ -5432,7 +5432,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (record) {
             if (typeof record.item === 'string') {
-              _this7._toggleClass(record.item, true);
+              _this8._toggleClass(record.item, true);
             } else {
               throw new Error("NgClass can only toggle CSS classes expressed as strings, got ".concat(Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵstringify"])(record.item)));
             }
@@ -5443,7 +5443,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this7._toggleClass(record.item, false);
+            return _this8._toggleClass(record.item, false);
           });
         }
         /**
@@ -5461,7 +5461,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_applyClasses",
         value: function _applyClasses(rawClassVal) {
-          var _this8 = this;
+          var _this9 = this;
 
           if (rawClassVal) {
             if (Array.isArray(rawClassVal) || rawClassVal instanceof Set) {
@@ -5472,7 +5472,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (klass) {
-                return _this8._toggleClass(klass, true);
+                return _this9._toggleClass(klass, true);
               });
             } else {
               Object.keys(rawClassVal).forEach(
@@ -5481,7 +5481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (klass) {
-                return _this8._toggleClass(klass, !!rawClassVal[klass]);
+                return _this9._toggleClass(klass, !!rawClassVal[klass]);
               });
             }
           }
@@ -5497,7 +5497,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_removeClasses",
         value: function _removeClasses(rawClassVal) {
-          var _this9 = this;
+          var _this10 = this;
 
           if (rawClassVal) {
             if (Array.isArray(rawClassVal) || rawClassVal instanceof Set) {
@@ -5508,7 +5508,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (klass) {
-                return _this9._toggleClass(klass, false);
+                return _this10._toggleClass(klass, false);
               });
             } else {
               Object.keys(rawClassVal).forEach(
@@ -5517,7 +5517,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (klass) {
-                return _this9._toggleClass(klass, false);
+                return _this10._toggleClass(klass, false);
               });
             }
           }
@@ -5532,7 +5532,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_toggleClass",
         value: function _toggleClass(klass, enabled) {
-          var _this10 = this;
+          var _this11 = this;
 
           klass = klass.trim();
 
@@ -5544,9 +5544,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (klass) {
               if (enabled) {
-                _this10._renderer.addClass(_this10._ngEl.nativeElement, klass);
+                _this11._renderer.addClass(_this11._ngEl.nativeElement, klass);
               } else {
-                _this10._renderer.removeClass(_this10._ngEl.nativeElement, klass);
+                _this11._renderer.removeClass(_this11._ngEl.nativeElement, klass);
               }
             });
           }
@@ -6303,7 +6303,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_applyChanges",
         value: function _applyChanges(changes) {
-          var _this11 = this;
+          var _this12 = this;
 
           /** @type {?} */
           var insertTuples = [];
@@ -6317,23 +6317,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (item, adjustedPreviousIndex, currentIndex) {
             if (item.previousIndex == null) {
               /** @type {?} */
-              var view = _this11._viewContainer.createEmbeddedView(_this11._template, new NgForOfContext(
+              var view = _this12._viewContainer.createEmbeddedView(_this12._template, new NgForOfContext(
               /** @type {?} */
-              null, _this11._ngForOf, -1, -1), currentIndex === null ? undefined : currentIndex);
+              null, _this12._ngForOf, -1, -1), currentIndex === null ? undefined : currentIndex);
               /** @type {?} */
 
 
               var tuple = new RecordViewTuple(item, view);
               insertTuples.push(tuple);
             } else if (currentIndex == null) {
-              _this11._viewContainer.remove(adjustedPreviousIndex === null ? undefined : adjustedPreviousIndex);
+              _this12._viewContainer.remove(adjustedPreviousIndex === null ? undefined : adjustedPreviousIndex);
             } else if (adjustedPreviousIndex !== null) {
               /** @type {?} */
               var _view2 =
               /** @type {?} */
-              _this11._viewContainer.get(adjustedPreviousIndex);
+              _this12._viewContainer.get(adjustedPreviousIndex);
 
-              _this11._viewContainer.move(_view2, currentIndex);
+              _this12._viewContainer.move(_view2, currentIndex);
               /** @type {?} */
 
 
@@ -6369,7 +6369,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             var viewRef =
             /** @type {?} */
-            _this11._viewContainer.get(record.currentIndex);
+            _this12._viewContainer.get(record.currentIndex);
 
             viewRef.context.$implicit = record.item;
           });
@@ -7523,7 +7523,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_applyChanges",
         value: function _applyChanges(changes) {
-          var _this12 = this;
+          var _this13 = this;
 
           changes.forEachRemovedItem(
           /**
@@ -7531,7 +7531,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this12._setStyle(record.key, null);
+            return _this13._setStyle(record.key, null);
           });
           changes.forEachAddedItem(
           /**
@@ -7539,7 +7539,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this12._setStyle(record.key, record.currentValue);
+            return _this13._setStyle(record.key, record.currentValue);
           });
           changes.forEachChangedItem(
           /**
@@ -7547,7 +7547,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (record) {
-            return _this12._setStyle(record.key, record.currentValue);
+            return _this13._setStyle(record.key, record.currentValue);
           });
         }
         /**
@@ -9222,7 +9222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_subscribe",
         value: function _subscribe(obj) {
-          var _this13 = this;
+          var _this14 = this;
 
           this._obj = obj;
           this._strategy = this._selectStrategy(obj);
@@ -9232,7 +9232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (value) {
-            return _this13._updateLatestValue(obj, value);
+            return _this14._updateLatestValue(obj, value);
           });
         }
         /**
@@ -9979,7 +9979,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(KeyValuePipe, [{
         key: "transform",
         value: function transform(input) {
-          var _this14 = this;
+          var _this15 = this;
 
           var compareFn = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultComparator;
 
@@ -10006,7 +10006,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (r) {
-              _this14.keyValues.push(makeKeyValuePair(r.key,
+              _this15.keyValues.push(makeKeyValuePair(r.key,
               /** @type {?} */
               r.currentValue));
             });
@@ -11325,7 +11325,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} headers
        */
       function HttpHeaders(headers) {
-        var _this15 = this;
+        var _this16 = this;
 
         _classCallCheck(this, HttpHeaders);
 
@@ -11348,7 +11348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this15.headers = new Map();
+            _this16.headers = new Map();
             headers.split('\n').forEach(
             /**
             * @param {?} line
@@ -11360,21 +11360,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               if (index > 0) {
                 /** @type {?} */
-                var name = line.slice(0, index);
+                var _name2 = line.slice(0, index);
                 /** @type {?} */
 
-                var key = name.toLowerCase();
+
+                var key = _name2.toLowerCase();
                 /** @type {?} */
+
 
                 var value = line.slice(index + 1).trim();
 
-                _this15.maybeSetNormalizedName(name, key);
+                _this16.maybeSetNormalizedName(_name2, key);
 
-                if (_this15.headers.has(key)) {
+                if (_this16.headers.has(key)) {
                   /** @type {?} */
-                  _this15.headers.get(key).push(value);
+                  _this16.headers.get(key).push(value);
                 } else {
-                  _this15.headers.set(key, [value]);
+                  _this16.headers.set(key, [value]);
                 }
               }
             });
@@ -11385,7 +11387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this15.headers = new Map();
+            _this16.headers = new Map();
             Object.keys(headers).forEach(
             /**
             * @param {?} name
@@ -11403,9 +11405,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               if (values.length > 0) {
-                _this15.headers.set(key, values);
+                _this16.headers.set(key, values);
 
-                _this15.maybeSetNormalizedName(name, key);
+                _this16.maybeSetNormalizedName(name, key);
               }
             });
           };
@@ -11548,7 +11550,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "init",
         value: function init() {
-          var _this16 = this;
+          var _this17 = this;
 
           if (!!this.lazyInit) {
             if (this.lazyInit instanceof HttpHeaders) {
@@ -11566,7 +11568,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (update) {
-                return _this16.applyUpdate(update);
+                return _this17.applyUpdate(update);
               });
               this.lazyUpdate = null;
             }
@@ -11581,7 +11583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "copyFrom",
         value: function copyFrom(other) {
-          var _this17 = this;
+          var _this18 = this;
 
           other.init();
           Array.from(other.headers.keys()).forEach(
@@ -11590,11 +11592,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (key) {
-            _this17.headers.set(key,
+            _this18.headers.set(key,
             /** @type {?} */
             other.headers.get(key));
 
-            _this17.normalizedNames.set(key,
+            _this18.normalizedNames.set(key,
             /** @type {?} */
             other.normalizedNames.get(key));
           });
@@ -11696,7 +11698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "forEach",
         value: function forEach(fn) {
-          var _this18 = this;
+          var _this19 = this;
 
           this.init();
           Array.from(this.normalizedNames.keys()).forEach(
@@ -11707,9 +11709,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (key) {
             return fn(
             /** @type {?} */
-            _this18.normalizedNames.get(key),
+            _this19.normalizedNames.get(key),
             /** @type {?} */
-            _this18.headers.get(key));
+            _this19.headers.get(key));
           });
         }
       }]);
@@ -11895,7 +11897,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} options
        */
       function HttpParams() {
-        var _this19 = this;
+        var _this20 = this;
 
         var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] :
         /** @type {?} */
@@ -11927,7 +11929,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             options.fromObject[key];
 
             /** @type {?} */
-            _this19.map.set(key, Array.isArray(value) ? value : [value]);
+            _this20.map.set(key, Array.isArray(value) ? value : [value]);
           });
         } else {
           this.map = null;
@@ -12055,7 +12057,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toString",
         value: function toString() {
-          var _this20 = this;
+          var _this21 = this;
 
           this.init();
           return this.keys().map(
@@ -12065,19 +12067,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (key) {
             /** @type {?} */
-            var eKey = _this20.encoder.encodeKey(key);
+            var eKey = _this21.encoder.encodeKey(key);
 
             return (
               /** @type {?} */
 
               /** @type {?} */
-              _this20.map.get(key).map(
+              _this21.map.get(key).map(
               /**
               * @param {?} value
               * @return {?}
               */
               function (value) {
-                return eKey + '=' + _this20.encoder.encodeValue(value);
+                return eKey + '=' + _this21.encoder.encodeValue(value);
               }).join('&')
             );
           }).join('&');
@@ -12109,7 +12111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "init",
         value: function init() {
-          var _this21 = this;
+          var _this22 = this;
 
           if (this.map === null) {
             this.map = new Map();
@@ -12125,13 +12127,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             function (key) {
               return (
                 /** @type {?} */
-                _this21.map.set(key,
+                _this22.map.set(key,
                 /** @type {?} */
 
                 /** @type {?} */
 
                 /** @type {?} */
-                _this21.cloneFrom.map.get(key))
+                _this22.cloneFrom.map.get(key))
               );
             });
 
@@ -12148,13 +12150,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   /** @type {?} */
                   var base = (update.op === 'a' ?
                   /** @type {?} */
-                  _this21.map.get(update.param) : undefined) || [];
+                  _this22.map.get(update.param) : undefined) || [];
                   base.push(
                   /** @type {?} */
                   update.value);
 
                   /** @type {?} */
-                  _this21.map.set(update.param, base);
+                  _this22.map.set(update.param, base);
 
                   break;
 
@@ -12163,7 +12165,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     /** @type {?} */
                     var _base =
                     /** @type {?} */
-                    _this21.map.get(update.param) || [];
+                    _this22.map.get(update.param) || [];
                     /** @type {?} */
 
 
@@ -12175,14 +12177,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                     if (_base.length > 0) {
                       /** @type {?} */
-                      _this21.map.set(update.param, _base);
+                      _this22.map.set(update.param, _base);
                     } else {
                       /** @type {?} */
-                      _this21.map.delete(update.param);
+                      _this22.map.delete(update.param);
                     }
                   } else {
                     /** @type {?} */
-                    _this21.map.delete(update.param);
+                    _this22.map.delete(update.param);
 
                     break;
                   }
@@ -12757,15 +12759,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} init
        */
       function HttpHeaderResponse() {
-        var _this22;
+        var _this23;
 
         var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
         _classCallCheck(this, HttpHeaderResponse);
 
-        _this22 = _possibleConstructorReturn(this, _getPrototypeOf(HttpHeaderResponse).call(this, init));
-        _this22.type = HttpEventType.ResponseHeader;
-        return _this22;
+        _this23 = _possibleConstructorReturn(this, _getPrototypeOf(HttpHeaderResponse).call(this, init));
+        _this23.type = HttpEventType.ResponseHeader;
+        return _this23;
       }
       /**
        * Copy this `HttpHeaderResponse`, overriding its contents with the
@@ -12816,16 +12818,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} init
        */
       function HttpResponse() {
-        var _this23;
+        var _this24;
 
         var init = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
         _classCallCheck(this, HttpResponse);
 
-        _this23 = _possibleConstructorReturn(this, _getPrototypeOf(HttpResponse).call(this, init));
-        _this23.type = HttpEventType.Response;
-        _this23.body = init.body !== undefined ? init.body : null;
-        return _this23;
+        _this24 = _possibleConstructorReturn(this, _getPrototypeOf(HttpResponse).call(this, init));
+        _this24.type = HttpEventType.Response;
+        _this24.body = init.body !== undefined ? init.body : null;
+        return _this24;
       }
       /**
        * @param {?=} update
@@ -12875,29 +12877,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} init
        */
       function HttpErrorResponse(init) {
-        var _this24;
+        var _this25;
 
         _classCallCheck(this, HttpErrorResponse);
 
         // Initialize with a default status of 0 / Unknown Error.
-        _this24 = _possibleConstructorReturn(this, _getPrototypeOf(HttpErrorResponse).call(this, init, 0, 'Unknown Error'));
-        _this24.name = 'HttpErrorResponse';
+        _this25 = _possibleConstructorReturn(this, _getPrototypeOf(HttpErrorResponse).call(this, init, 0, 'Unknown Error'));
+        _this25.name = 'HttpErrorResponse';
         /**
          * Errors are never okay, even when the status code is in the 2xx success range.
          */
 
-        _this24.ok = false; // If the response was successful, then this was a parse error. Otherwise, it was
+        _this25.ok = false; // If the response was successful, then this was a parse error. Otherwise, it was
         // a protocol-level failure of some sort. Either the request failed in transit
         // or the server returned an unsuccessful status code.
 
-        if (_this24.status >= 200 && _this24.status < 300) {
-          _this24.message = "Http failure during parsing for ".concat(init.url || '(unknown url)');
+        if (_this25.status >= 200 && _this25.status < 300) {
+          _this25.message = "Http failure during parsing for ".concat(init.url || '(unknown url)');
         } else {
-          _this24.message = "Http failure response for ".concat(init.url || '(unknown url)', ": ").concat(init.status, " ").concat(init.statusText);
+          _this25.message = "Http failure response for ".concat(init.url || '(unknown url)', ": ").concat(init.status, " ").concat(init.statusText);
         }
 
-        _this24.error = init.error || null;
-        return _this24;
+        _this25.error = init.error || null;
+        return _this25;
       }
 
       return HttpErrorResponse;
@@ -13029,7 +13031,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(HttpClient, [{
         key: "request",
         value: function request(first, url) {
-          var _this25 = this;
+          var _this26 = this;
 
           var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
@@ -13099,7 +13101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (req) {
-            return _this25.handler.handle(req);
+            return _this26.handler.handle(req);
           })); // If coming via the API signature which accepts a previously constructed HttpRequest,
           // the only option is to get the event stream. Otherwise, return the event stream if
           // that is what was requested.
@@ -13567,7 +13569,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "handle",
         value: function handle(req) {
-          var _this26 = this;
+          var _this27 = this;
 
           // Firstly, check both the method and response type. If either doesn't match
           // then the request was improperly routed here and cannot be handled.
@@ -13589,7 +13591,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // a trailing &, if matched, gets inserted back into the URL in the correct place.
 
             /** @type {?} */
-            var callback = _this26.nextCallback();
+            var callback = _this27.nextCallback();
             /** @type {?} */
 
 
@@ -13597,7 +13599,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             /** @type {?} */
 
-            var node = _this26.document.createElement('script');
+            var node = _this27.document.createElement('script');
 
             node.src = url; // A JSONP request requires waiting for multiple callbacks. These variables
             // are closed over and track state across those callbacks.
@@ -13618,14 +13620,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // object in the browser. The script being loaded via the <script> tag will
             // eventually call this callback.
 
-            _this26.callbackMap[callback] =
+            _this27.callbackMap[callback] =
             /**
             * @param {?=} data
             * @return {?}
             */
             function (data) {
               // Data has been received from the JSONP script. Firstly, delete this callback.
-              delete _this26.callbackMap[callback]; // Next, make sure the request wasn't cancelled in the meantime.
+              delete _this27.callbackMap[callback]; // Next, make sure the request wasn't cancelled in the meantime.
 
               if (cancelled) {
                 return;
@@ -13653,7 +13655,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               // browser).
 
 
-              delete _this26.callbackMap[callback];
+              delete _this27.callbackMap[callback];
             }; // onLoad() is the success callback which runs after the response callback
             // if the JSONP script loads successfully. The event itself is unimportant.
             // If something went wrong, onLoad() may run without the response callback
@@ -13731,7 +13733,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             node.addEventListener('load', onLoad);
             node.addEventListener('error', onError);
 
-            _this26.document.body.appendChild(node); // The request has now been successfully sent.
+            _this27.document.body.appendChild(node); // The request has now been successfully sent.
 
 
             observer.next({
@@ -13953,7 +13955,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(HttpXhrBackend, [{
         key: "handle",
         value: function handle(req) {
-          var _this27 = this;
+          var _this28 = this;
 
           // Quick check to give a better error message when a user attempts to use
           // HttpClient.jsonp() without installing the JsonpClientModule
@@ -13971,7 +13973,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // Start by setting up the XHR object with request method, URL, and withCredentials flag.
 
             /** @type {?} */
-            var xhr = _this27.xhrFactory.build();
+            var xhr = _this28.xhrFactory.build();
 
             xhr.open(req.method, req.urlWithParams);
 
@@ -34900,13 +34902,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _view
        */
       function RootViewRef(_view) {
-        var _this28;
+        var _this29;
 
         _classCallCheck(this, RootViewRef);
 
-        _this28 = _possibleConstructorReturn(this, _getPrototypeOf(RootViewRef).call(this, _view, null, -1));
-        _this28._view = _view;
-        return _this28;
+        _this29 = _possibleConstructorReturn(this, _getPrototypeOf(RootViewRef).call(this, _view, null, -1));
+        _this29._view = _view;
+        return _this29;
       }
       /**
        * @return {?}
@@ -35091,15 +35093,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
            * @param {?} elementRef
            */
           function TemplateRef_(_declarationView, _declarationTContainer, elementRef) {
-            var _this29;
+            var _this30;
 
             _classCallCheck(this, TemplateRef_);
 
-            _this29 = _possibleConstructorReturn(this, _getPrototypeOf(TemplateRef_).call(this));
-            _this29._declarationView = _declarationView;
-            _this29._declarationTContainer = _declarationTContainer;
-            _this29.elementRef = elementRef;
-            return _this29;
+            _this30 = _possibleConstructorReturn(this, _getPrototypeOf(TemplateRef_).call(this));
+            _this30._declarationView = _declarationView;
+            _this30._declarationTContainer = _declarationTContainer;
+            _this30.elementRef = elementRef;
+            return _this30;
           }
           /**
            * @param {?} context
@@ -35201,15 +35203,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
            * @param {?} _hostView
            */
           function ViewContainerRef_(_lContainer, _hostTNode, _hostView) {
-            var _this30;
+            var _this31;
 
             _classCallCheck(this, ViewContainerRef_);
 
-            _this30 = _possibleConstructorReturn(this, _getPrototypeOf(ViewContainerRef_).call(this));
-            _this30._lContainer = _lContainer;
-            _this30._hostTNode = _hostTNode;
-            _this30._hostView = _hostView;
-            return _this30;
+            _this31 = _possibleConstructorReturn(this, _getPrototypeOf(ViewContainerRef_).call(this));
+            _this31._lContainer = _lContainer;
+            _this31._hostTNode = _hostTNode;
+            _this31._hostView = _hostView;
+            return _this31;
           }
           /**
            * @return {?}
@@ -36651,7 +36653,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} source
        */
       function R3Injector(def, additionalProviders, parent) {
-        var _this31 = this;
+        var _this32 = this;
 
         var source = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
@@ -36685,7 +36687,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (injectorDef) {
-          return _this31.processInjectorType(injectorDef, [], dedupStack);
+          return _this32.processInjectorType(injectorDef, [], dedupStack);
         });
         additionalProviders && deepForEach(additionalProviders,
         /**
@@ -36693,7 +36695,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (provider) {
-          return _this31.processProvider(provider, def, additionalProviders);
+          return _this32.processProvider(provider, def, additionalProviders);
         }); // Make sure the INJECTOR token provides this injector.
 
         this.records.set(INJECTOR, makeRecord(undefined, this)); // Detect whether this injector has the APP_ROOT_SCOPE token and thus should provide
@@ -36707,7 +36709,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (defType) {
-          return _this31.get(defType);
+          return _this32.get(defType);
         }); // Source name, used for debugging
 
         this.source = source || (typeof def === 'object' ? null : stringify(def));
@@ -36880,7 +36882,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processInjectorType",
         value: function processInjectorType(defOrWrappedDef, parents, dedupStack) {
-          var _this32 = this;
+          var _this33 = this;
 
           defOrWrappedDef = resolveForwardRef(defOrWrappedDef);
           if (!defOrWrappedDef) return false; // Either the defOrWrappedDef is an InjectorType (with ngInjectorDef) or an
@@ -36956,7 +36958,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (imported) {
-                if (_this32.processInjectorType(imported, parents, dedupStack)) {
+                if (_this33.processInjectorType(imported, parents, dedupStack)) {
                   if (importTypesWithProviders === undefined) importTypesWithProviders = []; // If the processed import is an injector type with providers, we store it in the
                   // list of import types with providers, so that we can process those afterwards.
 
@@ -36984,7 +36986,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 * @return {?}
                 */
                 function (provider) {
-                  return _this32.processProvider(provider, ngModule, providers || EMPTY_ARRAY$2);
+                  return _this33.processProvider(provider, ngModule, providers || EMPTY_ARRAY$2);
                 });
               };
 
@@ -37010,7 +37012,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (provider) {
-              return _this32.processProvider(provider, injectorType, defProviders);
+              return _this33.processProvider(provider, injectorType, defProviders);
             });
           }
 
@@ -39303,7 +39305,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_instantiate",
         value: function _instantiate(provider, ResolvedReflectiveFactory) {
-          var _this33 = this;
+          var _this34 = this;
 
           /** @type {?} */
           var factory = ResolvedReflectiveFactory.factory;
@@ -39318,7 +39320,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (dep) {
-              return _this33._getByReflectiveDependency(dep);
+              return _this34._getByReflectiveDependency(dep);
             });
           } catch (e) {
             if (e.addKey) {
@@ -46007,7 +46009,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (typeof firstParam === 'string') {
             /** @type {?} */
-            var name = firstParam;
+            var _name3 = firstParam;
             /** @type {?} */
 
             var listenerElement =
@@ -46031,7 +46033,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (element == listenerElement) {
               listeners.push({
                 element: element,
-                name: name,
+                name: _name3,
                 callback: callback,
                 useCapture: useCapture
               });
@@ -47548,19 +47550,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} ngModule
        */
       function ComponentFactoryBoundToModule(factory, ngModule) {
-        var _this34;
+        var _this35;
 
         _classCallCheck(this, ComponentFactoryBoundToModule);
 
-        _this34 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactoryBoundToModule).call(this));
-        _this34.factory = factory;
-        _this34.ngModule = ngModule;
-        _this34.selector = factory.selector;
-        _this34.componentType = factory.componentType;
-        _this34.ngContentSelectors = factory.ngContentSelectors;
-        _this34.inputs = factory.inputs;
-        _this34.outputs = factory.outputs;
-        return _this34;
+        _this35 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactoryBoundToModule).call(this));
+        _this35.factory = factory;
+        _this35.ngModule = ngModule;
+        _this35.selector = factory.selector;
+        _this35.componentType = factory.componentType;
+        _this35.ngContentSelectors = factory.ngContentSelectors;
+        _this35.inputs = factory.inputs;
+        _this35.outputs = factory.outputs;
+        return _this35;
       }
       /**
        * @param {?} injector
@@ -48160,7 +48162,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "check",
         value: function check(collection) {
-          var _this35 = this;
+          var _this36 = this;
 
           this._reset();
           /** @type {?} */
@@ -48210,18 +48212,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (item) {
-              itemTrackBy = _this35._trackByFn(index, item);
+              itemTrackBy = _this36._trackByFn(index, item);
 
               if (record === null || !looseIdentical(record.trackById, itemTrackBy)) {
-                record = _this35._mismatch(record, item, itemTrackBy, index);
+                record = _this36._mismatch(record, item, itemTrackBy, index);
                 mayBeDirty = true;
               } else {
                 if (mayBeDirty) {
                   // TODO(misko): can we limit this to duplicates only?
-                  record = _this35._verifyReinsertion(record, item, itemTrackBy, index);
+                  record = _this36._verifyReinsertion(record, item, itemTrackBy, index);
                 }
 
-                if (!looseIdentical(record.item, item)) _this35._addIdentityChange(record, item);
+                if (!looseIdentical(record.item, item)) _this36._addIdentityChange(record, item);
               }
 
               record = record._next;
@@ -49219,7 +49221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "check",
         value: function check(map) {
-          var _this36 = this;
+          var _this37 = this;
 
           this._reset();
           /** @type {?} */
@@ -49236,15 +49238,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (value, key) {
             if (insertBefore && insertBefore.key === key) {
-              _this36._maybeAddToChanges(insertBefore, value);
+              _this37._maybeAddToChanges(insertBefore, value);
 
-              _this36._appendAfter = insertBefore;
+              _this37._appendAfter = insertBefore;
               insertBefore = insertBefore._next;
             } else {
               /** @type {?} */
-              var record = _this36._getOrCreateRecordForKey(key, value);
+              var record = _this37._getOrCreateRecordForKey(key, value);
 
-              insertBefore = _this36._insertBeforeOrAppend(insertBefore, record);
+              insertBefore = _this37._insertBeforeOrAppend(insertBefore, record);
             }
           }); // Items remaining at the end of the list have been deleted
 
@@ -52336,20 +52338,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} ngContentSelectors
        */
       function ComponentFactory_(selector, componentType, viewDefFactory, _inputs, _outputs, ngContentSelectors) {
-        var _this37;
+        var _this38;
 
         _classCallCheck(this, ComponentFactory_);
 
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
-        _this37 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactory_).call(this));
-        _this37.selector = selector;
-        _this37.componentType = componentType;
-        _this37._inputs = _inputs;
-        _this37._outputs = _outputs;
-        _this37.ngContentSelectors = ngContentSelectors;
-        _this37.viewDefFactory = viewDefFactory;
-        return _this37;
+        _this38 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactory_).call(this));
+        _this38.selector = selector;
+        _this38.componentType = componentType;
+        _this38._inputs = _inputs;
+        _this38._outputs = _outputs;
+        _this38.ngContentSelectors = ngContentSelectors;
+        _this38.viewDefFactory = viewDefFactory;
+        return _this38;
       }
       /**
        * @return {?}
@@ -52456,19 +52458,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _component
        */
       function ComponentRef_(_view, _viewRef, _component) {
-        var _this38;
+        var _this39;
 
         _classCallCheck(this, ComponentRef_);
 
-        _this38 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentRef_).call(this));
-        _this38._view = _view;
-        _this38._viewRef = _viewRef;
-        _this38._component = _component;
-        _this38._elDef = _this38._view.def.nodes[0];
-        _this38.hostView = _viewRef;
-        _this38.changeDetectorRef = _viewRef;
-        _this38.instance = _component;
-        return _this38;
+        _this39 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentRef_).call(this));
+        _this39._view = _view;
+        _this39._viewRef = _viewRef;
+        _this39._component = _component;
+        _this39._elDef = _this39._view.def.nodes[0];
+        _this39.hostView = _viewRef;
+        _this39.changeDetectorRef = _viewRef;
+        _this39.instance = _component;
+        return _this39;
       }
       /**
        * @return {?}
@@ -52993,14 +52995,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _def
        */
       function TemplateRef_(_parentView, _def) {
-        var _this39;
+        var _this40;
 
         _classCallCheck(this, TemplateRef_);
 
-        _this39 = _possibleConstructorReturn(this, _getPrototypeOf(TemplateRef_).call(this));
-        _this39._parentView = _parentView;
-        _this39._def = _def;
-        return _this39;
+        _this40 = _possibleConstructorReturn(this, _getPrototypeOf(TemplateRef_).call(this));
+        _this40._parentView = _parentView;
+        _this40._def = _def;
+        return _this40;
       }
       /**
        * @param {?} context
@@ -54595,13 +54597,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} ngModule The NgModuleRef to which all resolved factories are bound.
        */
       function ComponentFactoryResolver$1(ngModule) {
-        var _this40;
+        var _this41;
 
         _classCallCheck(this, ComponentFactoryResolver$1);
 
-        _this40 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactoryResolver$1).call(this));
-        _this40.ngModule = ngModule;
-        return _this40;
+        _this41 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactoryResolver$1).call(this));
+        _this41.ngModule = ngModule;
+        return _this41;
       }
       /**
        * @template T
@@ -54718,21 +54720,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} ngModule The NgModuleRef to which the factory is bound.
        */
       function ComponentFactory$1(componentDef, ngModule) {
-        var _this41;
+        var _this42;
 
         _classCallCheck(this, ComponentFactory$1);
 
-        _this41 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactory$1).call(this));
-        _this41.componentDef = componentDef;
-        _this41.ngModule = ngModule;
-        _this41.componentType = componentDef.type; // default to 'div' in case this component has an attribute selector
+        _this42 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentFactory$1).call(this));
+        _this42.componentDef = componentDef;
+        _this42.ngModule = ngModule;
+        _this42.componentType = componentDef.type; // default to 'div' in case this component has an attribute selector
 
-        _this41.selector =
+        _this42.selector =
         /** @type {?} */
         componentDef.selectors[0][0] || 'div';
-        _this41.ngContentSelectors = componentDef.ngContentSelectors ? componentDef.ngContentSelectors : [];
-        _this41.isBoundToModule = !!ngModule;
-        return _this41;
+        _this42.ngContentSelectors = componentDef.ngContentSelectors ? componentDef.ngContentSelectors : [];
+        _this42.isBoundToModule = !!ngModule;
+        return _this42;
       }
       /**
        * @return {?}
@@ -54922,20 +54924,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _tNode
        */
       function ComponentRef$1(componentType, instance, location, _rootLView, _tNode) {
-        var _this42;
+        var _this43;
 
         _classCallCheck(this, ComponentRef$1);
 
-        _this42 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentRef$1).call(this));
-        _this42.location = location;
-        _this42._rootLView = _rootLView;
-        _this42._tNode = _tNode;
-        _this42.destroyCbs = [];
-        _this42.instance = instance;
-        _this42.hostView = _this42.changeDetectorRef = new RootViewRef(_rootLView);
-        _this42.hostView._tViewNode = assignTViewNodeToLView(_rootLView[TVIEW], null, -1, _rootLView);
-        _this42.componentType = componentType;
-        return _this42;
+        _this43 = _possibleConstructorReturn(this, _getPrototypeOf(ComponentRef$1).call(this));
+        _this43.location = location;
+        _this43._rootLView = _rootLView;
+        _this43._tNode = _tNode;
+        _this43.destroyCbs = [];
+        _this43.instance = instance;
+        _this43.hostView = _this43.changeDetectorRef = new RootViewRef(_rootLView);
+        _this43.hostView._tViewNode = assignTViewNodeToLView(_rootLView[TVIEW], null, -1, _rootLView);
+        _this43.componentType = componentType;
+        return _this43;
       }
       /**
        * @return {?}
@@ -57454,16 +57456,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _parent
        */
       function NgModuleRef$1(ngModuleType, _parent) {
-        var _this43;
+        var _this44;
 
         _classCallCheck(this, NgModuleRef$1);
 
-        _this43 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleRef$1).call(this));
-        _this43._parent = _parent; // tslint:disable-next-line:require-internal-with-underscore
+        _this44 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleRef$1).call(this));
+        _this44._parent = _parent; // tslint:disable-next-line:require-internal-with-underscore
 
-        _this43._bootstrapComponents = [];
-        _this43.injector = _assertThisInitialized(_this43);
-        _this43.destroyCbs = [];
+        _this44._bootstrapComponents = [];
+        _this44.injector = _assertThisInitialized(_this44);
+        _this44.destroyCbs = [];
         /** @type {?} */
 
         /** @nocollapse */
@@ -57478,20 +57480,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           setLocaleId(ngLocaleIdDef);
         }
 
-        _this43._bootstrapComponents = maybeUnwrapFn(
+        _this44._bootstrapComponents = maybeUnwrapFn(
         /** @type {?} */
         ngModuleDef.bootstrap);
         /** @type {?} */
 
         var additionalProviders = [{
           provide: NgModuleRef,
-          useValue: _assertThisInitialized(_this43)
+          useValue: _assertThisInitialized(_this44)
         }, COMPONENT_FACTORY_RESOLVER];
-        _this43._r3Injector =
+        _this44._r3Injector =
         /** @type {?} */
         createInjector(ngModuleType, _parent, additionalProviders, stringify(ngModuleType));
-        _this43.instance = _this43.get(ngModuleType);
-        return _this43;
+        _this44.instance = _this44.get(ngModuleType);
+        return _this44;
       }
       /**
        * @param {?} token
@@ -57579,12 +57581,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} moduleType
        */
       function NgModuleFactory$1(moduleType) {
-        var _this44;
+        var _this45;
 
         _classCallCheck(this, NgModuleFactory$1);
 
-        _this44 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleFactory$1).call(this));
-        _this44.moduleType = moduleType;
+        _this45 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleFactory$1).call(this));
+        _this45.moduleType = moduleType;
         /** @type {?} */
 
         /** @nocollapse */
@@ -57620,7 +57622,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           moduleType);
         }
 
-        return _this44;
+        return _this45;
       }
       /**
        * @param {?} parentInjector
@@ -58326,15 +58328,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        *
        */
       function EventEmitter() {
-        var _this45;
+        var _this46;
 
         var isAsync = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
         _classCallCheck(this, EventEmitter);
 
-        _this45 = _possibleConstructorReturn(this, _getPrototypeOf(EventEmitter).call(this));
-        _this45.__isAsync = isAsync;
-        return _this45;
+        _this46 = _possibleConstructorReturn(this, _getPrototypeOf(EventEmitter).call(this));
+        _this46.__isAsync = isAsync;
+        return _this46;
       }
       /**
        * Emits an event containing a given value.
@@ -61223,10 +61225,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         function get() {
           if (ngDirectiveDef === null) {
             /** @type {?} */
-            var name = type && type.name;
+            var _name4 = type && type.name;
             /** @type {?} */
 
-            var sourceMapUrl = "ng:///".concat(name, "/ngDirectiveDef.js");
+
+            var sourceMapUrl = "ng:///".concat(_name4, "/ngDirectiveDef.js");
             /** @type {?} */
 
             var compiler = getCompilerFacade();
@@ -61235,7 +61238,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var facade = directiveMetadata(
             /** @type {?} */
             type, directive);
-            facade.typeSourceSpan = compiler.createParseSourceSpan('Directive', name, sourceMapUrl);
+            facade.typeSourceSpan = compiler.createParseSourceSpan('Directive', _name4, sourceMapUrl);
 
             if (facade.usesInheritance) {
               addBaseDefToUndecoratedParents(type);
@@ -61349,10 +61352,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         function get() {
           if (ngBaseDef === null) {
             /** @type {?} */
-            var name = type && type.name;
+            var _name5 = type && type.name;
             /** @type {?} */
 
-            var sourceMapUrl = "ng://".concat(name, "/ngBaseDef.js");
+
+            var sourceMapUrl = "ng://".concat(_name5, "/ngBaseDef.js");
             /** @type {?} */
 
             var compiler = getCompilerFacade();
@@ -62085,7 +62089,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} appInits
        */
       function ApplicationInitStatus(appInits) {
-        var _this46 = this;
+        var _this47 = this;
 
         _classCallCheck(this, ApplicationInitStatus);
 
@@ -62099,8 +62103,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (res, rej) {
-          _this46.resolve = res;
-          _this46.reject = rej;
+          _this47.resolve = res;
+          _this47.reject = rej;
         });
       }
       /**
@@ -62112,7 +62116,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplicationInitStatus, [{
         key: "runInitializers",
         value: function runInitializers() {
-          var _this47 = this;
+          var _this48 = this;
 
           if (this.initialized) {
             return;
@@ -62129,9 +62133,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function complete() {
             /** @type {?} */
-            _this47.done = true;
+            _this48.done = true;
 
-            _this47.resolve();
+            _this48.resolve();
           };
 
           if (this.appInits) {
@@ -62157,7 +62161,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (e) {
-            _this47.reject(e);
+            _this48.reject(e);
           });
 
           if (asyncInitPromises.length === 0) {
@@ -63536,7 +63540,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _ngZone
        */
       function Testability(_ngZone) {
-        var _this48 = this;
+        var _this49 = this;
 
         _classCallCheck(this, Testability);
 
@@ -63561,7 +63565,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function () {
-          _this48.taskTrackingZone = typeof Zone == 'undefined' ? null : Zone.current.get('TaskTrackingZone');
+          _this49.taskTrackingZone = typeof Zone == 'undefined' ? null : Zone.current.get('TaskTrackingZone');
         });
       }
       /**
@@ -63573,7 +63577,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(Testability, [{
         key: "_watchAngularEvents",
         value: function _watchAngularEvents() {
-          var _this49 = this;
+          var _this50 = this;
 
           this._ngZone.onUnstable.subscribe({
             next:
@@ -63581,8 +63585,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function next() {
-              _this49._didWork = true;
-              _this49._isZoneStable = false;
+              _this50._didWork = true;
+              _this50._isZoneStable = false;
             }
           });
 
@@ -63591,7 +63595,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this49._ngZone.onStable.subscribe({
+            _this50._ngZone.onStable.subscribe({
               next:
               /**
               * @return {?}
@@ -63603,9 +63607,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 * @return {?}
                 */
                 function () {
-                  _this49._isZoneStable = true;
+                  _this50._isZoneStable = true;
 
-                  _this49._runCallbacksIfReady();
+                  _this50._runCallbacksIfReady();
                 });
               }
             });
@@ -63661,7 +63665,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_runCallbacksIfReady",
         value: function _runCallbacksIfReady() {
-          var _this50 = this;
+          var _this51 = this;
 
           if (this.isStable()) {
             // Schedules the call backs in a new frame so that it is always async.
@@ -63670,17 +63674,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              while (_this50._callbacks.length !== 0) {
+              while (_this51._callbacks.length !== 0) {
                 /** @type {?} */
                 var cb =
                 /** @type {?} */
-                _this50._callbacks.pop();
+                _this51._callbacks.pop();
 
                 clearTimeout(cb.timeoutId);
-                cb.doneCb(_this50._didWork);
+                cb.doneCb(_this51._didWork);
               }
 
-              _this50._didWork = false;
+              _this51._didWork = false;
             });
           } else {
             // Still not stable, send updates.
@@ -63746,7 +63750,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addCallback",
         value: function addCallback(cb, timeout, updateCb) {
-          var _this51 = this;
+          var _this52 = this;
 
           /** @type {?} */
           var timeoutId = -1;
@@ -63757,7 +63761,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              _this51._callbacks = _this51._callbacks.filter(
+              _this52._callbacks = _this52._callbacks.filter(
               /**
               * @param {?} cb
               * @return {?}
@@ -63765,7 +63769,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               function (cb) {
                 return cb.timeoutId !== timeoutId;
               });
-              cb(_this51._didWork, _this51.getPendingTasks());
+              cb(_this52._didWork, _this52.getPendingTasks());
             }, timeout);
           }
 
@@ -64369,7 +64373,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(PlatformRef, [{
         key: "bootstrapModuleFactory",
         value: function bootstrapModuleFactory(moduleFactory, options) {
-          var _this52 = this;
+          var _this53 = this;
 
           // Note: We need to create the NgZone _before_ we instantiate the module,
           // as instantiating the module creates some providers eagerly.
@@ -64397,7 +64401,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             var ngZoneInjector = Injector.create({
               providers: providers,
-              parent: _this52.injector,
+              parent: _this53.injector,
               name: moduleFactory.moduleType.name
             });
             /** @type {?} */
@@ -64425,7 +64429,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return remove(_this52._modules, moduleRef);
+              return remove(_this53._modules, moduleRef);
             });
 
             /** @type {?} */
@@ -64463,7 +64467,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function () {
-                _this52._moduleDoBootstrap(moduleRef);
+                _this53._moduleDoBootstrap(moduleRef);
 
                 return moduleRef;
               });
@@ -64494,7 +64498,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "bootstrapModule",
         value: function bootstrapModule(moduleType) {
-          var _this53 = this;
+          var _this54 = this;
 
           var compilerOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
 
@@ -64506,7 +64510,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (moduleFactory) {
-            return _this53.bootstrapModuleFactory(moduleFactory, options);
+            return _this54.bootstrapModuleFactory(moduleFactory, options);
           });
         }
         /**
@@ -64812,7 +64816,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _initStatus
        */
       function ApplicationRef(_zone, _console, _injector, _exceptionHandler, _componentFactoryResolver, _initStatus) {
-        var _this54 = this;
+        var _this55 = this;
 
         _classCallCheck(this, ApplicationRef);
 
@@ -64846,12 +64850,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function next() {
-            _this54._zone.run(
+            _this55._zone.run(
             /**
             * @return {?}
             */
             function () {
-              _this54.tick();
+              _this55.tick();
             });
           }
         });
@@ -64864,14 +64868,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function (observer) {
-          _this54._stable = _this54._zone.isStable && !_this54._zone.hasPendingMacrotasks && !_this54._zone.hasPendingMicrotasks;
+          _this55._stable = _this55._zone.isStable && !_this55._zone.hasPendingMacrotasks && !_this55._zone.hasPendingMicrotasks;
 
-          _this54._zone.runOutsideAngular(
+          _this55._zone.runOutsideAngular(
           /**
           * @return {?}
           */
           function () {
-            observer.next(_this54._stable);
+            observer.next(_this55._stable);
             observer.complete();
           });
         });
@@ -64889,12 +64893,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
           var stableSub;
 
-          _this54._zone.runOutsideAngular(
+          _this55._zone.runOutsideAngular(
           /**
           * @return {?}
           */
           function () {
-            stableSub = _this54._zone.onStable.subscribe(
+            stableSub = _this55._zone.onStable.subscribe(
             /**
             * @return {?}
             */
@@ -64907,8 +64911,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function () {
-                if (!_this54._stable && !_this54._zone.hasPendingMacrotasks && !_this54._zone.hasPendingMicrotasks) {
-                  _this54._stable = true;
+                if (!_this55._stable && !_this55._zone.hasPendingMacrotasks && !_this55._zone.hasPendingMicrotasks) {
+                  _this55._stable = true;
                   observer.next(true);
                 }
               });
@@ -64917,17 +64921,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           /** @type {?} */
 
 
-          var unstableSub = _this54._zone.onUnstable.subscribe(
+          var unstableSub = _this55._zone.onUnstable.subscribe(
           /**
           * @return {?}
           */
           function () {
             NgZone.assertInAngularZone();
 
-            if (_this54._stable) {
-              _this54._stable = false;
+            if (_this55._stable) {
+              _this55._stable = false;
 
-              _this54._zone.runOutsideAngular(
+              _this55._zone.runOutsideAngular(
               /**
               * @return {?}
               */
@@ -64976,7 +64980,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplicationRef, [{
         key: "bootstrap",
         value: function bootstrap(componentOrFactory, rootSelectorOrNode) {
-          var _this55 = this;
+          var _this56 = this;
 
           if (!this._initStatus.done) {
             throw new Error('Cannot bootstrap as there are still asynchronous initializers running. Bootstrap components in the `ngDoBootstrap` method of the root module.');
@@ -65010,7 +65014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            _this55._unloadComponent(compRef);
+            _this56._unloadComponent(compRef);
           });
           /** @type {?} */
 
@@ -65043,7 +65047,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "tick",
         value: function tick() {
-          var _this56 = this;
+          var _this57 = this;
 
           if (this._runningTick) {
             throw new Error('ApplicationRef.tick is called recursively');
@@ -65112,7 +65116,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return _this56._exceptionHandler.handleError(e);
+              return _this57._exceptionHandler.handleError(e);
             });
           } finally {
             this._runningTick = false;
@@ -65440,7 +65444,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadAndCompile",
         value: function loadAndCompile(path) {
-          var _this57 = this;
+          var _this58 = this;
 
           var _path$split = path.split(_SEPARATOR),
               _path$split2 = _slicedToArray(_path$split, 2),
@@ -65471,7 +65475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (type) {
-            return _this57._compiler.compileModuleAsync(type);
+            return _this58._compiler.compileModuleAsync(type);
           });
         }
         /**
@@ -65778,18 +65782,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _debugContext
        */
       function DebugElement__PRE_R3__(nativeNode, parent, _debugContext) {
-        var _this58;
+        var _this59;
 
         _classCallCheck(this, DebugElement__PRE_R3__);
 
-        _this58 = _possibleConstructorReturn(this, _getPrototypeOf(DebugElement__PRE_R3__).call(this, nativeNode, parent, _debugContext));
-        _this58.properties = {};
-        _this58.attributes = {};
-        _this58.classes = {};
-        _this58.styles = {};
-        _this58.childNodes = [];
-        _this58.nativeElement = nativeNode;
-        return _this58;
+        _this59 = _possibleConstructorReturn(this, _getPrototypeOf(DebugElement__PRE_R3__).call(this, nativeNode, parent, _debugContext));
+        _this59.properties = {};
+        _this59.attributes = {};
+        _this59.classes = {};
+        _this59.styles = {};
+        _this59.childNodes = [];
+        _this59.nativeElement = nativeNode;
+        return _this59;
       }
       /**
        * @param {?} child
@@ -65833,7 +65837,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "insertChildrenAfter",
         value: function insertChildrenAfter(child, newChildren) {
-          var _this59 = this;
+          var _this60 = this;
 
           /** @type {?} */
           var siblingIndex = this.childNodes.indexOf(child);
@@ -65855,7 +65859,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               /** @type {?} */
-              child.parent = _this59;
+              child.parent = _this60;
             });
           }
         }
@@ -67313,7 +67317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var _splitNamespace7 = splitNamespace(_namespaceAndName),
             _splitNamespace8 = _slicedToArray(_splitNamespace7, 2),
             _ns = _splitNamespace8[0],
-            _name2 = _splitNamespace8[1];
+            _name6 = _splitNamespace8[1];
         /** @type {?} */
 
 
@@ -67352,8 +67356,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         bindingDefs[i] = {
           flags: bindingFlags,
           ns: _ns,
-          name: _name2,
-          nonMinifiedName: _name2,
+          name: _name6,
+          nonMinifiedName: _name6,
           securityContext: securityContext,
           suffix: suffix
         };
@@ -67503,10 +67507,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         for (var i = 0; i < elDef.attrs.length; i++) {
           var _elDef$attrs$i = _slicedToArray(elDef.attrs[i], 3),
               ns = _elDef$attrs$i[0],
-              name = _elDef$attrs$i[1],
+              _name7 = _elDef$attrs$i[1],
               value = _elDef$attrs$i[2];
 
-          renderer.setAttribute(el, name, value, ns);
+          renderer.setAttribute(el, _name7, value, ns);
         }
       }
 
@@ -71977,17 +71981,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _ngModuleDefFactory
        */
       function NgModuleFactory_(moduleType, _bootstrapComponents, _ngModuleDefFactory) {
-        var _this60;
+        var _this61;
 
         _classCallCheck(this, NgModuleFactory_);
 
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
-        _this60 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleFactory_).call(this));
-        _this60.moduleType = moduleType;
-        _this60._bootstrapComponents = _bootstrapComponents;
-        _this60._ngModuleDefFactory = _ngModuleDefFactory;
-        return _this60;
+        _this61 = _possibleConstructorReturn(this, _getPrototypeOf(NgModuleFactory_).call(this));
+        _this61.moduleType = moduleType;
+        _this61._bootstrapComponents = _bootstrapComponents;
+        _this61._ngModuleDefFactory = _ngModuleDefFactory;
+        return _this61;
       }
       /**
        * @param {?} parentInjector
@@ -72055,6 +72059,12679 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     /***/
 
+  },
+
+  /***/
+  "./node_modules/@angular/fire/es2015/angularfire2.js":
+  /*!***********************************************************!*\
+    !*** ./node_modules/@angular/fire/es2015/angularfire2.js ***!
+    \***********************************************************/
+
+  /*! exports provided: RealtimeDatabaseURL, DATABASE_URL, ɵZoneScheduler, ɵBlockUntilFirstOperator, ɵAngularFireSchedulers, ɵkeepUnstableUntilFirstFactory, runOutsideAngular, runInZone, FirebaseZoneScheduler, ɵlazySDKProxy */
+
+  /***/
+  function node_modulesAngularFireEs2015Angularfire2Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RealtimeDatabaseURL", function () {
+      return RealtimeDatabaseURL;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DATABASE_URL", function () {
+      return DATABASE_URL;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵZoneScheduler", function () {
+      return ɵZoneScheduler;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵBlockUntilFirstOperator", function () {
+      return ɵBlockUntilFirstOperator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵAngularFireSchedulers", function () {
+      return ɵAngularFireSchedulers;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵkeepUnstableUntilFirstFactory", function () {
+      return ɵkeepUnstableUntilFirstFactory;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runOutsideAngular", function () {
+      return runOutsideAngular;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runInZone", function () {
+      return runInZone;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseZoneScheduler", function () {
+      return FirebaseZoneScheduler;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵlazySDKProxy", function () {
+      return ɵlazySDKProxy;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+
+    var RealtimeDatabaseURL = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('angularfire2.realtimeDatabaseURL');
+    var DATABASE_URL = RealtimeDatabaseURL;
+
+    function noop() {}
+
+    var ɵZoneScheduler =
+    /*#__PURE__*/
+    function () {
+      function ɵZoneScheduler(zone) {
+        var delegate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : rxjs__WEBPACK_IMPORTED_MODULE_2__["queueScheduler"];
+
+        _classCallCheck(this, ɵZoneScheduler);
+
+        this.zone = zone;
+        this.delegate = delegate;
+      }
+
+      _createClass2(ɵZoneScheduler, [{
+        key: "now",
+        value: function now() {
+          return this.delegate.now();
+        }
+      }, {
+        key: "schedule",
+        value: function schedule(work, delay, state) {
+          var targetZone = this.zone;
+
+          var workInZone = function workInZone(state) {
+            var _this62 = this;
+
+            targetZone.runGuarded(function () {
+              work.apply(_this62, [state]);
+            });
+          };
+
+          return this.delegate.schedule(workInZone, delay, state);
+        }
+      }]);
+
+      return ɵZoneScheduler;
+    }();
+
+    var ɵBlockUntilFirstOperator =
+    /*#__PURE__*/
+    function () {
+      function ɵBlockUntilFirstOperator(zone) {
+        _classCallCheck(this, ɵBlockUntilFirstOperator);
+
+        this.zone = zone;
+        this.task = null;
+      }
+
+      _createClass2(ɵBlockUntilFirstOperator, [{
+        key: "call",
+        value: function call(subscriber, source) {
+          var unscheduleTask = this.unscheduleTask.bind(this);
+          this.task = this.zone.run(function () {
+            return Zone.current.scheduleMacroTask('firebaseZoneBlock', noop, {}, noop, noop);
+          });
+          return source.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(unscheduleTask, unscheduleTask, unscheduleTask)).subscribe(subscriber).add(unscheduleTask);
+        }
+      }, {
+        key: "unscheduleTask",
+        value: function unscheduleTask() {
+          if (this.task != null && this.task.state === 'scheduled') {
+            this.task.invoke();
+            this.task = null;
+          }
+        }
+      }]);
+
+      return ɵBlockUntilFirstOperator;
+    }();
+
+    var ɵAngularFireSchedulers = function ɵAngularFireSchedulers(ngZone) {
+      _classCallCheck(this, ɵAngularFireSchedulers);
+
+      this.ngZone = ngZone;
+      this.outsideAngular = ngZone.runOutsideAngular(function () {
+        return new ɵZoneScheduler(Zone.current);
+      });
+      this.insideAngular = ngZone.run(function () {
+        return new ɵZoneScheduler(Zone.current, rxjs__WEBPACK_IMPORTED_MODULE_2__["asyncScheduler"]);
+      });
+    };
+
+    function ɵkeepUnstableUntilFirstFactory(schedulers, platformId) {
+      return function keepUnstableUntilFirst(obs$) {
+        if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformServer"])(platformId)) {
+          obs$ = obs$.lift(new ɵBlockUntilFirstOperator(schedulers.ngZone));
+        }
+
+        return obs$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["subscribeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.insideAngular));
+      };
+    }
+
+    var runOutsideAngular = function runOutsideAngular(zone) {
+      return function (obs$) {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (subscriber) {
+          return zone.runOutsideAngular(function () {
+            runInZone(zone)(obs$).subscribe(subscriber);
+          });
+        });
+      };
+    };
+
+    var runInZone = function runInZone(zone) {
+      return function (obs$) {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (subscriber) {
+          return obs$.subscribe(function (value) {
+            return zone.run(function () {
+              return subscriber.next(value);
+            });
+          }, function (error) {
+            return zone.run(function () {
+              return subscriber.error(error);
+            });
+          }, function () {
+            return zone.run(function () {
+              return subscriber.complete();
+            });
+          });
+        });
+      };
+    };
+
+    var FirebaseZoneScheduler =
+    /*#__PURE__*/
+    function () {
+      function FirebaseZoneScheduler(zone, platformId) {
+        _classCallCheck(this, FirebaseZoneScheduler);
+
+        this.zone = zone;
+        this.platformId = platformId;
+      }
+
+      _createClass2(FirebaseZoneScheduler, [{
+        key: "schedule",
+        value: function schedule() {
+          for (var _len12 = arguments.length, args = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
+            args[_key12] = arguments[_key12];
+          }
+
+          return this.zone.runGuarded(function () {
+            return rxjs__WEBPACK_IMPORTED_MODULE_2__["queueScheduler"].schedule.apply(rxjs__WEBPACK_IMPORTED_MODULE_2__["queueScheduler"], args);
+          });
+        }
+      }, {
+        key: "keepUnstableUntilFirst",
+        value: function keepUnstableUntilFirst(obs$) {
+          if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformServer"])(this.platformId)) {
+            return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (subscriber) {
+              var noop = function noop() {};
+
+              var task = Zone.current.scheduleMacroTask('firebaseZoneBlock', noop, {}, noop, noop);
+              obs$.subscribe(function (next) {
+                if (task.state === 'scheduled') {
+                  task.invoke();
+                }
+
+                ;
+                subscriber.next(next);
+              }, function (error) {
+                if (task.state === 'scheduled') {
+                  task.invoke();
+                }
+
+                subscriber.error(error);
+              }, function () {
+                if (task.state === 'scheduled') {
+                  task.invoke();
+                }
+
+                subscriber.complete();
+              });
+            });
+          } else {
+            return obs$;
+          }
+        }
+      }, {
+        key: "runOutsideAngular",
+        value: function runOutsideAngular(obs$) {
+          var _this63 = this;
+
+          return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (subscriber) {
+            return _this63.zone.runOutsideAngular(function () {
+              return obs$.subscribe(function (value) {
+                return _this63.zone.run(function () {
+                  return subscriber.next(value);
+                });
+              }, function (error) {
+                return _this63.zone.run(function () {
+                  return subscriber.error(error);
+                });
+              }, function () {
+                return _this63.zone.run(function () {
+                  return subscriber.complete();
+                });
+              });
+            });
+          });
+        }
+      }]);
+
+      return FirebaseZoneScheduler;
+    }();
+
+    var noopFunctions = ['ngOnDestroy'];
+
+    var ɵlazySDKProxy = function ɵlazySDKProxy(klass, observable, zone) {
+      return new Proxy(klass, {
+        get: function get(_, name) {
+          return zone.runOutsideAngular(function () {
+            if (klass[name]) {
+              return klass[name];
+            }
+
+            if (noopFunctions.includes(name)) {
+              return function () {};
+            }
+
+            var promise = observable.toPromise().then(function (mod) {
+              var ret = mod && mod[name];
+
+              if (typeof ret == 'function') {
+                return ret.bind(mod);
+              } else if (ret && ret.then) {
+                return ret.then(function (res) {
+                  return zone.run(function () {
+                    return res;
+                  });
+                });
+              } else {
+                return zone.run(function () {
+                  return ret;
+                });
+              }
+            });
+            return new Proxy(function () {
+              return undefined;
+            }, {
+              get: function get(_, name) {
+                return promise[name];
+              },
+              apply: function apply(self, _, args) {
+                return promise.then(function (it) {
+                  return it && it.apply(void 0, _toConsumableArray(args));
+                });
+              }
+            });
+          });
+        }
+      });
+    }; //# sourceMappingURL=angularfire2.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/fire/es2015/firebase.app.module.js":
+  /*!******************************************************************!*\
+    !*** ./node_modules/@angular/fire/es2015/firebase.app.module.js ***!
+    \******************************************************************/
+
+  /*! exports provided: FirebaseOptionsToken, FirebaseNameOrConfigToken, FIREBASE_OPTIONS, FIREBASE_APP_NAME, FirebaseApp, VERSION, _firebaseAppFactory, AngularFireModule */
+
+  /***/
+  function node_modulesAngularFireEs2015FirebaseAppModuleJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseOptionsToken", function () {
+      return FirebaseOptionsToken;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseNameOrConfigToken", function () {
+      return FirebaseNameOrConfigToken;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_OPTIONS", function () {
+      return FIREBASE_OPTIONS;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_APP_NAME", function () {
+      return FIREBASE_APP_NAME;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseApp", function () {
+      return FirebaseApp;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "VERSION", function () {
+      return VERSION;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "_firebaseAppFactory", function () {
+      return _firebaseAppFactory;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireModule", function () {
+      return AngularFireModule;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! firebase/app */
+    "./node_modules/firebase/app/dist/index.cjs.js");
+    /* harmony import */
+
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_1___default =
+    /*#__PURE__*/
+    __webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
+
+    var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+
+    var __metadata = undefined && undefined.__metadata || function (k, v) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+
+    var __param = undefined && undefined.__param || function (paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    };
+
+    var AngularFireModule_1;
+    var FirebaseOptionsToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('angularfire2.app.options');
+    var FirebaseNameOrConfigToken = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('angularfire2.app.nameOrConfig');
+    var FIREBASE_OPTIONS = FirebaseOptionsToken;
+    var FIREBASE_APP_NAME = FirebaseNameOrConfigToken;
+
+    var FirebaseApp = function FirebaseApp() {
+      _classCallCheck(this, FirebaseApp);
+    };
+
+    var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('5.4.2');
+
+    function _firebaseAppFactory(options, zone, nameOrConfig) {
+      var name = typeof nameOrConfig === 'string' && nameOrConfig || '[DEFAULT]';
+      var config = typeof nameOrConfig === 'object' && nameOrConfig || {};
+      config.name = config.name || name;
+      var existingApp = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.apps.filter(function (app) {
+        return app && app.name === config.name;
+      })[0];
+      return existingApp || zone.runOutsideAngular(function () {
+        return firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializeApp(options, config);
+      });
+    }
+
+    var FirebaseAppProvider = {
+      provide: FirebaseApp,
+      useFactory: _firebaseAppFactory,
+      deps: [FIREBASE_OPTIONS, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], [new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"](), FIREBASE_APP_NAME]]
+    };
+
+    var AngularFireModule = AngularFireModule_1 =
+    /*#__PURE__*/
+    function () {
+      function AngularFireModule(platformId) {
+        _classCallCheck(this, AngularFireModule);
+
+        if (firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.registerVersion) {
+          firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.registerVersion('angularfire', VERSION.full, platformId.toString());
+          firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.registerVersion('angular', _angular_core__WEBPACK_IMPORTED_MODULE_0__["VERSION"].full);
+        }
+      }
+
+      _createClass2(AngularFireModule, null, [{
+        key: "initializeApp",
+        value: function initializeApp(options, nameOrConfig) {
+          return {
+            ngModule: AngularFireModule_1,
+            providers: [{
+              provide: FIREBASE_OPTIONS,
+              useValue: options
+            }, {
+              provide: FIREBASE_APP_NAME,
+              useValue: nameOrConfig
+            }]
+          };
+        }
+      }]);
+
+      return AngularFireModule;
+    }();
+
+    AngularFireModule = AngularFireModule_1 = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+      providers: [FirebaseAppProvider]
+    }), __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])), __metadata("design:paramtypes", [Object])], AngularFireModule); //# sourceMappingURL=firebase.app.module.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@angular/fire/es2015/index.js":
+  /*!****************************************************!*\
+    !*** ./node_modules/@angular/fire/es2015/index.js ***!
+    \****************************************************/
+
+  /*! exports provided: RealtimeDatabaseURL, DATABASE_URL, ɵZoneScheduler, ɵBlockUntilFirstOperator, ɵAngularFireSchedulers, ɵkeepUnstableUntilFirstFactory, runOutsideAngular, runInZone, FirebaseZoneScheduler, ɵlazySDKProxy, FirebaseOptionsToken, FirebaseNameOrConfigToken, FIREBASE_OPTIONS, FIREBASE_APP_NAME, FirebaseApp, VERSION, _firebaseAppFactory, AngularFireModule */
+
+  /***/
+  function node_modulesAngularFireEs2015IndexJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var _public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./public_api */
+    "./node_modules/@angular/fire/es2015/public_api.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RealtimeDatabaseURL", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["RealtimeDatabaseURL"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DATABASE_URL", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["DATABASE_URL"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵZoneScheduler", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["ɵZoneScheduler"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵBlockUntilFirstOperator", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["ɵBlockUntilFirstOperator"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵAngularFireSchedulers", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["ɵAngularFireSchedulers"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵkeepUnstableUntilFirstFactory", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["ɵkeepUnstableUntilFirstFactory"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runOutsideAngular", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["runOutsideAngular"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runInZone", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["runInZone"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseZoneScheduler", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FirebaseZoneScheduler"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵlazySDKProxy", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["ɵlazySDKProxy"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseOptionsToken", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FirebaseOptionsToken"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseNameOrConfigToken", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FirebaseNameOrConfigToken"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_OPTIONS", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FIREBASE_OPTIONS"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_APP_NAME", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FIREBASE_APP_NAME"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseApp", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["FirebaseApp"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "VERSION", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["VERSION"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "_firebaseAppFactory", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["_firebaseAppFactory"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireModule", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["AngularFireModule"];
+    }); //# sourceMappingURL=index.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/fire/es2015/public_api.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/@angular/fire/es2015/public_api.js ***!
+    \*********************************************************/
+
+  /*! exports provided: RealtimeDatabaseURL, DATABASE_URL, ɵZoneScheduler, ɵBlockUntilFirstOperator, ɵAngularFireSchedulers, ɵkeepUnstableUntilFirstFactory, runOutsideAngular, runInZone, FirebaseZoneScheduler, ɵlazySDKProxy, FirebaseOptionsToken, FirebaseNameOrConfigToken, FIREBASE_OPTIONS, FIREBASE_APP_NAME, FirebaseApp, VERSION, _firebaseAppFactory, AngularFireModule */
+
+  /***/
+  function node_modulesAngularFireEs2015Public_apiJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var _angularfire2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./angularfire2 */
+    "./node_modules/@angular/fire/es2015/angularfire2.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RealtimeDatabaseURL", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["RealtimeDatabaseURL"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DATABASE_URL", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["DATABASE_URL"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵZoneScheduler", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["ɵZoneScheduler"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵBlockUntilFirstOperator", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["ɵBlockUntilFirstOperator"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵAngularFireSchedulers", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["ɵAngularFireSchedulers"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵkeepUnstableUntilFirstFactory", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["ɵkeepUnstableUntilFirstFactory"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runOutsideAngular", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["runOutsideAngular"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "runInZone", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["runInZone"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseZoneScheduler", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["FirebaseZoneScheduler"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵlazySDKProxy", function () {
+      return _angularfire2__WEBPACK_IMPORTED_MODULE_0__["ɵlazySDKProxy"];
+    });
+    /* harmony import */
+
+
+    var _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./firebase.app.module */
+    "./node_modules/@angular/fire/es2015/firebase.app.module.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseOptionsToken", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["FirebaseOptionsToken"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseNameOrConfigToken", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["FirebaseNameOrConfigToken"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_OPTIONS", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["FIREBASE_OPTIONS"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FIREBASE_APP_NAME", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["FIREBASE_APP_NAME"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FirebaseApp", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["FirebaseApp"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "VERSION", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["VERSION"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "_firebaseAppFactory", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["_firebaseAppFactory"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireModule", function () {
+      return _firebase_app_module__WEBPACK_IMPORTED_MODULE_1__["AngularFireModule"];
+    }); //# sourceMappingURL=public_api.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/fire/messaging/es2015/index.js":
+  /*!**************************************************************!*\
+    !*** ./node_modules/@angular/fire/messaging/es2015/index.js ***!
+    \**************************************************************/
+
+  /*! exports provided: AngularFireMessaging, AngularFireMessagingModule */
+
+  /***/
+  function node_modulesAngularFireMessagingEs2015IndexJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var _public_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./public_api */
+    "./node_modules/@angular/fire/messaging/es2015/public_api.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessaging", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["AngularFireMessaging"];
+    });
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessagingModule", function () {
+      return _public_api__WEBPACK_IMPORTED_MODULE_0__["AngularFireMessagingModule"];
+    }); //# sourceMappingURL=index.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/fire/messaging/es2015/messaging.js":
+  /*!******************************************************************!*\
+    !*** ./node_modules/@angular/fire/messaging/es2015/messaging.js ***!
+    \******************************************************************/
+
+  /*! exports provided: AngularFireMessaging */
+
+  /***/
+  function node_modulesAngularFireMessagingEs2015MessagingJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessaging", function () {
+      return AngularFireMessaging;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _angular_fire__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/fire */
+    "./node_modules/@angular/fire/es2015/index.js");
+
+    var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+
+    var __metadata = undefined && undefined.__metadata || function (k, v) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+
+    var __param = undefined && undefined.__param || function (paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    };
+
+    var AngularFireMessaging = function AngularFireMessaging(options, nameOrConfig, platformId, zone) {
+      var _this64 = this;
+
+      _classCallCheck(this, AngularFireMessaging);
+
+      var schedulers = new _angular_fire__WEBPACK_IMPORTED_MODULE_4__["ɵAngularFireSchedulers"](zone);
+      var requireMessaging = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(__webpack_require__.e(
+      /*! import() | firebase-messaging */
+      "firebase-messaging").then(__webpack_require__.bind(null,
+      /*! firebase/messaging */
+      "./node_modules/firebase/messaging/dist/index.esm.js")));
+      this.messaging = requireMessaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function () {
+        return Object(_angular_fire__WEBPACK_IMPORTED_MODULE_4__["_firebaseAppFactory"])(options, zone, nameOrConfig);
+      }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (app) {
+        return app.messaging();
+      }));
+
+      if (!Object(_angular_common__WEBPACK_IMPORTED_MODULE_1__["isPlatformServer"])(platformId)) {
+        this.requestPermission = this.messaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (messaging) {
+          return messaging.requestPermission();
+        }));
+      } else {
+        this.requestPermission = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])('Not available on server platform.');
+      }
+
+      this.getToken = this.messaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (messaging) {
+        return messaging.getToken();
+      }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["defaultIfEmpty"])(null));
+      var tokenChanges = this.messaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (messaging) {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](messaging.onTokenRefresh.bind(messaging)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function () {
+          return messaging.getToken();
+        }));
+      }));
+      this.tokenChanges = this.getToken.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concat"])(tokenChanges));
+      this.messages = this.messaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (messaging) {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](messaging.onMessage.bind(messaging));
+      }));
+      this.requestToken = this.requestPermission.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function () {
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(null);
+      }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(function () {
+        return _this64.tokenChanges;
+      }));
+
+      this.deleteToken = function (token) {
+        return _this64.messaging.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["observeOn"])(schedulers.outsideAngular), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["switchMap"])(function (messaging) {
+          return messaging.deleteToken(token);
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["defaultIfEmpty"])(false));
+      };
+    };
+
+    AngularFireMessaging = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(), __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_fire__WEBPACK_IMPORTED_MODULE_4__["FIREBASE_OPTIONS"])), __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"])()), __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_fire__WEBPACK_IMPORTED_MODULE_4__["FIREBASE_APP_NAME"])), __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"])), __metadata("design:paramtypes", [Object, Object, Object, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])], AngularFireMessaging); //# sourceMappingURL=messaging.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@angular/fire/messaging/es2015/messaging.module.js":
+  /*!*************************************************************************!*\
+    !*** ./node_modules/@angular/fire/messaging/es2015/messaging.module.js ***!
+    \*************************************************************************/
+
+  /*! exports provided: AngularFireMessagingModule */
+
+  /***/
+  function node_modulesAngularFireMessagingEs2015MessagingModuleJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessagingModule", function () {
+      return AngularFireMessagingModule;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _messaging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./messaging */
+    "./node_modules/@angular/fire/messaging/es2015/messaging.js");
+
+    var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+
+    var AngularFireMessagingModule = function AngularFireMessagingModule() {
+      _classCallCheck(this, AngularFireMessagingModule);
+    };
+
+    AngularFireMessagingModule = __decorate([Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+      providers: [_messaging__WEBPACK_IMPORTED_MODULE_1__["AngularFireMessaging"]]
+    })], AngularFireMessagingModule); //# sourceMappingURL=messaging.module.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@angular/fire/messaging/es2015/public_api.js":
+  /*!*******************************************************************!*\
+    !*** ./node_modules/@angular/fire/messaging/es2015/public_api.js ***!
+    \*******************************************************************/
+
+  /*! exports provided: AngularFireMessaging, AngularFireMessagingModule */
+
+  /***/
+  function node_modulesAngularFireMessagingEs2015Public_apiJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */
+
+
+    var _messaging__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./messaging */
+    "./node_modules/@angular/fire/messaging/es2015/messaging.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessaging", function () {
+      return _messaging__WEBPACK_IMPORTED_MODULE_0__["AngularFireMessaging"];
+    });
+    /* harmony import */
+
+
+    var _messaging_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./messaging.module */
+    "./node_modules/@angular/fire/messaging/es2015/messaging.module.js");
+    /* harmony reexport (safe) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AngularFireMessagingModule", function () {
+      return _messaging_module__WEBPACK_IMPORTED_MODULE_1__["AngularFireMessagingModule"];
+    }); //# sourceMappingURL=public_api.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@angular/forms/fesm2015/forms.js":
+  /*!*******************************************************!*\
+    !*** ./node_modules/@angular/forms/fesm2015/forms.js ***!
+    \*******************************************************/
+
+  /*! exports provided: ɵangular_packages_forms_forms_d, ɵInternalFormsSharedModule, ɵangular_packages_forms_forms_c, ɵangular_packages_forms_forms_a, ɵangular_packages_forms_forms_b, ɵangular_packages_forms_forms_e, ɵangular_packages_forms_forms_f, ɵangular_packages_forms_forms_g, ɵangular_packages_forms_forms_h, ɵangular_packages_forms_forms_i, ɵangular_packages_forms_forms_j, ɵangular_packages_forms_forms_k, ɵangular_packages_forms_forms_l, ɵangular_packages_forms_forms_z, ɵNgNoValidate, ɵangular_packages_forms_forms_m, ɵangular_packages_forms_forms_n, ɵangular_packages_forms_forms_o, ɵangular_packages_forms_forms_p, ɵangular_packages_forms_forms_q, ɵangular_packages_forms_forms_r, ɵangular_packages_forms_forms_s, ɵangular_packages_forms_forms_t, ɵangular_packages_forms_forms_v, ɵangular_packages_forms_forms_u, ɵangular_packages_forms_forms_w, ɵangular_packages_forms_forms_y, ɵNgSelectMultipleOption, ɵangular_packages_forms_forms_x, ɵangular_packages_forms_forms_bb, ɵangular_packages_forms_forms_bc, ɵangular_packages_forms_forms_be, ɵangular_packages_forms_forms_bd, ɵangular_packages_forms_forms_bf, ɵangular_packages_forms_forms_ba, AbstractControlDirective, AbstractFormGroupDirective, CheckboxControlValueAccessor, ControlContainer, NG_VALUE_ACCESSOR, COMPOSITION_BUFFER_MODE, DefaultValueAccessor, NgControl, NgControlStatus, NgControlStatusGroup, NgForm, NgFormSelectorWarning, NgModel, NgModelGroup, NumberValueAccessor, RadioControlValueAccessor, RangeValueAccessor, FormControlDirective, FormControlName, FormGroupDirective, FormArrayName, FormGroupName, NgSelectOption, SelectControlValueAccessor, SelectMultipleControlValueAccessor, CheckboxRequiredValidator, EmailValidator, MaxLengthValidator, MinLengthValidator, PatternValidator, RequiredValidator, FormBuilder, AbstractControl, FormArray, FormControl, FormGroup, NG_ASYNC_VALIDATORS, NG_VALIDATORS, Validators, VERSION, FormsModule, ReactiveFormsModule */
+
+  /***/
+  function node_modulesAngularFormsFesm2015FormsJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_d", function () {
+      return ɵInternalFormsSharedModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵInternalFormsSharedModule", function () {
+      return ɵInternalFormsSharedModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_c", function () {
+      return REACTIVE_DRIVEN_DIRECTIVES;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_a", function () {
+      return SHARED_FORM_DIRECTIVES;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_b", function () {
+      return TEMPLATE_DRIVEN_DIRECTIVES;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_e", function () {
+      return CHECKBOX_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_f", function () {
+      return DEFAULT_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_g", function () {
+      return AbstractControlStatus;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_h", function () {
+      return ngControlStatusHost;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_i", function () {
+      return formDirectiveProvider;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_j", function () {
+      return NG_FORM_SELECTOR_WARNING;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_k", function () {
+      return formControlBinding;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_l", function () {
+      return modelGroupProvider;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_z", function () {
+      return ɵNgNoValidate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵNgNoValidate", function () {
+      return ɵNgNoValidate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_m", function () {
+      return NUMBER_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_n", function () {
+      return RADIO_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_o", function () {
+      return RadioControlRegistry;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_p", function () {
+      return RANGE_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_q", function () {
+      return NG_MODEL_WITH_FORM_CONTROL_WARNING;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_r", function () {
+      return formControlBinding$1;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_s", function () {
+      return controlNameBinding;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_t", function () {
+      return formDirectiveProvider$1;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_v", function () {
+      return formArrayNameProvider;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_u", function () {
+      return formGroupNameProvider;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_w", function () {
+      return SELECT_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_y", function () {
+      return ɵNgSelectMultipleOption;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵNgSelectMultipleOption", function () {
+      return ɵNgSelectMultipleOption;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_x", function () {
+      return SELECT_MULTIPLE_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bb", function () {
+      return CHECKBOX_REQUIRED_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bc", function () {
+      return EMAIL_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_be", function () {
+      return MAX_LENGTH_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bd", function () {
+      return MIN_LENGTH_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bf", function () {
+      return PATTERN_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_ba", function () {
+      return REQUIRED_VALIDATOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AbstractControlDirective", function () {
+      return AbstractControlDirective;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AbstractFormGroupDirective", function () {
+      return AbstractFormGroupDirective;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CheckboxControlValueAccessor", function () {
+      return CheckboxControlValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ControlContainer", function () {
+      return ControlContainer;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NG_VALUE_ACCESSOR", function () {
+      return NG_VALUE_ACCESSOR;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "COMPOSITION_BUFFER_MODE", function () {
+      return COMPOSITION_BUFFER_MODE;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DefaultValueAccessor", function () {
+      return DefaultValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgControl", function () {
+      return NgControl;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgControlStatus", function () {
+      return NgControlStatus;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgControlStatusGroup", function () {
+      return NgControlStatusGroup;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgForm", function () {
+      return NgForm;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgFormSelectorWarning", function () {
+      return NgFormSelectorWarning;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgModel", function () {
+      return NgModel;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgModelGroup", function () {
+      return NgModelGroup;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NumberValueAccessor", function () {
+      return NumberValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RadioControlValueAccessor", function () {
+      return RadioControlValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RangeValueAccessor", function () {
+      return RangeValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormControlDirective", function () {
+      return FormControlDirective;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormControlName", function () {
+      return FormControlName;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormGroupDirective", function () {
+      return FormGroupDirective;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormArrayName", function () {
+      return FormArrayName;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormGroupName", function () {
+      return FormGroupName;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NgSelectOption", function () {
+      return NgSelectOption;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SelectControlValueAccessor", function () {
+      return SelectControlValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SelectMultipleControlValueAccessor", function () {
+      return SelectMultipleControlValueAccessor;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CheckboxRequiredValidator", function () {
+      return CheckboxRequiredValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "EmailValidator", function () {
+      return EmailValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MaxLengthValidator", function () {
+      return MaxLengthValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MinLengthValidator", function () {
+      return MinLengthValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PatternValidator", function () {
+      return PatternValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RequiredValidator", function () {
+      return RequiredValidator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormBuilder", function () {
+      return FormBuilder;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AbstractControl", function () {
+      return AbstractControl;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormArray", function () {
+      return FormArray;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormControl", function () {
+      return FormControl;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormGroup", function () {
+      return FormGroup;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NG_ASYNC_VALIDATORS", function () {
+      return NG_ASYNC_VALIDATORS;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NG_VALIDATORS", function () {
+      return NG_VALIDATORS;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Validators", function () {
+      return Validators;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "VERSION", function () {
+      return VERSION;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FormsModule", function () {
+      return FormsModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ReactiveFormsModule", function () {
+      return ReactiveFormsModule;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /**
+     * @license Angular v8.2.14
+     * (c) 2010-2019 Google LLC. https://angular.io/
+     * License: MIT
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     * Defines an interface that acts as a bridge between the Angular forms API and a
+     * native element in the DOM.
+     *
+     * Implement this interface to create a custom form control directive
+     * that integrates with Angular forms.
+     *
+     * @see DefaultValueAccessor
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function ControlValueAccessor() {}
+
+    if (false) {}
+    /**
+     * Used to provide a `ControlValueAccessor` for form controls.
+     *
+     * See `DefaultValueAccessor` for how to implement one.
+     *
+     * \@publicApi
+     * @type {?}
+     */
+
+
+    var NG_VALUE_ACCESSOR = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('NgValueAccessor');
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+    var CHECKBOX_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return CheckboxControlValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * A `ControlValueAccessor` for writing a value and listening to changes on a checkbox input
+     * element.
+     *
+     * \@usageNotes
+     *
+     * ### Using a checkbox with a reactive form.
+     *
+     * The following example shows how to use a checkbox with a reactive form.
+     *
+     * ```ts
+     * const rememberLoginControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <input type="checkbox" [formControl]="rememberLoginControl">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var CheckboxControlValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       */
+      function CheckboxControlValueAccessor(_renderer, _elementRef) {
+        _classCallCheck(this, CheckboxControlValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        /**
+         * \@description
+         * The registered callback function called when a change event occurs on the input element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+      }
+      /**
+       * Sets the "checked" property on the input element.
+       *
+       * @param {?} value The checked value
+       * @return {?}
+       */
+
+
+      _createClass2(CheckboxControlValueAccessor, [{
+        key: "writeValue",
+        value: function writeValue(value) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'checked', value);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          this.onChange = fn;
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+      }]);
+
+      return CheckboxControlValueAccessor;
+    }();
+
+    CheckboxControlValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]',
+        host: {
+          '(change)': 'onChange($event.target.checked)',
+          '(blur)': 'onTouched()'
+        },
+        providers: [CHECKBOX_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    CheckboxControlValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }];
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var DEFAULT_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return DefaultValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * We must check whether the agent is Android because composition events
+     * behave differently between iOS and Android.
+     * @return {?}
+     */
+
+    function _isAndroid() {
+      /** @type {?} */
+      var userAgent = Object(_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])() ? Object(_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().getUserAgent() : '';
+      return /android (\d+)/.test(userAgent.toLowerCase());
+    }
+    /**
+     * \@description
+     * Provide this token to control if form directives buffer IME input until
+     * the "compositionend" event occurs.
+     * \@publicApi
+     * @type {?}
+     */
+
+
+    var COMPOSITION_BUFFER_MODE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('CompositionEventMode');
+    /**
+     * \@description
+     * The default `ControlValueAccessor` for writing a value and listening to changes on input
+     * elements. The accessor is used by the `FormControlDirective`, `FormControlName`, and
+     * `NgModel` directives.
+     *
+     * \@usageNotes
+     *
+     * ### Using the default value accessor
+     *
+     * The following example shows how to use an input element that activates the default value accessor
+     * (in this case, a text field).
+     *
+     * ```ts
+     * const firstNameControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <input type="text" [formControl]="firstNameControl">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var DefaultValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       * @param {?} _compositionMode
+       */
+      function DefaultValueAccessor(_renderer, _elementRef, _compositionMode) {
+        _classCallCheck(this, DefaultValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._compositionMode = _compositionMode;
+        /**
+         * \@description
+         * The registered callback function called when an input event occurs on the input element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+        /**
+         * Whether the user is creating a composition string (IME events).
+         */
+
+
+        this._composing = false;
+
+        if (this._compositionMode == null) {
+          this._compositionMode = !_isAndroid();
+        }
+      }
+      /**
+       * Sets the "value" property on the input element.
+       *
+       * @param {?} value The checked value
+       * @return {?}
+       */
+
+
+      _createClass2(DefaultValueAccessor, [{
+        key: "writeValue",
+        value: function writeValue(value) {
+          /** @type {?} */
+          var normalizedValue = value == null ? '' : value;
+
+          this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          this.onChange = fn;
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_handleInput",
+        value: function _handleInput(value) {
+          if (!this._compositionMode || this._compositionMode && !this._composing) {
+            this.onChange(value);
+          }
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_compositionStart",
+        value: function _compositionStart() {
+          this._composing = true;
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_compositionEnd",
+        value: function _compositionEnd(value) {
+          this._composing = false;
+          this._compositionMode && this.onChange(value);
+        }
+      }]);
+
+      return DefaultValueAccessor;
+    }();
+
+    DefaultValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
+        // TODO: vsavkin replace the above selector with the one below it once
+        // https://github.com/angular/angular/issues/3011 is implemented
+        // selector: '[ngModel],[formControl],[formControlName]',
+        host: {
+          '(input)': '$any(this)._handleInput($event.target.value)',
+          '(blur)': 'onTouched()',
+          '(compositionstart)': '$any(this)._compositionStart()',
+          '(compositionend)': '$any(this)._compositionEnd($event.target.value)'
+        },
+        providers: [DEFAULT_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    DefaultValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: Boolean,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [COMPOSITION_BUFFER_MODE]
+        }]
+      }];
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /**
+     * \@description
+     * Base class for control directives.
+     *
+     * This class is only used internally in the `ReactiveFormsModule` and the `FormsModule`.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var AbstractControlDirective =
+    /*#__PURE__*/
+    function () {
+      function AbstractControlDirective() {
+        _classCallCheck(this, AbstractControlDirective);
+      }
+
+      _createClass2(AbstractControlDirective, [{
+        key: "reset",
+
+        /**
+         * \@description
+         * Resets the control with the provided value if the control is present.
+         * @param {?=} value
+         * @return {?}
+         */
+        value: function reset() {
+          var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+          if (this.control) this.control.reset(value);
+        }
+        /**
+         * \@description
+         * Reports whether the control with the given path has the error specified.
+         *
+         * \@usageNotes
+         * For example, for the following `FormGroup`:
+         *
+         * ```
+         * form = new FormGroup({
+         *   address: new FormGroup({ street: new FormControl() })
+         * });
+         * ```
+         *
+         * The path to the 'street' control from the root form would be 'address' -> 'street'.
+         *
+         * It can be provided to this method in one of two formats:
+         *
+         * 1. An array of string control names, e.g. `['address', 'street']`
+         * 1. A period-delimited list of control names in one string, e.g. `'address.street'`
+         *
+         * If no path is given, this method checks for the error on the current control.
+         *
+         * @param {?} errorCode The code of the error to check
+         * @param {?=} path A list of control names that designates how to move from the current control
+         * to the control that should be queried for errors.
+         *
+         * @return {?} whether the given error is present in the control at the given path.
+         *
+         * If the control is not present, false is returned.
+         */
+
+      }, {
+        key: "hasError",
+        value: function hasError(errorCode, path) {
+          return this.control ? this.control.hasError(errorCode, path) : false;
+        }
+        /**
+         * \@description
+         * Reports error data for the control with the given path.
+         *
+         * \@usageNotes
+         * For example, for the following `FormGroup`:
+         *
+         * ```
+         * form = new FormGroup({
+         *   address: new FormGroup({ street: new FormControl() })
+         * });
+         * ```
+         *
+         * The path to the 'street' control from the root form would be 'address' -> 'street'.
+         *
+         * It can be provided to this method in one of two formats:
+         *
+         * 1. An array of string control names, e.g. `['address', 'street']`
+         * 1. A period-delimited list of control names in one string, e.g. `'address.street'`
+         *
+         * @param {?} errorCode The code of the error to check
+         * @param {?=} path A list of control names that designates how to move from the current control
+         * to the control that should be queried for errors.
+         *
+         * @return {?} error data for that particular error. If the control or error is not present,
+         * null is returned.
+         */
+
+      }, {
+        key: "getError",
+        value: function getError(errorCode, path) {
+          return this.control ? this.control.getError(errorCode, path) : null;
+        }
+      }, {
+        key: "value",
+
+        /**
+         * \@description
+         * Reports the value of the control if it is present, otherwise null.
+         * @return {?}
+         */
+        get: function get() {
+          return this.control ? this.control.value : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is valid. A control is considered valid if no
+         * validation errors exist with the current value.
+         * If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "valid",
+        get: function get() {
+          return this.control ? this.control.valid : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is invalid, meaning that an error exists in the input value.
+         * If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "invalid",
+        get: function get() {
+          return this.control ? this.control.invalid : null;
+        }
+        /**
+         * \@description
+         * Reports whether a control is pending, meaning that that async validation is occurring and
+         * errors are not yet available for the input value. If the control is not present, null is
+         * returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "pending",
+        get: function get() {
+          return this.control ? this.control.pending : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is disabled, meaning that the control is disabled
+         * in the UI and is exempt from validation checks and excluded from aggregate
+         * values of ancestor controls. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "disabled",
+        get: function get() {
+          return this.control ? this.control.disabled : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is enabled, meaning that the control is included in ancestor
+         * calculations of validity or value. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "enabled",
+        get: function get() {
+          return this.control ? this.control.enabled : null;
+        }
+        /**
+         * \@description
+         * Reports the control's validation errors. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "errors",
+        get: function get() {
+          return this.control ? this.control.errors : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is pristine, meaning that the user has not yet changed
+         * the value in the UI. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "pristine",
+        get: function get() {
+          return this.control ? this.control.pristine : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is dirty, meaning that the user has changed
+         * the value in the UI. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "dirty",
+        get: function get() {
+          return this.control ? this.control.dirty : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is touched, meaning that the user has triggered
+         * a `blur` event on it. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "touched",
+        get: function get() {
+          return this.control ? this.control.touched : null;
+        }
+        /**
+         * \@description
+         * Reports the validation status of the control. Possible values include:
+         * 'VALID', 'INVALID', 'DISABLED', and 'PENDING'.
+         * If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "status",
+        get: function get() {
+          return this.control ? this.control.status : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control is untouched, meaning that the user has not yet triggered
+         * a `blur` event on it. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "untouched",
+        get: function get() {
+          return this.control ? this.control.untouched : null;
+        }
+        /**
+         * \@description
+         * Returns a multicasting observable that emits a validation status whenever it is
+         * calculated for the control. If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "statusChanges",
+        get: function get() {
+          return this.control ? this.control.statusChanges : null;
+        }
+        /**
+         * \@description
+         * Returns a multicasting observable of value changes for the control that emits every time the
+         * value of the control changes in the UI or programmatically.
+         * If the control is not present, null is returned.
+         * @return {?}
+         */
+
+      }, {
+        key: "valueChanges",
+        get: function get() {
+          return this.control ? this.control.valueChanges : null;
+        }
+        /**
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return null;
+        }
+      }]);
+
+      return AbstractControlDirective;
+    }();
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     * A base class for directives that contain multiple registered instances of `NgControl`.
+     * Only used by the forms module.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var ControlContainer =
+    /*#__PURE__*/
+    function (_AbstractControlDirec) {
+      _inherits(ControlContainer, _AbstractControlDirec);
+
+      function ControlContainer() {
+        _classCallCheck(this, ControlContainer);
+
+        return _possibleConstructorReturn(this, _getPrototypeOf(ControlContainer).apply(this, arguments));
+      }
+
+      _createClass2(ControlContainer, [{
+        key: "formDirective",
+
+        /**
+         * \@description
+         * The top-level form directive for the control.
+         * @return {?}
+         */
+        get: function get() {
+          return null;
+        }
+        /**
+         * \@description
+         * The path to this group.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return null;
+        }
+      }]);
+
+      return ControlContainer;
+    }(AbstractControlDirective);
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @return {?}
+     */
+
+
+    function unimplemented() {
+      throw new Error('unimplemented');
+    }
+    /**
+     * \@description
+     * A base class that all control `FormControl`-based directives extend. It binds a `FormControl`
+     * object to a DOM element.
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var NgControl =
+    /*#__PURE__*/
+    function (_AbstractControlDirec2) {
+      _inherits(NgControl, _AbstractControlDirec2);
+
+      function NgControl() {
+        var _this65;
+
+        _classCallCheck(this, NgControl);
+
+        _this65 = _possibleConstructorReturn(this, _getPrototypeOf(NgControl).apply(this, arguments));
+        /**
+         * \@description
+         * The parent form for the control.
+         *
+         * \@internal
+         */
+
+        _this65._parent = null;
+        /**
+         * \@description
+         * The name for the control
+         */
+
+        _this65.name = null;
+        /**
+         * \@description
+         * The value accessor for the control
+         */
+
+        _this65.valueAccessor = null;
+        /**
+         * \@description
+         * The uncomposed array of synchronous validators for the control
+         *
+         * \@internal
+         */
+
+        _this65._rawValidators = [];
+        /**
+         * \@description
+         * The uncomposed array of async validators for the control
+         *
+         * \@internal
+         */
+
+        _this65._rawAsyncValidators = [];
+        return _this65;
+      }
+      /**
+       * \@description
+       * The registered synchronous validator function for the control
+       *
+       * @throws An exception that this method is not implemented
+       * @return {?}
+       */
+
+
+      _createClass2(NgControl, [{
+        key: "validator",
+        get: function get() {
+          return (
+            /** @type {?} */
+            unimplemented()
+          );
+        }
+        /**
+         * \@description
+         * The registered async validator function for the control
+         *
+         * @throws An exception that this method is not implemented
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return (
+            /** @type {?} */
+            unimplemented()
+          );
+        }
+      }]);
+
+      return NgControl;
+    }(AbstractControlDirective);
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var AbstractControlStatus =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} cd
+       */
+      function AbstractControlStatus(cd) {
+        _classCallCheck(this, AbstractControlStatus);
+
+        this._cd = cd;
+      }
+      /**
+       * @return {?}
+       */
+
+
+      _createClass2(AbstractControlStatus, [{
+        key: "ngClassUntouched",
+        get: function get() {
+          return this._cd.control ? this._cd.control.untouched : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassTouched",
+        get: function get() {
+          return this._cd.control ? this._cd.control.touched : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassPristine",
+        get: function get() {
+          return this._cd.control ? this._cd.control.pristine : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassDirty",
+        get: function get() {
+          return this._cd.control ? this._cd.control.dirty : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassValid",
+        get: function get() {
+          return this._cd.control ? this._cd.control.valid : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassInvalid",
+        get: function get() {
+          return this._cd.control ? this._cd.control.invalid : false;
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngClassPending",
+        get: function get() {
+          return this._cd.control ? this._cd.control.pending : false;
+        }
+      }]);
+
+      return AbstractControlStatus;
+    }();
+
+    if (false) {}
+    /** @type {?} */
+
+
+    var ngControlStatusHost = {
+      '[class.ng-untouched]': 'ngClassUntouched',
+      '[class.ng-touched]': 'ngClassTouched',
+      '[class.ng-pristine]': 'ngClassPristine',
+      '[class.ng-dirty]': 'ngClassDirty',
+      '[class.ng-valid]': 'ngClassValid',
+      '[class.ng-invalid]': 'ngClassInvalid',
+      '[class.ng-pending]': 'ngClassPending'
+    };
+    /**
+     * \@description
+     * Directive automatically applied to Angular form controls that sets CSS classes
+     * based on control status.
+     *
+     * \@usageNotes
+     *
+     * ### CSS classes applied
+     *
+     * The following classes are applied as the properties become true:
+     *
+     * * ng-valid
+     * * ng-invalid
+     * * ng-pending
+     * * ng-pristine
+     * * ng-dirty
+     * * ng-untouched
+     * * ng-touched
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NgControlStatus =
+    /*#__PURE__*/
+    function (_AbstractControlStatu) {
+      _inherits(NgControlStatus, _AbstractControlStatu);
+
+      /**
+       * @param {?} cd
+       */
+      function NgControlStatus(cd) {
+        _classCallCheck(this, NgControlStatus);
+
+        return _possibleConstructorReturn(this, _getPrototypeOf(NgControlStatus).call(this, cd));
+      }
+
+      return NgControlStatus;
+    }(AbstractControlStatus);
+
+    NgControlStatus.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formControlName],[ngModel],[formControl]',
+        host: ngControlStatusHost
+      }]
+    }];
+    /** @nocollapse */
+
+    NgControlStatus.ctorParameters = function () {
+      return [{
+        type: NgControl,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }]
+      }];
+    };
+    /**
+     * \@description
+     * Directive automatically applied to Angular form groups that sets CSS classes
+     * based on control status (valid/invalid/dirty/etc).
+     *
+     * @see `NgControlStatus`
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var NgControlStatusGroup =
+    /*#__PURE__*/
+    function (_AbstractControlStatu2) {
+      _inherits(NgControlStatusGroup, _AbstractControlStatu2);
+
+      /**
+       * @param {?} cd
+       */
+      function NgControlStatusGroup(cd) {
+        _classCallCheck(this, NgControlStatusGroup);
+
+        return _possibleConstructorReturn(this, _getPrototypeOf(NgControlStatusGroup).call(this, cd));
+      }
+
+      return NgControlStatusGroup;
+    }(AbstractControlStatus);
+
+    NgControlStatusGroup.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
+        host: ngControlStatusHost
+      }]
+    }];
+    /** @nocollapse */
+
+    NgControlStatusGroup.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }]
+      }];
+    };
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+
+
+    function isEmptyInputValue(value) {
+      // we don't check for string here so it also works with arrays
+      return value == null || value.length === 0;
+    }
+    /**
+     * \@description
+     * An `InjectionToken` for registering additional synchronous validators used with `AbstractControl`s.
+     *
+     * @see `NG_ASYNC_VALIDATORS`
+     *
+     * \@usageNotes
+     *
+     * ### Providing a custom validator
+     *
+     * The following example registers a custom validator directive. Adding the validator to the
+     * existing collection of validators requires the `multi: true` option.
+     *
+     * ```typescript
+     * \@Directive({
+     *   selector: '[customValidator]',
+     *   providers: [{provide: NG_VALIDATORS, useExisting: CustomValidatorDirective, multi: true}]
+     * })
+     * class CustomValidatorDirective implements Validator {
+     *   validate(control: AbstractControl): ValidationErrors | null {
+     *     return { 'custom': true };
+     *   }
+     * }
+     * ```
+     *
+     * \@publicApi
+     * @type {?}
+     */
+
+
+    var NG_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('NgValidators');
+    /**
+     * \@description
+     * An `InjectionToken` for registering additional asynchronous validators used with `AbstractControl`s.
+     *
+     * @see `NG_VALIDATORS`
+     *
+     * \@publicApi
+     * @type {?}
+     */
+
+    var NG_ASYNC_VALIDATORS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('NgAsyncValidators');
+    /**
+     * A regular expression that matches valid e-mail addresses.
+     *
+     * At a high level, this regexp matches e-mail addresses of the format `local-part\@tld`, where:
+     * - `local-part` consists of one or more of the allowed characters (alphanumeric and some
+     *   punctuation symbols).
+     * - `local-part` cannot begin or end with a period (`.`).
+     * - `local-part` cannot be longer than 64 characters.
+     * - `tld` consists of one or more `labels` separated by periods (`.`). For example `localhost` or
+     *   `foo.com`.
+     * - A `label` consists of one or more of the allowed characters (alphanumeric, dashes (`-`) and
+     *   periods (`.`)).
+     * - A `label` cannot begin or end with a dash (`-`) or a period (`.`).
+     * - A `label` cannot be longer than 63 characters.
+     * - The whole address cannot be longer than 254 characters.
+     *
+     * ## Implementation background
+     *
+     * This regexp was ported over from AngularJS (see there for git history):
+     * https://github.com/angular/angular.js/blob/c133ef836/src/ng/directive/input.js#L27
+     * It is based on the
+     * [WHATWG version](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address) with
+     * some enhancements to incorporate more RFC rules (such as rules related to domain names and the
+     * lengths of different parts of the address). The main differences from the WHATWG version are:
+     *   - Disallow `local-part` to begin or end with a period (`.`).
+     *   - Disallow `local-part` length to exceed 64 characters.
+     *   - Disallow total address length to exceed 254 characters.
+     *
+     * See [this commit](https://github.com/angular/angular.js/commit/f3f5cf72e) for more details.
+     * @type {?}
+     */
+
+    var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    /**
+     * \@description
+     * Provides a set of built-in validators that can be used by form controls.
+     *
+     * A validator is a function that processes a `FormControl` or collection of
+     * controls and returns an error map or null. A null map means that validation has passed.
+     *
+     * @see [Form Validation](/guide/form-validation)
+     *
+     * \@publicApi
+     */
+
+    var Validators =
+    /*#__PURE__*/
+    function () {
+      function Validators() {
+        _classCallCheck(this, Validators);
+      }
+
+      _createClass2(Validators, null, [{
+        key: "min",
+
+        /**
+         * \@description
+         * Validator that requires the control's value to be greater than or equal to the provided number.
+         * The validator exists only as a function and not as a directive.
+         *
+         * \@usageNotes
+         *
+         * ### Validate against a minimum of 3
+         *
+         * ```typescript
+         * const control = new FormControl(2, Validators.min(3));
+         *
+         * console.log(control.errors); // {min: {min: 3, actual: 2}}
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} min
+         * @return {?} A validator function that returns an error map with the
+         * `min` property if the validation check fails, otherwise `null`.
+         *
+         */
+        value: function min(_min) {
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              if (isEmptyInputValue(control.value) || isEmptyInputValue(_min)) {
+                return null; // don't validate empty values to allow optional controls
+              }
+              /** @type {?} */
+
+
+              var value = parseFloat(control.value); // Controls with NaN values after parsing should be treated as not having a
+              // minimum, per the HTML forms spec: https://www.w3.org/TR/html5/forms.html#attr-input-min
+
+              return !isNaN(value) && value < _min ? {
+                'min': {
+                  'min': _min,
+                  'actual': control.value
+                }
+              } : null;
+            }
+          );
+        }
+        /**
+         * \@description
+         * Validator that requires the control's value to be less than or equal to the provided number.
+         * The validator exists only as a function and not as a directive.
+         *
+         * \@usageNotes
+         *
+         * ### Validate against a maximum of 15
+         *
+         * ```typescript
+         * const control = new FormControl(16, Validators.max(15));
+         *
+         * console.log(control.errors); // {max: {max: 15, actual: 16}}
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} max
+         * @return {?} A validator function that returns an error map with the
+         * `max` property if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "max",
+        value: function max(_max) {
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              if (isEmptyInputValue(control.value) || isEmptyInputValue(_max)) {
+                return null; // don't validate empty values to allow optional controls
+              }
+              /** @type {?} */
+
+
+              var value = parseFloat(control.value); // Controls with NaN values after parsing should be treated as not having a
+              // maximum, per the HTML forms spec: https://www.w3.org/TR/html5/forms.html#attr-input-max
+
+              return !isNaN(value) && value > _max ? {
+                'max': {
+                  'max': _max,
+                  'actual': control.value
+                }
+              } : null;
+            }
+          );
+        }
+        /**
+         * \@description
+         * Validator that requires the control have a non-empty value.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field is non-empty
+         *
+         * ```typescript
+         * const control = new FormControl('', Validators.required);
+         *
+         * console.log(control.errors); // {required: true}
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} control
+         * @return {?} An error map with the `required` property
+         * if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "required",
+        value: function required(control) {
+          return isEmptyInputValue(control.value) ? {
+            'required': true
+          } : null;
+        }
+        /**
+         * \@description
+         * Validator that requires the control's value be true. This validator is commonly
+         * used for required checkboxes.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field value is true
+         *
+         * ```typescript
+         * const control = new FormControl('', Validators.requiredTrue);
+         *
+         * console.log(control.errors); // {required: true}
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} control
+         * @return {?} An error map that contains the `required` property
+         * set to `true` if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "requiredTrue",
+        value: function requiredTrue(control) {
+          return control.value === true ? null : {
+            'required': true
+          };
+        }
+        /**
+         * \@description
+         * Validator that requires the control's value pass an email validation test.
+         *
+         * Tests the value using a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+         * pattern suitable for common usecases. The pattern is based on the definition of a valid email
+         * address in the [WHATWG HTML specification](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address)
+         * with some enhancements to incorporate more RFC rules (such as rules related to domain names and
+         * the lengths of different parts of the address).
+         *
+         * The differences from the WHATWG version include:
+         * - Disallow `local-part` (the part before the `\@` symbol) to begin or end with a period (`.`).
+         * - Disallow `local-part` to be longer than 64 characters.
+         * - Disallow the whole address to be longer than 254 characters.
+         *
+         * If this pattern does not satisfy your business needs, you can use `Validators.pattern()` to
+         * validate the value against a different pattern.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field matches a valid email pattern
+         *
+         * ```typescript
+         * const control = new FormControl('bad\@', Validators.email);
+         *
+         * console.log(control.errors); // {email: true}
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} control
+         * @return {?} An error map with the `email` property
+         * if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "email",
+        value: function email(control) {
+          if (isEmptyInputValue(control.value)) {
+            return null; // don't validate empty values to allow optional controls
+          }
+
+          return EMAIL_REGEXP.test(control.value) ? null : {
+            'email': true
+          };
+        }
+        /**
+         * \@description
+         * Validator that requires the length of the control's value to be greater than or equal
+         * to the provided minimum length. This validator is also provided by default if you use the
+         * the HTML5 `minlength` attribute.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field has a minimum of 3 characters
+         *
+         * ```typescript
+         * const control = new FormControl('ng', Validators.minLength(3));
+         *
+         * console.log(control.errors); // {minlength: {requiredLength: 3, actualLength: 2}}
+         * ```
+         *
+         * ```html
+         * <input minlength="5">
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} minLength
+         * @return {?} A validator function that returns an error map with the
+         * `minlength` if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "minLength",
+        value: function minLength(_minLength) {
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              if (isEmptyInputValue(control.value)) {
+                return null; // don't validate empty values to allow optional controls
+              }
+              /** @type {?} */
+
+
+              var length = control.value ? control.value.length : 0;
+              return length < _minLength ? {
+                'minlength': {
+                  'requiredLength': _minLength,
+                  'actualLength': length
+                }
+              } : null;
+            }
+          );
+        }
+        /**
+         * \@description
+         * Validator that requires the length of the control's value to be less than or equal
+         * to the provided maximum length. This validator is also provided by default if you use the
+         * the HTML5 `maxlength` attribute.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field has maximum of 5 characters
+         *
+         * ```typescript
+         * const control = new FormControl('Angular', Validators.maxLength(5));
+         *
+         * console.log(control.errors); // {maxlength: {requiredLength: 5, actualLength: 7}}
+         * ```
+         *
+         * ```html
+         * <input maxlength="5">
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} maxLength
+         * @return {?} A validator function that returns an error map with the
+         * `maxlength` property if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "maxLength",
+        value: function maxLength(_maxLength) {
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              /** @type {?} */
+              var length = control.value ? control.value.length : 0;
+              return length > _maxLength ? {
+                'maxlength': {
+                  'requiredLength': _maxLength,
+                  'actualLength': length
+                }
+              } : null;
+            }
+          );
+        }
+        /**
+         * \@description
+         * Validator that requires the control's value to match a regex pattern. This validator is also
+         * provided by default if you use the HTML5 `pattern` attribute.
+         *
+         * \@usageNotes
+         *
+         * ### Validate that the field only contains letters or spaces
+         *
+         * ```typescript
+         * const control = new FormControl('1', Validators.pattern('[a-zA-Z ]*'));
+         *
+         * console.log(control.errors); // {pattern: {requiredPattern: '^[a-zA-Z ]*$', actualValue: '1'}}
+         * ```
+         *
+         * ```html
+         * <input pattern="[a-zA-Z ]*">
+         * ```
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} pattern A regular expression to be used as is to test the values, or a string.
+         * If a string is passed, the `^` character is prepended and the `$` character is
+         * appended to the provided string (if not already present), and the resulting regular
+         * expression is used to test the values.
+         *
+         * @return {?} A validator function that returns an error map with the
+         * `pattern` property if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "pattern",
+        value: function pattern(_pattern) {
+          if (!_pattern) return Validators.nullValidator;
+          /** @type {?} */
+
+          var regex;
+          /** @type {?} */
+
+          var regexStr;
+
+          if (typeof _pattern === 'string') {
+            regexStr = '';
+            if (_pattern.charAt(0) !== '^') regexStr += '^';
+            regexStr += _pattern;
+            if (_pattern.charAt(_pattern.length - 1) !== '$') regexStr += '$';
+            regex = new RegExp(regexStr);
+          } else {
+            regexStr = _pattern.toString();
+            regex = _pattern;
+          }
+
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              if (isEmptyInputValue(control.value)) {
+                return null; // don't validate empty values to allow optional controls
+              }
+              /** @type {?} */
+
+
+              var value = control.value;
+              return regex.test(value) ? null : {
+                'pattern': {
+                  'requiredPattern': regexStr,
+                  'actualValue': value
+                }
+              };
+            }
+          );
+        }
+        /**
+         * \@description
+         * Validator that performs no operation.
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} control
+         * @return {?}
+         */
+
+      }, {
+        key: "nullValidator",
+        value: function nullValidator(control) {
+          return null;
+        }
+        /**
+         * @param {?} validators
+         * @return {?}
+         */
+
+      }, {
+        key: "compose",
+        value: function compose(validators) {
+          if (!validators) return null;
+          /** @type {?} */
+
+          var presentValidators =
+          /** @type {?} */
+          validators.filter(isPresent);
+          if (presentValidators.length == 0) return null;
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              return _mergeErrors(_executeValidators(control, presentValidators));
+            }
+          );
+        }
+        /**
+         * \@description
+         * Compose multiple async validators into a single function that returns the union
+         * of the individual error objects for the provided control.
+         *
+         * @see `updateValueAndValidity()`
+         *
+         * @param {?} validators
+         * @return {?} A validator function that returns an error map with the
+         * merged error objects of the async validators if the validation check fails, otherwise `null`.
+         *
+         */
+
+      }, {
+        key: "composeAsync",
+        value: function composeAsync(validators) {
+          if (!validators) return null;
+          /** @type {?} */
+
+          var presentValidators =
+          /** @type {?} */
+          validators.filter(isPresent);
+          if (presentValidators.length == 0) return null;
+          return (
+            /**
+            * @param {?} control
+            * @return {?}
+            */
+            function (control) {
+              /** @type {?} */
+              var observables = _executeAsyncValidators(control, presentValidators).map(toObservable);
+
+              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(observables).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(_mergeErrors));
+            }
+          );
+        }
+      }]);
+
+      return Validators;
+    }();
+    /**
+     * @param {?} o
+     * @return {?}
+     */
+
+
+    function isPresent(o) {
+      return o != null;
+    }
+    /**
+     * @param {?} r
+     * @return {?}
+     */
+
+
+    function toObservable(r) {
+      /** @type {?} */
+      var obs = Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵisPromise"])(r) ? Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(r) : r;
+
+      if (!Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵisObservable"])(obs)) {
+        throw new Error("Expected validator to return Promise or Observable.");
+      }
+
+      return obs;
+    }
+    /**
+     * @param {?} control
+     * @param {?} validators
+     * @return {?}
+     */
+
+
+    function _executeValidators(control, validators) {
+      return validators.map(
+      /**
+      * @param {?} v
+      * @return {?}
+      */
+      function (v) {
+        return v(control);
+      });
+    }
+    /**
+     * @param {?} control
+     * @param {?} validators
+     * @return {?}
+     */
+
+
+    function _executeAsyncValidators(control, validators) {
+      return validators.map(
+      /**
+      * @param {?} v
+      * @return {?}
+      */
+      function (v) {
+        return v(control);
+      });
+    }
+    /**
+     * @param {?} arrayOfErrors
+     * @return {?}
+     */
+
+
+    function _mergeErrors(arrayOfErrors) {
+      /** @type {?} */
+      var res = arrayOfErrors.reduce(
+      /**
+      * @param {?} res
+      * @param {?} errors
+      * @return {?}
+      */
+      function (res, errors) {
+        return errors != null ? Object.assign({},
+        /** @type {?} */
+        res, errors) :
+        /** @type {?} */
+        res;
+      }, {});
+      return Object.keys(res).length === 0 ? null : res;
+    }
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /**
+     * @param {?} validator
+     * @return {?}
+     */
+
+
+    function normalizeValidator(validator) {
+      if (
+      /** @type {?} */
+      validator.validate) {
+        return (
+          /**
+          * @param {?} c
+          * @return {?}
+          */
+          function (c) {
+            return (
+              /** @type {?} */
+              validator.validate(c)
+            );
+          }
+        );
+      } else {
+        return (
+          /** @type {?} */
+          validator
+        );
+      }
+    }
+    /**
+     * @param {?} validator
+     * @return {?}
+     */
+
+
+    function normalizeAsyncValidator(validator) {
+      if (
+      /** @type {?} */
+      validator.validate) {
+        return (
+          /**
+          * @param {?} c
+          * @return {?}
+          */
+          function (c) {
+            return (
+              /** @type {?} */
+              validator.validate(c)
+            );
+          }
+        );
+      } else {
+        return (
+          /** @type {?} */
+          validator
+        );
+      }
+    }
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var NUMBER_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return NumberValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * The `ControlValueAccessor` for writing a number value and listening to number input changes.
+     * The value accessor is used by the `FormControlDirective`, `FormControlName`, and  `NgModel`
+     * directives.
+     *
+     * \@usageNotes
+     *
+     * ### Using a number input with a reactive form.
+     *
+     * The following example shows how to use a number input with a reactive form.
+     *
+     * ```ts
+     * const totalCountControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <input type="number" [formControl]="totalCountControl">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NumberValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       */
+      function NumberValueAccessor(_renderer, _elementRef) {
+        _classCallCheck(this, NumberValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        /**
+         * \@description
+         * The registered callback function called when a change or input event occurs on the input
+         * element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+      }
+      /**
+       * Sets the "value" property on the input element.
+       *
+       * @param {?} value The checked value
+       * @return {?}
+       */
+
+
+      _createClass2(NumberValueAccessor, [{
+        key: "writeValue",
+        value: function writeValue(value) {
+          // The value needs to be normalized for IE9, otherwise it is set to 'null' when null
+
+          /** @type {?} */
+          var normalizedValue = value == null ? '' : value;
+
+          this._renderer.setProperty(this._elementRef.nativeElement, 'value', normalizedValue);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          this.onChange =
+          /**
+          * @param {?} value
+          * @return {?}
+          */
+          function (value) {
+            fn(value == '' ? null : parseFloat(value));
+          };
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+      }]);
+
+      return NumberValueAccessor;
+    }();
+
+    NumberValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
+        host: {
+          '(change)': 'onChange($event.target.value)',
+          '(input)': 'onChange($event.target.value)',
+          '(blur)': 'onTouched()'
+        },
+        providers: [NUMBER_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    NumberValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }];
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var RADIO_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return RadioControlValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * Class used by Angular to track radio buttons. For internal use only.
+     */
+
+    var RadioControlRegistry =
+    /*#__PURE__*/
+    function () {
+      function RadioControlRegistry() {
+        _classCallCheck(this, RadioControlRegistry);
+
+        this._accessors = [];
+      }
+      /**
+       * \@description
+       * Adds a control to the internal registry. For internal use only.
+       * @param {?} control
+       * @param {?} accessor
+       * @return {?}
+       */
+
+
+      _createClass2(RadioControlRegistry, [{
+        key: "add",
+        value: function add(control, accessor) {
+          this._accessors.push([control, accessor]);
+        }
+        /**
+         * \@description
+         * Removes a control from the internal registry. For internal use only.
+         * @param {?} accessor
+         * @return {?}
+         */
+
+      }, {
+        key: "remove",
+        value: function remove(accessor) {
+          for (var i = this._accessors.length - 1; i >= 0; --i) {
+            if (this._accessors[i][1] === accessor) {
+              this._accessors.splice(i, 1);
+
+              return;
+            }
+          }
+        }
+        /**
+         * \@description
+         * Selects a radio button. For internal use only.
+         * @param {?} accessor
+         * @return {?}
+         */
+
+      }, {
+        key: "select",
+        value: function select(accessor) {
+          var _this66 = this;
+
+          this._accessors.forEach(
+          /**
+          * @param {?} c
+          * @return {?}
+          */
+          function (c) {
+            if (_this66._isSameGroup(c, accessor) && c[1] !== accessor) {
+              c[1].fireUncheck(accessor.value);
+            }
+          });
+        }
+        /**
+         * @private
+         * @param {?} controlPair
+         * @param {?} accessor
+         * @return {?}
+         */
+
+      }, {
+        key: "_isSameGroup",
+        value: function _isSameGroup(controlPair, accessor) {
+          if (!controlPair[0].control) return false;
+          return controlPair[0]._parent === accessor._control._parent && controlPair[1].name === accessor.name;
+        }
+      }]);
+
+      return RadioControlRegistry;
+    }();
+
+    RadioControlRegistry.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }];
+
+    if (false) {}
+    /**
+     * \@description
+     * The `ControlValueAccessor` for writing radio control values and listening to radio control
+     * changes. The value accessor is used by the `FormControlDirective`, `FormControlName`, and
+     * `NgModel` directives.
+     *
+     * \@usageNotes
+     *
+     * ### Using radio buttons with reactive form directives
+     *
+     * The follow example shows how to use radio buttons in a reactive form. When using radio buttons in
+     * a reactive form, radio buttons in the same group should have the same `formControlName`.
+     * Providing a `name` attribute is optional.
+     *
+     * {\@example forms/ts/reactiveRadioButtons/reactive_radio_button_example.ts region='Reactive'}
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var RadioControlValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       * @param {?} _registry
+       * @param {?} _injector
+       */
+      function RadioControlValueAccessor(_renderer, _elementRef, _registry, _injector) {
+        _classCallCheck(this, RadioControlValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        this._registry = _registry;
+        this._injector = _injector;
+        /**
+         * \@description
+         * The registered callback function called when a change event occurs on the input element.
+         */
+
+        this.onChange =
+        /**
+        * @return {?}
+        */
+        function () {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+      }
+      /**
+       * \@description
+       * A lifecycle method called when the directive is initialized. For internal use only.
+       * @return {?}
+       */
+
+
+      _createClass2(RadioControlValueAccessor, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this._control = this._injector.get(NgControl);
+
+          this._checkName();
+
+          this._registry.add(this._control, this);
+        }
+        /**
+         * \@description
+         * Lifecycle method called before the directive's instance is destroyed. For internal use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this._registry.remove(this);
+        }
+        /**
+         * \@description
+         * Sets the "checked" property value on the radio input element.
+         *
+         * @param {?} value The checked value
+         * @return {?}
+         */
+
+      }, {
+        key: "writeValue",
+        value: function writeValue(value) {
+          this._state = value === this.value;
+
+          this._renderer.setProperty(this._elementRef.nativeElement, 'checked', this._state);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          var _this67 = this;
+
+          this._fn = fn;
+
+          this.onChange =
+          /**
+          * @return {?}
+          */
+          function () {
+            fn(_this67.value);
+
+            _this67._registry.select(_this67);
+          };
+        }
+        /**
+         * Sets the "value" on the radio input element and unchecks it.
+         *
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "fireUncheck",
+        value: function fireUncheck(value) {
+          this.writeValue(value);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkName",
+        value: function _checkName() {
+          if (this.name && this.formControlName && this.name !== this.formControlName) {
+            this._throwNameError();
+          }
+
+          if (!this.name && this.formControlName) this.name = this.formControlName;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_throwNameError",
+        value: function _throwNameError() {
+          throw new Error("\n      If you define both a name and a formControlName attribute on your radio button, their values\n      must match. Ex: <input type=\"radio\" formControlName=\"food\" name=\"food\">\n    ");
+        }
+      }]);
+
+      return RadioControlValueAccessor;
+    }();
+
+    RadioControlValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input[type=radio][formControlName],input[type=radio][formControl],input[type=radio][ngModel]',
+        host: {
+          '(change)': 'onChange()',
+          '(blur)': 'onTouched()'
+        },
+        providers: [RADIO_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    RadioControlValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: RadioControlRegistry
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]
+      }];
+    };
+
+    RadioControlValueAccessor.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      formControlName: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      value: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var RANGE_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return RangeValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * The `ControlValueAccessor` for writing a range value and listening to range input changes.
+     * The value accessor is used by the `FormControlDirective`, `FormControlName`, and  `NgModel`
+     * directives.
+     *
+     * \@usageNotes
+     *
+     * ### Using a range input with a reactive form
+     *
+     * The following example shows how to use a range input with a reactive form.
+     *
+     * ```ts
+     * const ageControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <input type="range" [formControl]="ageControl">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var RangeValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       */
+      function RangeValueAccessor(_renderer, _elementRef) {
+        _classCallCheck(this, RangeValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        /**
+         * \@description
+         * The registered callback function called when a change or input event occurs on the input
+         * element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+      }
+      /**
+       * Sets the "value" property on the input element.
+       *
+       * @param {?} value The checked value
+       * @return {?}
+       */
+
+
+      _createClass2(RangeValueAccessor, [{
+        key: "writeValue",
+        value: function writeValue(value) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'value', parseFloat(value));
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          this.onChange =
+          /**
+          * @param {?} value
+          * @return {?}
+          */
+          function (value) {
+            fn(value == '' ? null : parseFloat(value));
+          };
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the range input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+      }]);
+
+      return RangeValueAccessor;
+    }();
+
+    RangeValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input[type=range][formControlName],input[type=range][formControl],input[type=range][ngModel]',
+        host: {
+          '(change)': 'onChange($event.target.value)',
+          '(input)': 'onChange($event.target.value)',
+          '(blur)': 'onTouched()'
+        },
+        providers: [RANGE_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    RangeValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }];
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+
+    /** @type {?} */
+
+
+    var FormErrorExamples = {
+      formControlName: "\n    <div [formGroup]=\"myGroup\">\n      <input formControlName=\"firstName\">\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       firstName: new FormControl()\n    });",
+      formGroupName: "\n    <div [formGroup]=\"myGroup\">\n       <div formGroupName=\"person\">\n          <input formControlName=\"firstName\">\n       </div>\n    </div>\n\n    In your class:\n\n    this.myGroup = new FormGroup({\n       person: new FormGroup({ firstName: new FormControl() })\n    });",
+      formArrayName: "\n    <div [formGroup]=\"myGroup\">\n      <div formArrayName=\"cities\">\n        <div *ngFor=\"let city of cityArray.controls; index as i\">\n          <input [formControlName]=\"i\">\n        </div>\n      </div>\n    </div>\n\n    In your class:\n\n    this.cityArray = new FormArray([new FormControl('SF')]);\n    this.myGroup = new FormGroup({\n      cities: this.cityArray\n    });",
+      ngModelGroup: "\n    <form>\n       <div ngModelGroup=\"person\">\n          <input [(ngModel)]=\"person.name\" name=\"firstName\">\n       </div>\n    </form>",
+      ngModelWithFormGroup: "\n    <div [formGroup]=\"myGroup\">\n       <input formControlName=\"firstName\">\n       <input [(ngModel)]=\"showMoreControls\" [ngModelOptions]=\"{standalone: true}\">\n    </div>\n  "
+    };
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    var ReactiveErrors =
+    /*#__PURE__*/
+    function () {
+      function ReactiveErrors() {
+        _classCallCheck(this, ReactiveErrors);
+      }
+
+      _createClass2(ReactiveErrors, null, [{
+        key: "controlParentException",
+
+        /**
+         * @return {?}
+         */
+        value: function controlParentException() {
+          throw new Error("formControlName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      ".concat(FormErrorExamples.formControlName));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngModelGroupException",
+        value: function ngModelGroupException() {
+          throw new Error("formControlName cannot be used with an ngModelGroup parent. It is only compatible with parents\n       that also have a \"form\" prefix: formGroupName, formArrayName, or formGroup.\n\n       Option 1:  Update the parent to be formGroupName (reactive form strategy)\n\n        ".concat(FormErrorExamples.formGroupName, "\n\n        Option 2: Use ngModel instead of formControlName (template-driven strategy)\n\n        ").concat(FormErrorExamples.ngModelGroup));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "missingFormException",
+        value: function missingFormException() {
+          throw new Error("formGroup expects a FormGroup instance. Please pass one in.\n\n       Example:\n\n       ".concat(FormErrorExamples.formControlName));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "groupParentException",
+        value: function groupParentException() {
+          throw new Error("formGroupName must be used with a parent formGroup directive.  You'll want to add a formGroup\n      directive and pass it an existing FormGroup instance (you can create one in your class).\n\n      Example:\n\n      ".concat(FormErrorExamples.formGroupName));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "arrayParentException",
+        value: function arrayParentException() {
+          throw new Error("formArrayName must be used with a parent formGroup directive.  You'll want to add a formGroup\n       directive and pass it an existing FormGroup instance (you can create one in your class).\n\n        Example:\n\n        ".concat(FormErrorExamples.formArrayName));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "disabledAttrWarning",
+        value: function disabledAttrWarning() {
+          console.warn("\n      It looks like you're using the disabled attribute with a reactive form directive. If you set disabled to true\n      when you set up this control in your component class, the disabled attribute will actually be set in the DOM for\n      you. We recommend using this approach to avoid 'changed after checked' errors.\n       \n      Example: \n      form = new FormGroup({\n        first: new FormControl({value: 'Nancy', disabled: true}, Validators.required),\n        last: new FormControl('Drew', Validators.required)\n      });\n    ");
+        }
+        /**
+         * @param {?} directiveName
+         * @return {?}
+         */
+
+      }, {
+        key: "ngModelWarning",
+        value: function ngModelWarning(directiveName) {
+          console.warn("\n    It looks like you're using ngModel on the same form field as ".concat(directiveName, ". \n    Support for using the ngModel input property and ngModelChange event with \n    reactive form directives has been deprecated in Angular v6 and will be removed \n    in Angular v7.\n    \n    For more information on this, see our API docs here:\n    https://angular.io/api/forms/").concat(directiveName === 'formControl' ? 'FormControlDirective' : 'FormControlName', "#use-with-ngmodel\n    "));
+        }
+      }]);
+
+      return ReactiveErrors;
+    }();
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var SELECT_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return SelectControlValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * @param {?} id
+     * @param {?} value
+     * @return {?}
+     */
+
+    function _buildValueString(id, value) {
+      if (id == null) return "".concat(value);
+      if (value && typeof value === 'object') value = 'Object';
+      return "".concat(id, ": ").concat(value).slice(0, 50);
+    }
+    /**
+     * @param {?} valueString
+     * @return {?}
+     */
+
+
+    function _extractId(valueString) {
+      return valueString.split(':')[0];
+    }
+    /**
+     * \@description
+     * The `ControlValueAccessor` for writing select control values and listening to select control
+     * changes. The value accessor is used by the `FormControlDirective`, `FormControlName`, and
+     * `NgModel` directives.
+     *
+     * \@usageNotes
+     *
+     * ### Using select controls in a reactive form
+     *
+     * The following examples show how to use a select control in a reactive form.
+     *
+     * {\@example forms/ts/reactiveSelectControl/reactive_select_control_example.ts region='Component'}
+     *
+     * ### Using select controls in a template-driven form
+     *
+     * To use a select in a template-driven form, simply add an `ngModel` and a `name`
+     * attribute to the main `<select>` tag.
+     *
+     * {\@example forms/ts/selectControl/select_control_example.ts region='Component'}
+     *
+     * ### Customizing option selection
+     *
+     * Angular uses object identity to select option. It's possible for the identities of items
+     * to change while the data does not. This can happen, for example, if the items are produced
+     * from an RPC to the server, and that RPC is re-run. Even if the data hasn't changed, the
+     * second response will produce objects with different identities.
+     *
+     * To customize the default option comparison algorithm, `<select>` supports `compareWith` input.
+     * `compareWith` takes a **function** which has two arguments: `option1` and `option2`.
+     * If `compareWith` is given, Angular selects option by the return value of the function.
+     *
+     * ```ts
+     * const selectedCountriesControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <select [compareWith]="compareFn"  [formControl]="selectedCountriesControl">
+     *     <option *ngFor="let country of countries" [ngValue]="country">
+     *         {{country.name}}
+     *     </option>
+     * </select>
+     *
+     * compareFn(c1: Country, c2: Country): boolean {
+     *     return c1 && c2 ? c1.id === c2.id : c1 === c2;
+     * }
+     * ```
+     *
+     * **Note:** We listen to the 'change' event because 'input' events aren't fired
+     * for selects in Firefox and IE:
+     * https://bugzilla.mozilla.org/show_bug.cgi?id=1024350
+     * https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4660045/
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var SelectControlValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       */
+      function SelectControlValueAccessor(_renderer, _elementRef) {
+        _classCallCheck(this, SelectControlValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        /**
+         * \@internal
+         */
+
+        this._optionMap = new Map();
+        /**
+         * \@internal
+         */
+
+        this._idCounter = 0;
+        /**
+         * \@description
+         * The registered callback function called when a change event occurs on the input element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+
+        this._compareWith = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵlooseIdentical"];
+      }
+      /**
+       * \@description
+       * Tracks the option comparison algorithm for tracking identities when
+       * checking for changes.
+       * @param {?} fn
+       * @return {?}
+       */
+
+
+      _createClass2(SelectControlValueAccessor, [{
+        key: "writeValue",
+
+        /**
+         * Sets the "value" property on the input element. The "selectedIndex"
+         * property is also set if an ID is provided on the option element.
+         *
+         * @param {?} value The checked value
+         * @return {?}
+         */
+        value: function writeValue(value) {
+          this.value = value;
+          /** @type {?} */
+
+          var id = this._getOptionId(value);
+
+          if (id == null) {
+            this._renderer.setProperty(this._elementRef.nativeElement, 'selectedIndex', -1);
+          }
+          /** @type {?} */
+
+
+          var valueString = _buildValueString(id, value);
+
+          this._renderer.setProperty(this._elementRef.nativeElement, 'value', valueString);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          var _this68 = this;
+
+          this.onChange =
+          /**
+          * @param {?} valueString
+          * @return {?}
+          */
+          function (valueString) {
+            _this68.value = _this68._getOptionValue(valueString);
+            fn(_this68.value);
+          };
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the select input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_registerOption",
+        value: function _registerOption() {
+          return (this._idCounter++).toString();
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_getOptionId",
+        value: function _getOptionId(value) {
+          for (var _i22 = 0, _Array$from = Array.from(this._optionMap.keys()); _i22 < _Array$from.length; _i22++) {
+            var id = _Array$from[_i22];
+            if (this._compareWith(this._optionMap.get(id), value)) return id;
+          }
+
+          return null;
+        }
+        /**
+         * \@internal
+         * @param {?} valueString
+         * @return {?}
+         */
+
+      }, {
+        key: "_getOptionValue",
+        value: function _getOptionValue(valueString) {
+          /** @type {?} */
+          var id = _extractId(valueString);
+
+          return this._optionMap.has(id) ? this._optionMap.get(id) : valueString;
+        }
+      }, {
+        key: "compareWith",
+        set: function set(fn) {
+          if (typeof fn !== 'function') {
+            throw new Error("compareWith must be a function, but received ".concat(JSON.stringify(fn)));
+          }
+
+          this._compareWith = fn;
+        }
+      }]);
+
+      return SelectControlValueAccessor;
+    }();
+
+    SelectControlValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]',
+        host: {
+          '(change)': 'onChange($event.target.value)',
+          '(blur)': 'onTouched()'
+        },
+        providers: [SELECT_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    SelectControlValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }];
+    };
+
+    SelectControlValueAccessor.propDecorators = {
+      compareWith: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * Marks `<option>` as dynamic, so Angular can be notified when options change.
+     *
+     * @see `SelectControlValueAccessor`
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var NgSelectOption =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _element
+       * @param {?} _renderer
+       * @param {?} _select
+       */
+      function NgSelectOption(_element, _renderer, _select) {
+        _classCallCheck(this, NgSelectOption);
+
+        this._element = _element;
+        this._renderer = _renderer;
+        this._select = _select;
+        if (this._select) this.id = this._select._registerOption();
+      }
+      /**
+       * \@description
+       * Tracks the value bound to the option element. Unlike the value binding,
+       * ngValue supports binding to objects.
+       * @param {?} value
+       * @return {?}
+       */
+
+
+      _createClass2(NgSelectOption, [{
+        key: "_setElementValue",
+
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+        value: function _setElementValue(value) {
+          this._renderer.setProperty(this._element.nativeElement, 'value', value);
+        }
+        /**
+         * \@description
+         * Lifecycle method called before the directive's instance is destroyed. For internal use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this._select) {
+            this._select._optionMap.delete(this.id);
+
+            this._select.writeValue(this._select.value);
+          }
+        }
+      }, {
+        key: "ngValue",
+        set: function set(value) {
+          if (this._select == null) return;
+
+          this._select._optionMap.set(this.id, value);
+
+          this._setElementValue(_buildValueString(this.id, value));
+
+          this._select.writeValue(this._select.value);
+        }
+        /**
+         * \@description
+         * Tracks simple string values bound to the option element.
+         * For objects, use the `ngValue` input binding.
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "value",
+        set: function set(value) {
+          this._setElementValue(value);
+
+          if (this._select) this._select.writeValue(this._select.value);
+        }
+      }]);
+
+      return NgSelectOption;
+    }();
+
+    NgSelectOption.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'option'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgSelectOption.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: SelectControlValueAccessor,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }]
+      }];
+    };
+
+    NgSelectOption.propDecorators = {
+      ngValue: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngValue']
+      }],
+      value: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['value']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var SELECT_MULTIPLE_VALUE_ACCESSOR = {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return SelectMultipleControlValueAccessor;
+      }),
+      multi: true
+    };
+    /**
+     * @param {?} id
+     * @param {?} value
+     * @return {?}
+     */
+
+    function _buildValueString$1(id, value) {
+      if (id == null) return "".concat(value);
+      if (typeof value === 'string') value = "'".concat(value, "'");
+      if (value && typeof value === 'object') value = 'Object';
+      return "".concat(id, ": ").concat(value).slice(0, 50);
+    }
+    /**
+     * @param {?} valueString
+     * @return {?}
+     */
+
+
+    function _extractId$1(valueString) {
+      return valueString.split(':')[0];
+    }
+    /**
+     * Mock interface for HTML Options
+     * @record
+     */
+
+
+    function HTMLOption() {}
+
+    if (false) {}
+    /**
+     * Mock interface for HTMLCollection
+     * @abstract
+     */
+
+
+    var HTMLCollection = function HTMLCollection() {
+      _classCallCheck(this, HTMLCollection);
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * The `ControlValueAccessor` for writing multi-select control values and listening to multi-select control
+     * changes. The value accessor is used by the `FormControlDirective`, `FormControlName`, and `NgModel`
+     * directives.
+     *
+     * @see `SelectControlValueAccessor`
+     *
+     * \@usageNotes
+     *
+     * ### Using a multi-select control
+     *
+     * The follow example shows you how to use a multi-select control with a reactive form.
+     *
+     * ```ts
+     * const countryControl = new FormControl();
+     * ```
+     *
+     * ```
+     * <select multiple name="countries" [formControl]="countryControl">
+     *   <option *ngFor="let country of countries" [ngValue]="country">
+     *     {{ country.name }}
+     *   </option>
+     * </select>
+     * ```
+     *
+     * ### Customizing option selection
+     *
+     * To customize the default option comparison algorithm, `<select>` supports `compareWith` input.
+     * See the `SelectControlValueAccessor` for usage.
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var SelectMultipleControlValueAccessor =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _renderer
+       * @param {?} _elementRef
+       */
+      function SelectMultipleControlValueAccessor(_renderer, _elementRef) {
+        _classCallCheck(this, SelectMultipleControlValueAccessor);
+
+        this._renderer = _renderer;
+        this._elementRef = _elementRef;
+        /**
+         * \@internal
+         */
+
+        this._optionMap = new Map();
+        /**
+         * \@internal
+         */
+
+        this._idCounter = 0;
+        /**
+         * \@description
+         * The registered callback function called when a change event occurs on the input element.
+         */
+
+        this.onChange =
+        /**
+        * @param {?} _
+        * @return {?}
+        */
+        function (_) {};
+        /**
+         * \@description
+         * The registered callback function called when a blur event occurs on the input element.
+         */
+
+
+        this.onTouched =
+        /**
+        * @return {?}
+        */
+        function () {};
+
+        this._compareWith = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵlooseIdentical"];
+      }
+      /**
+       * \@description
+       * Tracks the option comparison algorithm for tracking identities when
+       * checking for changes.
+       * @param {?} fn
+       * @return {?}
+       */
+
+
+      _createClass2(SelectMultipleControlValueAccessor, [{
+        key: "writeValue",
+
+        /**
+         * \@description
+         * Sets the "value" property on one or of more
+         * of the select's options.
+         *
+         * @param {?} value The value
+         * @return {?}
+         */
+        value: function writeValue(value) {
+          var _this69 = this;
+
+          this.value = value;
+          /** @type {?} */
+
+          var optionSelectedStateSetter;
+
+          if (Array.isArray(value)) {
+            // convert values to ids
+
+            /** @type {?} */
+            var ids = value.map(
+            /**
+            * @param {?} v
+            * @return {?}
+            */
+            function (v) {
+              return _this69._getOptionId(v);
+            });
+
+            optionSelectedStateSetter =
+            /**
+            * @param {?} opt
+            * @param {?} o
+            * @return {?}
+            */
+            function optionSelectedStateSetter(opt, o) {
+              opt._setSelected(ids.indexOf(o.toString()) > -1);
+            };
+          } else {
+            optionSelectedStateSetter =
+            /**
+            * @param {?} opt
+            * @param {?} o
+            * @return {?}
+            */
+            function optionSelectedStateSetter(opt, o) {
+              opt._setSelected(false);
+            };
+          }
+
+          this._optionMap.forEach(optionSelectedStateSetter);
+        }
+        /**
+         * \@description
+         * Registers a function called when the control value changes
+         * and writes an array of the selected options.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          var _this70 = this;
+
+          this.onChange =
+          /**
+          * @param {?} _
+          * @return {?}
+          */
+          function (_) {
+            /** @type {?} */
+            var selected = [];
+
+            if (_.hasOwnProperty('selectedOptions')) {
+              /** @type {?} */
+              var options = _.selectedOptions;
+
+              for (var i = 0; i < options.length; i++) {
+                /** @type {?} */
+                var opt = options.item(i);
+                /** @type {?} */
+
+                var val = _this70._getOptionValue(opt.value);
+
+                selected.push(val);
+              }
+            } // Degrade on IE
+            else {
+                /** @type {?} */
+                var _options3 =
+                /** @type {?} */
+                _.options;
+
+                for (var _i23 = 0; _i23 < _options3.length; _i23++) {
+                  /** @type {?} */
+                  var _opt = _options3.item(_i23);
+
+                  if (_opt.selected) {
+                    /** @type {?} */
+                    var _val = _this70._getOptionValue(_opt.value);
+
+                    selected.push(_val);
+                  }
+                }
+              }
+
+            _this70.value = selected;
+            fn(selected);
+          };
+        }
+        /**
+         * \@description
+         * Registers a function called when the control is touched.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnTouched",
+        value: function registerOnTouched(fn) {
+          this.onTouched = fn;
+        }
+        /**
+         * Sets the "disabled" property on the select input element.
+         *
+         * @param {?} isDisabled The disabled value
+         * @return {?}
+         */
+
+      }, {
+        key: "setDisabledState",
+        value: function setDisabledState(isDisabled) {
+          this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_registerOption",
+        value: function _registerOption(value) {
+          /** @type {?} */
+          var id = (this._idCounter++).toString();
+
+          this._optionMap.set(id, value);
+
+          return id;
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_getOptionId",
+        value: function _getOptionId(value) {
+          for (var _i24 = 0, _Array$from2 = Array.from(this._optionMap.keys()); _i24 < _Array$from2.length; _i24++) {
+            var id = _Array$from2[_i24];
+            if (this._compareWith(
+            /** @type {?} */
+            this._optionMap.get(id)._value, value)) return id;
+          }
+
+          return null;
+        }
+        /**
+         * \@internal
+         * @param {?} valueString
+         * @return {?}
+         */
+
+      }, {
+        key: "_getOptionValue",
+        value: function _getOptionValue(valueString) {
+          /** @type {?} */
+          var id = _extractId$1(valueString);
+
+          return this._optionMap.has(id) ?
+          /** @type {?} */
+          this._optionMap.get(id)._value : valueString;
+        }
+      }, {
+        key: "compareWith",
+        set: function set(fn) {
+          if (typeof fn !== 'function') {
+            throw new Error("compareWith must be a function, but received ".concat(JSON.stringify(fn)));
+          }
+
+          this._compareWith = fn;
+        }
+      }]);
+
+      return SelectMultipleControlValueAccessor;
+    }();
+
+    SelectMultipleControlValueAccessor.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'select[multiple][formControlName],select[multiple][formControl],select[multiple][ngModel]',
+        host: {
+          '(change)': 'onChange($event.target)',
+          '(blur)': 'onTouched()'
+        },
+        providers: [SELECT_MULTIPLE_VALUE_ACCESSOR]
+      }]
+    }];
+    /** @nocollapse */
+
+    SelectMultipleControlValueAccessor.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }];
+    };
+
+    SelectMultipleControlValueAccessor.propDecorators = {
+      compareWith: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * Marks `<option>` as dynamic, so Angular can be notified when options change.
+     *
+     * @see `SelectMultipleControlValueAccessor`
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+
+    var ɵNgSelectMultipleOption =
+    /*#__PURE__*/
+    function () {
+      /**
+       * @param {?} _element
+       * @param {?} _renderer
+       * @param {?} _select
+       */
+      function ɵNgSelectMultipleOption(_element, _renderer, _select) {
+        _classCallCheck(this, ɵNgSelectMultipleOption);
+
+        this._element = _element;
+        this._renderer = _renderer;
+        this._select = _select;
+
+        if (this._select) {
+          this.id = this._select._registerOption(this);
+        }
+      }
+      /**
+       * \@description
+       * Tracks the value bound to the option element. Unlike the value binding,
+       * ngValue supports binding to objects.
+       * @param {?} value
+       * @return {?}
+       */
+
+
+      _createClass2(ɵNgSelectMultipleOption, [{
+        key: "_setElementValue",
+
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+        value: function _setElementValue(value) {
+          this._renderer.setProperty(this._element.nativeElement, 'value', value);
+        }
+        /**
+         * \@internal
+         * @param {?} selected
+         * @return {?}
+         */
+
+      }, {
+        key: "_setSelected",
+        value: function _setSelected(selected) {
+          this._renderer.setProperty(this._element.nativeElement, 'selected', selected);
+        }
+        /**
+         * \@description
+         * Lifecycle method called before the directive's instance is destroyed. For internal use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this._select) {
+            this._select._optionMap.delete(this.id);
+
+            this._select.writeValue(this._select.value);
+          }
+        }
+      }, {
+        key: "ngValue",
+        set: function set(value) {
+          if (this._select == null) return;
+          this._value = value;
+
+          this._setElementValue(_buildValueString$1(this.id, value));
+
+          this._select.writeValue(this._select.value);
+        }
+        /**
+         * \@description
+         * Tracks simple string values bound to the option element.
+         * For objects, use the `ngValue` input binding.
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "value",
+        set: function set(value) {
+          if (this._select) {
+            this._value = value;
+
+            this._setElementValue(_buildValueString$1(this.id, value));
+
+            this._select.writeValue(this._select.value);
+          } else {
+            this._setElementValue(value);
+          }
+        }
+      }]);
+
+      return ɵNgSelectMultipleOption;
+    }();
+
+    ɵNgSelectMultipleOption.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'option'
+      }]
+    }];
+    /** @nocollapse */
+
+    ɵNgSelectMultipleOption.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]
+      }, {
+        type: SelectMultipleControlValueAccessor,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }]
+      }];
+    };
+
+    ɵNgSelectMultipleOption.propDecorators = {
+      ngValue: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngValue']
+      }],
+      value: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['value']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @param {?} name
+     * @param {?} parent
+     * @return {?}
+     */
+
+
+    function controlPath(name, parent) {
+      return [].concat(_toConsumableArray(
+      /** @type {?} */
+      parent.path), [name]);
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function setUpControl(control, dir) {
+      if (!control) _throwError(dir, 'Cannot find control with');
+      if (!dir.valueAccessor) _throwError(dir, 'No value accessor for form control with');
+      control.validator = Validators.compose([
+      /** @type {?} */
+      control.validator, dir.validator]);
+      control.asyncValidator = Validators.composeAsync([
+      /** @type {?} */
+      control.asyncValidator, dir.asyncValidator]);
+
+      /** @type {?} */
+      dir.valueAccessor.writeValue(control.value);
+      setUpViewChangePipeline(control, dir);
+      setUpModelChangePipeline(control, dir);
+      setUpBlurPipeline(control, dir);
+
+      if (
+      /** @type {?} */
+      dir.valueAccessor.setDisabledState) {
+        control.registerOnDisabledChange(
+        /**
+        * @param {?} isDisabled
+        * @return {?}
+        */
+        function (isDisabled) {
+          /** @type {?} */
+
+          /** @type {?} */
+          dir.valueAccessor.setDisabledState(isDisabled);
+        });
+      } // re-run validation when validator binding changes, e.g. minlength=3 -> minlength=4
+
+
+      dir._rawValidators.forEach(
+      /**
+      * @param {?} validator
+      * @return {?}
+      */
+      function (validator) {
+        if (
+        /** @type {?} */
+        validator.registerOnValidatorChange)
+        /** @type {?} */
+
+        /** @type {?} */
+        validator.registerOnValidatorChange(
+        /**
+        * @return {?}
+        */
+        function () {
+          return control.updateValueAndValidity();
+        });
+      });
+
+      dir._rawAsyncValidators.forEach(
+      /**
+      * @param {?} validator
+      * @return {?}
+      */
+      function (validator) {
+        if (
+        /** @type {?} */
+        validator.registerOnValidatorChange)
+        /** @type {?} */
+
+        /** @type {?} */
+        validator.registerOnValidatorChange(
+        /**
+        * @return {?}
+        */
+        function () {
+          return control.updateValueAndValidity();
+        });
+      });
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function cleanUpControl(control, dir) {
+      /** @type {?} */
+      dir.valueAccessor.registerOnChange(
+      /**
+      * @return {?}
+      */
+      function () {
+        return _noControlError(dir);
+      });
+
+      /** @type {?} */
+      dir.valueAccessor.registerOnTouched(
+      /**
+      * @return {?}
+      */
+      function () {
+        return _noControlError(dir);
+      });
+
+      dir._rawValidators.forEach(
+      /**
+      * @param {?} validator
+      * @return {?}
+      */
+      function (validator) {
+        if (validator.registerOnValidatorChange) {
+          validator.registerOnValidatorChange(null);
+        }
+      });
+
+      dir._rawAsyncValidators.forEach(
+      /**
+      * @param {?} validator
+      * @return {?}
+      */
+      function (validator) {
+        if (validator.registerOnValidatorChange) {
+          validator.registerOnValidatorChange(null);
+        }
+      });
+
+      if (control) control._clearChangeFns();
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function setUpViewChangePipeline(control, dir) {
+      /** @type {?} */
+      dir.valueAccessor.registerOnChange(
+      /**
+      * @param {?} newValue
+      * @return {?}
+      */
+      function (newValue) {
+        control._pendingValue = newValue;
+        control._pendingChange = true;
+        control._pendingDirty = true;
+        if (control.updateOn === 'change') updateControl(control, dir);
+      });
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function setUpBlurPipeline(control, dir) {
+      /** @type {?} */
+      dir.valueAccessor.registerOnTouched(
+      /**
+      * @return {?}
+      */
+      function () {
+        control._pendingTouched = true;
+        if (control.updateOn === 'blur' && control._pendingChange) updateControl(control, dir);
+        if (control.updateOn !== 'submit') control.markAsTouched();
+      });
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function updateControl(control, dir) {
+      if (control._pendingDirty) control.markAsDirty();
+      control.setValue(control._pendingValue, {
+        emitModelToViewChange: false
+      });
+      dir.viewToModelUpdate(control._pendingValue);
+      control._pendingChange = false;
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function setUpModelChangePipeline(control, dir) {
+      control.registerOnChange(
+      /**
+      * @param {?} newValue
+      * @param {?} emitModelEvent
+      * @return {?}
+      */
+      function (newValue, emitModelEvent) {
+        // control -> view
+
+        /** @type {?} */
+        dir.valueAccessor.writeValue(newValue); // control -> ngModel
+
+        if (emitModelEvent) dir.viewToModelUpdate(newValue);
+      });
+    }
+    /**
+     * @param {?} control
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function setUpFormContainer(control, dir) {
+      if (control == null) _throwError(dir, 'Cannot find control with');
+      control.validator = Validators.compose([control.validator, dir.validator]);
+      control.asyncValidator = Validators.composeAsync([control.asyncValidator, dir.asyncValidator]);
+    }
+    /**
+     * @param {?} dir
+     * @return {?}
+     */
+
+
+    function _noControlError(dir) {
+      return _throwError(dir, 'There is no FormControl instance attached to form control element with');
+    }
+    /**
+     * @param {?} dir
+     * @param {?} message
+     * @return {?}
+     */
+
+
+    function _throwError(dir, message) {
+      /** @type {?} */
+      var messageEnd;
+
+      if (
+      /** @type {?} */
+      dir.path.length > 1) {
+        messageEnd = "path: '".concat(
+        /** @type {?} */
+        dir.path.join(' -> '), "'");
+      } else if (
+      /** @type {?} */
+      dir.path[0]) {
+        messageEnd = "name: '".concat(dir.path, "'");
+      } else {
+        messageEnd = 'unspecified name attribute';
+      }
+
+      throw new Error("".concat(message, " ").concat(messageEnd));
+    }
+    /**
+     * @param {?} validators
+     * @return {?}
+     */
+
+
+    function composeValidators(validators) {
+      return validators != null ? Validators.compose(validators.map(normalizeValidator)) : null;
+    }
+    /**
+     * @param {?} validators
+     * @return {?}
+     */
+
+
+    function composeAsyncValidators(validators) {
+      return validators != null ? Validators.composeAsync(validators.map(normalizeAsyncValidator)) : null;
+    }
+    /**
+     * @param {?} changes
+     * @param {?} viewModel
+     * @return {?}
+     */
+
+
+    function isPropertyUpdated(changes, viewModel) {
+      if (!changes.hasOwnProperty('model')) return false;
+      /** @type {?} */
+
+      var change = changes['model'];
+      if (change.isFirstChange()) return true;
+      return !Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵlooseIdentical"])(viewModel, change.currentValue);
+    }
+    /** @type {?} */
+
+
+    var BUILTIN_ACCESSORS = [CheckboxControlValueAccessor, RangeValueAccessor, NumberValueAccessor, SelectControlValueAccessor, SelectMultipleControlValueAccessor, RadioControlValueAccessor];
+    /**
+     * @param {?} valueAccessor
+     * @return {?}
+     */
+
+    function isBuiltInAccessor(valueAccessor) {
+      return BUILTIN_ACCESSORS.some(
+      /**
+      * @param {?} a
+      * @return {?}
+      */
+      function (a) {
+        return valueAccessor.constructor === a;
+      });
+    }
+    /**
+     * @param {?} form
+     * @param {?} directives
+     * @return {?}
+     */
+
+
+    function syncPendingControls(form, directives) {
+      form._syncPendingControls();
+
+      directives.forEach(
+      /**
+      * @param {?} dir
+      * @return {?}
+      */
+      function (dir) {
+        /** @type {?} */
+        var control =
+        /** @type {?} */
+        dir.control;
+
+        if (control.updateOn === 'submit' && control._pendingChange) {
+          dir.viewToModelUpdate(control._pendingValue);
+          control._pendingChange = false;
+        }
+      });
+    } // TODO: vsavkin remove it once https://github.com/angular/angular/issues/3011 is implemented
+
+    /**
+     * @param {?} dir
+     * @param {?} valueAccessors
+     * @return {?}
+     */
+
+
+    function selectValueAccessor(dir, valueAccessors) {
+      if (!valueAccessors) return null;
+      if (!Array.isArray(valueAccessors)) _throwError(dir, 'Value accessor was not provided as an array for form control with');
+      /** @type {?} */
+
+      var defaultAccessor = undefined;
+      /** @type {?} */
+
+      var builtinAccessor = undefined;
+      /** @type {?} */
+
+      var customAccessor = undefined;
+      valueAccessors.forEach(
+      /**
+      * @param {?} v
+      * @return {?}
+      */
+      function (v) {
+        if (v.constructor === DefaultValueAccessor) {
+          defaultAccessor = v;
+        } else if (isBuiltInAccessor(v)) {
+          if (builtinAccessor) _throwError(dir, 'More than one built-in value accessor matches form control with');
+          builtinAccessor = v;
+        } else {
+          if (customAccessor) _throwError(dir, 'More than one custom value accessor matches form control with');
+          customAccessor = v;
+        }
+      });
+      if (customAccessor) return customAccessor;
+      if (builtinAccessor) return builtinAccessor;
+      if (defaultAccessor) return defaultAccessor;
+
+      _throwError(dir, 'No valid value accessor for form control with');
+
+      return null;
+    }
+    /**
+     * @template T
+     * @param {?} list
+     * @param {?} el
+     * @return {?}
+     */
+
+
+    function removeDir(list, el) {
+      /** @type {?} */
+      var index = list.indexOf(el);
+      if (index > -1) list.splice(index, 1);
+    } // TODO(kara): remove after deprecation period
+
+    /**
+     * @param {?} name
+     * @param {?} type
+     * @param {?} instance
+     * @param {?} warningConfig
+     * @return {?}
+     */
+
+
+    function _ngModelWarning(name, type, instance, warningConfig) {
+      if (!Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["isDevMode"])() || warningConfig === 'never') return;
+
+      if ((warningConfig === null || warningConfig === 'once') && !type._ngModelWarningSentOnce || warningConfig === 'always' && !instance._ngModelWarningSent) {
+        ReactiveErrors.ngModelWarning(name);
+        type._ngModelWarningSentOnce = true;
+        instance._ngModelWarningSent = true;
+      }
+    }
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Reports that a FormControl is valid, meaning that no errors exist in the input value.
+     *
+     * @see `status`
+     * @type {?}
+     */
+
+
+    var VALID = 'VALID';
+    /**
+     * Reports that a FormControl is invalid, meaning that an error exists in the input value.
+     *
+     * @see `status`
+     * @type {?}
+     */
+
+    var INVALID = 'INVALID';
+    /**
+     * Reports that a FormControl is pending, meaning that that async validation is occurring and
+     * errors are not yet available for the input value.
+     *
+     * @see `markAsPending`
+     * @see `status`
+     * @type {?}
+     */
+
+    var PENDING = 'PENDING';
+    /**
+     * Reports that a FormControl is disabled, meaning that the control is exempt from ancestor
+     * calculations of validity or value.
+     *
+     * @see `markAsDisabled`
+     * @see `status`
+     * @type {?}
+     */
+
+    var DISABLED = 'DISABLED';
+    /**
+     * @param {?} control
+     * @param {?} path
+     * @param {?} delimiter
+     * @return {?}
+     */
+
+    function _find(control, path, delimiter) {
+      if (path == null) return null;
+
+      if (!(path instanceof Array)) {
+        path =
+        /** @type {?} */
+        path.split(delimiter);
+      }
+
+      if (path instanceof Array && path.length === 0) return null;
+      return (
+        /** @type {?} */
+        path.reduce(
+        /**
+        * @param {?} v
+        * @param {?} name
+        * @return {?}
+        */
+        function (v, name) {
+          if (v instanceof FormGroup) {
+            return v.controls.hasOwnProperty(
+            /** @type {?} */
+            name) ? v.controls[name] : null;
+          }
+
+          if (v instanceof FormArray) {
+            return v.at(
+            /** @type {?} */
+            name) || null;
+          }
+
+          return null;
+        }, control)
+      );
+    }
+    /**
+     * @param {?=} validatorOrOpts
+     * @return {?}
+     */
+
+
+    function coerceToValidator(validatorOrOpts) {
+      /** @type {?} */
+      var validator =
+      /** @type {?} */
+      isOptionsObj(validatorOrOpts) ?
+      /** @type {?} */
+      validatorOrOpts.validators : validatorOrOpts;
+      return Array.isArray(validator) ? composeValidators(validator) : validator || null;
+    }
+    /**
+     * @param {?=} asyncValidator
+     * @param {?=} validatorOrOpts
+     * @return {?}
+     */
+
+
+    function coerceToAsyncValidator(asyncValidator, validatorOrOpts) {
+      /** @type {?} */
+      var origAsyncValidator =
+      /** @type {?} */
+      isOptionsObj(validatorOrOpts) ?
+      /** @type {?} */
+      validatorOrOpts.asyncValidators : asyncValidator;
+      return Array.isArray(origAsyncValidator) ? composeAsyncValidators(origAsyncValidator) : origAsyncValidator || null;
+    }
+    /**
+     * Interface for options provided to an `AbstractControl`.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function AbstractControlOptions() {}
+
+    if (false) {}
+    /**
+     * @param {?=} validatorOrOpts
+     * @return {?}
+     */
+
+
+    function isOptionsObj(validatorOrOpts) {
+      return validatorOrOpts != null && !Array.isArray(validatorOrOpts) && typeof validatorOrOpts === 'object';
+    }
+    /**
+     * This is the base class for `FormControl`, `FormGroup`, and `FormArray`.
+     *
+     * It provides some of the shared behavior that all controls and groups of controls have, like
+     * running validators, calculating status, and resetting state. It also defines the properties
+     * that are shared between all sub-classes, like `value`, `valid`, and `dirty`. It shouldn't be
+     * instantiated directly.
+     *
+     * @see [Forms Guide](/guide/forms)
+     * @see [Reactive Forms Guide](/guide/reactive-forms)
+     * @see [Dynamic Forms Guide](/guide/dynamic-form)
+     *
+     * \@publicApi
+     * @abstract
+     */
+
+
+    var AbstractControl =
+    /*#__PURE__*/
+    function () {
+      /**
+       * Initialize the AbstractControl instance.
+       *
+       * @param {?} validator The function that determines the synchronous validity of this control.
+       * @param {?} asyncValidator The function that determines the asynchronous validity of this
+       * control.
+       */
+      function AbstractControl(validator, asyncValidator) {
+        _classCallCheck(this, AbstractControl);
+
+        this.validator = validator;
+        this.asyncValidator = asyncValidator;
+        /**
+         * \@internal
+         */
+
+        this._onCollectionChange =
+        /**
+        * @return {?}
+        */
+        function () {};
+        /**
+         * A control is `pristine` if the user has not yet changed
+         * the value in the UI.
+         *
+         * @return True if the user has not yet changed the value in the UI; compare `dirty`.
+         * Programmatic changes to a control's value do not mark it dirty.
+         */
+
+
+        this.pristine = true;
+        /**
+         * True if the control is marked as `touched`.
+         *
+         * A control is marked `touched` once the user has triggered
+         * a `blur` event on it.
+         */
+
+        this.touched = false;
+        /**
+         * \@internal
+         */
+
+        this._onDisabledChange = [];
+      }
+      /**
+       * The parent control.
+       * @return {?}
+       */
+
+
+      _createClass2(AbstractControl, [{
+        key: "setValidators",
+
+        /**
+         * Sets the synchronous validators that are active on this control.  Calling
+         * this overwrites any existing sync validators.
+         *
+         * When you add or remove a validator at run time, you must call
+         * `updateValueAndValidity()` for the new validation to take effect.
+         *
+         * @param {?} newValidator
+         * @return {?}
+         */
+        value: function setValidators(newValidator) {
+          this.validator = coerceToValidator(newValidator);
+        }
+        /**
+         * Sets the async validators that are active on this control. Calling this
+         * overwrites any existing async validators.
+         *
+         * When you add or remove a validator at run time, you must call
+         * `updateValueAndValidity()` for the new validation to take effect.
+         *
+         * @param {?} newValidator
+         * @return {?}
+         */
+
+      }, {
+        key: "setAsyncValidators",
+        value: function setAsyncValidators(newValidator) {
+          this.asyncValidator = coerceToAsyncValidator(newValidator);
+        }
+        /**
+         * Empties out the sync validator list.
+         *
+         * When you add or remove a validator at run time, you must call
+         * `updateValueAndValidity()` for the new validation to take effect.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "clearValidators",
+        value: function clearValidators() {
+          this.validator = null;
+        }
+        /**
+         * Empties out the async validator list.
+         *
+         * When you add or remove a validator at run time, you must call
+         * `updateValueAndValidity()` for the new validation to take effect.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "clearAsyncValidators",
+        value: function clearAsyncValidators() {
+          this.asyncValidator = null;
+        }
+        /**
+         * Marks the control as `touched`. A control is touched by focus and
+         * blur events that do not change the value.
+         *
+         * @see `markAsUntouched()` / `markAsDirty()` / `markAsPristine()`
+         *
+         * @param {?=} opts Configuration options that determine how the control propagates changes
+         * and emits events events after marking is applied.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false.
+         * @return {?}
+         */
+
+      }, {
+        key: "markAsTouched",
+        value: function markAsTouched() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.touched = true;
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent.markAsTouched(opts);
+          }
+        }
+        /**
+         * Marks the control and all its descendant controls as `touched`.
+         * @see `markAsTouched()`
+         * @return {?}
+         */
+
+      }, {
+        key: "markAllAsTouched",
+        value: function markAllAsTouched() {
+          this.markAsTouched({
+            onlySelf: true
+          });
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.markAllAsTouched();
+          });
+        }
+        /**
+         * Marks the control as `untouched`.
+         *
+         * If the control has any children, also marks all children as `untouched`
+         * and recalculates the `touched` status of all parent controls.
+         *
+         * @see `markAsTouched()` / `markAsDirty()` / `markAsPristine()`
+         *
+         * @param {?=} opts Configuration options that determine how the control propagates changes
+         * and emits events after the marking is applied.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false.
+         * @return {?}
+         */
+
+      }, {
+        key: "markAsUntouched",
+        value: function markAsUntouched() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.touched = false;
+          this._pendingTouched = false;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            control.markAsUntouched({
+              onlySelf: true
+            });
+          });
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent._updateTouched(opts);
+          }
+        }
+        /**
+         * Marks the control as `dirty`. A control becomes dirty when
+         * the control's value is changed through the UI; compare `markAsTouched`.
+         *
+         * @see `markAsTouched()` / `markAsUntouched()` / `markAsPristine()`
+         *
+         * @param {?=} opts Configuration options that determine how the control propagates changes
+         * and emits events after marking is applied.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false.
+         * @return {?}
+         */
+
+      }, {
+        key: "markAsDirty",
+        value: function markAsDirty() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.pristine = false;
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent.markAsDirty(opts);
+          }
+        }
+        /**
+         * Marks the control as `pristine`.
+         *
+         * If the control has any children, marks all children as `pristine`,
+         * and recalculates the `pristine` status of all parent
+         * controls.
+         *
+         * @see `markAsTouched()` / `markAsUntouched()` / `markAsDirty()`
+         *
+         * @param {?=} opts Configuration options that determine how the control emits events after
+         * marking is applied.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false..
+         * @return {?}
+         */
+
+      }, {
+        key: "markAsPristine",
+        value: function markAsPristine() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.pristine = true;
+          this._pendingDirty = false;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            control.markAsPristine({
+              onlySelf: true
+            });
+          });
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent._updatePristine(opts);
+          }
+        }
+        /**
+         * Marks the control as `pending`.
+         *
+         * A control is pending while the control performs async validation.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @param {?=} opts Configuration options that determine how the control propagates changes and
+         * emits events after marking is applied.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false..
+         * * `emitEvent`: When true or not supplied (the default), the `statusChanges`
+         * observable emits an event with the latest status the control is marked pending.
+         * When false, no events are emitted.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "markAsPending",
+        value: function markAsPending() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.status = PENDING;
+
+          if (opts.emitEvent !== false) {
+            /** @type {?} */
+            this.statusChanges.emit(this.status);
+          }
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent.markAsPending(opts);
+          }
+        }
+        /**
+         * Disables the control. This means the control is exempt from validation checks and
+         * excluded from the aggregate value of any parent. Its status is `DISABLED`.
+         *
+         * If the control has children, all children are also disabled.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @param {?=} opts Configuration options that determine how the control propagates
+         * changes and emits events after the control is disabled.
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false..
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is disabled.
+         * When false, no events are emitted.
+         * @return {?}
+         */
+
+      }, {
+        key: "disable",
+        value: function disable() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          // If parent has been marked artificially dirty we don't want to re-calculate the
+          // parent's dirtiness based on the children.
+
+          /** @type {?} */
+          var skipPristineCheck = this._parentMarkedDirty(opts.onlySelf);
+
+          /** @type {?} */
+          this.status = DISABLED;
+
+          /** @type {?} */
+          this.errors = null;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            control.disable(Object.assign({}, opts, {
+              onlySelf: true
+            }));
+          });
+
+          this._updateValue();
+
+          if (opts.emitEvent !== false) {
+            /** @type {?} */
+            this.valueChanges.emit(this.value);
+
+            /** @type {?} */
+            this.statusChanges.emit(this.status);
+          }
+
+          this._updateAncestors(Object.assign({}, opts, {
+            skipPristineCheck: skipPristineCheck
+          }));
+
+          this._onDisabledChange.forEach(
+          /**
+          * @param {?} changeFn
+          * @return {?}
+          */
+          function (changeFn) {
+            return changeFn(true);
+          });
+        }
+        /**
+         * Enables the control. This means the control is included in validation checks and
+         * the aggregate value of its parent. Its status recalculates based on its value and
+         * its validators.
+         *
+         * By default, if the control has children, all children are enabled.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @param {?=} opts Configure options that control how the control propagates changes and
+         * emits events when marked as untouched
+         * * `onlySelf`: When true, mark only this control. When false or not supplied,
+         * marks all direct ancestors. Default is false..
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is enabled.
+         * When false, no events are emitted.
+         * @return {?}
+         */
+
+      }, {
+        key: "enable",
+        value: function enable() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          // If parent has been marked artificially dirty we don't want to re-calculate the
+          // parent's dirtiness based on the children.
+
+          /** @type {?} */
+          var skipPristineCheck = this._parentMarkedDirty(opts.onlySelf);
+
+          /** @type {?} */
+          this.status = VALID;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            control.enable(Object.assign({}, opts, {
+              onlySelf: true
+            }));
+          });
+
+          this.updateValueAndValidity({
+            onlySelf: true,
+            emitEvent: opts.emitEvent
+          });
+
+          this._updateAncestors(Object.assign({}, opts, {
+            skipPristineCheck: skipPristineCheck
+          }));
+
+          this._onDisabledChange.forEach(
+          /**
+          * @param {?} changeFn
+          * @return {?}
+          */
+          function (changeFn) {
+            return changeFn(false);
+          });
+        }
+        /**
+         * @private
+         * @param {?} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateAncestors",
+        value: function _updateAncestors(opts) {
+          if (this._parent && !opts.onlySelf) {
+            this._parent.updateValueAndValidity(opts);
+
+            if (!opts.skipPristineCheck) {
+              this._parent._updatePristine();
+            }
+
+            this._parent._updateTouched();
+          }
+        }
+        /**
+         * @param {?} parent Sets the parent of the control
+         * @return {?}
+         */
+
+      }, {
+        key: "setParent",
+        value: function setParent(parent) {
+          this._parent = parent;
+        }
+        /**
+         * Recalculates the value and validation status of the control.
+         *
+         * By default, it also updates the value and validity of its ancestors.
+         *
+         * @param {?=} opts Configuration options determine how the control propagates changes and emits events
+         * after updates and validity checks are applied.
+         * * `onlySelf`: When true, only update this control. When false or not supplied,
+         * update all direct ancestors. Default is false..
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is updated.
+         * When false, no events are emitted.
+         * @return {?}
+         */
+
+      }, {
+        key: "updateValueAndValidity",
+        value: function updateValueAndValidity() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          this._setInitialStatus();
+
+          this._updateValue();
+
+          if (this.enabled) {
+            this._cancelExistingSubscription();
+
+            /** @type {?} */
+            this.errors = this._runValidator();
+
+            /** @type {?} */
+            this.status = this._calculateStatus();
+
+            if (this.status === VALID || this.status === PENDING) {
+              this._runAsyncValidator(opts.emitEvent);
+            }
+          }
+
+          if (opts.emitEvent !== false) {
+            /** @type {?} */
+            this.valueChanges.emit(this.value);
+
+            /** @type {?} */
+            this.statusChanges.emit(this.status);
+          }
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent.updateValueAndValidity(opts);
+          }
+        }
+        /**
+         * \@internal
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateTreeValidity",
+        value: function _updateTreeValidity() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+            emitEvent: true
+          };
+
+          this._forEachChild(
+          /**
+          * @param {?} ctrl
+          * @return {?}
+          */
+          function (ctrl) {
+            return ctrl._updateTreeValidity(opts);
+          });
+
+          this.updateValueAndValidity({
+            onlySelf: true,
+            emitEvent: opts.emitEvent
+          });
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setInitialStatus",
+        value: function _setInitialStatus() {
+          /** @type {?} */
+          this.status = this._allControlsDisabled() ? DISABLED : VALID;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_runValidator",
+        value: function _runValidator() {
+          return this.validator ? this.validator(this) : null;
+        }
+        /**
+         * @private
+         * @param {?=} emitEvent
+         * @return {?}
+         */
+
+      }, {
+        key: "_runAsyncValidator",
+        value: function _runAsyncValidator(emitEvent) {
+          var _this71 = this;
+
+          if (this.asyncValidator) {
+            /** @type {?} */
+            this.status = PENDING;
+            /** @type {?} */
+
+            var obs = toObservable(this.asyncValidator(this));
+            this._asyncValidationSubscription = obs.subscribe(
+            /**
+            * @param {?} errors
+            * @return {?}
+            */
+            function (errors) {
+              return _this71.setErrors(errors, {
+                emitEvent: emitEvent
+              });
+            });
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_cancelExistingSubscription",
+        value: function _cancelExistingSubscription() {
+          if (this._asyncValidationSubscription) {
+            this._asyncValidationSubscription.unsubscribe();
+          }
+        }
+        /**
+         * Sets errors on a form control when running validations manually, rather than automatically.
+         *
+         * Calling `setErrors` also updates the validity of the parent control.
+         *
+         * \@usageNotes
+         * ### Manually set the errors for a control
+         *
+         * ```
+         * const login = new FormControl('someLogin');
+         * login.setErrors({
+         *   notUnique: true
+         * });
+         *
+         * expect(login.valid).toEqual(false);
+         * expect(login.errors).toEqual({ notUnique: true });
+         *
+         * login.setValue('someOtherLogin');
+         *
+         * expect(login.valid).toEqual(true);
+         * ```
+         * @param {?} errors
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "setErrors",
+        value: function setErrors(errors) {
+          var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          /** @type {?} */
+          this.errors = errors;
+
+          this._updateControlsErrors(opts.emitEvent !== false);
+        }
+        /**
+         * Retrieves a child control given the control's name or path.
+         *
+         * \@usageNotes
+         * ### Retrieve a nested control
+         *
+         * For example, to get a `name` control nested within a `person` sub-group:
+         *
+         * * `this.form.get('person.name');`
+         *
+         * -OR-
+         *
+         * * `this.form.get(['person', 'name']);`
+         * @param {?} path A dot-delimited string or array of string/number values that define the path to the
+         * control.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "get",
+        value: function get(path) {
+          return _find(this, path, '.');
+        }
+        /**
+         * \@description
+         * Reports error data for the control with the given path.
+         *
+         * \@usageNotes
+         * For example, for the following `FormGroup`:
+         *
+         * ```
+         * form = new FormGroup({
+         *   address: new FormGroup({ street: new FormControl() })
+         * });
+         * ```
+         *
+         * The path to the 'street' control from the root form would be 'address' -> 'street'.
+         *
+         * It can be provided to this method in one of two formats:
+         *
+         * 1. An array of string control names, e.g. `['address', 'street']`
+         * 1. A period-delimited list of control names in one string, e.g. `'address.street'`
+         *
+         * @param {?} errorCode The code of the error to check
+         * @param {?=} path A list of control names that designates how to move from the current control
+         * to the control that should be queried for errors.
+         *
+         * @return {?} error data for that particular error. If the control or error is not present,
+         * null is returned.
+         */
+
+      }, {
+        key: "getError",
+        value: function getError(errorCode, path) {
+          /** @type {?} */
+          var control = path ? this.get(path) : this;
+          return control && control.errors ? control.errors[errorCode] : null;
+        }
+        /**
+         * \@description
+         * Reports whether the control with the given path has the error specified.
+         *
+         * \@usageNotes
+         * For example, for the following `FormGroup`:
+         *
+         * ```
+         * form = new FormGroup({
+         *   address: new FormGroup({ street: new FormControl() })
+         * });
+         * ```
+         *
+         * The path to the 'street' control from the root form would be 'address' -> 'street'.
+         *
+         * It can be provided to this method in one of two formats:
+         *
+         * 1. An array of string control names, e.g. `['address', 'street']`
+         * 1. A period-delimited list of control names in one string, e.g. `'address.street'`
+         *
+         * If no path is given, this method checks for the error on the current control.
+         *
+         * @param {?} errorCode The code of the error to check
+         * @param {?=} path A list of control names that designates how to move from the current control
+         * to the control that should be queried for errors.
+         *
+         * @return {?} whether the given error is present in the control at the given path.
+         *
+         * If the control is not present, false is returned.
+         */
+
+      }, {
+        key: "hasError",
+        value: function hasError(errorCode, path) {
+          return !!this.getError(errorCode, path);
+        }
+        /**
+         * Retrieves the top-level ancestor of this control.
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateControlsErrors",
+
+        /**
+         * \@internal
+         * @param {?} emitEvent
+         * @return {?}
+         */
+        value: function _updateControlsErrors(emitEvent) {
+          /** @type {?} */
+          this.status = this._calculateStatus();
+
+          if (emitEvent) {
+            /** @type {?} */
+            this.statusChanges.emit(this.status);
+          }
+
+          if (this._parent) {
+            this._parent._updateControlsErrors(emitEvent);
+          }
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_initObservables",
+        value: function _initObservables() {
+          /** @type {?} */
+          this.valueChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+
+          /** @type {?} */
+          this.statusChanges = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_calculateStatus",
+        value: function _calculateStatus() {
+          if (this._allControlsDisabled()) return DISABLED;
+          if (this.errors) return INVALID;
+          if (this._anyControlsHaveStatus(PENDING)) return PENDING;
+          if (this._anyControlsHaveStatus(INVALID)) return INVALID;
+          return VALID;
+        }
+        /**
+         * \@internal
+         * @param {?} status
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControlsHaveStatus",
+        value: function _anyControlsHaveStatus(status) {
+          return this._anyControls(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.status === status;
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControlsDirty",
+        value: function _anyControlsDirty() {
+          return this._anyControls(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.dirty;
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControlsTouched",
+        value: function _anyControlsTouched() {
+          return this._anyControls(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.touched;
+          });
+        }
+        /**
+         * \@internal
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "_updatePristine",
+        value: function _updatePristine() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.pristine = !this._anyControlsDirty();
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent._updatePristine(opts);
+          }
+        }
+        /**
+         * \@internal
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateTouched",
+        value: function _updateTouched() {
+          var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+          /** @type {?} */
+          this.touched = this._anyControlsTouched();
+
+          if (this._parent && !opts.onlySelf) {
+            this._parent._updateTouched(opts);
+          }
+        }
+        /**
+         * \@internal
+         * @param {?} formState
+         * @return {?}
+         */
+
+      }, {
+        key: "_isBoxedValue",
+        value: function _isBoxedValue(formState) {
+          return typeof formState === 'object' && formState !== null && Object.keys(formState).length === 2 && 'value' in formState && 'disabled' in formState;
+        }
+        /**
+         * \@internal
+         * @param {?} fn
+         * @return {?}
+         */
+
+      }, {
+        key: "_registerOnCollectionChange",
+        value: function _registerOnCollectionChange(fn) {
+          this._onCollectionChange = fn;
+        }
+        /**
+         * \@internal
+         * @param {?=} opts
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpdateStrategy",
+        value: function _setUpdateStrategy(opts) {
+          if (isOptionsObj(opts) &&
+          /** @type {?} */
+          opts.updateOn != null) {
+            this._updateOn =
+            /** @type {?} */
+
+            /** @type {?} */
+            opts.updateOn;
+          }
+        }
+        /**
+         * Check to see if parent has been marked artificially dirty.
+         *
+         * \@internal
+         * @private
+         * @param {?=} onlySelf
+         * @return {?}
+         */
+
+      }, {
+        key: "_parentMarkedDirty",
+        value: function _parentMarkedDirty(onlySelf) {
+          /** @type {?} */
+          var parentDirty = this._parent && this._parent.dirty;
+          return !onlySelf && parentDirty && !this._parent._anyControlsDirty();
+        }
+      }, {
+        key: "parent",
+        get: function get() {
+          return this._parent;
+        }
+        /**
+         * A control is `valid` when its `status` is `VALID`.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @return {?} True if the control has passed all of its validation tests,
+         * false otherwise.
+         */
+
+      }, {
+        key: "valid",
+        get: function get() {
+          return this.status === VALID;
+        }
+        /**
+         * A control is `invalid` when its `status` is `INVALID`.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @return {?} True if this control has failed one or more of its validation checks,
+         * false otherwise.
+         */
+
+      }, {
+        key: "invalid",
+        get: function get() {
+          return this.status === INVALID;
+        }
+        /**
+         * A control is `pending` when its `status` is `PENDING`.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @return {?} True if this control is in the process of conducting a validation check,
+         * false otherwise.
+         */
+
+      }, {
+        key: "pending",
+        get: function get() {
+          return this.status == PENDING;
+        }
+        /**
+         * A control is `disabled` when its `status` is `DISABLED`.
+         *
+         * Disabled controls are exempt from validation checks and
+         * are not included in the aggregate value of their ancestor
+         * controls.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @return {?} True if the control is disabled, false otherwise.
+         */
+
+      }, {
+        key: "disabled",
+        get: function get() {
+          return this.status === DISABLED;
+        }
+        /**
+         * A control is `enabled` as long as its `status` is not `DISABLED`.
+         *
+         * @see {\@link AbstractControl.status}
+         *
+         * @return {?} True if the control has any status other than 'DISABLED',
+         * false if the status is 'DISABLED'.
+         *
+         */
+
+      }, {
+        key: "enabled",
+        get: function get() {
+          return this.status !== DISABLED;
+        }
+        /**
+         * A control is `dirty` if the user has changed the value
+         * in the UI.
+         *
+         * @return {?} True if the user has changed the value of this control in the UI; compare `pristine`.
+         * Programmatic changes to a control's value do not mark it dirty.
+         */
+
+      }, {
+        key: "dirty",
+        get: function get() {
+          return !this.pristine;
+        }
+        /**
+         * True if the control has not been marked as touched
+         *
+         * A control is `untouched` if the user has not yet triggered
+         * a `blur` event on it.
+         * @return {?}
+         */
+
+      }, {
+        key: "untouched",
+        get: function get() {
+          return !this.touched;
+        }
+        /**
+         * Reports the update strategy of the `AbstractControl` (meaning
+         * the event on which the control updates itself).
+         * Possible values: `'change'` | `'blur'` | `'submit'`
+         * Default value: `'change'`
+         * @return {?}
+         */
+
+      }, {
+        key: "updateOn",
+        get: function get() {
+          return this._updateOn ? this._updateOn : this.parent ? this.parent.updateOn : 'change';
+        }
+      }, {
+        key: "root",
+        get: function get() {
+          /** @type {?} */
+          var x = this;
+
+          while (x._parent) {
+            x = x._parent;
+          }
+
+          return x;
+        }
+      }]);
+
+      return AbstractControl;
+    }();
+
+    if (false) {}
+    /**
+     * Tracks the value and validation status of an individual form control.
+     *
+     * This is one of the three fundamental building blocks of Angular forms, along with
+     * `FormGroup` and `FormArray`. It extends the `AbstractControl` class that
+     * implements most of the base functionality for accessing the value, validation status,
+     * user interactions and events.
+     *
+     * @see `AbstractControl`
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     * @see [Usage Notes](#usage-notes)
+     *
+     * \@usageNotes
+     *
+     * ### Initializing Form Controls
+     *
+     * Instantiate a `FormControl`, with an initial value.
+     *
+     * ```ts
+     * const control = new FormControl('some value');
+     * console.log(control.value);     // 'some value'
+     * ```
+     *
+     * The following example initializes the control with a form state object. The `value`
+     * and `disabled` keys are required in this case.
+     *
+     * ```ts
+     * const control = new FormControl({ value: 'n/a', disabled: true });
+     * console.log(control.value);     // 'n/a'
+     * console.log(control.status);    // 'DISABLED'
+     * ```
+     *
+     * The following example initializes the control with a sync validator.
+     *
+     * ```ts
+     * const control = new FormControl('', Validators.required);
+     * console.log(control.value);      // ''
+     * console.log(control.status);     // 'INVALID'
+     * ```
+     *
+     * The following example initializes the control using an options object.
+     *
+     * ```ts
+     * const control = new FormControl('', {
+     *    validators: Validators.required,
+     *    asyncValidators: myAsyncValidator
+     * });
+     * ```
+     *
+     * ### Configure the control to update on a blur event
+     *
+     * Set the `updateOn` option to `'blur'` to update on the blur `event`.
+     *
+     * ```ts
+     * const control = new FormControl('', { updateOn: 'blur' });
+     * ```
+     *
+     * ### Configure the control to update on a submit event
+     *
+     * Set the `updateOn` option to `'submit'` to update on a submit `event`.
+     *
+     * ```ts
+     * const control = new FormControl('', { updateOn: 'submit' });
+     * ```
+     *
+     * ### Reset the control back to an initial value
+     *
+     * You reset to a specific form state by passing through a standalone
+     * value or a form state object that contains both a value and a disabled state
+     * (these are the only two properties that cannot be calculated).
+     *
+     * ```ts
+     * const control = new FormControl('Nancy');
+     *
+     * console.log(control.value); // 'Nancy'
+     *
+     * control.reset('Drew');
+     *
+     * console.log(control.value); // 'Drew'
+     * ```
+     *
+     * ### Reset the control back to an initial value and disabled
+     *
+     * ```
+     * const control = new FormControl('Nancy');
+     *
+     * console.log(control.value); // 'Nancy'
+     * console.log(control.status); // 'VALID'
+     *
+     * control.reset({ value: 'Drew', disabled: true });
+     *
+     * console.log(control.value); // 'Drew'
+     * console.log(control.status); // 'DISABLED'
+     * ```
+     *
+     * \@publicApi
+     */
+
+
+    var FormControl =
+    /*#__PURE__*/
+    function (_AbstractControl) {
+      _inherits(FormControl, _AbstractControl);
+
+      /**
+       * Creates a new `FormControl` instance.
+       *
+       * @param {?=} formState Initializes the control with an initial value,
+       * or an object that defines the initial value and disabled state.
+       *
+       * @param {?=} validatorOrOpts A synchronous validator function, or an array of
+       * such functions, or an `AbstractControlOptions` object that contains validation functions
+       * and a validation trigger.
+       *
+       * @param {?=} asyncValidator A single async validator or array of async validator functions
+       *
+       */
+      function FormControl() {
+        var _this72;
+
+        var formState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+        var validatorOrOpts = arguments.length > 1 ? arguments[1] : undefined;
+        var asyncValidator = arguments.length > 2 ? arguments[2] : undefined;
+
+        _classCallCheck(this, FormControl);
+
+        _this72 = _possibleConstructorReturn(this, _getPrototypeOf(FormControl).call(this, coerceToValidator(validatorOrOpts), coerceToAsyncValidator(asyncValidator, validatorOrOpts)));
+        /**
+         * \@internal
+         */
+
+        _this72._onChange = [];
+
+        _this72._applyFormState(formState);
+
+        _this72._setUpdateStrategy(validatorOrOpts);
+
+        _this72.updateValueAndValidity({
+          onlySelf: true,
+          emitEvent: false
+        });
+
+        _this72._initObservables();
+
+        return _this72;
+      }
+      /**
+       * Sets a new value for the form control.
+       *
+       * @param {?} value The new value for the control.
+       * @param {?=} options Configuration options that determine how the control propagates changes
+       * and emits events when the value changes.
+       * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+       * updateValueAndValidity} method.
+       *
+       * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+       * false.
+       * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+       * `valueChanges`
+       * observables emit events with the latest status and value when the control value is updated.
+       * When false, no events are emitted.
+       * * `emitModelToViewChange`: When true or not supplied  (the default), each change triggers an
+       * `onChange` event to
+       * update the view.
+       * * `emitViewToModelChange`: When true or not supplied (the default), each change triggers an
+       * `ngModelChange`
+       * event to update the model.
+       *
+       * @return {?}
+       */
+
+
+      _createClass2(FormControl, [{
+        key: "setValue",
+        value: function setValue(value) {
+          var _this73 = this;
+
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          /** @type {?} */
+          this.value = this._pendingValue = value;
+
+          if (this._onChange.length && options.emitModelToViewChange !== false) {
+            this._onChange.forEach(
+            /**
+            * @param {?} changeFn
+            * @return {?}
+            */
+            function (changeFn) {
+              return changeFn(_this73.value, options.emitViewToModelChange !== false);
+            });
+          }
+
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * Patches the value of a control.
+         *
+         * This function is functionally the same as {\@link FormControl#setValue setValue} at this level.
+         * It exists for symmetry with {\@link FormGroup#patchValue patchValue} on `FormGroups` and
+         * `FormArrays`, where it does behave differently.
+         *
+         * @see `setValue` for options
+         * @param {?} value
+         * @param {?=} options
+         * @return {?}
+         */
+
+      }, {
+        key: "patchValue",
+        value: function patchValue(value) {
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          this.setValue(value, options);
+        }
+        /**
+         * Resets the form control, marking it `pristine` and `untouched`, and setting
+         * the value to null.
+         *
+         * @param {?=} formState Resets the control with an initial value,
+         * or an object that defines the initial value and disabled state.
+         *
+         * @param {?=} options Configuration options that determine how the control propagates changes
+         * and emits events after the value changes.
+         *
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+         * false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is reset.
+         * When false, no events are emitted.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "reset",
+        value: function reset() {
+          var formState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          this._applyFormState(formState);
+
+          this.markAsPristine(options);
+          this.markAsUntouched(options);
+          this.setValue(this.value, options);
+          this._pendingChange = false;
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateValue",
+        value: function _updateValue() {}
+        /**
+         * \@internal
+         * @param {?} condition
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControls",
+        value: function _anyControls(condition) {
+          return false;
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_allControlsDisabled",
+        value: function _allControlsDisabled() {
+          return this.disabled;
+        }
+        /**
+         * Register a listener for change events.
+         *
+         * @param {?} fn The method that is called when the value changes
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnChange",
+        value: function registerOnChange(fn) {
+          this._onChange.push(fn);
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_clearChangeFns",
+        value: function _clearChangeFns() {
+          this._onChange = [];
+          this._onDisabledChange = [];
+
+          this._onCollectionChange =
+          /**
+          * @return {?}
+          */
+          function () {};
+        }
+        /**
+         * Register a listener for disabled events.
+         *
+         * @param {?} fn The method that is called when the disabled status changes.
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnDisabledChange",
+        value: function registerOnDisabledChange(fn) {
+          this._onDisabledChange.push(fn);
+        }
+        /**
+         * \@internal
+         * @param {?} cb
+         * @return {?}
+         */
+
+      }, {
+        key: "_forEachChild",
+        value: function _forEachChild(cb) {}
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_syncPendingControls",
+        value: function _syncPendingControls() {
+          if (this.updateOn === 'submit') {
+            if (this._pendingDirty) this.markAsDirty();
+            if (this._pendingTouched) this.markAsTouched();
+
+            if (this._pendingChange) {
+              this.setValue(this._pendingValue, {
+                onlySelf: true,
+                emitModelToViewChange: false
+              });
+              return true;
+            }
+          }
+
+          return false;
+        }
+        /**
+         * @private
+         * @param {?} formState
+         * @return {?}
+         */
+
+      }, {
+        key: "_applyFormState",
+        value: function _applyFormState(formState) {
+          if (this._isBoxedValue(formState)) {
+            /** @type {?} */
+            this.value = this._pendingValue = formState.value;
+            formState.disabled ? this.disable({
+              onlySelf: true,
+              emitEvent: false
+            }) : this.enable({
+              onlySelf: true,
+              emitEvent: false
+            });
+          } else {
+            /** @type {?} */
+            this.value = this._pendingValue = formState;
+          }
+        }
+      }]);
+
+      return FormControl;
+    }(AbstractControl);
+
+    if (false) {}
+    /**
+     * Tracks the value and validity state of a group of `FormControl` instances.
+     *
+     * A `FormGroup` aggregates the values of each child `FormControl` into one object,
+     * with each control name as the key.  It calculates its status by reducing the status values
+     * of its children. For example, if one of the controls in a group is invalid, the entire
+     * group becomes invalid.
+     *
+     * `FormGroup` is one of the three fundamental building blocks used to define forms in Angular,
+     * along with `FormControl` and `FormArray`.
+     *
+     * When instantiating a `FormGroup`, pass in a collection of child controls as the first
+     * argument. The key for each child registers the name for the control.
+     *
+     * \@usageNotes
+     *
+     * ### Create a form group with 2 controls
+     *
+     * ```
+     * const form = new FormGroup({
+     *   first: new FormControl('Nancy', Validators.minLength(2)),
+     *   last: new FormControl('Drew'),
+     * });
+     *
+     * console.log(form.value);   // {first: 'Nancy', last; 'Drew'}
+     * console.log(form.status);  // 'VALID'
+     * ```
+     *
+     * ### Create a form group with a group-level validator
+     *
+     * You include group-level validators as the second arg, or group-level async
+     * validators as the third arg. These come in handy when you want to perform validation
+     * that considers the value of more than one child control.
+     *
+     * ```
+     * const form = new FormGroup({
+     *   password: new FormControl('', Validators.minLength(2)),
+     *   passwordConfirm: new FormControl('', Validators.minLength(2)),
+     * }, passwordMatchValidator);
+     *
+     *
+     * function passwordMatchValidator(g: FormGroup) {
+     *    return g.get('password').value === g.get('passwordConfirm').value
+     *       ? null : {'mismatch': true};
+     * }
+     * ```
+     *
+     * Like `FormControl` instances, you choose to pass in
+     * validators and async validators as part of an options object.
+     *
+     * ```
+     * const form = new FormGroup({
+     *   password: new FormControl('')
+     *   passwordConfirm: new FormControl('')
+     * }, { validators: passwordMatchValidator, asyncValidators: otherValidator });
+     * ```
+     *
+     * ### Set the updateOn property for all controls in a form group
+     *
+     * The options object is used to set a default value for each child
+     * control's `updateOn` property. If you set `updateOn` to `'blur'` at the
+     * group level, all child controls default to 'blur', unless the child
+     * has explicitly specified a different `updateOn` value.
+     *
+     * ```ts
+     * const c = new FormGroup({
+     *   one: new FormControl()
+     * }, { updateOn: 'blur' });
+     * ```
+     *
+     * \@publicApi
+     */
+
+
+    var FormGroup =
+    /*#__PURE__*/
+    function (_AbstractControl2) {
+      _inherits(FormGroup, _AbstractControl2);
+
+      /**
+       * Creates a new `FormGroup` instance.
+       *
+       * @param {?} controls A collection of child controls. The key for each child is the name
+       * under which it is registered.
+       *
+       * @param {?=} validatorOrOpts A synchronous validator function, or an array of
+       * such functions, or an `AbstractControlOptions` object that contains validation functions
+       * and a validation trigger.
+       *
+       * @param {?=} asyncValidator A single async validator or array of async validator functions
+       *
+       */
+      function FormGroup(controls, validatorOrOpts, asyncValidator) {
+        var _this74;
+
+        _classCallCheck(this, FormGroup);
+
+        _this74 = _possibleConstructorReturn(this, _getPrototypeOf(FormGroup).call(this, coerceToValidator(validatorOrOpts), coerceToAsyncValidator(asyncValidator, validatorOrOpts)));
+        _this74.controls = controls;
+
+        _this74._initObservables();
+
+        _this74._setUpdateStrategy(validatorOrOpts);
+
+        _this74._setUpControls();
+
+        _this74.updateValueAndValidity({
+          onlySelf: true,
+          emitEvent: false
+        });
+
+        return _this74;
+      }
+      /**
+       * Registers a control with the group's list of controls.
+       *
+       * This method does not update the value or validity of the control.
+       * Use {\@link FormGroup#addControl addControl} instead.
+       *
+       * @param {?} name The control name to register in the collection
+       * @param {?} control Provides the control for the given name
+       * @return {?}
+       */
+
+
+      _createClass2(FormGroup, [{
+        key: "registerControl",
+        value: function registerControl(name, control) {
+          if (this.controls[name]) return this.controls[name];
+          this.controls[name] = control;
+          control.setParent(this);
+
+          control._registerOnCollectionChange(this._onCollectionChange);
+
+          return control;
+        }
+        /**
+         * Add a control to this group.
+         *
+         * This method also updates the value and validity of the control.
+         *
+         * @param {?} name The control name to add to the collection
+         * @param {?} control Provides the control for the given name
+         * @return {?}
+         */
+
+      }, {
+        key: "addControl",
+        value: function addControl(name, control) {
+          this.registerControl(name, control);
+          this.updateValueAndValidity();
+
+          this._onCollectionChange();
+        }
+        /**
+         * Remove a control from this group.
+         *
+         * @param {?} name The control name to remove from the collection
+         * @return {?}
+         */
+
+      }, {
+        key: "removeControl",
+        value: function removeControl(name) {
+          if (this.controls[name]) this.controls[name]._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {});
+          delete this.controls[name];
+          this.updateValueAndValidity();
+
+          this._onCollectionChange();
+        }
+        /**
+         * Replace an existing control.
+         *
+         * @param {?} name The control name to replace in the collection
+         * @param {?} control Provides the control for the given name
+         * @return {?}
+         */
+
+      }, {
+        key: "setControl",
+        value: function setControl(name, control) {
+          if (this.controls[name]) this.controls[name]._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {});
+          delete this.controls[name];
+          if (control) this.registerControl(name, control);
+          this.updateValueAndValidity();
+
+          this._onCollectionChange();
+        }
+        /**
+         * Check whether there is an enabled control with the given name in the group.
+         *
+         * Reports false for disabled controls. If you'd like to check for existence in the group
+         * only, use {\@link AbstractControl#get get} instead.
+         *
+         * @param {?} controlName The control name to check for existence in the collection
+         *
+         * @return {?} false for disabled controls, true otherwise.
+         */
+
+      }, {
+        key: "contains",
+        value: function contains(controlName) {
+          return this.controls.hasOwnProperty(controlName) && this.controls[controlName].enabled;
+        }
+        /**
+         * Sets the value of the `FormGroup`. It accepts an object that matches
+         * the structure of the group, with control names as keys.
+         *
+         * \@usageNotes
+         * ### Set the complete value for the form group
+         *
+         * ```
+         * const form = new FormGroup({
+         *   first: new FormControl(),
+         *   last: new FormControl()
+         * });
+         *
+         * console.log(form.value);   // {first: null, last: null}
+         *
+         * form.setValue({first: 'Nancy', last: 'Drew'});
+         * console.log(form.value);   // {first: 'Nancy', last: 'Drew'}
+         * ```
+         *
+         * @throws When strict checks fail, such as setting the value of a control
+         * that doesn't exist or if you exclude a value of a control that does exist.
+         *
+         * @param {?} value The new value for the control that matches the structure of the group.
+         * @param {?=} options Configuration options that determine how the control propagates changes
+         * and emits events after the value changes.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         *
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+         * false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control value is updated.
+         * When false, no events are emitted.
+         * @return {?}
+         */
+
+      }, {
+        key: "setValue",
+        value: function setValue(value) {
+          var _this75 = this;
+
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          this._checkAllValuesPresent(value);
+
+          Object.keys(value).forEach(
+          /**
+          * @param {?} name
+          * @return {?}
+          */
+          function (name) {
+            _this75._throwIfControlMissing(name);
+
+            _this75.controls[name].setValue(value[name], {
+              onlySelf: true,
+              emitEvent: options.emitEvent
+            });
+          });
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * Patches the value of the `FormGroup`. It accepts an object with control
+         * names as keys, and does its best to match the values to the correct controls
+         * in the group.
+         *
+         * It accepts both super-sets and sub-sets of the group without throwing an error.
+         *
+         * \@usageNotes
+         * ### Patch the value for a form group
+         *
+         * ```
+         * const form = new FormGroup({
+         *    first: new FormControl(),
+         *    last: new FormControl()
+         * });
+         * console.log(form.value);   // {first: null, last: null}
+         *
+         * form.patchValue({first: 'Nancy'});
+         * console.log(form.value);   // {first: 'Nancy', last: null}
+         * ```
+         *
+         * @param {?} value The object that matches the structure of the group.
+         * @param {?=} options Configuration options that determine how the control propagates changes and
+         * emits events after the value is patched.
+         * * `onlySelf`: When true, each change only affects this control and not its parent. Default is
+         * true.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control value is updated.
+         * When false, no events are emitted.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         * @return {?}
+         */
+
+      }, {
+        key: "patchValue",
+        value: function patchValue(value) {
+          var _this76 = this;
+
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          Object.keys(value).forEach(
+          /**
+          * @param {?} name
+          * @return {?}
+          */
+          function (name) {
+            if (_this76.controls[name]) {
+              _this76.controls[name].patchValue(value[name], {
+                onlySelf: true,
+                emitEvent: options.emitEvent
+              });
+            }
+          });
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * Resets the `FormGroup`, marks all descendants are marked `pristine` and `untouched`, and
+         * the value of all descendants to null.
+         *
+         * You reset to a specific form state by passing in a map of states
+         * that matches the structure of your form, with control names as keys. The state
+         * is a standalone value or a form state object with both a value and a disabled
+         * status.
+         *
+         * \@usageNotes
+         *
+         * ### Reset the form group values
+         *
+         * ```ts
+         * const form = new FormGroup({
+         *   first: new FormControl('first name'),
+         *   last: new FormControl('last name')
+         * });
+         *
+         * console.log(form.value);  // {first: 'first name', last: 'last name'}
+         *
+         * form.reset({ first: 'name', last: 'last name' });
+         *
+         * console.log(form.value);  // {first: 'name', last: 'last name'}
+         * ```
+         *
+         * ### Reset the form group values and disabled status
+         *
+         * ```
+         * const form = new FormGroup({
+         *   first: new FormControl('first name'),
+         *   last: new FormControl('last name')
+         * });
+         *
+         * form.reset({
+         *   first: {value: 'name', disabled: true},
+         *   last: 'last'
+         * });
+         *
+         * console.log(this.form.value);  // {first: 'name', last: 'last name'}
+         * console.log(this.form.get('first').status);  // 'DISABLED'
+         * ```
+         * @param {?=} value Resets the control with an initial value,
+         * or an object that defines the initial value and disabled state.
+         *
+         * @param {?=} options Configuration options that determine how the control propagates changes
+         * and emits events when the group is reset.
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default is
+         * false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is reset.
+         * When false, no events are emitted.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "reset",
+        value: function reset() {
+          var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (control, name) {
+            control.reset(value[name], {
+              onlySelf: true,
+              emitEvent: options.emitEvent
+            });
+          });
+
+          this._updatePristine(options);
+
+          this._updateTouched(options);
+
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * The aggregate value of the `FormGroup`, including any disabled controls.
+         *
+         * Retrieves all values regardless of disabled status.
+         * The `value` property is the best way to get the value of the group, because
+         * it excludes disabled controls in the `FormGroup`.
+         * @return {?}
+         */
+
+      }, {
+        key: "getRawValue",
+        value: function getRawValue() {
+          return this._reduceChildren({},
+          /**
+          * @param {?} acc
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (acc, control, name) {
+            acc[name] = control instanceof FormControl ? control.value :
+            /** @type {?} */
+            control.getRawValue();
+            return acc;
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_syncPendingControls",
+        value: function _syncPendingControls() {
+          /** @type {?} */
+          var subtreeUpdated = this._reduceChildren(false,
+          /**
+          * @param {?} updated
+          * @param {?} child
+          * @return {?}
+          */
+          function (updated, child) {
+            return child._syncPendingControls() ? true : updated;
+          });
+
+          if (subtreeUpdated) this.updateValueAndValidity({
+            onlySelf: true
+          });
+          return subtreeUpdated;
+        }
+        /**
+         * \@internal
+         * @param {?} name
+         * @return {?}
+         */
+
+      }, {
+        key: "_throwIfControlMissing",
+        value: function _throwIfControlMissing(name) {
+          if (!Object.keys(this.controls).length) {
+            throw new Error("\n        There are no form controls registered with this group yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+          }
+
+          if (!this.controls[name]) {
+            throw new Error("Cannot find form control with name: ".concat(name, "."));
+          }
+        }
+        /**
+         * \@internal
+         * @param {?} cb
+         * @return {?}
+         */
+
+      }, {
+        key: "_forEachChild",
+        value: function _forEachChild(cb) {
+          var _this77 = this;
+
+          Object.keys(this.controls).forEach(
+          /**
+          * @param {?} k
+          * @return {?}
+          */
+          function (k) {
+            return cb(_this77.controls[k], k);
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpControls",
+        value: function _setUpControls() {
+          var _this78 = this;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            control.setParent(_this78);
+
+            control._registerOnCollectionChange(_this78._onCollectionChange);
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateValue",
+        value: function _updateValue() {
+          /** @type {?} */
+          this.value = this._reduceValue();
+        }
+        /**
+         * \@internal
+         * @param {?} condition
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControls",
+        value: function _anyControls(condition) {
+          var _this79 = this;
+
+          /** @type {?} */
+          var res = false;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (control, name) {
+            res = res || _this79.contains(name) && condition(control);
+          });
+
+          return res;
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_reduceValue",
+        value: function _reduceValue() {
+          var _this80 = this;
+
+          return this._reduceChildren({},
+          /**
+          * @param {?} acc
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (acc, control, name) {
+            if (control.enabled || _this80.disabled) {
+              acc[name] = control.value;
+            }
+
+            return acc;
+          });
+        }
+        /**
+         * \@internal
+         * @param {?} initValue
+         * @param {?} fn
+         * @return {?}
+         */
+
+      }, {
+        key: "_reduceChildren",
+        value: function _reduceChildren(initValue, fn) {
+          /** @type {?} */
+          var res = initValue;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (control, name) {
+            res = fn(res, control, name);
+          });
+
+          return res;
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_allControlsDisabled",
+        value: function _allControlsDisabled() {
+          for (var _i25 = 0, _Object$keys3 = Object.keys(this.controls); _i25 < _Object$keys3.length; _i25++) {
+            var controlName = _Object$keys3[_i25];
+
+            if (this.controls[controlName].enabled) {
+              return false;
+            }
+          }
+
+          return Object.keys(this.controls).length > 0 || this.disabled;
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkAllValuesPresent",
+        value: function _checkAllValuesPresent(value) {
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} name
+          * @return {?}
+          */
+          function (control, name) {
+            if (value[name] === undefined) {
+              throw new Error("Must supply a value for form control with name: '".concat(name, "'."));
+            }
+          });
+        }
+      }]);
+
+      return FormGroup;
+    }(AbstractControl);
+
+    if (false) {}
+    /**
+     * Tracks the value and validity state of an array of `FormControl`,
+     * `FormGroup` or `FormArray` instances.
+     *
+     * A `FormArray` aggregates the values of each child `FormControl` into an array.
+     * It calculates its status by reducing the status values of its children. For example, if one of
+     * the controls in a `FormArray` is invalid, the entire array becomes invalid.
+     *
+     * `FormArray` is one of the three fundamental building blocks used to define forms in Angular,
+     * along with `FormControl` and `FormGroup`.
+     *
+     * \@usageNotes
+     *
+     * ### Create an array of form controls
+     *
+     * ```
+     * const arr = new FormArray([
+     *   new FormControl('Nancy', Validators.minLength(2)),
+     *   new FormControl('Drew'),
+     * ]);
+     *
+     * console.log(arr.value);   // ['Nancy', 'Drew']
+     * console.log(arr.status);  // 'VALID'
+     * ```
+     *
+     * ### Create a form array with array-level validators
+     *
+     * You include array-level validators and async validators. These come in handy
+     * when you want to perform validation that considers the value of more than one child
+     * control.
+     *
+     * The two types of validators are passed in separately as the second and third arg
+     * respectively, or together as part of an options object.
+     *
+     * ```
+     * const arr = new FormArray([
+     *   new FormControl('Nancy'),
+     *   new FormControl('Drew')
+     * ], {validators: myValidator, asyncValidators: myAsyncValidator});
+     * ```
+     *
+     * ### Set the updateOn property for all controls in a form array
+     *
+     * The options object is used to set a default value for each child
+     * control's `updateOn` property. If you set `updateOn` to `'blur'` at the
+     * array level, all child controls default to 'blur', unless the child
+     * has explicitly specified a different `updateOn` value.
+     *
+     * ```ts
+     * const arr = new FormArray([
+     *    new FormControl()
+     * ], {updateOn: 'blur'});
+     * ```
+     *
+     * ### Adding or removing controls from a form array
+     *
+     * To change the controls in the array, use the `push`, `insert`, `removeAt` or `clear` methods
+     * in `FormArray` itself. These methods ensure the controls are properly tracked in the
+     * form's hierarchy. Do not modify the array of `AbstractControl`s used to instantiate
+     * the `FormArray` directly, as that result in strange and unexpected behavior such
+     * as broken change detection.
+     *
+     * \@publicApi
+     */
+
+
+    var FormArray =
+    /*#__PURE__*/
+    function (_AbstractControl3) {
+      _inherits(FormArray, _AbstractControl3);
+
+      /**
+       * Creates a new `FormArray` instance.
+       *
+       * @param {?} controls An array of child controls. Each child control is given an index
+       * where it is registered.
+       *
+       * @param {?=} validatorOrOpts A synchronous validator function, or an array of
+       * such functions, or an `AbstractControlOptions` object that contains validation functions
+       * and a validation trigger.
+       *
+       * @param {?=} asyncValidator A single async validator or array of async validator functions
+       *
+       */
+      function FormArray(controls, validatorOrOpts, asyncValidator) {
+        var _this81;
+
+        _classCallCheck(this, FormArray);
+
+        _this81 = _possibleConstructorReturn(this, _getPrototypeOf(FormArray).call(this, coerceToValidator(validatorOrOpts), coerceToAsyncValidator(asyncValidator, validatorOrOpts)));
+        _this81.controls = controls;
+
+        _this81._initObservables();
+
+        _this81._setUpdateStrategy(validatorOrOpts);
+
+        _this81._setUpControls();
+
+        _this81.updateValueAndValidity({
+          onlySelf: true,
+          emitEvent: false
+        });
+
+        return _this81;
+      }
+      /**
+       * Get the `AbstractControl` at the given `index` in the array.
+       *
+       * @param {?} index Index in the array to retrieve the control
+       * @return {?}
+       */
+
+
+      _createClass2(FormArray, [{
+        key: "at",
+        value: function at(index) {
+          return this.controls[index];
+        }
+        /**
+         * Insert a new `AbstractControl` at the end of the array.
+         *
+         * @param {?} control Form control to be inserted
+         * @return {?}
+         */
+
+      }, {
+        key: "push",
+        value: function push(control) {
+          this.controls.push(control);
+
+          this._registerControl(control);
+
+          this.updateValueAndValidity();
+
+          this._onCollectionChange();
+        }
+        /**
+         * Insert a new `AbstractControl` at the given `index` in the array.
+         *
+         * @param {?} index Index in the array to insert the control
+         * @param {?} control Form control to be inserted
+         * @return {?}
+         */
+
+      }, {
+        key: "insert",
+        value: function insert(index, control) {
+          this.controls.splice(index, 0, control);
+
+          this._registerControl(control);
+
+          this.updateValueAndValidity();
+        }
+        /**
+         * Remove the control at the given `index` in the array.
+         *
+         * @param {?} index Index in the array to remove the control
+         * @return {?}
+         */
+
+      }, {
+        key: "removeAt",
+        value: function removeAt(index) {
+          if (this.controls[index]) this.controls[index]._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {});
+          this.controls.splice(index, 1);
+          this.updateValueAndValidity();
+        }
+        /**
+         * Replace an existing control.
+         *
+         * @param {?} index Index in the array to replace the control
+         * @param {?} control The `AbstractControl` control to replace the existing control
+         * @return {?}
+         */
+
+      }, {
+        key: "setControl",
+        value: function setControl(index, control) {
+          if (this.controls[index]) this.controls[index]._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {});
+          this.controls.splice(index, 1);
+
+          if (control) {
+            this.controls.splice(index, 0, control);
+
+            this._registerControl(control);
+          }
+
+          this.updateValueAndValidity();
+
+          this._onCollectionChange();
+        }
+        /**
+         * Length of the control array.
+         * @return {?}
+         */
+
+      }, {
+        key: "setValue",
+
+        /**
+         * Sets the value of the `FormArray`. It accepts an array that matches
+         * the structure of the control.
+         *
+         * This method performs strict checks, and throws an error if you try
+         * to set the value of a control that doesn't exist or if you exclude the
+         * value of a control.
+         *
+         * \@usageNotes
+         * ### Set the values for the controls in the form array
+         *
+         * ```
+         * const arr = new FormArray([
+         *   new FormControl(),
+         *   new FormControl()
+         * ]);
+         * console.log(arr.value);   // [null, null]
+         *
+         * arr.setValue(['Nancy', 'Drew']);
+         * console.log(arr.value);   // ['Nancy', 'Drew']
+         * ```
+         *
+         * @param {?} value Array of values for the controls
+         * @param {?=} options Configure options that determine how the control propagates changes and
+         * emits events after the value changes
+         *
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default
+         * is false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control value is updated.
+         * When false, no events are emitted.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         * @return {?}
+         */
+        value: function setValue(value) {
+          var _this82 = this;
+
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          this._checkAllValuesPresent(value);
+
+          value.forEach(
+          /**
+          * @param {?} newValue
+          * @param {?} index
+          * @return {?}
+          */
+          function (newValue, index) {
+            _this82._throwIfControlMissing(index);
+
+            _this82.at(index).setValue(newValue, {
+              onlySelf: true,
+              emitEvent: options.emitEvent
+            });
+          });
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * Patches the value of the `FormArray`. It accepts an array that matches the
+         * structure of the control, and does its best to match the values to the correct
+         * controls in the group.
+         *
+         * It accepts both super-sets and sub-sets of the array without throwing an error.
+         *
+         * \@usageNotes
+         * ### Patch the values for controls in a form array
+         *
+         * ```
+         * const arr = new FormArray([
+         *    new FormControl(),
+         *    new FormControl()
+         * ]);
+         * console.log(arr.value);   // [null, null]
+         *
+         * arr.patchValue(['Nancy']);
+         * console.log(arr.value);   // ['Nancy', null]
+         * ```
+         *
+         * @param {?} value Array of latest values for the controls
+         * @param {?=} options Configure options that determine how the control propagates changes and
+         * emits events after the value changes
+         *
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default
+         * is false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control value is updated.
+         * When false, no events are emitted.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         * @return {?}
+         */
+
+      }, {
+        key: "patchValue",
+        value: function patchValue(value) {
+          var _this83 = this;
+
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+          value.forEach(
+          /**
+          * @param {?} newValue
+          * @param {?} index
+          * @return {?}
+          */
+          function (newValue, index) {
+            if (_this83.at(index)) {
+              _this83.at(index).patchValue(newValue, {
+                onlySelf: true,
+                emitEvent: options.emitEvent
+              });
+            }
+          });
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * Resets the `FormArray` and all descendants are marked `pristine` and `untouched`, and the
+         * value of all descendants to null or null maps.
+         *
+         * You reset to a specific form state by passing in an array of states
+         * that matches the structure of the control. The state is a standalone value
+         * or a form state object with both a value and a disabled status.
+         *
+         * \@usageNotes
+         * ### Reset the values in a form array
+         *
+         * ```ts
+         * const arr = new FormArray([
+         *    new FormControl(),
+         *    new FormControl()
+         * ]);
+         * arr.reset(['name', 'last name']);
+         *
+         * console.log(this.arr.value);  // ['name', 'last name']
+         * ```
+         *
+         * ### Reset the values in a form array and the disabled status for the first control
+         *
+         * ```
+         * this.arr.reset([
+         *   {value: 'name', disabled: true},
+         *   'last'
+         * ]);
+         *
+         * console.log(this.arr.value);  // ['name', 'last name']
+         * console.log(this.arr.get(0).status);  // 'DISABLED'
+         * ```
+         *
+         * @param {?=} value Array of values for the controls
+         * @param {?=} options Configure options that determine how the control propagates changes and
+         * emits events after the value changes
+         *
+         * * `onlySelf`: When true, each change only affects this control, and not its parent. Default
+         * is false.
+         * * `emitEvent`: When true or not supplied (the default), both the `statusChanges` and
+         * `valueChanges`
+         * observables emit events with the latest status and value when the control is reset.
+         * When false, no events are emitted.
+         * The configuration options are passed to the {\@link AbstractControl#updateValueAndValidity
+         * updateValueAndValidity} method.
+         * @return {?}
+         */
+
+      }, {
+        key: "reset",
+        value: function reset() {
+          var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} index
+          * @return {?}
+          */
+          function (control, index) {
+            control.reset(value[index], {
+              onlySelf: true,
+              emitEvent: options.emitEvent
+            });
+          });
+
+          this._updatePristine(options);
+
+          this._updateTouched(options);
+
+          this.updateValueAndValidity(options);
+        }
+        /**
+         * The aggregate value of the array, including any disabled controls.
+         *
+         * Reports all values regardless of disabled status.
+         * For enabled controls only, the `value` property is the best way to get the value of the array.
+         * @return {?}
+         */
+
+      }, {
+        key: "getRawValue",
+        value: function getRawValue() {
+          return this.controls.map(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control instanceof FormControl ? control.value :
+            /** @type {?} */
+            control.getRawValue();
+          });
+        }
+        /**
+         * Remove all controls in the `FormArray`.
+         *
+         * \@usageNotes
+         * ### Remove all elements from a FormArray
+         *
+         * ```ts
+         * const arr = new FormArray([
+         *    new FormControl(),
+         *    new FormControl()
+         * ]);
+         * console.log(arr.length);  // 2
+         *
+         * arr.clear();
+         * console.log(arr.length);  // 0
+         * ```
+         *
+         * It's a simpler and more efficient alternative to removing all elements one by one:
+         *
+         * ```ts
+         * const arr = new FormArray([
+         *    new FormControl(),
+         *    new FormControl()
+         * ]);
+         *
+         * while (arr.length) {
+         *    arr.removeAt(0);
+         * }
+         * ```
+         * @return {?}
+         */
+
+      }, {
+        key: "clear",
+        value: function clear() {
+          if (this.controls.length < 1) return;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control._registerOnCollectionChange(
+            /**
+            * @return {?}
+            */
+            function () {});
+          });
+
+          this.controls.splice(0);
+          this.updateValueAndValidity();
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_syncPendingControls",
+        value: function _syncPendingControls() {
+          /** @type {?} */
+          var subtreeUpdated = this.controls.reduce(
+          /**
+          * @param {?} updated
+          * @param {?} child
+          * @return {?}
+          */
+          function (updated, child) {
+            return child._syncPendingControls() ? true : updated;
+          }, false);
+          if (subtreeUpdated) this.updateValueAndValidity({
+            onlySelf: true
+          });
+          return subtreeUpdated;
+        }
+        /**
+         * \@internal
+         * @param {?} index
+         * @return {?}
+         */
+
+      }, {
+        key: "_throwIfControlMissing",
+        value: function _throwIfControlMissing(index) {
+          if (!this.controls.length) {
+            throw new Error("\n        There are no form controls registered with this array yet.  If you're using ngModel,\n        you may want to check next tick (e.g. use setTimeout).\n      ");
+          }
+
+          if (!this.at(index)) {
+            throw new Error("Cannot find form control at index ".concat(index));
+          }
+        }
+        /**
+         * \@internal
+         * @param {?} cb
+         * @return {?}
+         */
+
+      }, {
+        key: "_forEachChild",
+        value: function _forEachChild(cb) {
+          this.controls.forEach(
+          /**
+          * @param {?} control
+          * @param {?} index
+          * @return {?}
+          */
+          function (control, index) {
+            cb(control, index);
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateValue",
+        value: function _updateValue() {
+          var _this84 = this;
+
+          /** @type {?} */
+          this.value = this.controls.filter(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.enabled || _this84.disabled;
+          }).map(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.value;
+          });
+        }
+        /**
+         * \@internal
+         * @param {?} condition
+         * @return {?}
+         */
+
+      }, {
+        key: "_anyControls",
+        value: function _anyControls(condition) {
+          return this.controls.some(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return control.enabled && condition(control);
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpControls",
+        value: function _setUpControls() {
+          var _this85 = this;
+
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @return {?}
+          */
+          function (control) {
+            return _this85._registerControl(control);
+          });
+        }
+        /**
+         * \@internal
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkAllValuesPresent",
+        value: function _checkAllValuesPresent(value) {
+          this._forEachChild(
+          /**
+          * @param {?} control
+          * @param {?} i
+          * @return {?}
+          */
+          function (control, i) {
+            if (value[i] === undefined) {
+              throw new Error("Must supply a value for form control at index: ".concat(i, "."));
+            }
+          });
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_allControlsDisabled",
+        value: function _allControlsDisabled() {
+          var _iteratorNormalCompletion13 = true;
+          var _didIteratorError13 = false;
+          var _iteratorError13 = undefined;
+
+          try {
+            for (var _iterator13 = this.controls[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
+              var control = _step13.value;
+              if (control.enabled) return false;
+            }
+          } catch (err) {
+            _didIteratorError13 = true;
+            _iteratorError13 = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion13 && _iterator13.return != null) {
+                _iterator13.return();
+              }
+            } finally {
+              if (_didIteratorError13) {
+                throw _iteratorError13;
+              }
+            }
+          }
+
+          return this.controls.length > 0 || this.disabled;
+        }
+        /**
+         * @private
+         * @param {?} control
+         * @return {?}
+         */
+
+      }, {
+        key: "_registerControl",
+        value: function _registerControl(control) {
+          control.setParent(this);
+
+          control._registerOnCollectionChange(this._onCollectionChange);
+        }
+      }, {
+        key: "length",
+        get: function get() {
+          return this.controls.length;
+        }
+      }]);
+
+      return FormArray;
+    }(AbstractControl);
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var formDirectiveProvider = {
+      provide: ControlContainer,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return NgForm;
+      })
+    };
+
+    var ɵ0 =
+    /**
+    * @return {?}
+    */
+    function ɵ0() {
+      return Promise.resolve(null);
+    };
+    /** @type {?} */
+
+
+    var resolvedPromise = ɵ0();
+    /**
+     * \@description
+     * Creates a top-level `FormGroup` instance and binds it to a form
+     * to track aggregate form value and validation status.
+     *
+     * As soon as you import the `FormsModule`, this directive becomes active by default on
+     * all `<form>` tags.  You don't need to add a special selector.
+     *
+     * You optionally export the directive into a local template variable using `ngForm` as the key
+     * (ex: `#myForm="ngForm"`). This is optional, but useful.  Many properties from the underlying
+     * `FormGroup` instance are duplicated on the directive itself, so a reference to it
+     * gives you access to the aggregate value and validity status of the form, as well as
+     * user interaction properties like `dirty` and `touched`.
+     *
+     * To register child controls with the form, use `NgModel` with a `name`
+     * attribute. You may use `NgModelGroup` to create sub-groups within the form.
+     *
+     * If necessary, listen to the directive's `ngSubmit` event to be notified when the user has
+     * triggered a form submission. The `ngSubmit` event emits the original form
+     * submission event.
+     *
+     * In template driven forms, all `<form>` tags are automatically tagged as `NgForm`.
+     * To import the `FormsModule` but skip its usage in some forms,
+     * for example, to use native HTML5 validation, add the `ngNoForm` and the `<form>`
+     * tags won't create an `NgForm` directive. In reactive forms, using `ngNoForm` is
+     * unnecessary because the `<form>` tags are inert. In that case, you would
+     * refrain from using the `formGroup` directive.
+     *
+     * \@usageNotes
+     *
+     * ### Migrating from deprecated ngForm selector
+     *
+     * Support for using `ngForm` element selector has been deprecated in Angular v6 and will be removed
+     * in Angular v9.
+     *
+     * This has been deprecated to keep selectors consistent with other core Angular selectors,
+     * as element selectors are typically written in kebab-case.
+     *
+     * Now deprecated:
+     * ```html
+     * <ngForm #myForm="ngForm">
+     * ```
+     *
+     * After:
+     * ```html
+     * <ng-form #myForm="ngForm">
+     * ```
+     *
+     * ### Listening for form submission
+     *
+     * The following example shows how to capture the form values from the "ngSubmit" event.
+     *
+     * {\@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+     *
+     * ### Setting the update options
+     *
+     * The following example shows you how to change the "updateOn" option from its default using
+     * ngFormOptions.
+     *
+     * ```html
+     * <form [ngFormOptions]="{updateOn: 'blur'}">
+     *    <input name="one" ngModel>  <!-- this ngModel will update on blur -->
+     * </form>
+     * ```
+     *
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NgForm =
+    /*#__PURE__*/
+    function (_ControlContainer) {
+      _inherits(NgForm, _ControlContainer);
+
+      /**
+       * @param {?} validators
+       * @param {?} asyncValidators
+       */
+      function NgForm(validators, asyncValidators) {
+        var _this86;
+
+        _classCallCheck(this, NgForm);
+
+        _this86 = _possibleConstructorReturn(this, _getPrototypeOf(NgForm).call(this));
+        /**
+         * \@description
+         * Returns whether the form submission has been triggered.
+         */
+
+        _this86.submitted = false;
+        _this86._directives = [];
+        /**
+         * \@description
+         * Event emitter for the "ngSubmit" event
+         */
+
+        _this86.ngSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this86.form = new FormGroup({}, composeValidators(validators), composeAsyncValidators(asyncValidators));
+        return _this86;
+      }
+      /**
+       * \@description
+       * Lifecycle method called after the view is initialized. For internal use only.
+       * @return {?}
+       */
+
+
+      _createClass2(NgForm, [{
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
+          this._setUpdateStrategy();
+        }
+        /**
+         * \@description
+         * The directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "addControl",
+
+        /**
+         * \@description
+         * Method that sets up the control directive in this group, re-calculates its value
+         * and validity, and adds the instance to the internal list of directives.
+         *
+         * @param {?} dir The `NgModel` directive instance.
+         * @return {?}
+         */
+        value: function addControl(dir) {
+          var _this87 = this;
+
+          resolvedPromise.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            /** @type {?} */
+            var container = _this87._findContainer(dir.path);
+
+            /** @type {?} */
+            dir.control =
+            /** @type {?} */
+            container.registerControl(dir.name, dir.control);
+            setUpControl(dir.control, dir);
+            dir.control.updateValueAndValidity({
+              emitEvent: false
+            });
+
+            _this87._directives.push(dir);
+          });
+        }
+        /**
+         * \@description
+         * Retrieves the `FormControl` instance from the provided `NgModel` directive.
+         *
+         * @param {?} dir The `NgModel` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "getControl",
+        value: function getControl(dir) {
+          return (
+            /** @type {?} */
+            this.form.get(dir.path)
+          );
+        }
+        /**
+         * \@description
+         * Removes the `NgModel` instance from the internal list of directives
+         *
+         * @param {?} dir The `NgModel` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "removeControl",
+        value: function removeControl(dir) {
+          var _this88 = this;
+
+          resolvedPromise.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            /** @type {?} */
+            var container = _this88._findContainer(dir.path);
+
+            if (container) {
+              container.removeControl(dir.name);
+            }
+
+            removeDir(_this88._directives, dir);
+          });
+        }
+        /**
+         * \@description
+         * Adds a new `NgModelGroup` directive instance to the form.
+         *
+         * @param {?} dir The `NgModelGroup` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "addFormGroup",
+        value: function addFormGroup(dir) {
+          var _this89 = this;
+
+          resolvedPromise.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            /** @type {?} */
+            var container = _this89._findContainer(dir.path);
+            /** @type {?} */
+
+
+            var group = new FormGroup({});
+            setUpFormContainer(group, dir);
+            container.registerControl(dir.name, group);
+            group.updateValueAndValidity({
+              emitEvent: false
+            });
+          });
+        }
+        /**
+         * \@description
+         * Removes the `NgModelGroup` directive instance from the form.
+         *
+         * @param {?} dir The `NgModelGroup` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "removeFormGroup",
+        value: function removeFormGroup(dir) {
+          var _this90 = this;
+
+          resolvedPromise.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            /** @type {?} */
+            var container = _this90._findContainer(dir.path);
+
+            if (container) {
+              container.removeControl(dir.name);
+            }
+          });
+        }
+        /**
+         * \@description
+         * Retrieves the `FormGroup` for a provided `NgModelGroup` directive instance
+         *
+         * @param {?} dir The `NgModelGroup` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "getFormGroup",
+        value: function getFormGroup(dir) {
+          return (
+            /** @type {?} */
+            this.form.get(dir.path)
+          );
+        }
+        /**
+         * Sets the new value for the provided `NgControl` directive.
+         *
+         * @param {?} dir The `NgControl` directive instance.
+         * @param {?} value The new value for the directive's control.
+         * @return {?}
+         */
+
+      }, {
+        key: "updateModel",
+        value: function updateModel(dir, value) {
+          var _this91 = this;
+
+          resolvedPromise.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            /** @type {?} */
+            var ctrl =
+            /** @type {?} */
+            _this91.form.get(
+            /** @type {?} */
+            dir.path);
+
+            ctrl.setValue(value);
+          });
+        }
+        /**
+         * \@description
+         * Sets the value for this `FormGroup`.
+         *
+         * @param {?} value The new value
+         * @return {?}
+         */
+
+      }, {
+        key: "setValue",
+        value: function setValue(value) {
+          this.control.setValue(value);
+        }
+        /**
+         * \@description
+         * Method called when the "submit" event is triggered on the form.
+         * Triggers the `ngSubmit` emitter to emit the "submit" event as its payload.
+         *
+         * @param {?} $event The "submit" event object
+         * @return {?}
+         */
+
+      }, {
+        key: "onSubmit",
+        value: function onSubmit($event) {
+          /** @type {?} */
+          this.submitted = true;
+          syncPendingControls(this.form, this._directives);
+          this.ngSubmit.emit($event);
+          return false;
+        }
+        /**
+         * \@description
+         * Method called when the "reset" event is triggered on the form.
+         * @return {?}
+         */
+
+      }, {
+        key: "onReset",
+        value: function onReset() {
+          this.resetForm();
+        }
+        /**
+         * \@description
+         * Resets the form to an initial value and resets its submitted status.
+         *
+         * @param {?=} value The new value for the form.
+         * @return {?}
+         */
+
+      }, {
+        key: "resetForm",
+        value: function resetForm() {
+          var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+          this.form.reset(value);
+
+          /** @type {?} */
+          this.submitted = false;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpdateStrategy",
+        value: function _setUpdateStrategy() {
+          if (this.options && this.options.updateOn != null) {
+            this.form._updateOn = this.options.updateOn;
+          }
+        }
+        /**
+         * \@internal
+         * @param {?} path
+         * @return {?}
+         */
+
+      }, {
+        key: "_findContainer",
+        value: function _findContainer(path) {
+          path.pop();
+          return path.length ?
+          /** @type {?} */
+          this.form.get(path) : this.form;
+        }
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this;
+        }
+        /**
+         * \@description
+         * The internal `FormGroup` instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "control",
+        get: function get() {
+          return this.form;
+        }
+        /**
+         * \@description
+         * Returns an array representing the path to this group. Because this directive
+         * always lives at the top level of a form, it is always an empty array.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return [];
+        }
+        /**
+         * \@description
+         * Returns a map of the controls in this group.
+         * @return {?}
+         */
+
+      }, {
+        key: "controls",
+        get: function get() {
+          return this.form.controls;
+        }
+      }]);
+
+      return NgForm;
+    }(ControlContainer);
+
+    NgForm.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'form:not([ngNoForm]):not([formGroup]),ngForm,ng-form,[ngForm]',
+        providers: [formDirectiveProvider],
+        host: {
+          '(submit)': 'onSubmit($event)',
+          '(reset)': 'onReset()'
+        },
+        outputs: ['ngSubmit'],
+        exportAs: 'ngForm'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgForm.ctorParameters = function () {
+      return [{
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }];
+    };
+
+    NgForm.propDecorators = {
+      options: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngFormOptions']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+
+    var TemplateDrivenErrors =
+    /*#__PURE__*/
+    function () {
+      function TemplateDrivenErrors() {
+        _classCallCheck(this, TemplateDrivenErrors);
+      }
+
+      _createClass2(TemplateDrivenErrors, null, [{
+        key: "modelParentException",
+
+        /**
+         * @return {?}
+         */
+        value: function modelParentException() {
+          throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroup directive.  Try using\n      formGroup's partner directive \"formControlName\" instead.  Example:\n\n      ".concat(FormErrorExamples.formControlName, "\n\n      Or, if you'd like to avoid registering this form control, indicate that it's standalone in ngModelOptions:\n\n      Example:\n\n      ").concat(FormErrorExamples.ngModelWithFormGroup));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "formGroupNameException",
+        value: function formGroupNameException() {
+          throw new Error("\n      ngModel cannot be used to register form controls with a parent formGroupName or formArrayName directive.\n\n      Option 1: Use formControlName instead of ngModel (reactive strategy):\n\n      ".concat(FormErrorExamples.formGroupName, "\n\n      Option 2:  Update ngModel's parent be ngModelGroup (template-driven strategy):\n\n      ").concat(FormErrorExamples.ngModelGroup));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "missingNameException",
+        value: function missingNameException() {
+          throw new Error("If ngModel is used within a form tag, either the name attribute must be set or the form\n      control must be defined as 'standalone' in ngModelOptions.\n\n      Example 1: <input [(ngModel)]=\"person.firstName\" name=\"first\">\n      Example 2: <input [(ngModel)]=\"person.firstName\" [ngModelOptions]=\"{standalone: true}\">");
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "modelGroupParentException",
+        value: function modelGroupParentException() {
+          throw new Error("\n      ngModelGroup cannot be used with a parent formGroup directive.\n\n      Option 1: Use formGroupName instead of ngModelGroup (reactive strategy):\n\n      ".concat(FormErrorExamples.formGroupName, "\n\n      Option 2:  Use a regular form tag instead of the formGroup directive (template-driven strategy):\n\n      ").concat(FormErrorExamples.ngModelGroup));
+        }
+        /**
+         * @return {?}
+         */
+
+      }, {
+        key: "ngFormWarning",
+        value: function ngFormWarning() {
+          console.warn("\n    It looks like you're using 'ngForm'.\n\n    Support for using the 'ngForm' element selector has been deprecated in Angular v6 and will be removed\n    in Angular v9.\n\n    Use 'ng-form' instead.\n\n    Before:\n    <ngForm #myForm=\"ngForm\">\n\n    After:\n    <ng-form #myForm=\"ngForm\">\n    ");
+        }
+      }]);
+
+      return TemplateDrivenErrors;
+    }();
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     * `InjectionToken` to provide to turn off the warning when using 'ngForm' deprecated selector.
+     * @type {?}
+     */
+
+
+    var NG_FORM_SELECTOR_WARNING = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('NgFormSelectorWarning');
+    /**
+     * This directive is solely used to display warnings when the deprecated `ngForm` selector is used.
+     *
+     * @deprecated in Angular v6 and will be removed in Angular v9.
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NgFormSelectorWarning =
+    /**
+     * @param {?} ngFormWarning
+     */
+    function NgFormSelectorWarning(ngFormWarning) {
+      _classCallCheck(this, NgFormSelectorWarning);
+
+      if ((!ngFormWarning || ngFormWarning === 'once') && !NgFormSelectorWarning._ngFormWarning || ngFormWarning === 'always') {
+        TemplateDrivenErrors.ngFormWarning();
+        NgFormSelectorWarning._ngFormWarning = true;
+      }
+    };
+    /**
+     * Static property used to track whether the deprecation warning for this selector has been sent.
+     * Used to support warning config of "once".
+     *
+     * \@internal
+     */
+
+
+    NgFormSelectorWarning._ngFormWarning = false;
+    NgFormSelectorWarning.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'ngForm'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgFormSelectorWarning.ctorParameters = function () {
+      return [{
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_FORM_SELECTOR_WARNING]
+        }]
+      }];
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     * A base class for code shared between the `NgModelGroup` and `FormGroupName` directives.
+     *
+     * \@publicApi
+     */
+
+
+    var AbstractFormGroupDirective =
+    /*#__PURE__*/
+    function (_ControlContainer2) {
+      _inherits(AbstractFormGroupDirective, _ControlContainer2);
+
+      function AbstractFormGroupDirective() {
+        _classCallCheck(this, AbstractFormGroupDirective);
+
+        return _possibleConstructorReturn(this, _getPrototypeOf(AbstractFormGroupDirective).apply(this, arguments));
+      }
+
+      _createClass2(AbstractFormGroupDirective, [{
+        key: "ngOnInit",
+
+        /**
+         * \@description
+         * An internal callback method triggered on the instance after the inputs are set.
+         * Registers the group with its parent group.
+         * @return {?}
+         */
+        value: function ngOnInit() {
+          this._checkParentType();
+
+          /** @type {?} */
+          this.formDirective.addFormGroup(this);
+        }
+        /**
+         * \@description
+         * An internal callback method triggered before the instance is destroyed.
+         * Removes the group from its parent group.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.formDirective) {
+            this.formDirective.removeFormGroup(this);
+          }
+        }
+        /**
+         * \@description
+         * The `FormGroup` bound to this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkParentType",
+
+        /**
+         * \@internal
+         * @return {?}
+         */
+        value: function _checkParentType() {}
+      }, {
+        key: "control",
+        get: function get() {
+          return (
+            /** @type {?} */
+            this.formDirective.getFormGroup(this)
+          );
+        }
+        /**
+         * \@description
+         * The path to this group from the top-level directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return controlPath(this.name, this._parent);
+        }
+        /**
+         * \@description
+         * The top-level directive for this group if present, otherwise null.
+         * @return {?}
+         */
+
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this._parent ? this._parent.formDirective : null;
+        }
+        /**
+         * \@description
+         * The synchronous validators registered with this group.
+         * @return {?}
+         */
+
+      }, {
+        key: "validator",
+        get: function get() {
+          return composeValidators(this._validators);
+        }
+        /**
+         * \@description
+         * The async validators registered with this group.
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return composeAsyncValidators(this._asyncValidators);
+        }
+      }]);
+
+      return AbstractFormGroupDirective;
+    }(ControlContainer);
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var modelGroupProvider = {
+      provide: ControlContainer,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return NgModelGroup;
+      })
+    };
+    /**
+     * \@description
+     * Creates and binds a `FormGroup` instance to a DOM element.
+     *
+     * This directive can only be used as a child of `NgForm` (within `<form>` tags).
+     *
+     * Use this directive to validate a sub-group of your form separately from the
+     * rest of your form, or if some values in your domain model make more sense
+     * to consume together in a nested object.
+     *
+     * Provide a name for the sub-group and it will become the key
+     * for the sub-group in the form's full value. If you need direct access, export the directive into
+     * a local template variable using `ngModelGroup` (ex: `#myGroup="ngModelGroup"`).
+     *
+     * \@usageNotes
+     *
+     * ### Consuming controls in a grouping
+     *
+     * The following example shows you how to combine controls together in a sub-group
+     * of the form.
+     *
+     * {\@example forms/ts/ngModelGroup/ng_model_group_example.ts region='Component'}
+     *
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NgModelGroup =
+    /*#__PURE__*/
+    function (_AbstractFormGroupDir) {
+      _inherits(NgModelGroup, _AbstractFormGroupDir);
+
+      /**
+       * @param {?} parent
+       * @param {?} validators
+       * @param {?} asyncValidators
+       */
+      function NgModelGroup(parent, validators, asyncValidators) {
+        var _this92;
+
+        _classCallCheck(this, NgModelGroup);
+
+        _this92 = _possibleConstructorReturn(this, _getPrototypeOf(NgModelGroup).call(this));
+        _this92._parent = parent;
+        _this92._validators = validators;
+        _this92._asyncValidators = asyncValidators;
+        return _this92;
+      }
+      /**
+       * \@internal
+       * @return {?}
+       */
+
+
+      _createClass2(NgModelGroup, [{
+        key: "_checkParentType",
+        value: function _checkParentType() {
+          if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+            TemplateDrivenErrors.modelGroupParentException();
+          }
+        }
+      }]);
+
+      return NgModelGroup;
+    }(AbstractFormGroupDirective);
+
+    NgModelGroup.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[ngModelGroup]',
+        providers: [modelGroupProvider],
+        exportAs: 'ngModelGroup'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgModelGroup.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }];
+    };
+
+    NgModelGroup.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngModelGroup']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var formControlBinding = {
+      provide: NgControl,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return NgModel;
+      })
+    };
+
+    var ɵ0$1 =
+    /**
+    * @return {?}
+    */
+    function ɵ0$1() {
+      return Promise.resolve(null);
+    };
+    /**
+     * `ngModel` forces an additional change detection run when its inputs change:
+     * E.g.:
+     * ```
+     * <div>{{myModel.valid}}</div>
+     * <input [(ngModel)]="myValue" #myModel="ngModel">
+     * ```
+     * I.e. `ngModel` can export itself on the element and then be used in the template.
+     * Normally, this would result in expressions before the `input` that use the exported directive
+     * to have and old value as they have been
+     * dirty checked before. As this is a very common case for `ngModel`, we added this second change
+     * detection run.
+     *
+     * Notes:
+     * - this is just one extra run no matter how many `ngModel` have been changed.
+     * - this is a general problem when using `exportAs` for directives!
+     * @type {?}
+     */
+
+
+    var resolvedPromise$1 = ɵ0$1();
+    /**
+     * \@description
+     * Creates a `FormControl` instance from a domain model and binds it
+     * to a form control element.
+     *
+     * The `FormControl` instance tracks the value, user interaction, and
+     * validation status of the control and keeps the view synced with the model. If used
+     * within a parent form, the directive also registers itself with the form as a child
+     * control.
+     *
+     * This directive is used by itself or as part of a larger form. Use the
+     * `ngModel` selector to activate it.
+     *
+     * It accepts a domain model as an optional `Input`. If you have a one-way binding
+     * to `ngModel` with `[]` syntax, changing the value of the domain model in the component
+     * class sets the value in the view. If you have a two-way binding with `[()]` syntax
+     * (also known as 'banana-box syntax'), the value in the UI always syncs back to
+     * the domain model in your class.
+     *
+     * To inspect the properties of the associated `FormControl` (like validity state),
+     * export the directive into a local template variable using `ngModel` as the key (ex: `#myVar="ngModel"`).
+     * You then access the control using the directive's `control` property,
+     * but most properties used (like `valid` and `dirty`) fall through to the control anyway for direct access.
+     * See a full list of properties directly available in `AbstractControlDirective`.
+     *
+     * @see `RadioControlValueAccessor`
+     * @see `SelectControlValueAccessor`
+     *
+     * \@usageNotes
+     *
+     * ### Using ngModel on a standalone control
+     *
+     * The following examples show a simple standalone control using `ngModel`:
+     *
+     * {\@example forms/ts/simpleNgModel/simple_ng_model_example.ts region='Component'}
+     *
+     * When using the `ngModel` within `<form>` tags, you'll also need to supply a `name` attribute
+     * so that the control can be registered with the parent form under that name.
+     *
+     * In the context of a parent form, it's often unnecessary to include one-way or two-way binding,
+     * as the parent form syncs the value for you. You access its properties by exporting it into a
+     * local template variable using `ngForm` such as (`#f="ngForm"`). Use the variable where
+     * needed on form submission.
+     *
+     * If you do need to populate initial values into your form, using a one-way binding for
+     * `ngModel` tends to be sufficient as long as you use the exported form's value rather
+     * than the domain model's value on submit.
+     *
+     * ### Using ngModel within a form
+     *
+     * The following example shows controls using `ngModel` within a form:
+     *
+     * {\@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
+     *
+     * ### Using a standalone ngModel within a group
+     *
+     * The following example shows you how to use a standalone ngModel control
+     * within a form. This controls the display of the form, but doesn't contain form data.
+     *
+     * ```html
+     * <form>
+     *   <input name="login" ngModel placeholder="Login">
+     *   <input type="checkbox" ngModel [ngModelOptions]="{standalone: true}"> Show more options?
+     * </form>
+     * <!-- form value: {login: ''} -->
+     * ```
+     *
+     * ### Setting the ngModel name attribute through options
+     *
+     * The following example shows you an alternate way to set the name attribute. The name attribute is used
+     * within a custom form component, and the name `\@Input` property serves a different purpose.
+     *
+     * ```html
+     * <form>
+     *   <my-person-control name="Nancy" ngModel [ngModelOptions]="{name: 'user'}">
+     *   </my-person-control>
+     * </form>
+     * <!-- form value: {user: ''} -->
+     * ```
+     *
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var NgModel =
+    /*#__PURE__*/
+    function (_NgControl) {
+      _inherits(NgModel, _NgControl);
+
+      /**
+       * @param {?} parent
+       * @param {?} validators
+       * @param {?} asyncValidators
+       * @param {?} valueAccessors
+       */
+      function NgModel(parent, validators, asyncValidators, valueAccessors) {
+        var _this93;
+
+        _classCallCheck(this, NgModel);
+
+        _this93 = _possibleConstructorReturn(this, _getPrototypeOf(NgModel).call(this));
+        _this93.control = new FormControl();
+        /**
+         * \@internal
+         */
+
+        _this93._registered = false;
+        /**
+         * \@description
+         * Event emitter for producing the `ngModelChange` event after
+         * the view model updates.
+         */
+
+        _this93.update = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        _this93._parent = parent;
+        _this93._rawValidators = validators || [];
+        _this93._rawAsyncValidators = asyncValidators || [];
+        _this93.valueAccessor = selectValueAccessor(_assertThisInitialized(_this93), valueAccessors);
+        return _this93;
+      }
+      /**
+       * \@description
+       * A lifecycle method called when the directive's inputs change. For internal use
+       * only.
+       *
+       * @param {?} changes A object of key/value pairs for the set of changed inputs.
+       * @return {?}
+       */
+
+
+      _createClass2(NgModel, [{
+        key: "ngOnChanges",
+        value: function ngOnChanges(changes) {
+          this._checkForErrors();
+
+          if (!this._registered) this._setUpControl();
+
+          if ('isDisabled' in changes) {
+            this._updateDisabled(changes);
+          }
+
+          if (isPropertyUpdated(changes, this.viewModel)) {
+            this._updateValue(this.model);
+
+            this.viewModel = this.model;
+          }
+        }
+        /**
+         * \@description
+         * Lifecycle method called before the directive's instance is destroyed. For internal
+         * use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this.formDirective && this.formDirective.removeControl(this);
+        }
+        /**
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
+         * @return {?}
+         */
+
+      }, {
+        key: "viewToModelUpdate",
+
+        /**
+         * \@description
+         * Sets the new value for the view model and emits an `ngModelChange` event.
+         *
+         * @param {?} newValue The new value emitted by `ngModelChange`.
+         * @return {?}
+         */
+        value: function viewToModelUpdate(newValue) {
+          this.viewModel = newValue;
+          this.update.emit(newValue);
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpControl",
+        value: function _setUpControl() {
+          this._setUpdateStrategy();
+
+          this._isStandalone() ? this._setUpStandalone() : this.formDirective.addControl(this);
+          this._registered = true;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpdateStrategy",
+        value: function _setUpdateStrategy() {
+          if (this.options && this.options.updateOn != null) {
+            this.control._updateOn = this.options.updateOn;
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_isStandalone",
+        value: function _isStandalone() {
+          return !this._parent || !!(this.options && this.options.standalone);
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpStandalone",
+        value: function _setUpStandalone() {
+          setUpControl(this.control, this);
+          this.control.updateValueAndValidity({
+            emitEvent: false
+          });
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkForErrors",
+        value: function _checkForErrors() {
+          if (!this._isStandalone()) {
+            this._checkParentType();
+          }
+
+          this._checkName();
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkParentType",
+        value: function _checkParentType() {
+          if (!(this._parent instanceof NgModelGroup) && this._parent instanceof AbstractFormGroupDirective) {
+            TemplateDrivenErrors.formGroupNameException();
+          } else if (!(this._parent instanceof NgModelGroup) && !(this._parent instanceof NgForm)) {
+            TemplateDrivenErrors.modelParentException();
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkName",
+        value: function _checkName() {
+          if (this.options && this.options.name) this.name = this.options.name;
+
+          if (!this._isStandalone() && !this.name) {
+            TemplateDrivenErrors.missingNameException();
+          }
+        }
+        /**
+         * @private
+         * @param {?} value
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateValue",
+        value: function _updateValue(value) {
+          var _this94 = this;
+
+          resolvedPromise$1.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            _this94.control.setValue(value, {
+              emitViewToModelChange: false
+            });
+          });
+        }
+        /**
+         * @private
+         * @param {?} changes
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateDisabled",
+        value: function _updateDisabled(changes) {
+          var _this95 = this;
+
+          /** @type {?} */
+          var disabledValue = changes['isDisabled'].currentValue;
+          /** @type {?} */
+
+          var isDisabled = disabledValue === '' || disabledValue && disabledValue !== 'false';
+          resolvedPromise$1.then(
+          /**
+          * @return {?}
+          */
+          function () {
+            if (isDisabled && !_this95.control.disabled) {
+              _this95.control.disable();
+            } else if (!isDisabled && _this95.control.disabled) {
+              _this95.control.enable();
+            }
+          });
+        }
+      }, {
+        key: "path",
+        get: function get() {
+          return this._parent ? controlPath(this.name, this._parent) : [this.name];
+        }
+        /**
+         * \@description
+         * The top-level directive for this control if present, otherwise null.
+         * @return {?}
+         */
+
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this._parent ? this._parent.formDirective : null;
+        }
+        /**
+         * \@description
+         * Synchronous validator function composed of all the synchronous validators
+         * registered with this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "validator",
+        get: function get() {
+          return composeValidators(this._rawValidators);
+        }
+        /**
+         * \@description
+         * Async validator function composed of all the async validators registered with this
+         * directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return composeAsyncValidators(this._rawAsyncValidators);
+        }
+      }]);
+
+      return NgModel;
+    }(NgControl);
+
+    NgModel.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[ngModel]:not([formControlName]):not([formControl])',
+        providers: [formControlBinding],
+        exportAs: 'ngModel'
+      }]
+    }];
+    /** @nocollapse */
+
+    NgModel.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALUE_ACCESSOR]
+        }]
+      }];
+    };
+
+    NgModel.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }],
+      isDisabled: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['disabled']
+      }],
+      model: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngModel']
+      }],
+      options: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngModelOptions']
+      }],
+      update: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"],
+        args: ['ngModelChange']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     *
+     * Adds `novalidate` attribute to all forms by default.
+     *
+     * `novalidate` is used to disable browser's native form validation.
+     *
+     * If you want to use native validation with Angular forms, just add `ngNativeValidate` attribute:
+     *
+     * ```
+     * <form ngNativeValidate></form>
+     * ```
+     *
+     * \@publicApi
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     */
+
+
+    var ɵNgNoValidate = function ɵNgNoValidate() {
+      _classCallCheck(this, ɵNgNoValidate);
+    };
+
+    ɵNgNoValidate.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'form:not([ngNoForm]):not([ngNativeValidate])',
+        host: {
+          'novalidate': ''
+        }
+      }]
+    }];
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Token to provide to turn off the ngModel warning on formControl and formControlName.
+     * @type {?}
+     */
+
+    var NG_MODEL_WITH_FORM_CONTROL_WARNING = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('NgModelWithFormControlWarning');
+    /** @type {?} */
+
+    var formControlBinding$1 = {
+      provide: NgControl,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return FormControlDirective;
+      })
+    };
+    /**
+     * \@description
+     * * Syncs a standalone `FormControl` instance to a form control element.
+     *
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     * @see `FormControl`
+     * @see `AbstractControl`
+     *
+     * \@usageNotes
+     *
+     * ### Registering a single form control
+     *
+     * The following examples shows how to register a standalone control and set its value.
+     *
+     * {\@example forms/ts/simpleFormControl/simple_form_control_example.ts region='Component'}
+     *
+     * ### Use with ngModel
+     *
+     * Support for using the `ngModel` input property and `ngModelChange` event with reactive
+     * form directives has been deprecated in Angular v6 and will be removed in Angular v7.
+     *
+     * Now deprecated:
+     *
+     * ```html
+     * <input [formControl]="control" [(ngModel)]="value">
+     * ```
+     *
+     * ```ts
+     * this.value = 'some value';
+     * ```
+     *
+     * This has been deprecated for a few reasons. First, developers have found this pattern
+     * confusing. It seems like the actual `ngModel` directive is being used, but in fact it's
+     * an input/output property named `ngModel` on the reactive form directive that simply
+     * approximates (some of) its behavior. Specifically, it allows getting/setting the value
+     * and intercepting value events. However, some of `ngModel`'s other features - like
+     * delaying updates with`ngModelOptions` or exporting the directive - simply don't work,
+     * which has understandably caused some confusion.
+     *
+     * In addition, this pattern mixes template-driven and reactive forms strategies, which
+     * we generally don't recommend because it doesn't take advantage of the full benefits of
+     * either strategy. Setting the value in the template violates the template-agnostic
+     * principles behind reactive forms, whereas adding a `FormControl`/`FormGroup` layer in
+     * the class removes the convenience of defining forms in the template.
+     *
+     * To update your code before v7, you'll want to decide whether to stick with reactive form
+     * directives (and get/set values using reactive forms patterns) or switch over to
+     * template-driven directives.
+     *
+     * After (choice 1 - use reactive forms):
+     *
+     * ```html
+     * <input [formControl]="control">
+     * ```
+     *
+     * ```ts
+     * this.control.setValue('some value');
+     * ```
+     *
+     * After (choice 2 - use template-driven forms):
+     *
+     * ```html
+     * <input [(ngModel)]="value">
+     * ```
+     *
+     * ```ts
+     * this.value = 'some value';
+     * ```
+     *
+     * By default, when you use this pattern, you will see a deprecation warning once in dev
+     * mode. You can choose to silence this warning by providing a config for
+     * `ReactiveFormsModule` at import time:
+     *
+     * ```ts
+     * imports: [
+     *   ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'});
+     * ]
+     * ```
+     *
+     * Alternatively, you can choose to surface a separate warning for each instance of this
+     * pattern with a config value of `"always"`. This may help to track down where in the code
+     * the pattern is being used as the code is being updated.
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var FormControlDirective =
+    /*#__PURE__*/
+    function (_NgControl2) {
+      _inherits(FormControlDirective, _NgControl2);
+
+      /**
+       * @param {?} validators
+       * @param {?} asyncValidators
+       * @param {?} valueAccessors
+       * @param {?} _ngModelWarningConfig
+       */
+      function FormControlDirective(validators, asyncValidators, valueAccessors, _ngModelWarningConfig) {
+        var _this96;
+
+        _classCallCheck(this, FormControlDirective);
+
+        _this96 = _possibleConstructorReturn(this, _getPrototypeOf(FormControlDirective).call(this));
+        _this96._ngModelWarningConfig = _ngModelWarningConfig;
+        /**
+         * @deprecated as of v6
+         */
+
+        _this96.update = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        /**
+         * \@description
+         * Instance property used to track whether an ngModel warning has been sent out for this
+         * particular `FormControlDirective` instance. Used to support warning config of "always".
+         *
+         * \@internal
+         */
+
+        _this96._ngModelWarningSent = false;
+        _this96._rawValidators = validators || [];
+        _this96._rawAsyncValidators = asyncValidators || [];
+        _this96.valueAccessor = selectValueAccessor(_assertThisInitialized(_this96), valueAccessors);
+        return _this96;
+      }
+      /**
+       * \@description
+       * Triggers a warning that this input should not be used with reactive forms.
+       * @param {?} isDisabled
+       * @return {?}
+       */
+
+
+      _createClass2(FormControlDirective, [{
+        key: "ngOnChanges",
+
+        /**
+         * \@description
+         * A lifecycle method called when the directive's inputs change. For internal use
+         * only.
+         *
+         * @param {?} changes A object of key/value pairs for the set of changed inputs.
+         * @return {?}
+         */
+        value: function ngOnChanges(changes) {
+          if (this._isControlChanged(changes)) {
+            setUpControl(this.form, this);
+
+            if (this.control.disabled &&
+            /** @type {?} */
+            this.valueAccessor.setDisabledState) {
+              /** @type {?} */
+
+              /** @type {?} */
+              this.valueAccessor.setDisabledState(true);
+            }
+
+            this.form.updateValueAndValidity({
+              emitEvent: false
+            });
+          }
+
+          if (isPropertyUpdated(changes, this.viewModel)) {
+            _ngModelWarning('formControl', FormControlDirective, this, this._ngModelWarningConfig);
+
+            this.form.setValue(this.model);
+            this.viewModel = this.model;
+          }
+        }
+        /**
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
+         * @return {?}
+         */
+
+      }, {
+        key: "viewToModelUpdate",
+
+        /**
+         * \@description
+         * Sets the new value for the view model and emits an `ngModelChange` event.
+         *
+         * @param {?} newValue The new value for the view model.
+         * @return {?}
+         */
+        value: function viewToModelUpdate(newValue) {
+          this.viewModel = newValue;
+          this.update.emit(newValue);
+        }
+        /**
+         * @private
+         * @param {?} changes
+         * @return {?}
+         */
+
+      }, {
+        key: "_isControlChanged",
+        value: function _isControlChanged(changes) {
+          return changes.hasOwnProperty('form');
+        }
+      }, {
+        key: "isDisabled",
+        set: function set(isDisabled) {
+          ReactiveErrors.disabledAttrWarning();
+        }
+      }, {
+        key: "path",
+        get: function get() {
+          return [];
+        }
+        /**
+         * \@description
+         * Synchronous validator function composed of all the synchronous validators
+         * registered with this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "validator",
+        get: function get() {
+          return composeValidators(this._rawValidators);
+        }
+        /**
+         * \@description
+         * Async validator function composed of all the async validators registered with this
+         * directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return composeAsyncValidators(this._rawAsyncValidators);
+        }
+        /**
+         * \@description
+         * The `FormControl` bound to this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "control",
+        get: function get() {
+          return this.form;
+        }
+      }]);
+
+      return FormControlDirective;
+    }(NgControl);
+    /**
+     * \@description
+     * Static property used to track whether any ngModel warnings have been sent across
+     * all instances of FormControlDirective. Used to support warning config of "once".
+     *
+     * \@internal
+     */
+
+
+    FormControlDirective._ngModelWarningSentOnce = false;
+    FormControlDirective.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formControl]',
+        providers: [formControlBinding$1],
+        exportAs: 'ngForm'
+      }]
+    }];
+    /** @nocollapse */
+
+    FormControlDirective.ctorParameters = function () {
+      return [{
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALUE_ACCESSOR]
+        }]
+      }, {
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_MODEL_WITH_FORM_CONTROL_WARNING]
+        }]
+      }];
+    };
+
+    FormControlDirective.propDecorators = {
+      form: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['formControl']
+      }],
+      isDisabled: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['disabled']
+      }],
+      model: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngModel']
+      }],
+      update: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"],
+        args: ['ngModelChange']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var formDirectiveProvider$1 = {
+      provide: ControlContainer,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return FormGroupDirective;
+      })
+    };
+    /**
+     * \@description
+     *
+     * Binds an existing `FormGroup` to a DOM element.
+     *
+     * This directive accepts an existing `FormGroup` instance. It will then use this
+     * `FormGroup` instance to match any child `FormControl`, `FormGroup`,
+     * and `FormArray` instances to child `FormControlName`, `FormGroupName`,
+     * and `FormArrayName` directives.
+     *
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     * @see `AbstractControl`
+     *
+     * ### Register Form Group
+     *
+     * The following example registers a `FormGroup` with first name and last name controls,
+     * and listens for the *ngSubmit* event when the button is clicked.
+     *
+     * {\@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var FormGroupDirective =
+    /*#__PURE__*/
+    function (_ControlContainer3) {
+      _inherits(FormGroupDirective, _ControlContainer3);
+
+      /**
+       * @param {?} _validators
+       * @param {?} _asyncValidators
+       */
+      function FormGroupDirective(_validators, _asyncValidators) {
+        var _this97;
+
+        _classCallCheck(this, FormGroupDirective);
+
+        _this97 = _possibleConstructorReturn(this, _getPrototypeOf(FormGroupDirective).call(this));
+        _this97._validators = _validators;
+        _this97._asyncValidators = _asyncValidators;
+        /**
+         * \@description
+         * Reports whether the form submission has been triggered.
+         */
+
+        _this97.submitted = false;
+        /**
+         * \@description
+         * Tracks the list of added `FormControlName` instances
+         */
+
+        _this97.directives = [];
+        /**
+         * \@description
+         * Tracks the `FormGroup` bound to this directive.
+         */
+
+        _this97.form =
+        /** @type {?} */
+        null;
+        /**
+         * \@description
+         * Emits an event when the form submission has been triggered.
+         */
+
+        _this97.ngSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        return _this97;
+      }
+      /**
+       * \@description
+       * A lifecycle method called when the directive's inputs change. For internal use only.
+       *
+       * @param {?} changes A object of key/value pairs for the set of changed inputs.
+       * @return {?}
+       */
+
+
+      _createClass2(FormGroupDirective, [{
+        key: "ngOnChanges",
+        value: function ngOnChanges(changes) {
+          this._checkFormPresent();
+
+          if (changes.hasOwnProperty('form')) {
+            this._updateValidators();
+
+            this._updateDomValue();
+
+            this._updateRegistrations();
+          }
+        }
+        /**
+         * \@description
+         * Returns this directive's instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "addControl",
+
+        /**
+         * \@description
+         * Method that sets up the control directive in this group, re-calculates its value
+         * and validity, and adds the instance to the internal list of directives.
+         *
+         * @param {?} dir The `FormControlName` directive instance.
+         * @return {?}
+         */
+        value: function addControl(dir) {
+          /** @type {?} */
+          var ctrl = this.form.get(dir.path);
+          setUpControl(ctrl, dir);
+          ctrl.updateValueAndValidity({
+            emitEvent: false
+          });
+          this.directives.push(dir);
+          return ctrl;
+        }
+        /**
+         * \@description
+         * Retrieves the `FormControl` instance from the provided `FormControlName` directive
+         *
+         * @param {?} dir The `FormControlName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "getControl",
+        value: function getControl(dir) {
+          return (
+            /** @type {?} */
+            this.form.get(dir.path)
+          );
+        }
+        /**
+         * \@description
+         * Removes the `FormControlName` instance from the internal list of directives
+         *
+         * @param {?} dir The `FormControlName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "removeControl",
+        value: function removeControl(dir) {
+          removeDir(this.directives, dir);
+        }
+        /**
+         * Adds a new `FormGroupName` directive instance to the form.
+         *
+         * @param {?} dir The `FormGroupName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "addFormGroup",
+        value: function addFormGroup(dir) {
+          /** @type {?} */
+          var ctrl = this.form.get(dir.path);
+          setUpFormContainer(ctrl, dir);
+          ctrl.updateValueAndValidity({
+            emitEvent: false
+          });
+        }
+        /**
+         * No-op method to remove the form group.
+         *
+         * @param {?} dir The `FormGroupName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "removeFormGroup",
+        value: function removeFormGroup(dir) {}
+        /**
+         * \@description
+         * Retrieves the `FormGroup` for a provided `FormGroupName` directive instance
+         *
+         * @param {?} dir The `FormGroupName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "getFormGroup",
+        value: function getFormGroup(dir) {
+          return (
+            /** @type {?} */
+            this.form.get(dir.path)
+          );
+        }
+        /**
+         * Adds a new `FormArrayName` directive instance to the form.
+         *
+         * @param {?} dir The `FormArrayName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "addFormArray",
+        value: function addFormArray(dir) {
+          /** @type {?} */
+          var ctrl = this.form.get(dir.path);
+          setUpFormContainer(ctrl, dir);
+          ctrl.updateValueAndValidity({
+            emitEvent: false
+          });
+        }
+        /**
+         * No-op method to remove the form array.
+         *
+         * @param {?} dir The `FormArrayName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "removeFormArray",
+        value: function removeFormArray(dir) {}
+        /**
+         * \@description
+         * Retrieves the `FormArray` for a provided `FormArrayName` directive instance.
+         *
+         * @param {?} dir The `FormArrayName` directive instance.
+         * @return {?}
+         */
+
+      }, {
+        key: "getFormArray",
+        value: function getFormArray(dir) {
+          return (
+            /** @type {?} */
+            this.form.get(dir.path)
+          );
+        }
+        /**
+         * Sets the new value for the provided `FormControlName` directive.
+         *
+         * @param {?} dir The `FormControlName` directive instance.
+         * @param {?} value The new value for the directive's control.
+         * @return {?}
+         */
+
+      }, {
+        key: "updateModel",
+        value: function updateModel(dir, value) {
+          /** @type {?} */
+          var ctrl =
+          /** @type {?} */
+          this.form.get(dir.path);
+          ctrl.setValue(value);
+        }
+        /**
+         * \@description
+         * Method called with the "submit" event is triggered on the form.
+         * Triggers the `ngSubmit` emitter to emit the "submit" event as its payload.
+         *
+         * @param {?} $event The "submit" event object
+         * @return {?}
+         */
+
+      }, {
+        key: "onSubmit",
+        value: function onSubmit($event) {
+          /** @type {?} */
+          this.submitted = true;
+          syncPendingControls(this.form, this.directives);
+          this.ngSubmit.emit($event);
+          return false;
+        }
+        /**
+         * \@description
+         * Method called when the "reset" event is triggered on the form.
+         * @return {?}
+         */
+
+      }, {
+        key: "onReset",
+        value: function onReset() {
+          this.resetForm();
+        }
+        /**
+         * \@description
+         * Resets the form to an initial value and resets its submitted status.
+         *
+         * @param {?=} value The new value for the form.
+         * @return {?}
+         */
+
+      }, {
+        key: "resetForm",
+        value: function resetForm() {
+          var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+          this.form.reset(value);
+
+          /** @type {?} */
+          this.submitted = false;
+        }
+        /**
+         * \@internal
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateDomValue",
+        value: function _updateDomValue() {
+          var _this98 = this;
+
+          this.directives.forEach(
+          /**
+          * @param {?} dir
+          * @return {?}
+          */
+          function (dir) {
+            /** @type {?} */
+            var newCtrl = _this98.form.get(dir.path);
+
+            if (dir.control !== newCtrl) {
+              cleanUpControl(dir.control, dir);
+              if (newCtrl) setUpControl(newCtrl, dir);
+
+              /** @type {?} */
+              dir.control = newCtrl;
+            }
+          });
+
+          this.form._updateTreeValidity({
+            emitEvent: false
+          });
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateRegistrations",
+        value: function _updateRegistrations() {
+          var _this99 = this;
+
+          this.form._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {
+            return _this99._updateDomValue();
+          });
+
+          if (this._oldForm) this._oldForm._registerOnCollectionChange(
+          /**
+          * @return {?}
+          */
+          function () {});
+          this._oldForm = this.form;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_updateValidators",
+        value: function _updateValidators() {
+          /** @type {?} */
+          var sync = composeValidators(this._validators);
+          this.form.validator = Validators.compose([
+          /** @type {?} */
+          this.form.validator,
+          /** @type {?} */
+          sync]);
+          /** @type {?} */
+
+          var async = composeAsyncValidators(this._asyncValidators);
+          this.form.asyncValidator = Validators.composeAsync([
+          /** @type {?} */
+          this.form.asyncValidator,
+          /** @type {?} */
+          async]);
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkFormPresent",
+        value: function _checkFormPresent() {
+          if (!this.form) {
+            ReactiveErrors.missingFormException();
+          }
+        }
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this;
+        }
+        /**
+         * \@description
+         * Returns the `FormGroup` bound to this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "control",
+        get: function get() {
+          return this.form;
+        }
+        /**
+         * \@description
+         * Returns an array representing the path to this group. Because this directive
+         * always lives at the top level of a form, it always an empty array.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return [];
+        }
+      }]);
+
+      return FormGroupDirective;
+    }(ControlContainer);
+
+    FormGroupDirective.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formGroup]',
+        providers: [formDirectiveProvider$1],
+        host: {
+          '(submit)': 'onSubmit($event)',
+          '(reset)': 'onReset()'
+        },
+        exportAs: 'ngForm'
+      }]
+    }];
+    /** @nocollapse */
+
+    FormGroupDirective.ctorParameters = function () {
+      return [{
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }];
+    };
+
+    FormGroupDirective.propDecorators = {
+      form: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['formGroup']
+      }],
+      ngSubmit: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var formGroupNameProvider = {
+      provide: ControlContainer,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return FormGroupName;
+      })
+    };
+    /**
+     * \@description
+     *
+     * Syncs a nested `FormGroup` to a DOM element.
+     *
+     * This directive can only be used with a parent `FormGroupDirective`.
+     *
+     * It accepts the string name of the nested `FormGroup` to link, and
+     * looks for a `FormGroup` registered with that name in the parent
+     * `FormGroup` instance you passed into `FormGroupDirective`.
+     *
+     * Use nested form groups to validate a sub-group of a
+     * form separately from the rest or to group the values of certain
+     * controls into their own nested object.
+     *
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     *
+     * \@usageNotes
+     *
+     * ### Access the group by name
+     *
+     * The following example uses the {\@link AbstractControl#get get} method to access the
+     * associated `FormGroup`
+     *
+     * ```ts
+     *   this.form.get('name');
+     * ```
+     *
+     * ### Access individual controls in the group
+     *
+     * The following example uses the {\@link AbstractControl#get get} method to access
+     * individual controls within the group using dot syntax.
+     *
+     * ```ts
+     *   this.form.get('name.first');
+     * ```
+     *
+     * ### Register a nested `FormGroup`.
+     *
+     * The following example registers a nested *name* `FormGroup` within an existing `FormGroup`,
+     * and provides methods to retrieve the nested `FormGroup` and individual controls.
+     *
+     * {\@example forms/ts/nestedFormGroup/nested_form_group_example.ts region='Component'}
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var FormGroupName =
+    /*#__PURE__*/
+    function (_AbstractFormGroupDir2) {
+      _inherits(FormGroupName, _AbstractFormGroupDir2);
+
+      /**
+       * @param {?} parent
+       * @param {?} validators
+       * @param {?} asyncValidators
+       */
+      function FormGroupName(parent, validators, asyncValidators) {
+        var _this100;
+
+        _classCallCheck(this, FormGroupName);
+
+        _this100 = _possibleConstructorReturn(this, _getPrototypeOf(FormGroupName).call(this));
+        _this100._parent = parent;
+        _this100._validators = validators;
+        _this100._asyncValidators = asyncValidators;
+        return _this100;
+      }
+      /**
+       * \@internal
+       * @return {?}
+       */
+
+
+      _createClass2(FormGroupName, [{
+        key: "_checkParentType",
+        value: function _checkParentType() {
+          if (_hasInvalidParent(this._parent)) {
+            ReactiveErrors.groupParentException();
+          }
+        }
+      }]);
+
+      return FormGroupName;
+    }(AbstractFormGroupDirective);
+
+    FormGroupName.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formGroupName]',
+        providers: [formGroupNameProvider]
+      }]
+    }];
+    /** @nocollapse */
+
+    FormGroupName.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }];
+    };
+
+    FormGroupName.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['formGroupName']
+      }]
+    };
+
+    if (false) {}
+    /** @type {?} */
+
+
+    var formArrayNameProvider = {
+      provide: ControlContainer,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return FormArrayName;
+      })
+    };
+    /**
+     * \@description
+     *
+     * Syncs a nested `FormArray` to a DOM element.
+     *
+     * This directive is designed to be used with a parent `FormGroupDirective` (selector:
+     * `[formGroup]`).
+     *
+     * It accepts the string name of the nested `FormArray` you want to link, and
+     * will look for a `FormArray` registered with that name in the parent
+     * `FormGroup` instance you passed into `FormGroupDirective`.
+     *
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     * @see `AbstractControl`
+     *
+     * \@usageNotes
+     *
+     * ### Example
+     *
+     * {\@example forms/ts/nestedFormArray/nested_form_array_example.ts region='Component'}
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var FormArrayName =
+    /*#__PURE__*/
+    function (_ControlContainer4) {
+      _inherits(FormArrayName, _ControlContainer4);
+
+      /**
+       * @param {?} parent
+       * @param {?} validators
+       * @param {?} asyncValidators
+       */
+      function FormArrayName(parent, validators, asyncValidators) {
+        var _this101;
+
+        _classCallCheck(this, FormArrayName);
+
+        _this101 = _possibleConstructorReturn(this, _getPrototypeOf(FormArrayName).call(this));
+        _this101._parent = parent;
+        _this101._validators = validators;
+        _this101._asyncValidators = asyncValidators;
+        return _this101;
+      }
+      /**
+       * \@description
+       * A lifecycle method called when the directive's inputs are initialized. For internal use only.
+       *
+       * @throws If the directive does not have a valid parent.
+       * @return {?}
+       */
+
+
+      _createClass2(FormArrayName, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this._checkParentType();
+
+          /** @type {?} */
+          this.formDirective.addFormArray(this);
+        }
+        /**
+         * \@description
+         * A lifecycle method called before the directive's instance is destroyed. For internal use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.formDirective) {
+            this.formDirective.removeFormArray(this);
+          }
+        }
+        /**
+         * \@description
+         * The `FormArray` bound to this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkParentType",
+
+        /**
+         * @private
+         * @return {?}
+         */
+        value: function _checkParentType() {
+          if (_hasInvalidParent(this._parent)) {
+            ReactiveErrors.arrayParentException();
+          }
+        }
+      }, {
+        key: "control",
+        get: function get() {
+          return (
+            /** @type {?} */
+            this.formDirective.getFormArray(this)
+          );
+        }
+        /**
+         * \@description
+         * The top-level directive for this group if present, otherwise null.
+         * @return {?}
+         */
+
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this._parent ?
+          /** @type {?} */
+          this._parent.formDirective : null;
+        }
+        /**
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
+         * @return {?}
+         */
+
+      }, {
+        key: "path",
+        get: function get() {
+          return controlPath(this.name, this._parent);
+        }
+        /**
+         * \@description
+         * Synchronous validator function composed of all the synchronous validators registered with this
+         * directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "validator",
+        get: function get() {
+          return composeValidators(this._validators);
+        }
+        /**
+         * \@description
+         * Async validator function composed of all the async validators registered with this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return composeAsyncValidators(this._asyncValidators);
+        }
+      }]);
+
+      return FormArrayName;
+    }(ControlContainer);
+
+    FormArrayName.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formArrayName]',
+        providers: [formArrayNameProvider]
+      }]
+    }];
+    /** @nocollapse */
+
+    FormArrayName.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }];
+    };
+
+    FormArrayName.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['formArrayName']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @param {?} parent
+     * @return {?}
+     */
+
+
+    function _hasInvalidParent(parent) {
+      return !(parent instanceof FormGroupName) && !(parent instanceof FormGroupDirective) && !(parent instanceof FormArrayName);
+    }
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var controlNameBinding = {
+      provide: NgControl,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return FormControlName;
+      })
+    };
+    /**
+     * \@description
+     * Syncs a `FormControl` in an existing `FormGroup` to a form control
+     * element by name.
+     *
+     * @see [Reactive Forms Guide](guide/reactive-forms)
+     * @see `FormControl`
+     * @see `AbstractControl`
+     *
+     * \@usageNotes
+     *
+     * ### Register `FormControl` within a group
+     *
+     * The following example shows how to register multiple form controls within a form group
+     * and set their value.
+     *
+     * {\@example forms/ts/simpleFormGroup/simple_form_group_example.ts region='Component'}
+     *
+     * To see `formControlName` examples with different form control types, see:
+     *
+     * * Radio buttons: `RadioControlValueAccessor`
+     * * Selects: `SelectControlValueAccessor`
+     *
+     * ### Use with ngModel
+     *
+     * Support for using the `ngModel` input property and `ngModelChange` event with reactive
+     * form directives has been deprecated in Angular v6 and will be removed in Angular v7.
+     *
+     * Now deprecated:
+     *
+     * ```html
+     * <form [formGroup]="form">
+     *   <input formControlName="first" [(ngModel)]="value">
+     * </form>
+     * ```
+     *
+     * ```ts
+     * this.value = 'some value';
+     * ```
+     *
+     * This has been deprecated for a few reasons. First, developers have found this pattern
+     * confusing. It seems like the actual `ngModel` directive is being used, but in fact it's
+     * an input/output property named `ngModel` on the reactive form directive that simply
+     * approximates (some of) its behavior. Specifically, it allows getting/setting the value
+     * and intercepting value events. However, some of `ngModel`'s other features - like
+     * delaying updates with`ngModelOptions` or exporting the directive - simply don't work,
+     * which has understandably caused some confusion.
+     *
+     * In addition, this pattern mixes template-driven and reactive forms strategies, which
+     * we generally don't recommend because it doesn't take advantage of the full benefits of
+     * either strategy. Setting the value in the template violates the template-agnostic
+     * principles behind reactive forms, whereas adding a `FormControl`/`FormGroup` layer in
+     * the class removes the convenience of defining forms in the template.
+     *
+     * To update your code before v7, you'll want to decide whether to stick with reactive form
+     * directives (and get/set values using reactive forms patterns) or switch over to
+     * template-driven directives.
+     *
+     * After (choice 1 - use reactive forms):
+     *
+     * ```html
+     * <form [formGroup]="form">
+     *   <input formControlName="first">
+     * </form>
+     * ```
+     *
+     * ```ts
+     * this.form.get('first').setValue('some value');
+     * ```
+     *
+     * After (choice 2 - use template-driven forms):
+     *
+     * ```html
+     * <input [(ngModel)]="value">
+     * ```
+     *
+     * ```ts
+     * this.value = 'some value';
+     * ```
+     *
+     * By default, when you use this pattern, you will see a deprecation warning once in dev
+     * mode. You can choose to silence this warning by providing a config for
+     * `ReactiveFormsModule` at import time:
+     *
+     * ```ts
+     * imports: [
+     *   ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
+     * ]
+     * ```
+     *
+     * Alternatively, you can choose to surface a separate warning for each instance of this
+     * pattern with a config value of `"always"`. This may help to track down where in the code
+     * the pattern is being used as the code is being updated.
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var FormControlName =
+    /*#__PURE__*/
+    function (_NgControl3) {
+      _inherits(FormControlName, _NgControl3);
+
+      /**
+       * @param {?} parent
+       * @param {?} validators
+       * @param {?} asyncValidators
+       * @param {?} valueAccessors
+       * @param {?} _ngModelWarningConfig
+       */
+      function FormControlName(parent, validators, asyncValidators, valueAccessors, _ngModelWarningConfig) {
+        var _this102;
+
+        _classCallCheck(this, FormControlName);
+
+        _this102 = _possibleConstructorReturn(this, _getPrototypeOf(FormControlName).call(this));
+        _this102._ngModelWarningConfig = _ngModelWarningConfig;
+        _this102._added = false;
+        /**
+         * @deprecated as of v6
+         */
+
+        _this102.update = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        /**
+         * \@description
+         * Instance property used to track whether an ngModel warning has been sent out for this
+         * particular FormControlName instance. Used to support warning config of "always".
+         *
+         * \@internal
+         */
+
+        _this102._ngModelWarningSent = false;
+        _this102._parent = parent;
+        _this102._rawValidators = validators || [];
+        _this102._rawAsyncValidators = asyncValidators || [];
+        _this102.valueAccessor = selectValueAccessor(_assertThisInitialized(_this102), valueAccessors);
+        return _this102;
+      }
+      /**
+       * \@description
+       * Triggers a warning that this input should not be used with reactive forms.
+       * @param {?} isDisabled
+       * @return {?}
+       */
+
+
+      _createClass2(FormControlName, [{
+        key: "ngOnChanges",
+
+        /**
+         * \@description
+         * A lifecycle method called when the directive's inputs change. For internal use only.
+         *
+         * @param {?} changes A object of key/value pairs for the set of changed inputs.
+         * @return {?}
+         */
+        value: function ngOnChanges(changes) {
+          if (!this._added) this._setUpControl();
+
+          if (isPropertyUpdated(changes, this.viewModel)) {
+            _ngModelWarning('formControlName', FormControlName, this, this._ngModelWarningConfig);
+
+            this.viewModel = this.model;
+            this.formDirective.updateModel(this, this.model);
+          }
+        }
+        /**
+         * \@description
+         * Lifecycle method called before the directive's instance is destroyed. For internal use only.
+         * @return {?}
+         */
+
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          if (this.formDirective) {
+            this.formDirective.removeControl(this);
+          }
+        }
+        /**
+         * \@description
+         * Sets the new value for the view model and emits an `ngModelChange` event.
+         *
+         * @param {?} newValue The new value for the view model.
+         * @return {?}
+         */
+
+      }, {
+        key: "viewToModelUpdate",
+        value: function viewToModelUpdate(newValue) {
+          this.viewModel = newValue;
+          this.update.emit(newValue);
+        }
+        /**
+         * \@description
+         * Returns an array that represents the path from the top-level form to this control.
+         * Each index is the string name of the control on that level.
+         * @return {?}
+         */
+
+      }, {
+        key: "_checkParentType",
+
+        /**
+         * @private
+         * @return {?}
+         */
+        value: function _checkParentType() {
+          if (!(this._parent instanceof FormGroupName) && this._parent instanceof AbstractFormGroupDirective) {
+            ReactiveErrors.ngModelGroupException();
+          } else if (!(this._parent instanceof FormGroupName) && !(this._parent instanceof FormGroupDirective) && !(this._parent instanceof FormArrayName)) {
+            ReactiveErrors.controlParentException();
+          }
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_setUpControl",
+        value: function _setUpControl() {
+          this._checkParentType();
+
+          /** @type {?} */
+          this.control = this.formDirective.addControl(this);
+
+          if (this.control.disabled &&
+          /** @type {?} */
+          this.valueAccessor.setDisabledState) {
+            /** @type {?} */
+
+            /** @type {?} */
+            this.valueAccessor.setDisabledState(true);
+          }
+
+          this._added = true;
+        }
+      }, {
+        key: "isDisabled",
+        set: function set(isDisabled) {
+          ReactiveErrors.disabledAttrWarning();
+        }
+      }, {
+        key: "path",
+        get: function get() {
+          return controlPath(this.name,
+          /** @type {?} */
+          this._parent);
+        }
+        /**
+         * \@description
+         * The top-level directive for this group if present, otherwise null.
+         * @return {?}
+         */
+
+      }, {
+        key: "formDirective",
+        get: function get() {
+          return this._parent ? this._parent.formDirective : null;
+        }
+        /**
+         * \@description
+         * Synchronous validator function composed of all the synchronous validators
+         * registered with this directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "validator",
+        get: function get() {
+          return composeValidators(this._rawValidators);
+        }
+        /**
+         * \@description
+         * Async validator function composed of all the async validators registered with this
+         * directive.
+         * @return {?}
+         */
+
+      }, {
+        key: "asyncValidator",
+        get: function get() {
+          return (
+            /** @type {?} */
+            composeAsyncValidators(this._rawAsyncValidators)
+          );
+        }
+      }]);
+
+      return FormControlName;
+    }(NgControl);
+    /**
+     * \@description
+     * Static property used to track whether any ngModel warnings have been sent across
+     * all instances of FormControlName. Used to support warning config of "once".
+     *
+     * \@internal
+     */
+
+
+    FormControlName._ngModelWarningSentOnce = false;
+    FormControlName.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[formControlName]',
+        providers: [controlNameBinding]
+      }]
+    }];
+    /** @nocollapse */
+
+    FormControlName.ctorParameters = function () {
+      return [{
+        type: ControlContainer,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Host"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["SkipSelf"]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_ASYNC_VALIDATORS]
+        }]
+      }, {
+        type: Array,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Self"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_VALUE_ACCESSOR]
+        }]
+      }, {
+        type: undefined,
+        decorators: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
+          args: [NG_MODEL_WITH_FORM_CONTROL_WARNING]
+        }]
+      }];
+    };
+
+    FormControlName.propDecorators = {
+      name: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['formControlName']
+      }],
+      isDisabled: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['disabled']
+      }],
+      model: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
+        args: ['ngModel']
+      }],
+      update: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"],
+        args: ['ngModelChange']
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@description
+     * An interface implemented by classes that perform synchronous validation.
+     *
+     * \@usageNotes
+     *
+     * ### Provide a custom validator
+     *
+     * The following example implements the `Validator` interface to create a
+     * validator directive with a custom error key.
+     *
+     * ```typescript
+     * \@Directive({
+     *   selector: '[customValidator]',
+     *   providers: [{provide: NG_VALIDATORS, useExisting: CustomValidatorDirective, multi: true}]
+     * })
+     * class CustomValidatorDirective implements Validator {
+     *   validate(control: AbstractControl): ValidationErrors|null {
+     *     return {'custom': true};
+     *   }
+     * }
+     * ```
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function Validator() {}
+
+    if (false) {}
+    /**
+     * \@description
+     * An interface implemented by classes that perform asynchronous validation.
+     *
+     * \@usageNotes
+     *
+     * ### Provide a custom async validator directive
+     *
+     * The following example implements the `AsyncValidator` interface to create an
+     * async validator directive with a custom error key.
+     *
+     * ```typescript
+     * import { of as observableOf } from 'rxjs';
+     *
+     * \@Directive({
+     *   selector: '[customAsyncValidator]',
+     *   providers: [{provide: NG_ASYNC_VALIDATORS, useExisting: CustomAsyncValidatorDirective, multi:
+     * true}]
+     * })
+     * class CustomAsyncValidatorDirective implements AsyncValidator {
+     *   validate(control: AbstractControl): Observable<ValidationErrors|null> {
+     *     return observableOf({'custom': true});
+     *   }
+     * }
+     * ```
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function AsyncValidator() {}
+
+    if (false) {}
+    /**
+     * \@description
+     * Provider which adds `RequiredValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+
+    var REQUIRED_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return RequiredValidator;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * Provider which adds `CheckboxRequiredValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+    var CHECKBOX_REQUIRED_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return CheckboxRequiredValidator;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * A directive that adds the `required` validator to any controls marked with the
+     * `required` attribute. The directive is provided with the `NG_VALIDATORS` multi-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding a required validator using template-driven forms
+     *
+     * ```
+     * <input name="fullName" ngModel required>
+     * ```
+     *
+     * \@ngModule FormsModule
+     * \@ngModule ReactiveFormsModule
+     * \@publicApi
+     */
+
+    var RequiredValidator =
+    /*#__PURE__*/
+    function () {
+      function RequiredValidator() {
+        _classCallCheck(this, RequiredValidator);
+      }
+
+      _createClass2(RequiredValidator, [{
+        key: "validate",
+
+        /**
+         * \@description
+         * Method that validates whether the control is empty.
+         * Returns the validation result if enabled, otherwise null.
+         * @param {?} control
+         * @return {?}
+         */
+        value: function validate(control) {
+          return this.required ? Validators.required(control) : null;
+        }
+        /**
+         * \@description
+         * Registers a callback function to call when the validator inputs change.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnValidatorChange",
+        value: function registerOnValidatorChange(fn) {
+          this._onChange = fn;
+        }
+      }, {
+        key: "required",
+
+        /**
+         * \@description
+         * Tracks changes to the required attribute bound to this directive.
+         * @return {?}
+         */
+        get: function get() {
+          return this._required;
+        }
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        ,
+        set: function set(value) {
+          this._required = value != null && value !== false && "".concat(value) !== 'false';
+          if (this._onChange) this._onChange();
+        }
+      }]);
+
+      return RequiredValidator;
+    }();
+
+    RequiredValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: ':not([type=checkbox])[required][formControlName],:not([type=checkbox])[required][formControl],:not([type=checkbox])[required][ngModel]',
+        providers: [REQUIRED_VALIDATOR],
+        host: {
+          '[attr.required]': 'required ? "" : null'
+        }
+      }]
+    }];
+    RequiredValidator.propDecorators = {
+      required: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * A Directive that adds the `required` validator to checkbox controls marked with the
+     * `required` attribute. The directive is provided with the `NG_VALIDATORS` multi-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding a required checkbox validator using template-driven forms
+     *
+     * The following example shows how to add a checkbox required validator to an input attached to an ngModel binding.
+     *
+     * ```
+     * <input type="checkbox" name="active" ngModel required>
+     * ```
+     *
+     * \@publicApi
+     * \@ngModule FormsModule
+     * \@ngModule ReactiveFormsModule
+     */
+
+
+    var CheckboxRequiredValidator =
+    /*#__PURE__*/
+    function (_RequiredValidator) {
+      _inherits(CheckboxRequiredValidator, _RequiredValidator);
+
+      function CheckboxRequiredValidator() {
+        _classCallCheck(this, CheckboxRequiredValidator);
+
+        return _possibleConstructorReturn(this, _getPrototypeOf(CheckboxRequiredValidator).apply(this, arguments));
+      }
+
+      _createClass2(CheckboxRequiredValidator, [{
+        key: "validate",
+
+        /**
+         * \@description
+         * Method that validates whether or not the checkbox has been checked.
+         * Returns the validation result if enabled, otherwise null.
+         * @param {?} control
+         * @return {?}
+         */
+        value: function validate(control) {
+          return this.required ? Validators.requiredTrue(control) : null;
+        }
+      }]);
+
+      return CheckboxRequiredValidator;
+    }(RequiredValidator);
+
+    CheckboxRequiredValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: 'input[type=checkbox][required][formControlName],input[type=checkbox][required][formControl],input[type=checkbox][required][ngModel]',
+        providers: [CHECKBOX_REQUIRED_VALIDATOR],
+        host: {
+          '[attr.required]': 'required ? "" : null'
+        }
+      }]
+    }];
+    /**
+     * \@description
+     * Provider which adds `EmailValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+    var EMAIL_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return EmailValidator;
+      }),
+      multi: true
+    };
+    /**
+     * A directive that adds the `email` validator to controls marked with the
+     * `email` attribute. The directive is provided with the `NG_VALIDATORS` multi-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding an email validator
+     *
+     * The following example shows how to add an email validator to an input attached to an ngModel binding.
+     *
+     * ```
+     * <input type="email" name="email" ngModel email>
+     * <input type="email" name="email" ngModel email="true">
+     * <input type="email" name="email" ngModel [email]="true">
+     * ```
+     *
+     * \@publicApi
+     * \@ngModule FormsModule
+     * \@ngModule ReactiveFormsModule
+     */
+
+    var EmailValidator =
+    /*#__PURE__*/
+    function () {
+      function EmailValidator() {
+        _classCallCheck(this, EmailValidator);
+      }
+
+      _createClass2(EmailValidator, [{
+        key: "validate",
+
+        /**
+         * \@description
+         * Method that validates whether an email address is valid.
+         * Returns the validation result if enabled, otherwise null.
+         * @param {?} control
+         * @return {?}
+         */
+        value: function validate(control) {
+          return this._enabled ? Validators.email(control) : null;
+        }
+        /**
+         * \@description
+         * Registers a callback function to call when the validator inputs change.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnValidatorChange",
+        value: function registerOnValidatorChange(fn) {
+          this._onChange = fn;
+        }
+      }, {
+        key: "email",
+
+        /**
+         * \@description
+         * Tracks changes to the email attribute bound to this directive.
+         * @param {?} value
+         * @return {?}
+         */
+        set: function set(value) {
+          this._enabled = value === '' || value === true || value === 'true';
+          if (this._onChange) this._onChange();
+        }
+      }]);
+
+      return EmailValidator;
+    }();
+
+    EmailValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[email][formControlName],[email][formControl],[email][ngModel]',
+        providers: [EMAIL_VALIDATOR]
+      }]
+    }];
+    EmailValidator.propDecorators = {
+      email: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * A function that receives a control and synchronously returns a map of
+     * validation errors if present, otherwise null.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function ValidatorFn() {}
+    /**
+     * \@description
+     * A function that receives a control and returns a Promise or observable
+     * that emits validation errors if present, otherwise null.
+     *
+     * \@publicApi
+     * @record
+     */
+
+
+    function AsyncValidatorFn() {}
+    /**
+     * \@description
+     * Provider which adds `MinLengthValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+
+    var MIN_LENGTH_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return MinLengthValidator;
+      }),
+      multi: true
+    };
+    /**
+     * A directive that adds minimum length validation to controls marked with the
+     * `minlength` attribute. The directive is provided with the `NG_VALIDATORS` mult-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding a minimum length validator
+     *
+     * The following example shows how to add a minimum length validator to an input attached to an
+     * ngModel binding.
+     *
+     * ```html
+     * <input name="firstName" ngModel minlength="4">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var MinLengthValidator =
+    /*#__PURE__*/
+    function () {
+      function MinLengthValidator() {
+        _classCallCheck(this, MinLengthValidator);
+      }
+
+      _createClass2(MinLengthValidator, [{
+        key: "ngOnChanges",
+
+        /**
+         * \@description
+         * A lifecycle method called when the directive's inputs change. For internal use
+         * only.
+         *
+         * @param {?} changes A object of key/value pairs for the set of changed inputs.
+         * @return {?}
+         */
+        value: function ngOnChanges(changes) {
+          if ('minlength' in changes) {
+            this._createValidator();
+
+            if (this._onChange) this._onChange();
+          }
+        }
+        /**
+         * \@description
+         * Method that validates whether the value meets a minimum length
+         * requirement. Returns the validation result if enabled, otherwise null.
+         * @param {?} control
+         * @return {?}
+         */
+
+      }, {
+        key: "validate",
+        value: function validate(control) {
+          return this.minlength == null ? null : this._validator(control);
+        }
+        /**
+         * \@description
+         * Registers a callback function to call when the validator inputs change.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnValidatorChange",
+        value: function registerOnValidatorChange(fn) {
+          this._onChange = fn;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_createValidator",
+        value: function _createValidator() {
+          this._validator = Validators.minLength(parseInt(this.minlength, 10));
+        }
+      }]);
+
+      return MinLengthValidator;
+    }();
+
+    MinLengthValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[minlength][formControlName],[minlength][formControl],[minlength][ngModel]',
+        providers: [MIN_LENGTH_VALIDATOR],
+        host: {
+          '[attr.minlength]': 'minlength ? minlength : null'
+        }
+      }]
+    }];
+    MinLengthValidator.propDecorators = {
+      minlength: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * Provider which adds `MaxLengthValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+
+    var MAX_LENGTH_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return MaxLengthValidator;
+      }),
+      multi: true
+    };
+    /**
+     * A directive that adds max length validation to controls marked with the
+     * `maxlength` attribute. The directive is provided with the `NG_VALIDATORS` multi-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding a maximum length validator
+     *
+     * The following example shows how to add a maximum length validator to an input attached to an
+     * ngModel binding.
+     *
+     * ```html
+     * <input name="firstName" ngModel maxlength="25">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var MaxLengthValidator =
+    /*#__PURE__*/
+    function () {
+      function MaxLengthValidator() {
+        _classCallCheck(this, MaxLengthValidator);
+      }
+
+      _createClass2(MaxLengthValidator, [{
+        key: "ngOnChanges",
+
+        /**
+         * \@description
+         * A lifecycle method called when the directive's inputs change. For internal use
+         * only.
+         *
+         * @param {?} changes A object of key/value pairs for the set of changed inputs.
+         * @return {?}
+         */
+        value: function ngOnChanges(changes) {
+          if ('maxlength' in changes) {
+            this._createValidator();
+
+            if (this._onChange) this._onChange();
+          }
+        }
+        /**
+         * \@description
+         * Method that validates whether the value exceeds
+         * the maximum length requirement.
+         * @param {?} control
+         * @return {?}
+         */
+
+      }, {
+        key: "validate",
+        value: function validate(control) {
+          return this.maxlength != null ? this._validator(control) : null;
+        }
+        /**
+         * \@description
+         * Registers a callback function to call when the validator inputs change.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnValidatorChange",
+        value: function registerOnValidatorChange(fn) {
+          this._onChange = fn;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_createValidator",
+        value: function _createValidator() {
+          this._validator = Validators.maxLength(parseInt(this.maxlength, 10));
+        }
+      }]);
+
+      return MaxLengthValidator;
+    }();
+
+    MaxLengthValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[maxlength][formControlName],[maxlength][formControl],[maxlength][ngModel]',
+        providers: [MAX_LENGTH_VALIDATOR],
+        host: {
+          '[attr.maxlength]': 'maxlength ? maxlength : null'
+        }
+      }]
+    }];
+    MaxLengthValidator.propDecorators = {
+      maxlength: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * \@description
+     * Provider which adds `PatternValidator` to the `NG_VALIDATORS` multi-provider list.
+     * @type {?}
+     */
+
+
+    var PATTERN_VALIDATOR = {
+      provide: NG_VALIDATORS,
+      useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["forwardRef"])(
+      /**
+      * @return {?}
+      */
+      function () {
+        return PatternValidator;
+      }),
+      multi: true
+    };
+    /**
+     * \@description
+     * A directive that adds regex pattern validation to controls marked with the
+     * `pattern` attribute. The regex must match the entire control value.
+     * The directive is provided with the `NG_VALIDATORS` multi-provider list.
+     *
+     * @see [Form Validation](guide/form-validation)
+     *
+     * \@usageNotes
+     *
+     * ### Adding a pattern validator
+     *
+     * The following example shows how to add a pattern validator to an input attached to an
+     * ngModel binding.
+     *
+     * ```html
+     * <input name="firstName" ngModel pattern="[a-zA-Z ]*">
+     * ```
+     *
+     * \@ngModule ReactiveFormsModule
+     * \@ngModule FormsModule
+     * \@publicApi
+     */
+
+    var PatternValidator =
+    /*#__PURE__*/
+    function () {
+      function PatternValidator() {
+        _classCallCheck(this, PatternValidator);
+      }
+
+      _createClass2(PatternValidator, [{
+        key: "ngOnChanges",
+
+        /**
+         * \@description
+         * A lifecycle method called when the directive's inputs change. For internal use
+         * only.
+         *
+         * @param {?} changes A object of key/value pairs for the set of changed inputs.
+         * @return {?}
+         */
+        value: function ngOnChanges(changes) {
+          if ('pattern' in changes) {
+            this._createValidator();
+
+            if (this._onChange) this._onChange();
+          }
+        }
+        /**
+         * \@description
+         * Method that validates whether the value matches the
+         * the pattern requirement.
+         * @param {?} control
+         * @return {?}
+         */
+
+      }, {
+        key: "validate",
+        value: function validate(control) {
+          return this._validator(control);
+        }
+        /**
+         * \@description
+         * Registers a callback function to call when the validator inputs change.
+         *
+         * @param {?} fn The callback function
+         * @return {?}
+         */
+
+      }, {
+        key: "registerOnValidatorChange",
+        value: function registerOnValidatorChange(fn) {
+          this._onChange = fn;
+        }
+        /**
+         * @private
+         * @return {?}
+         */
+
+      }, {
+        key: "_createValidator",
+        value: function _createValidator() {
+          this._validator = Validators.pattern(this.pattern);
+        }
+      }]);
+
+      return PatternValidator;
+    }();
+
+    PatternValidator.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"],
+      args: [{
+        selector: '[pattern][formControlName],[pattern][formControl],[pattern][ngModel]',
+        providers: [PATTERN_VALIDATOR],
+        host: {
+          '[attr.pattern]': 'pattern ? pattern : null'
+        }
+      }]
+    }];
+    PatternValidator.propDecorators = {
+      pattern: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+      }]
+    };
+
+    if (false) {}
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /** @type {?} */
+
+
+    var SHARED_FORM_DIRECTIVES = [ɵNgNoValidate, NgSelectOption, ɵNgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, RangeValueAccessor, CheckboxControlValueAccessor, SelectControlValueAccessor, SelectMultipleControlValueAccessor, RadioControlValueAccessor, NgControlStatus, NgControlStatusGroup, RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator, CheckboxRequiredValidator, EmailValidator];
+    /** @type {?} */
+
+    var TEMPLATE_DRIVEN_DIRECTIVES = [NgModel, NgModelGroup, NgForm, NgFormSelectorWarning];
+    /** @type {?} */
+
+    var REACTIVE_DRIVEN_DIRECTIVES = [FormControlDirective, FormGroupDirective, FormControlName, FormGroupName, FormArrayName];
+    /**
+     * Internal module used for sharing directives between FormsModule and ReactiveFormsModule
+     */
+
+    var ɵInternalFormsSharedModule = function ɵInternalFormsSharedModule() {
+      _classCallCheck(this, ɵInternalFormsSharedModule);
+    };
+
+    ɵInternalFormsSharedModule.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+      args: [{
+        declarations: SHARED_FORM_DIRECTIVES,
+        exports: SHARED_FORM_DIRECTIVES
+      }]
+    }];
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @param {?} options
+     * @return {?}
+     */
+
+    function isAbstractControlOptions(options) {
+      return (
+        /** @type {?} */
+        options.asyncValidators !== undefined ||
+        /** @type {?} */
+        options.validators !== undefined ||
+        /** @type {?} */
+        options.updateOn !== undefined
+      );
+    }
+    /**
+     * \@description
+     * Creates an `AbstractControl` from a user-specified configuration.
+     *
+     * The `FormBuilder` provides syntactic sugar that shortens creating instances of a `FormControl`,
+     * `FormGroup`, or `FormArray`. It reduces the amount of boilerplate needed to build complex
+     * forms.
+     *
+     * @see [Reactive Forms Guide](/guide/reactive-forms)
+     *
+     * \@publicApi
+     */
+
+
+    var FormBuilder =
+    /*#__PURE__*/
+    function () {
+      function FormBuilder() {
+        _classCallCheck(this, FormBuilder);
+      }
+
+      _createClass2(FormBuilder, [{
+        key: "group",
+
+        /**
+         * \@description
+         * Construct a new `FormGroup` instance.
+         *
+         * @param {?} controlsConfig A collection of child controls. The key for each child is the name
+         * under which it is registered.
+         *
+         * @param {?=} options Configuration options object for the `FormGroup`. The object can
+         * have two shapes:
+         *
+         * 1) `AbstractControlOptions` object (preferred), which consists of:
+         * * `validators`: A synchronous validator function, or an array of validator functions
+         * * `asyncValidators`: A single async validator or array of async validator functions
+         * * `updateOn`: The event upon which the control should be updated (options: 'change' | 'blur' |
+         * submit')
+         *
+         * 2) Legacy configuration object, which consists of:
+         * * `validator`: A synchronous validator function, or an array of validator functions
+         * * `asyncValidator`: A single async validator or array of async validator functions
+         *
+         * @return {?}
+         */
+        value: function group(controlsConfig) {
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+          /** @type {?} */
+          var controls = this._reduceControls(controlsConfig);
+          /** @type {?} */
+
+
+          var validators = null;
+          /** @type {?} */
+
+          var asyncValidators = null;
+          /** @type {?} */
+
+          var updateOn = undefined;
+
+          if (options != null) {
+            if (isAbstractControlOptions(options)) {
+              // `options` are `AbstractControlOptions`
+              validators = options.validators != null ? options.validators : null;
+              asyncValidators = options.asyncValidators != null ? options.asyncValidators : null;
+              updateOn = options.updateOn != null ? options.updateOn : undefined;
+            } else {
+              // `options` are legacy form group options
+              validators = options['validator'] != null ? options['validator'] : null;
+              asyncValidators = options['asyncValidator'] != null ? options['asyncValidator'] : null;
+            }
+          }
+
+          return new FormGroup(controls, {
+            asyncValidators: asyncValidators,
+            updateOn: updateOn,
+            validators: validators
+          });
+        }
+        /**
+         * \@description
+         * Construct a new `FormControl` with the given state, validators and options.
+         *
+         * \@usageNotes
+         *
+         * ### Initialize a control as disabled
+         *
+         * The following example returns a control with an initial value in a disabled state.
+         *
+         * <code-example path="forms/ts/formBuilder/form_builder_example.ts" region="disabled-control">
+         * </code-example>
+         * @param {?} formState Initializes the control with an initial state value, or
+         * with an object that contains both a value and a disabled status.
+         *
+         * @param {?=} validatorOrOpts A synchronous validator function, or an array of
+         * such functions, or an `AbstractControlOptions` object that contains
+         * validation functions and a validation trigger.
+         *
+         * @param {?=} asyncValidator A single async validator or array of async validator
+         * functions.
+         *
+         * @return {?}
+         */
+
+      }, {
+        key: "control",
+        value: function control(formState, validatorOrOpts, asyncValidator) {
+          return new FormControl(formState, validatorOrOpts, asyncValidator);
+        }
+        /**
+         * Constructs a new `FormArray` from the given array of configurations,
+         * validators and options.
+         *
+         * @param {?} controlsConfig An array of child controls or control configs. Each
+         * child control is given an index when it is registered.
+         *
+         * @param {?=} validatorOrOpts A synchronous validator function, or an array of
+         * such functions, or an `AbstractControlOptions` object that contains
+         * validation functions and a validation trigger.
+         *
+         * @param {?=} asyncValidator A single async validator or array of async validator
+         * functions.
+         * @return {?}
+         */
+
+      }, {
+        key: "array",
+        value: function array(controlsConfig, validatorOrOpts, asyncValidator) {
+          var _this103 = this;
+
+          /** @type {?} */
+          var controls = controlsConfig.map(
+          /**
+          * @param {?} c
+          * @return {?}
+          */
+          function (c) {
+            return _this103._createControl(c);
+          });
+          return new FormArray(controls, validatorOrOpts, asyncValidator);
+        }
+        /**
+         * \@internal
+         * @param {?} controlsConfig
+         * @return {?}
+         */
+
+      }, {
+        key: "_reduceControls",
+        value: function _reduceControls(controlsConfig) {
+          var _this104 = this;
+
+          /** @type {?} */
+          var controls = {};
+          Object.keys(controlsConfig).forEach(
+          /**
+          * @param {?} controlName
+          * @return {?}
+          */
+          function (controlName) {
+            controls[controlName] = _this104._createControl(controlsConfig[controlName]);
+          });
+          return controls;
+        }
+        /**
+         * \@internal
+         * @param {?} controlConfig
+         * @return {?}
+         */
+
+      }, {
+        key: "_createControl",
+        value: function _createControl(controlConfig) {
+          if (controlConfig instanceof FormControl || controlConfig instanceof FormGroup || controlConfig instanceof FormArray) {
+            return controlConfig;
+          } else if (Array.isArray(controlConfig)) {
+            /** @type {?} */
+            var value = controlConfig[0];
+            /** @type {?} */
+
+            var validator = controlConfig.length > 1 ? controlConfig[1] : null;
+            /** @type {?} */
+
+            var asyncValidator = controlConfig.length > 2 ? controlConfig[2] : null;
+            return this.control(value, validator, asyncValidator);
+          } else {
+            return this.control(controlConfig);
+          }
+        }
+      }]);
+
+      return FormBuilder;
+    }();
+
+    FormBuilder.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }];
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * \@publicApi
+     * @type {?}
+     */
+
+    var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('8.2.14');
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Exports the required providers and directives for template-driven forms,
+     * making them available for import by NgModules that import this module.
+     *
+     * @see [Forms Guide](/guide/forms)
+     *
+     * \@publicApi
+     */
+
+    var FormsModule =
+    /*#__PURE__*/
+    function () {
+      function FormsModule() {
+        _classCallCheck(this, FormsModule);
+      }
+
+      _createClass2(FormsModule, null, [{
+        key: "withConfig",
+
+        /**
+         * \@description
+         * Provides options for configuring the template-driven forms module.
+         *
+         * @param {?} opts An object of configuration options
+         * * `warnOnDeprecatedNgFormSelector` Configures when to emit a warning when the deprecated
+         * `ngForm` selector is used.
+         * @return {?}
+         */
+        value: function withConfig(opts) {
+          return {
+            ngModule: FormsModule,
+            providers: [{
+              provide: NG_FORM_SELECTOR_WARNING,
+              useValue: opts.warnOnDeprecatedNgFormSelector
+            }]
+          };
+        }
+      }]);
+
+      return FormsModule;
+    }();
+
+    FormsModule.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+      args: [{
+        declarations: TEMPLATE_DRIVEN_DIRECTIVES,
+        providers: [RadioControlRegistry],
+        exports: [ɵInternalFormsSharedModule, TEMPLATE_DRIVEN_DIRECTIVES]
+      }]
+    }];
+    /**
+     * Exports the required infrastructure and directives for reactive forms,
+     * making them available for import by NgModules that import this module.
+     * @see [Forms](guide/reactive-forms)
+     *
+     * @see [Reactive Forms Guide](/guide/reactive-forms)
+     *
+     * \@publicApi
+     */
+
+    var ReactiveFormsModule =
+    /*#__PURE__*/
+    function () {
+      function ReactiveFormsModule() {
+        _classCallCheck(this, ReactiveFormsModule);
+      }
+
+      _createClass2(ReactiveFormsModule, null, [{
+        key: "withConfig",
+
+        /**
+         * \@description
+         * Provides options for configuring the reactive forms module.
+         *
+         * @param {?} opts An object of configuration options
+         * * `warnOnNgModelWithFormControl` Configures when to emit a warning when an `ngModel`
+         * binding is used with reactive form directives.
+         * @return {?}
+         */
+        value: function withConfig(opts) {
+          return {
+            ngModule: ReactiveFormsModule,
+            providers: [{
+              provide: NG_MODEL_WITH_FORM_CONTROL_WARNING,
+              useValue: opts.warnOnNgModelWithFormControl
+            }]
+          };
+        }
+      }]);
+
+      return ReactiveFormsModule;
+    }();
+
+    ReactiveFormsModule.decorators = [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+      args: [{
+        declarations: [REACTIVE_DRIVEN_DIRECTIVES],
+        providers: [FormBuilder, RadioControlRegistry],
+        exports: [ɵInternalFormsSharedModule, REACTIVE_DRIVEN_DIRECTIVES]
+      }]
+    }];
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * Generated bundle index. Do not edit.
+     */
+    //# sourceMappingURL=forms.js.map
+
+    /***/
   },
 
   /***/
@@ -72519,27 +85196,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GenericBrowserDomAdapter, _DomAdapter);
 
       function GenericBrowserDomAdapter() {
-        var _this61;
+        var _this105;
 
         _classCallCheck(this, GenericBrowserDomAdapter);
 
-        _this61 = _possibleConstructorReturn(this, _getPrototypeOf(GenericBrowserDomAdapter).call(this));
-        _this61._animationPrefix = null;
-        _this61._transitionEnd = null;
+        _this105 = _possibleConstructorReturn(this, _getPrototypeOf(GenericBrowserDomAdapter).call(this));
+        _this105._animationPrefix = null;
+        _this105._transitionEnd = null;
 
         try {
           /** @type {?} */
-          var element = _this61.createElement('div', document);
+          var element = _this105.createElement('div', document);
 
-          if (_this61.getStyle(element, 'animationName') != null) {
-            _this61._animationPrefix = '';
+          if (_this105.getStyle(element, 'animationName') != null) {
+            _this105._animationPrefix = '';
           } else {
             /** @type {?} */
             var domPrefixes = ['Webkit', 'Moz', 'O', 'ms'];
 
             for (var i = 0; i < domPrefixes.length; i++) {
-              if (_this61.getStyle(element, domPrefixes[i] + 'AnimationName') != null) {
-                _this61._animationPrefix = '-' + domPrefixes[i].toLowerCase() + '-';
+              if (_this105.getStyle(element, domPrefixes[i] + 'AnimationName') != null) {
+                _this105._animationPrefix = '-' + domPrefixes[i].toLowerCase() + '-';
                 break;
               }
             }
@@ -72559,16 +85236,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (key) {
-            if (_this61.getStyle(element, key) != null) {
-              _this61._transitionEnd = transEndEventNames[key];
+            if (_this105.getStyle(element, key) != null) {
+              _this105._transitionEnd = transEndEventNames[key];
             }
           });
         } catch (_a) {
-          _this61._animationPrefix = null;
-          _this61._transitionEnd = null;
+          _this105._animationPrefix = null;
+          _this105._transitionEnd = null;
         }
 
-        return _this61;
+        return _this105;
       }
       /**
        * @param {?} el
@@ -74183,16 +86860,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _doc
        */
       function BrowserPlatformLocation(_doc) {
-        var _this62;
+        var _this106;
 
         _classCallCheck(this, BrowserPlatformLocation);
 
-        _this62 = _possibleConstructorReturn(this, _getPrototypeOf(BrowserPlatformLocation).call(this));
-        _this62._doc = _doc;
+        _this106 = _possibleConstructorReturn(this, _getPrototypeOf(BrowserPlatformLocation).call(this));
+        _this106._doc = _doc;
 
-        _this62._init();
+        _this106._init();
 
-        return _this62;
+        return _this106;
       } // This is moved to its own method so that `MockPlatformLocationStrategy` can overwrite it
 
       /**
@@ -74634,8 +87311,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function () {
-        for (var _len12 = arguments.length, m = new Array(_len12), _key12 = 0; _key12 < _len12; _key12++) {
-          m[_key12] = arguments[_key12];
+        for (var _len13 = arguments.length, m = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
+          m[_key13] = arguments[_key13];
         }
 
         return '-' + m[1].toLowerCase();
@@ -74654,8 +87331,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function () {
-        for (var _len13 = arguments.length, m = new Array(_len13), _key13 = 0; _key13 < _len13; _key13++) {
-          m[_key13] = arguments[_key13];
+        for (var _len14 = arguments.length, m = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
+          m[_key14] = arguments[_key14];
         }
 
         return m[1].toUpperCase();
@@ -74811,7 +87488,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _zone
        */
       function EventManager(plugins, _zone) {
-        var _this63 = this;
+        var _this107 = this;
 
         _classCallCheck(this, EventManager);
 
@@ -74825,7 +87502,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {THIS}
         */
         function (p) {
-          return p.manager = _this63;
+          return p.manager = _this107;
         });
         this._plugins = plugins.slice().reverse();
       }
@@ -75000,7 +87677,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(SharedStylesHost, [{
         key: "addStyles",
         value: function addStyles(styles) {
-          var _this64 = this;
+          var _this108 = this;
 
           /** @type {?} */
           var additions = new Set();
@@ -75010,8 +87687,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (style) {
-            if (!_this64._stylesSet.has(style)) {
-              _this64._stylesSet.add(style);
+            if (!_this108._stylesSet.has(style)) {
+              _this108._stylesSet.add(style);
 
               additions.add(style);
             }
@@ -75055,18 +87732,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _doc
        */
       function DomSharedStylesHost(_doc) {
-        var _this65;
+        var _this109;
 
         _classCallCheck(this, DomSharedStylesHost);
 
-        _this65 = _possibleConstructorReturn(this, _getPrototypeOf(DomSharedStylesHost).call(this));
-        _this65._doc = _doc;
-        _this65._hostNodes = new Set();
-        _this65._styleNodes = new Set();
+        _this109 = _possibleConstructorReturn(this, _getPrototypeOf(DomSharedStylesHost).call(this));
+        _this109._doc = _doc;
+        _this109._hostNodes = new Set();
+        _this109._styleNodes = new Set();
 
-        _this65._hostNodes.add(_doc.head);
+        _this109._hostNodes.add(_doc.head);
 
-        return _this65;
+        return _this109;
       }
       /**
        * @private
@@ -75079,7 +87756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(DomSharedStylesHost, [{
         key: "_addStylesToHost",
         value: function _addStylesToHost(styles, host) {
-          var _this66 = this;
+          var _this110 = this;
 
           styles.forEach(
           /**
@@ -75088,11 +87765,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (style) {
             /** @type {?} */
-            var styleEl = _this66._doc.createElement('style');
+            var styleEl = _this110._doc.createElement('style');
 
             styleEl.textContent = style;
 
-            _this66._styleNodes.add(host.appendChild(styleEl));
+            _this110._styleNodes.add(host.appendChild(styleEl));
           });
         }
         /**
@@ -75125,7 +87802,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "onStylesAdded",
         value: function onStylesAdded(additions) {
-          var _this67 = this;
+          var _this111 = this;
 
           this._hostNodes.forEach(
           /**
@@ -75133,7 +87810,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (hostNode) {
-            return _this67._addStylesToHost(additions, hostNode);
+            return _this111._addStylesToHost(additions, hostNode);
           });
         }
         /**
@@ -75712,19 +88389,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} appId
        */
       function EmulatedEncapsulationDomRenderer2(eventManager, sharedStylesHost, component, appId) {
-        var _this68;
+        var _this112;
 
         _classCallCheck(this, EmulatedEncapsulationDomRenderer2);
 
-        _this68 = _possibleConstructorReturn(this, _getPrototypeOf(EmulatedEncapsulationDomRenderer2).call(this, eventManager));
-        _this68.component = component;
+        _this112 = _possibleConstructorReturn(this, _getPrototypeOf(EmulatedEncapsulationDomRenderer2).call(this, eventManager));
+        _this112.component = component;
         /** @type {?} */
 
         var styles = flattenStyles(appId + '-' + component.id, component.styles, []);
         sharedStylesHost.addStyles(styles);
-        _this68.contentAttr = shimContentAttribute(appId + '-' + component.id);
-        _this68.hostAttr = shimHostAttribute(appId + '-' + component.id);
-        return _this68;
+        _this112.contentAttr = shimContentAttribute(appId + '-' + component.id);
+        _this112.hostAttr = shimHostAttribute(appId + '-' + component.id);
+        return _this112;
       }
       /**
        * @param {?} element
@@ -75772,28 +88449,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} component
        */
       function ShadowDomRenderer(eventManager, sharedStylesHost, hostEl, component) {
-        var _this69;
+        var _this113;
 
         _classCallCheck(this, ShadowDomRenderer);
 
-        _this69 = _possibleConstructorReturn(this, _getPrototypeOf(ShadowDomRenderer).call(this, eventManager));
-        _this69.sharedStylesHost = sharedStylesHost;
-        _this69.hostEl = hostEl;
-        _this69.component = component;
+        _this113 = _possibleConstructorReturn(this, _getPrototypeOf(ShadowDomRenderer).call(this, eventManager));
+        _this113.sharedStylesHost = sharedStylesHost;
+        _this113.hostEl = hostEl;
+        _this113.component = component;
 
         if (component.encapsulation === _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].ShadowDom) {
-          _this69.shadowRoot =
+          _this113.shadowRoot =
           /** @type {?} */
           hostEl.attachShadow({
             mode: 'open'
           });
         } else {
-          _this69.shadowRoot =
+          _this113.shadowRoot =
           /** @type {?} */
           hostEl.createShadowRoot();
         }
 
-        _this69.sharedStylesHost.addHost(_this69.shadowRoot);
+        _this113.sharedStylesHost.addHost(_this113.shadowRoot);
         /** @type {?} */
 
 
@@ -75804,10 +88481,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var styleEl = document.createElement('style');
           styleEl.textContent = styles[i];
 
-          _this69.shadowRoot.appendChild(styleEl);
+          _this113.shadowRoot.appendChild(styleEl);
         }
 
-        return _this69;
+        return _this113;
       }
       /**
        * @private
@@ -76083,18 +88760,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} platformId
        */
       function DomEventsPlugin(doc, ngZone, platformId) {
-        var _this70;
+        var _this114;
 
         _classCallCheck(this, DomEventsPlugin);
 
-        _this70 = _possibleConstructorReturn(this, _getPrototypeOf(DomEventsPlugin).call(this, doc));
-        _this70.ngZone = ngZone;
+        _this114 = _possibleConstructorReturn(this, _getPrototypeOf(DomEventsPlugin).call(this, doc));
+        _this114.ngZone = ngZone;
 
         if (!platformId || !Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformServer"])(platformId)) {
-          _this70.patchEvent();
+          _this114.patchEvent();
         }
 
-        return _this70;
+        return _this114;
       }
       /**
        * @private
@@ -76164,7 +88841,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addEventListener",
         value: function addEventListener(element, eventName, handler) {
-          var _this71 = this;
+          var _this115 = this;
 
           /**
            * This code is about to add a listener to the DOM. If Zone.js is present, than
@@ -76254,7 +88931,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function () {
-              return _this71.removeEventListener(element, eventName, callback);
+              return _this115.removeEventListener(element, eventName, callback);
             }
           );
         }
@@ -76506,15 +89183,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} loader
        */
       function HammerGesturesPlugin(doc, _config, console, loader) {
-        var _this72;
+        var _this116;
 
         _classCallCheck(this, HammerGesturesPlugin);
 
-        _this72 = _possibleConstructorReturn(this, _getPrototypeOf(HammerGesturesPlugin).call(this, doc));
-        _this72._config = _config;
-        _this72.console = console;
-        _this72.loader = loader;
-        return _this72;
+        _this116 = _possibleConstructorReturn(this, _getPrototypeOf(HammerGesturesPlugin).call(this, doc));
+        _this116._config = _config;
+        _this116.console = console;
+        _this116.loader = loader;
+        return _this116;
       }
       /**
        * @param {?} eventName
@@ -76548,7 +89225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addEventListener",
         value: function addEventListener(element, eventName, handler) {
-          var _this73 = this;
+          var _this117 = this;
 
           /** @type {?} */
           var zone = this.manager.getZone();
@@ -76583,7 +89260,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (!
               /** @type {?} */
               window.Hammer) {
-                _this73.console.warn("The custom HAMMER_LOADER completed, but Hammer.JS is not present.");
+                _this117.console.warn("The custom HAMMER_LOADER completed, but Hammer.JS is not present.");
 
                 deregister =
                 /**
@@ -76597,14 +89274,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (!cancelRegistration) {
                 // Now that Hammer is loaded and the listener is being loaded for real,
                 // the deregistration function changes from canceling registration to removal.
-                deregister = _this73.addEventListener(element, eventName, handler);
+                deregister = _this117.addEventListener(element, eventName, handler);
               }
             }).catch(
             /**
             * @return {?}
             */
             function () {
-              _this73.console.warn("The \"".concat(eventName, "\" event cannot be bound because the custom ") + "Hammer.JS loader failed.");
+              _this117.console.warn("The \"".concat(eventName, "\" event cannot be bound because the custom ") + "Hammer.JS loader failed.");
 
               deregister =
               /**
@@ -76633,7 +89310,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             // Creating the manager bind events, must be done outside of angular
 
             /** @type {?} */
-            var mc = _this73._config.buildHammer(element);
+            var mc = _this117._config.buildHammer(element);
             /** @type {?} */
 
 
@@ -77099,13 +89776,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} _doc
        */
       function DomSanitizerImpl(_doc) {
-        var _this74;
+        var _this118;
 
         _classCallCheck(this, DomSanitizerImpl);
 
-        _this74 = _possibleConstructorReturn(this, _getPrototypeOf(DomSanitizerImpl).call(this));
-        _this74._doc = _doc;
-        return _this74;
+        _this118 = _possibleConstructorReturn(this, _getPrototypeOf(DomSanitizerImpl).call(this));
+        _this118._doc = _doc;
+        return _this118;
       }
       /**
        * @param {?} ctx
@@ -77659,7 +90336,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addTags",
         value: function addTags(tags) {
-          var _this75 = this;
+          var _this119 = this;
 
           var forceCreation = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
           if (!tags) return [];
@@ -77671,7 +90348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (result, tag) {
             if (tag) {
-              result.push(_this75._getOrCreateElement(tag, forceCreation));
+              result.push(_this119._getOrCreateElement(tag, forceCreation));
             }
 
             return result;
@@ -77805,7 +90482,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_setMetaElementAttributes",
         value: function _setMetaElementAttributes(tag, el) {
-          var _this76 = this;
+          var _this120 = this;
 
           Object.keys(tag).forEach(
           /**
@@ -77813,7 +90490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (prop) {
-            return _this76._dom.setAttribute(el, prop, tag[prop]);
+            return _this120._dom.setAttribute(el, prop, tag[prop]);
           });
           return el;
         }
@@ -77840,7 +90517,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "_containsAttributes",
         value: function _containsAttributes(tag, elem) {
-          var _this77 = this;
+          var _this121 = this;
 
           return Object.keys(tag).every(
           /**
@@ -77848,7 +90525,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (key) {
-            return _this77._dom.getAttribute(elem, key) === tag[key];
+            return _this121._dom.getAttribute(elem, key) === tag[key];
           });
         }
       }]);
@@ -79052,17 +91729,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url) {
-        var _this78;
+        var _this122;
 
         var navigationTrigger = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'imperative';
         var restoredState = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
         _classCallCheck(this, NavigationStart);
 
-        _this78 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationStart).call(this, id, url));
-        _this78.navigationTrigger = navigationTrigger;
-        _this78.restoredState = restoredState;
-        return _this78;
+        _this122 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationStart).call(this, id, url));
+        _this122.navigationTrigger = navigationTrigger;
+        _this122.restoredState = restoredState;
+        return _this122;
       }
       /**
        * \@docsNotRequired
@@ -79103,13 +91780,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects) {
-        var _this79;
+        var _this123;
 
         _classCallCheck(this, NavigationEnd);
 
-        _this79 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationEnd).call(this, id, url));
-        _this79.urlAfterRedirects = urlAfterRedirects;
-        return _this79;
+        _this123 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationEnd).call(this, id, url));
+        _this123.urlAfterRedirects = urlAfterRedirects;
+        return _this123;
       }
       /**
        * \@docsNotRequired
@@ -79153,13 +91830,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, reason) {
-        var _this80;
+        var _this124;
 
         _classCallCheck(this, NavigationCancel);
 
-        _this80 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationCancel).call(this, id, url));
-        _this80.reason = reason;
-        return _this80;
+        _this124 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationCancel).call(this, id, url));
+        _this124.reason = reason;
+        return _this124;
       }
       /**
        * \@docsNotRequired
@@ -79200,13 +91877,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, error) {
-        var _this81;
+        var _this125;
 
         _classCallCheck(this, NavigationError);
 
-        _this81 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationError).call(this, id, url));
-        _this81.error = error;
-        return _this81;
+        _this125 = _possibleConstructorReturn(this, _getPrototypeOf(NavigationError).call(this, id, url));
+        _this125.error = error;
+        return _this125;
       }
       /**
        * \@docsNotRequired
@@ -79248,14 +91925,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this82;
+        var _this126;
 
         _classCallCheck(this, RoutesRecognized);
 
-        _this82 = _possibleConstructorReturn(this, _getPrototypeOf(RoutesRecognized).call(this, id, url));
-        _this82.urlAfterRedirects = urlAfterRedirects;
-        _this82.state = state;
-        return _this82;
+        _this126 = _possibleConstructorReturn(this, _getPrototypeOf(RoutesRecognized).call(this, id, url));
+        _this126.urlAfterRedirects = urlAfterRedirects;
+        _this126.state = state;
+        return _this126;
       }
       /**
        * \@docsNotRequired
@@ -79297,14 +91974,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this83;
+        var _this127;
 
         _classCallCheck(this, GuardsCheckStart);
 
-        _this83 = _possibleConstructorReturn(this, _getPrototypeOf(GuardsCheckStart).call(this, id, url));
-        _this83.urlAfterRedirects = urlAfterRedirects;
-        _this83.state = state;
-        return _this83;
+        _this127 = _possibleConstructorReturn(this, _getPrototypeOf(GuardsCheckStart).call(this, id, url));
+        _this127.urlAfterRedirects = urlAfterRedirects;
+        _this127.state = state;
+        return _this127;
       }
       /**
        * @return {?}
@@ -79346,15 +92023,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state, shouldActivate) {
-        var _this84;
+        var _this128;
 
         _classCallCheck(this, GuardsCheckEnd);
 
-        _this84 = _possibleConstructorReturn(this, _getPrototypeOf(GuardsCheckEnd).call(this, id, url));
-        _this84.urlAfterRedirects = urlAfterRedirects;
-        _this84.state = state;
-        _this84.shouldActivate = shouldActivate;
-        return _this84;
+        _this128 = _possibleConstructorReturn(this, _getPrototypeOf(GuardsCheckEnd).call(this, id, url));
+        _this128.urlAfterRedirects = urlAfterRedirects;
+        _this128.state = state;
+        _this128.shouldActivate = shouldActivate;
+        return _this128;
       }
       /**
        * @return {?}
@@ -79398,14 +92075,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this85;
+        var _this129;
 
         _classCallCheck(this, ResolveStart);
 
-        _this85 = _possibleConstructorReturn(this, _getPrototypeOf(ResolveStart).call(this, id, url));
-        _this85.urlAfterRedirects = urlAfterRedirects;
-        _this85.state = state;
-        return _this85;
+        _this129 = _possibleConstructorReturn(this, _getPrototypeOf(ResolveStart).call(this, id, url));
+        _this129.urlAfterRedirects = urlAfterRedirects;
+        _this129.state = state;
+        return _this129;
       }
       /**
        * @return {?}
@@ -79447,14 +92124,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       id,
       /** @docsNotRequired */
       url, urlAfterRedirects, state) {
-        var _this86;
+        var _this130;
 
         _classCallCheck(this, ResolveEnd);
 
-        _this86 = _possibleConstructorReturn(this, _getPrototypeOf(ResolveEnd).call(this, id, url));
-        _this86.urlAfterRedirects = urlAfterRedirects;
-        _this86.state = state;
-        return _this86;
+        _this130 = _possibleConstructorReturn(this, _getPrototypeOf(ResolveEnd).call(this, id, url));
+        _this130.urlAfterRedirects = urlAfterRedirects;
+        _this130.state = state;
+        return _this130;
       }
       /**
        * @return {?}
@@ -80751,7 +93428,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} children
        */
       function UrlSegmentGroup(segments, children) {
-        var _this87 = this;
+        var _this131 = this;
 
         _classCallCheck(this, UrlSegmentGroup);
 
@@ -80771,7 +93448,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {THIS}
         */
         function (v, k) {
-          return v.parent = _this87;
+          return v.parent = _this131;
         });
       }
       /**
@@ -81755,13 +94432,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function findNode(value, node) {
       if (value === node.value) return node;
-      var _iteratorNormalCompletion13 = true;
-      var _didIteratorError13 = false;
-      var _iteratorError13 = undefined;
+      var _iteratorNormalCompletion14 = true;
+      var _didIteratorError14 = false;
+      var _iteratorError14 = undefined;
 
       try {
-        for (var _iterator13 = node.children[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
-          var child = _step13.value;
+        for (var _iterator14 = node.children[Symbol.iterator](), _step14; !(_iteratorNormalCompletion14 = (_step14 = _iterator14.next()).done); _iteratorNormalCompletion14 = true) {
+          var child = _step14.value;
 
           /** @type {?} */
           var _node = findNode(value, child);
@@ -81769,16 +94446,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (_node) return _node;
         }
       } catch (err) {
-        _didIteratorError13 = true;
-        _iteratorError13 = err;
+        _didIteratorError14 = true;
+        _iteratorError14 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion13 && _iterator13.return != null) {
-            _iterator13.return();
+          if (!_iteratorNormalCompletion14 && _iterator14.return != null) {
+            _iterator14.return();
           }
         } finally {
-          if (_didIteratorError13) {
-            throw _iteratorError13;
+          if (_didIteratorError14) {
+            throw _iteratorError14;
           }
         }
       }
@@ -81796,13 +94473,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function findPath(value, node) {
       if (value === node.value) return [node];
-      var _iteratorNormalCompletion14 = true;
-      var _didIteratorError14 = false;
-      var _iteratorError14 = undefined;
+      var _iteratorNormalCompletion15 = true;
+      var _didIteratorError15 = false;
+      var _iteratorError15 = undefined;
 
       try {
-        for (var _iterator14 = node.children[Symbol.iterator](), _step14; !(_iteratorNormalCompletion14 = (_step14 = _iterator14.next()).done); _iteratorNormalCompletion14 = true) {
-          var child = _step14.value;
+        for (var _iterator15 = node.children[Symbol.iterator](), _step15; !(_iteratorNormalCompletion15 = (_step15 = _iterator15.next()).done); _iteratorNormalCompletion15 = true) {
+          var child = _step15.value;
 
           /** @type {?} */
           var path = findPath(value, child);
@@ -81813,16 +94490,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _didIteratorError14 = true;
-        _iteratorError14 = err;
+        _didIteratorError15 = true;
+        _iteratorError15 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion14 && _iterator14.return != null) {
-            _iterator14.return();
+          if (!_iteratorNormalCompletion15 && _iterator15.return != null) {
+            _iterator15.return();
           }
         } finally {
-          if (_didIteratorError14) {
-            throw _iteratorError14;
+          if (_didIteratorError15) {
+            throw _iteratorError15;
           }
         }
       }
@@ -81935,16 +94612,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} snapshot
        */
       function RouterState(root, snapshot) {
-        var _this88;
+        var _this132;
 
         _classCallCheck(this, RouterState);
 
-        _this88 = _possibleConstructorReturn(this, _getPrototypeOf(RouterState).call(this, root));
-        _this88.snapshot = snapshot;
+        _this132 = _possibleConstructorReturn(this, _getPrototypeOf(RouterState).call(this, root));
+        _this132.snapshot = snapshot;
         setRouterState(
         /** @type {?} */
-        _assertThisInitialized(_this88), root);
-        return _this88;
+        _assertThisInitialized(_this132), root);
+        return _this132;
       }
       /**
        * @return {?}
@@ -82451,16 +95128,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} root
        */
       function RouterStateSnapshot(url, root) {
-        var _this89;
+        var _this133;
 
         _classCallCheck(this, RouterStateSnapshot);
 
-        _this89 = _possibleConstructorReturn(this, _getPrototypeOf(RouterStateSnapshot).call(this, root));
-        _this89.url = url;
+        _this133 = _possibleConstructorReturn(this, _getPrototypeOf(RouterStateSnapshot).call(this, root));
+        _this133.url = url;
         setRouterState(
         /** @type {?} */
-        _assertThisInitialized(_this89), root);
-        return _this89;
+        _assertThisInitialized(_this133), root);
+        return _this133;
       }
       /**
        * @return {?}
@@ -82677,29 +95354,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       * @return {?}
       */
       function (child) {
-        var _iteratorNormalCompletion15 = true;
-        var _didIteratorError15 = false;
-        var _iteratorError15 = undefined;
+        var _iteratorNormalCompletion16 = true;
+        var _didIteratorError16 = false;
+        var _iteratorError16 = undefined;
 
         try {
-          for (var _iterator15 = prevState.children[Symbol.iterator](), _step15; !(_iteratorNormalCompletion15 = (_step15 = _iterator15.next()).done); _iteratorNormalCompletion15 = true) {
-            var p = _step15.value;
+          for (var _iterator16 = prevState.children[Symbol.iterator](), _step16; !(_iteratorNormalCompletion16 = (_step16 = _iterator16.next()).done); _iteratorNormalCompletion16 = true) {
+            var p = _step16.value;
 
             if (routeReuseStrategy.shouldReuseRoute(p.value.snapshot, child.value)) {
               return createNode(routeReuseStrategy, child, p);
             }
           }
         } catch (err) {
-          _didIteratorError15 = true;
-          _iteratorError15 = err;
+          _didIteratorError16 = true;
+          _iteratorError16 = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion15 && _iterator15.return != null) {
-              _iterator15.return();
+            if (!_iteratorNormalCompletion16 && _iterator16.return != null) {
+              _iterator16.return();
             }
           } finally {
-            if (_didIteratorError15) {
-              throw _iteratorError15;
+            if (_didIteratorError16) {
+              throw _iteratorError16;
             }
           }
         }
@@ -83367,7 +96044,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deactivateChildRoutes",
         value: function deactivateChildRoutes(futureNode, currNode, contexts) {
-          var _this90 = this;
+          var _this134 = this;
 
           /** @type {?} */
           var children = nodeChildrenAsMap(currNode); // Recurse on the routes active in the future state to de-activate deeper children
@@ -83381,7 +96058,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
             var childOutletName = futureChild.value.outlet;
 
-            _this90.deactivateRoutes(futureChild, children[childOutletName], contexts);
+            _this134.deactivateRoutes(futureChild, children[childOutletName], contexts);
 
             delete children[childOutletName];
           }); // De-activate the routes that will not be re-used
@@ -83393,7 +96070,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (v, childName) {
-            _this90.deactivateRouteAndItsChildren(v, contexts);
+            _this134.deactivateRouteAndItsChildren(v, contexts);
           });
         }
         /**
@@ -83487,7 +96164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deactivateRouteAndOutlet",
         value: function deactivateRouteAndOutlet(route, parentContexts) {
-          var _this91 = this;
+          var _this135 = this;
 
           /** @type {?} */
           var context = parentContexts.getContext(route.value.outlet);
@@ -83505,7 +96182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (v, k) {
-              return _this91.deactivateRouteAndItsChildren(v, contexts);
+              return _this135.deactivateRouteAndItsChildren(v, contexts);
             });
 
             if (context.outlet) {
@@ -83527,7 +96204,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "activateChildRoutes",
         value: function activateChildRoutes(futureNode, currNode, contexts) {
-          var _this92 = this;
+          var _this136 = this;
 
           /** @type {?} */
           var children = nodeChildrenAsMap(currNode);
@@ -83537,9 +96214,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (c) {
-            _this92.activateRoutes(c, children[c.value.outlet], contexts);
+            _this136.activateRoutes(c, children[c.value.outlet], contexts);
 
-            _this92.forwardEvent(new ActivationEnd(c.value.snapshot));
+            _this136.forwardEvent(new ActivationEnd(c.value.snapshot));
           });
 
           if (futureNode.children.length) {
@@ -83876,7 +96553,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(ApplyRedirects, [{
         key: "apply",
         value: function apply() {
-          var _this93 = this;
+          var _this137 = this;
 
           /** @type {?} */
           var expanded$ = this.expandSegmentGroup(this.ngModule, this.config, this.urlTree.root, PRIMARY_OUTLET);
@@ -83888,9 +96565,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (rootSegmentGroup) {
-            return _this93.createUrlTree(rootSegmentGroup, _this93.urlTree.queryParams,
+            return _this137.createUrlTree(rootSegmentGroup, _this137.urlTree.queryParams,
             /** @type {?} */
-            _this93.urlTree.fragment);
+            _this137.urlTree.fragment);
           }));
           return urlTrees$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
           /**
@@ -83900,13 +96577,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (e) {
             if (e instanceof AbsoluteRedirect) {
               // after an absolute redirect we do not apply any more redirects!
-              _this93.allowRedirects = false; // we need to run matching, so we can fetch all lazy-loaded modules
+              _this137.allowRedirects = false; // we need to run matching, so we can fetch all lazy-loaded modules
 
-              return _this93.match(e.urlTree);
+              return _this137.match(e.urlTree);
             }
 
             if (e instanceof NoMatch) {
-              throw _this93.noMatchError(e);
+              throw _this137.noMatchError(e);
             }
 
             throw e;
@@ -83921,7 +96598,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "match",
         value: function match(tree) {
-          var _this94 = this;
+          var _this138 = this;
 
           /** @type {?} */
           var expanded$ = this.expandSegmentGroup(this.ngModule, this.config, tree.root, PRIMARY_OUTLET);
@@ -83933,7 +96610,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (rootSegmentGroup) {
-            return _this94.createUrlTree(rootSegmentGroup, tree.queryParams,
+            return _this138.createUrlTree(rootSegmentGroup, tree.queryParams,
             /** @type {?} */
             tree.fragment);
           }));
@@ -83944,7 +96621,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (e) {
             if (e instanceof NoMatch) {
-              throw _this94.noMatchError(e);
+              throw _this138.noMatchError(e);
             }
 
             throw e;
@@ -84013,7 +96690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandChildren",
         value: function expandChildren(ngModule, routes, segmentGroup) {
-          var _this95 = this;
+          var _this139 = this;
 
           return waitForMap(segmentGroup.children,
           /**
@@ -84022,7 +96699,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (childOutlet, child) {
-            return _this95.expandSegmentGroup(ngModule, routes, child, childOutlet);
+            return _this139.expandSegmentGroup(ngModule, routes, child, childOutlet);
           });
         }
         /**
@@ -84039,7 +96716,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandSegment",
         value: function expandSegment(ngModule, segmentGroup, routes, segments, outlet, allowRedirects) {
-          var _this96 = this;
+          var _this140 = this;
 
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"]).apply(void 0, _toConsumableArray(routes)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
           /**
@@ -84048,7 +96725,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (r) {
             /** @type {?} */
-            var expanded$ = _this96.expandSegmentAgainstRoute(ngModule, segmentGroup, routes, r, segments, outlet, allowRedirects);
+            var expanded$ = _this140.expandSegmentAgainstRoute(ngModule, segmentGroup, routes, r, segments, outlet, allowRedirects);
 
             return expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
             /**
@@ -84082,7 +96759,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function (e, _) {
             if (e instanceof rxjs__WEBPACK_IMPORTED_MODULE_2__["EmptyError"] || e.name === 'EmptyError') {
-              if (_this96.noLeftoversInUrl(segmentGroup, segments, outlet)) {
+              if (_this140.noLeftoversInUrl(segmentGroup, segments, outlet)) {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(new UrlSegmentGroup([], {}));
               }
 
@@ -84166,7 +96843,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandWildCardWithParamsAgainstRouteUsingRedirect",
         value: function expandWildCardWithParamsAgainstRouteUsingRedirect(ngModule, routes, route, outlet) {
-          var _this97 = this;
+          var _this141 = this;
 
           /** @type {?} */
           var newTree = this.applyRedirectCommands([],
@@ -84187,7 +96864,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (newSegments) {
             /** @type {?} */
             var group = new UrlSegmentGroup(newSegments, {});
-            return _this97.expandSegment(ngModule, group, routes, newSegments, outlet, false);
+            return _this141.expandSegment(ngModule, group, routes, newSegments, outlet, false);
           }));
         }
         /**
@@ -84204,7 +96881,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "expandRegularSegmentAgainstRouteUsingRedirect",
         value: function expandRegularSegmentAgainstRouteUsingRedirect(ngModule, segmentGroup, routes, route, segments, outlet) {
-          var _this98 = this;
+          var _this142 = this;
 
           var _match = match(segmentGroup, route, segments),
               matched = _match.matched,
@@ -84233,7 +96910,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (newSegments) {
-            return _this98.expandSegment(ngModule, segmentGroup, routes, newSegments.concat(segments.slice(lastChild)), outlet, false);
+            return _this142.expandSegment(ngModule, segmentGroup, routes, newSegments.concat(segments.slice(lastChild)), outlet, false);
           }));
         }
         /**
@@ -84248,7 +96925,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "matchSegmentAgainstRoute",
         value: function matchSegmentAgainstRoute(ngModule, rawSegmentGroup, route, segments) {
-          var _this99 = this;
+          var _this143 = this;
 
           if (route.path === '**') {
             if (route.loadChildren) {
@@ -84296,7 +96973,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
               /** @type {?} */
-              var _expanded$ = _this99.expandChildren(childModule, childConfig, segmentGroup);
+              var _expanded$ = _this143.expandChildren(childModule, childConfig, segmentGroup);
 
               return _expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
               /**
@@ -84314,7 +96991,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             /** @type {?} */
 
 
-            var expanded$ = _this99.expandSegment(childModule, segmentGroup, childConfig, slicedSegments, PRIMARY_OUTLET, true);
+            var expanded$ = _this143.expandSegment(childModule, segmentGroup, childConfig, slicedSegments, PRIMARY_OUTLET, true);
 
             return expanded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
             /**
@@ -84337,7 +97014,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getChildConfig",
         value: function getChildConfig(ngModule, route, segments) {
-          var _this100 = this;
+          var _this144 = this;
 
           if (route.children) {
             // The children belong to the same module
@@ -84357,7 +97034,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (shouldLoad) {
               if (shouldLoad) {
-                return _this100.configLoader.load(ngModule.injector, route).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
+                return _this144.configLoader.load(ngModule.injector, route).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
                 /**
                 * @param {?} cfg
                 * @return {?}
@@ -84479,7 +97156,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createSegmentGroup",
         value: function createSegmentGroup(redirectTo, group, segments, posParams) {
-          var _this101 = this;
+          var _this145 = this;
 
           /** @type {?} */
           var updatedSegments = this.createSegments(redirectTo, group.segments, segments, posParams);
@@ -84493,7 +97170,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (child, name) {
-            children[name] = _this101.createSegmentGroup(redirectTo, child, segments, posParams);
+            children[name] = _this145.createSegmentGroup(redirectTo, child, segments, posParams);
           });
           return new UrlSegmentGroup(updatedSegments, children);
         }
@@ -84509,7 +97186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createSegments",
         value: function createSegments(redirectTo, redirectToSegments, actualSegments, posParams) {
-          var _this102 = this;
+          var _this146 = this;
 
           return redirectToSegments.map(
           /**
@@ -84517,7 +97194,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (s) {
-            return s.path.startsWith(':') ? _this102.findPosParam(redirectTo, s, posParams) : _this102.findOrReturn(s, actualSegments);
+            return s.path.startsWith(':') ? _this146.findPosParam(redirectTo, s, posParams) : _this146.findOrReturn(s, actualSegments);
           });
         }
         /**
@@ -84548,13 +97225,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function findOrReturn(redirectToUrlSegment, actualSegments) {
           /** @type {?} */
           var idx = 0;
-          var _iteratorNormalCompletion16 = true;
-          var _didIteratorError16 = false;
-          var _iteratorError16 = undefined;
+          var _iteratorNormalCompletion17 = true;
+          var _didIteratorError17 = false;
+          var _iteratorError17 = undefined;
 
           try {
-            for (var _iterator16 = actualSegments[Symbol.iterator](), _step16; !(_iteratorNormalCompletion16 = (_step16 = _iterator16.next()).done); _iteratorNormalCompletion16 = true) {
-              var s = _step16.value;
+            for (var _iterator17 = actualSegments[Symbol.iterator](), _step17; !(_iteratorNormalCompletion17 = (_step17 = _iterator17.next()).done); _iteratorNormalCompletion17 = true) {
+              var s = _step17.value;
 
               if (s.path === redirectToUrlSegment.path) {
                 actualSegments.splice(idx);
@@ -84564,16 +97241,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               idx++;
             }
           } catch (err) {
-            _didIteratorError16 = true;
-            _iteratorError16 = err;
+            _didIteratorError17 = true;
+            _iteratorError17 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion16 && _iterator16.return != null) {
-                _iterator16.return();
+              if (!_iteratorNormalCompletion17 && _iterator17.return != null) {
+                _iterator17.return();
               }
             } finally {
-              if (_didIteratorError16) {
-                throw _iteratorError16;
+              if (_didIteratorError17) {
+                throw _iteratorError17;
               }
             }
           }
@@ -84750,29 +97427,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function addEmptySegmentsToChildrenIfNeeded(segmentGroup, slicedSegments, routes, children) {
       /** @type {?} */
       var res = {};
-      var _iteratorNormalCompletion17 = true;
-      var _didIteratorError17 = false;
-      var _iteratorError17 = undefined;
+      var _iteratorNormalCompletion18 = true;
+      var _didIteratorError18 = false;
+      var _iteratorError18 = undefined;
 
       try {
-        for (var _iterator17 = routes[Symbol.iterator](), _step17; !(_iteratorNormalCompletion17 = (_step17 = _iterator17.next()).done); _iteratorNormalCompletion17 = true) {
-          var r = _step17.value;
+        for (var _iterator18 = routes[Symbol.iterator](), _step18; !(_iteratorNormalCompletion18 = (_step18 = _iterator18.next()).done); _iteratorNormalCompletion18 = true) {
+          var r = _step18.value;
 
           if (isEmptyPathRedirect(segmentGroup, slicedSegments, r) && !children[getOutlet(r)]) {
             res[getOutlet(r)] = new UrlSegmentGroup([], {});
           }
         }
       } catch (err) {
-        _didIteratorError17 = true;
-        _iteratorError17 = err;
+        _didIteratorError18 = true;
+        _iteratorError18 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion17 && _iterator17.return != null) {
-            _iterator17.return();
+          if (!_iteratorNormalCompletion18 && _iterator18.return != null) {
+            _iterator18.return();
           }
         } finally {
-          if (_didIteratorError17) {
-            throw _iteratorError17;
+          if (_didIteratorError18) {
+            throw _iteratorError18;
           }
         }
       }
@@ -84790,29 +97467,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /** @type {?} */
       var res = {};
       res[PRIMARY_OUTLET] = primarySegmentGroup;
-      var _iteratorNormalCompletion18 = true;
-      var _didIteratorError18 = false;
-      var _iteratorError18 = undefined;
+      var _iteratorNormalCompletion19 = true;
+      var _didIteratorError19 = false;
+      var _iteratorError19 = undefined;
 
       try {
-        for (var _iterator18 = routes[Symbol.iterator](), _step18; !(_iteratorNormalCompletion18 = (_step18 = _iterator18.next()).done); _iteratorNormalCompletion18 = true) {
-          var r = _step18.value;
+        for (var _iterator19 = routes[Symbol.iterator](), _step19; !(_iteratorNormalCompletion19 = (_step19 = _iterator19.next()).done); _iteratorNormalCompletion19 = true) {
+          var r = _step19.value;
 
           if (r.path === '' && getOutlet(r) !== PRIMARY_OUTLET) {
             res[getOutlet(r)] = new UrlSegmentGroup([], {});
           }
         }
       } catch (err) {
-        _didIteratorError18 = true;
-        _iteratorError18 = err;
+        _didIteratorError19 = true;
+        _iteratorError19 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion18 && _iterator18.return != null) {
-            _iterator18.return();
+          if (!_iteratorNormalCompletion19 && _iterator19.return != null) {
+            _iterator19.return();
           }
         } finally {
-          if (_didIteratorError18) {
-            throw _iteratorError18;
+          if (_didIteratorError19) {
+            throw _iteratorError19;
           }
         }
       }
@@ -85695,7 +98372,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "inheritParamsAndData",
         value: function inheritParamsAndData(routeNode) {
-          var _this103 = this;
+          var _this147 = this;
 
           /** @type {?} */
           var route = routeNode.value;
@@ -85710,7 +98387,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (n) {
-            return _this103.inheritParamsAndData(n);
+            return _this147.inheritParamsAndData(n);
           });
         }
         /**
@@ -85738,7 +98415,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processChildren",
         value: function processChildren(config, segmentGroup) {
-          var _this104 = this;
+          var _this148 = this;
 
           /** @type {?} */
           var children = mapChildrenIntoArray(segmentGroup,
@@ -85748,7 +98425,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (child, childOutlet) {
-            return _this104.processSegmentGroup(config, child, childOutlet);
+            return _this148.processSegmentGroup(config, child, childOutlet);
           });
           checkOutletNameUniqueness(children);
           sortActivatedRouteSnapshots(children);
@@ -85765,13 +98442,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processSegment",
         value: function processSegment(config, segmentGroup, segments, outlet) {
-          var _iteratorNormalCompletion19 = true;
-          var _didIteratorError19 = false;
-          var _iteratorError19 = undefined;
+          var _iteratorNormalCompletion20 = true;
+          var _didIteratorError20 = false;
+          var _iteratorError20 = undefined;
 
           try {
-            for (var _iterator19 = config[Symbol.iterator](), _step19; !(_iteratorNormalCompletion19 = (_step19 = _iterator19.next()).done); _iteratorNormalCompletion19 = true) {
-              var r = _step19.value;
+            for (var _iterator20 = config[Symbol.iterator](), _step20; !(_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done); _iteratorNormalCompletion20 = true) {
+              var r = _step20.value;
 
               try {
                 return this.processSegmentAgainstRoute(r, segmentGroup, segments, outlet);
@@ -85780,16 +98457,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
           } catch (err) {
-            _didIteratorError19 = true;
-            _iteratorError19 = err;
+            _didIteratorError20 = true;
+            _iteratorError20 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion19 && _iterator19.return != null) {
-                _iterator19.return();
+              if (!_iteratorNormalCompletion20 && _iterator20.return != null) {
+                _iterator20.return();
               }
             } finally {
-              if (_didIteratorError19) {
-                throw _iteratorError19;
+              if (_didIteratorError20) {
+                throw _iteratorError20;
               }
             }
           }
@@ -86125,13 +98802,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     function addEmptyPathsToChildrenIfNeeded(segmentGroup, consumedSegments, slicedSegments, routes, children, relativeLinkResolution) {
       /** @type {?} */
       var res = {};
-      var _iteratorNormalCompletion20 = true;
-      var _didIteratorError20 = false;
-      var _iteratorError20 = undefined;
+      var _iteratorNormalCompletion21 = true;
+      var _didIteratorError21 = false;
+      var _iteratorError21 = undefined;
 
       try {
-        for (var _iterator20 = routes[Symbol.iterator](), _step20; !(_iteratorNormalCompletion20 = (_step20 = _iterator20.next()).done); _iteratorNormalCompletion20 = true) {
-          var r = _step20.value;
+        for (var _iterator21 = routes[Symbol.iterator](), _step21; !(_iteratorNormalCompletion21 = (_step21 = _iterator21.next()).done); _iteratorNormalCompletion21 = true) {
+          var r = _step21.value;
 
           if (emptyPathMatch(segmentGroup, slicedSegments, r) && !children[getOutlet$1(r)]) {
             /** @type {?} */
@@ -86148,16 +98825,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _didIteratorError20 = true;
-        _iteratorError20 = err;
+        _didIteratorError21 = true;
+        _iteratorError21 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion20 && _iterator20.return != null) {
-            _iterator20.return();
+          if (!_iteratorNormalCompletion21 && _iterator21.return != null) {
+            _iterator21.return();
           }
         } finally {
-          if (_didIteratorError20) {
-            throw _iteratorError20;
+          if (_didIteratorError21) {
+            throw _iteratorError21;
           }
         }
       }
@@ -86179,13 +98856,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       res[PRIMARY_OUTLET] = primarySegment;
       primarySegment._sourceSegment = segmentGroup;
       primarySegment._segmentIndexShift = consumedSegments.length;
-      var _iteratorNormalCompletion21 = true;
-      var _didIteratorError21 = false;
-      var _iteratorError21 = undefined;
+      var _iteratorNormalCompletion22 = true;
+      var _didIteratorError22 = false;
+      var _iteratorError22 = undefined;
 
       try {
-        for (var _iterator21 = routes[Symbol.iterator](), _step21; !(_iteratorNormalCompletion21 = (_step21 = _iterator21.next()).done); _iteratorNormalCompletion21 = true) {
-          var r = _step21.value;
+        for (var _iterator22 = routes[Symbol.iterator](), _step22; !(_iteratorNormalCompletion22 = (_step22 = _iterator22.next()).done); _iteratorNormalCompletion22 = true) {
+          var r = _step22.value;
 
           if (r.path === '' && getOutlet$1(r) !== PRIMARY_OUTLET) {
             /** @type {?} */
@@ -86196,16 +98873,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
       } catch (err) {
-        _didIteratorError21 = true;
-        _iteratorError21 = err;
+        _didIteratorError22 = true;
+        _iteratorError22 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion21 && _iterator21.return != null) {
-            _iterator21.return();
+          if (!_iteratorNormalCompletion22 && _iterator22.return != null) {
+            _iterator22.return();
           }
         } finally {
-          if (_didIteratorError21) {
-            throw _iteratorError21;
+          if (_didIteratorError22) {
+            throw _iteratorError22;
           }
         }
       }
@@ -86672,7 +99349,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterConfigLoader, [{
         key: "load",
         value: function load(parentInjector, route) {
-          var _this105 = this;
+          var _this149 = this;
 
           if (this.onLoadStartListener) {
             this.onLoadStartListener(route);
@@ -86689,8 +99366,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (factory) {
-            if (_this105.onLoadEndListener) {
-              _this105.onLoadEndListener(route);
+            if (_this149.onLoadEndListener) {
+              _this149.onLoadEndListener(route);
             }
             /** @type {?} */
 
@@ -86708,7 +99385,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "loadModuleFactory",
         value: function loadModuleFactory(loadChildren) {
-          var _this106 = this;
+          var _this150 = this;
 
           if (typeof loadChildren === 'string') {
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.loader.load(loadChildren));
@@ -86722,7 +99399,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (t instanceof _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleFactory"]) {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(t);
               } else {
-                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(_this106.compiler.compileModuleAsync(t));
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(_this150.compiler.compileModuleAsync(t));
               }
             }));
           }
@@ -86890,7 +99567,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        */
       // TODO: vsavkin make internal after the final is out.
       function Router(rootComponentType, urlSerializer, rootContexts, location, injector, loader, compiler, config) {
-        var _this107 = this;
+        var _this151 = this;
 
         _classCallCheck(this, Router);
 
@@ -86992,7 +99669,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function onLoadStart(r) {
-          return _this107.triggerEvent(new RouteConfigLoadStart(r));
+          return _this151.triggerEvent(new RouteConfigLoadStart(r));
         };
         /** @type {?} */
 
@@ -87003,7 +99680,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         * @return {?}
         */
         function onLoadEnd(r) {
-          return _this107.triggerEvent(new RouteConfigLoadEnd(r));
+          return _this151.triggerEvent(new RouteConfigLoadEnd(r));
         };
 
         this.ngModule = injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModuleRef"]);
@@ -87054,7 +99731,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(Router, [{
         key: "setupNavigations",
         value: function setupNavigations(transitions) {
-          var _this108 = this;
+          var _this152 = this;
 
           /** @type {?} */
           var eventsSubject =
@@ -87081,7 +99758,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               return (
                 /** @type {?} */
                 Object.assign({}, t, {
-                  extractedUrl: _this108.urlHandlingStrategy.extract(t.rawUrl)
+                  extractedUrl: _this152.urlHandlingStrategy.extract(t.rawUrl)
                 })
               );
             }), // Using switchMap so we cancel executing navigations when a new one comes in
@@ -87103,13 +99780,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (t) {
-                _this108.currentNavigation = {
+                _this152.currentNavigation = {
                   id: t.id,
                   initialUrl: t.currentRawUrl,
                   extractedUrl: t.extractedUrl,
                   trigger: t.source,
                   extras: t.extras,
-                  previousNavigation: _this108.lastSuccessfulNavigation ? Object.assign({}, _this108.lastSuccessfulNavigation, {
+                  previousNavigation: _this152.lastSuccessfulNavigation ? Object.assign({}, _this152.lastSuccessfulNavigation, {
                     previousNavigation: null
                   }) : null
                 };
@@ -87120,11 +99797,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var urlTransition = !_this108.navigated || t.extractedUrl.toString() !== _this108.browserUrlTree.toString();
+                var urlTransition = !_this152.navigated || t.extractedUrl.toString() !== _this152.browserUrlTree.toString();
                 /** @type {?} */
 
 
-                var processCurrentUrl = (_this108.onSameUrlNavigation === 'reload' ? true : urlTransition) && _this108.urlHandlingStrategy.shouldProcessUrl(t.rawUrl);
+                var processCurrentUrl = (_this152.onSameUrlNavigation === 'reload' ? true : urlTransition) && _this152.urlHandlingStrategy.shouldProcessUrl(t.rawUrl);
 
                 if (processCurrentUrl) {
                   return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(t).pipe( // Fire NavigationStart event
@@ -87135,11 +99812,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var transition = _this108.transitions.getValue();
+                    var transition = _this152.transitions.getValue();
 
-                    eventsSubject.next(new NavigationStart(t.id, _this108.serializeUrl(t.extractedUrl), t.source, t.restoredState));
+                    eventsSubject.next(new NavigationStart(t.id, _this152.serializeUrl(t.extractedUrl), t.source, t.restoredState));
 
-                    if (transition !== _this108.transitions.getValue()) {
+                    if (transition !== _this152.transitions.getValue()) {
                       return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
                     }
 
@@ -87154,39 +99831,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   function (t) {
                     return Promise.resolve(t);
                   }), // ApplyRedirects
-                  applyRedirects$1(_this108.ngModule.injector, _this108.configLoader, _this108.urlSerializer, _this108.config), // Update the currentNavigation
+                  applyRedirects$1(_this152.ngModule.injector, _this152.configLoader, _this152.urlSerializer, _this152.config), // Update the currentNavigation
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
                   * @return {?}
                   */
                   function (t) {
-                    _this108.currentNavigation = Object.assign({},
+                    _this152.currentNavigation = Object.assign({},
                     /** @type {?} */
-                    _this108.currentNavigation, {
+                    _this152.currentNavigation, {
                       finalUrl: t.urlAfterRedirects
                     });
                   }), // Recognize
-                  recognize$1(_this108.rootComponentType, _this108.config,
+                  recognize$1(_this152.rootComponentType, _this152.config,
                   /**
                   * @param {?} url
                   * @return {?}
                   */
                   function (url) {
-                    return _this108.serializeUrl(url);
-                  }, _this108.paramsInheritanceStrategy, _this108.relativeLinkResolution), // Update URL if in `eager` update mode
+                    return _this152.serializeUrl(url);
+                  }, _this152.paramsInheritanceStrategy, _this152.relativeLinkResolution), // Update URL if in `eager` update mode
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
                   * @return {?}
                   */
                   function (t) {
-                    if (_this108.urlUpdateStrategy === 'eager') {
+                    if (_this152.urlUpdateStrategy === 'eager') {
                       if (!t.extras.skipLocationChange) {
-                        _this108.setBrowserUrl(t.urlAfterRedirects, !!t.extras.replaceUrl, t.id, t.extras.state);
+                        _this152.setBrowserUrl(t.urlAfterRedirects, !!t.extras.replaceUrl, t.id, t.extras.state);
                       }
 
-                      _this108.browserUrlTree = t.urlAfterRedirects;
+                      _this152.browserUrlTree = t.urlAfterRedirects;
                     }
                   }), // Fire RoutesRecognized
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
@@ -87196,14 +99873,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var routesRecognized = new RoutesRecognized(t.id, _this108.serializeUrl(t.extractedUrl), _this108.serializeUrl(t.urlAfterRedirects),
+                    var routesRecognized = new RoutesRecognized(t.id, _this152.serializeUrl(t.extractedUrl), _this152.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
                     eventsSubject.next(routesRecognized);
                   }));
                 } else {
                   /** @type {?} */
-                  var processPreviousUrl = urlTransition && _this108.rawUrlTree && _this108.urlHandlingStrategy.shouldProcessUrl(_this108.rawUrlTree);
+                  var processPreviousUrl = urlTransition && _this152.rawUrlTree && _this152.urlHandlingStrategy.shouldProcessUrl(_this152.rawUrlTree);
                   /* When the current URL shouldn't be processed, but the previous one was, we
                    * handle this "error condition" by navigating to the previously successful URL,
                    * but leaving the URL intact.*/
@@ -87217,11 +99894,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         extras = t.extras;
                     /** @type {?} */
 
-                    var navStart = new NavigationStart(id, _this108.serializeUrl(extractedUrl), source, restoredState);
+                    var navStart = new NavigationStart(id, _this152.serializeUrl(extractedUrl), source, restoredState);
                     eventsSubject.next(navStart);
                     /** @type {?} */
 
-                    var targetSnapshot = createEmptyState(extractedUrl, _this108.rootComponentType).snapshot;
+                    var targetSnapshot = createEmptyState(extractedUrl, _this152.rootComponentType).snapshot;
                     return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(Object.assign({}, t, {
                       targetSnapshot: targetSnapshot,
                       urlAfterRedirects: extractedUrl,
@@ -87235,8 +99912,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                      * than update router's internal reference to the current "settled" URL. This
                      * way the next navigation will be coming from the current URL in the browser.
                      */
-                    _this108.rawUrlTree = t.rawUrl;
-                    _this108.browserUrlTree = t.urlAfterRedirects;
+                    _this152.rawUrlTree = t.rawUrl;
+                    _this152.browserUrlTree = t.urlAfterRedirects;
                     t.resolve(null);
                     return rxjs__WEBPACK_IMPORTED_MODULE_2__["EMPTY"];
                   }
@@ -87255,7 +99932,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     _t$extras = t.extras,
                     skipLocationChange = _t$extras.skipLocationChange,
                     replaceUrl = _t$extras.replaceUrl;
-                return _this108.hooks.beforePreactivation(
+                return _this152.hooks.beforePreactivation(
                 /** @type {?} */
                 targetSnapshot, {
                   navigationId: navigationId,
@@ -87272,11 +99949,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var guardsStart = new GuardsCheckStart(t.id, _this108.serializeUrl(t.extractedUrl), _this108.serializeUrl(t.urlAfterRedirects),
+                var guardsStart = new GuardsCheckStart(t.id, _this152.serializeUrl(t.extractedUrl), _this152.serializeUrl(t.urlAfterRedirects),
                 /** @type {?} */
                 t.targetSnapshot);
 
-                _this108.triggerEvent(guardsStart);
+                _this152.triggerEvent(guardsStart);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(
               /**
               * @param {?} t
@@ -87286,15 +99963,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 return Object.assign({}, t, {
                   guards: getAllRouteGuards(
                   /** @type {?} */
-                  t.targetSnapshot, t.currentSnapshot, _this108.rootContexts)
+                  t.targetSnapshot, t.currentSnapshot, _this152.rootContexts)
                 });
-              }), checkGuards(_this108.ngModule.injector,
+              }), checkGuards(_this152.ngModule.injector,
               /**
               * @param {?} evt
               * @return {?}
               */
               function (evt) {
-                return _this108.triggerEvent(evt);
+                return _this152.triggerEvent(evt);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
               /**
               * @param {?} t
@@ -87303,7 +99980,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               function (t) {
                 if (isUrlTree(t.guardsResult)) {
                   /** @type {?} */
-                  var error = navigationCancelingError("Redirecting to \"".concat(_this108.serializeUrl(t.guardsResult), "\""));
+                  var error = navigationCancelingError("Redirecting to \"".concat(_this152.serializeUrl(t.guardsResult), "\""));
                   error.url = t.guardsResult;
                   throw error;
                 }
@@ -87314,11 +99991,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var guardsEnd = new GuardsCheckEnd(t.id, _this108.serializeUrl(t.extractedUrl), _this108.serializeUrl(t.urlAfterRedirects),
+                var guardsEnd = new GuardsCheckEnd(t.id, _this152.serializeUrl(t.extractedUrl), _this152.serializeUrl(t.urlAfterRedirects),
                 /** @type {?} */
                 t.targetSnapshot, !!t.guardsResult);
 
-                _this108.triggerEvent(guardsEnd);
+                _this152.triggerEvent(guardsEnd);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(
               /**
               * @param {?} t
@@ -87326,11 +100003,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 if (!t.guardsResult) {
-                  _this108.resetUrlToCurrentUrlTree();
+                  _this152.resetUrlToCurrentUrlTree();
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this108.serializeUrl(t.extractedUrl), '');
+                  var navCancel = new NavigationCancel(t.id, _this152.serializeUrl(t.extractedUrl), '');
                   eventsSubject.next(navCancel);
                   t.resolve(false);
                   return false;
@@ -87352,12 +100029,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var resolveStart = new ResolveStart(t.id, _this108.serializeUrl(t.extractedUrl), _this108.serializeUrl(t.urlAfterRedirects),
+                    var resolveStart = new ResolveStart(t.id, _this152.serializeUrl(t.extractedUrl), _this152.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
 
-                    _this108.triggerEvent(resolveStart);
-                  }), resolveData(_this108.paramsInheritanceStrategy, _this108.ngModule.injector), //
+                    _this152.triggerEvent(resolveStart);
+                  }), resolveData(_this152.paramsInheritanceStrategy, _this152.ngModule.injector), //
                   Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(
                   /**
                   * @param {?} t
@@ -87365,11 +100042,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   */
                   function (t) {
                     /** @type {?} */
-                    var resolveEnd = new ResolveEnd(t.id, _this108.serializeUrl(t.extractedUrl), _this108.serializeUrl(t.urlAfterRedirects),
+                    var resolveEnd = new ResolveEnd(t.id, _this152.serializeUrl(t.extractedUrl), _this152.serializeUrl(t.urlAfterRedirects),
                     /** @type {?} */
                     t.targetSnapshot);
 
-                    _this108.triggerEvent(resolveEnd);
+                    _this152.triggerEvent(resolveEnd);
                   }));
                 }
 
@@ -87388,7 +100065,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     _t$extras2 = t.extras,
                     skipLocationChange = _t$extras2.skipLocationChange,
                     replaceUrl = _t$extras2.replaceUrl;
-                return _this108.hooks.afterPreactivation(
+                return _this152.hooks.afterPreactivation(
                 /** @type {?} */
                 targetSnapshot, {
                   navigationId: navigationId,
@@ -87404,7 +100081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function (t) {
                 /** @type {?} */
-                var targetRouterState = createRouterState(_this108.routeReuseStrategy,
+                var targetRouterState = createRouterState(_this152.routeReuseStrategy,
                 /** @type {?} */
                 t.targetSnapshot, t.currentRouterState);
                 return Object.assign({}, t, {
@@ -87422,28 +100099,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function (t) {
-                _this108.currentUrlTree = t.urlAfterRedirects;
-                _this108.rawUrlTree = _this108.urlHandlingStrategy.merge(_this108.currentUrlTree, t.rawUrl);
+                _this152.currentUrlTree = t.urlAfterRedirects;
+                _this152.rawUrlTree = _this152.urlHandlingStrategy.merge(_this152.currentUrlTree, t.rawUrl);
 
                 /** @type {?} */
-                _this108.routerState =
+                _this152.routerState =
                 /** @type {?} */
                 t.targetRouterState;
 
-                if (_this108.urlUpdateStrategy === 'deferred') {
+                if (_this152.urlUpdateStrategy === 'deferred') {
                   if (!t.extras.skipLocationChange) {
-                    _this108.setBrowserUrl(_this108.rawUrlTree, !!t.extras.replaceUrl, t.id, t.extras.state);
+                    _this152.setBrowserUrl(_this152.rawUrlTree, !!t.extras.replaceUrl, t.id, t.extras.state);
                   }
 
-                  _this108.browserUrlTree = t.urlAfterRedirects;
+                  _this152.browserUrlTree = t.urlAfterRedirects;
                 }
-              }), activateRoutes(_this108.rootContexts, _this108.routeReuseStrategy,
+              }), activateRoutes(_this152.rootContexts, _this152.routeReuseStrategy,
               /**
               * @param {?} evt
               * @return {?}
               */
               function (evt) {
-                return _this108.triggerEvent(evt);
+                return _this152.triggerEvent(evt);
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])({
                 /**
                 * @return {?}
@@ -87475,11 +100152,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   // sync problems with AngularJS sync code which looks for a value here in order
                   // to determine whether or not to handle a given popstate event or to leave it
                   // to the Angualr router.
-                  _this108.resetUrlToCurrentUrlTree();
+                  _this152.resetUrlToCurrentUrlTree();
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this108.serializeUrl(t.extractedUrl), "Navigation ID ".concat(t.id, " is not equal to the current navigation id ").concat(_this108.navigationId));
+                  var navCancel = new NavigationCancel(t.id, _this152.serializeUrl(t.extractedUrl), "Navigation ID ".concat(t.id, " is not equal to the current navigation id ").concat(_this152.navigationId));
                   eventsSubject.next(navCancel);
                   t.resolve(false);
                 } // currentNavigation should always be reset to null here. If navigation was
@@ -87487,7 +100164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 // can safely set currentNavigation to null here.
 
 
-                _this108.currentNavigation = null;
+                _this152.currentNavigation = null;
               }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(
               /**
               * @param {?} e
@@ -87508,33 +100185,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     // a change from the default currentUrlTree and won't navigate. This is
                     // only applicable with initial navigation, so setting `navigated` only when
                     // not redirecting resolves this scenario.
-                    _this108.navigated = true;
+                    _this152.navigated = true;
 
-                    _this108.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
+                    _this152.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
                   }
                   /** @type {?} */
 
 
-                  var navCancel = new NavigationCancel(t.id, _this108.serializeUrl(t.extractedUrl), e.message);
+                  var navCancel = new NavigationCancel(t.id, _this152.serializeUrl(t.extractedUrl), e.message);
                   eventsSubject.next(navCancel);
                   t.resolve(false);
 
                   if (redirecting) {
-                    _this108.navigateByUrl(e.url);
+                    _this152.navigateByUrl(e.url);
                   }
                   /* All other errors should reset to the router's internal URL reference to the
                    * pre-error state. */
 
                 } else {
-                  _this108.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
+                  _this152.resetStateAndUrl(t.currentRouterState, t.currentUrlTree, t.rawUrl);
                   /** @type {?} */
 
 
-                  var navError = new NavigationError(t.id, _this108.serializeUrl(t.extractedUrl), e);
+                  var navError = new NavigationError(t.id, _this152.serializeUrl(t.extractedUrl), e);
                   eventsSubject.next(navError);
 
                   try {
-                    t.resolve(_this108.errorHandler(e));
+                    t.resolve(_this152.errorHandler(e));
                   } catch (ee) {
                     t.reject(ee);
                   }
@@ -87611,7 +100288,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "setUpLocationChangeListener",
         value: function setUpLocationChangeListener() {
-          var _this109 = this;
+          var _this153 = this;
 
           // Don't need to use Zone.wrap any more, because zone.js
           // already patch onPopState, so location change callback will
@@ -87626,7 +100303,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (change) {
               /** @type {?} */
-              var rawUrlTree = _this109.parseUrl(change['url']);
+              var rawUrlTree = _this153.parseUrl(change['url']);
               /** @type {?} */
 
 
@@ -87641,7 +100318,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               * @return {?}
               */
               function () {
-                _this109.scheduleNavigation(rawUrlTree, source, state, {
+                _this153.scheduleNavigation(rawUrlTree, source, state, {
                   replaceUrl: true
                 });
               }, 0);
@@ -87992,7 +100669,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "processNavigations",
         value: function processNavigations() {
-          var _this110 = this;
+          var _this154 = this;
 
           this.navigations.subscribe(
           /**
@@ -88000,14 +100677,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (t) {
-            _this110.navigated = true;
-            _this110.lastSuccessfulId = t.id;
+            _this154.navigated = true;
+            _this154.lastSuccessfulId = t.id;
 
             /** @type {?} */
-            _this110.events.next(new NavigationEnd(t.id, _this110.serializeUrl(t.extractedUrl), _this110.serializeUrl(_this110.currentUrlTree)));
+            _this154.events.next(new NavigationEnd(t.id, _this154.serializeUrl(t.extractedUrl), _this154.serializeUrl(_this154.currentUrlTree)));
 
-            _this110.lastSuccessfulNavigation = _this110.currentNavigation;
-            _this110.currentNavigation = null;
+            _this154.lastSuccessfulNavigation = _this154.currentNavigation;
+            _this154.currentNavigation = null;
             t.resolve(true);
           },
           /**
@@ -88015,7 +100692,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (e) {
-            _this110.console.warn("Unhandled Navigation Error: ");
+            _this154.console.warn("Unhandled Navigation Error: ");
           });
         }
         /**
@@ -88457,7 +101134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?} locationStrategy
        */
       function RouterLinkWithHref(router, route, locationStrategy) {
-        var _this111 = this;
+        var _this155 = this;
 
         _classCallCheck(this, RouterLinkWithHref);
 
@@ -88472,7 +101149,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         */
         function (s) {
           if (s instanceof NavigationEnd) {
-            _this111.updateTargetUrlAndHref();
+            _this155.updateTargetUrlAndHref();
           }
         });
       }
@@ -88734,7 +101411,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        * @param {?=} linkWithHref
        */
       function RouterLinkActive(router, element, renderer, link, linkWithHref) {
-        var _this112 = this;
+        var _this156 = this;
 
         _classCallCheck(this, RouterLinkActive);
 
@@ -88755,7 +101432,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         */
         function (s) {
           if (s instanceof NavigationEnd) {
-            _this112.update();
+            _this156.update();
           }
         });
       }
@@ -88767,7 +101444,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterLinkActive, [{
         key: "ngAfterContentInit",
         value: function ngAfterContentInit() {
-          var _this113 = this;
+          var _this157 = this;
 
           this.links.changes.subscribe(
           /**
@@ -88775,7 +101452,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (_) {
-            return _this113.update();
+            return _this157.update();
           });
           this.linksWithHrefs.changes.subscribe(
           /**
@@ -88783,7 +101460,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function (_) {
-            return _this113.update();
+            return _this157.update();
           });
           this.update();
         }
@@ -88819,7 +101496,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "update",
         value: function update() {
-          var _this114 = this;
+          var _this158 = this;
 
           if (!this.links || !this.linksWithHrefs || !this.router.navigated) return;
           Promise.resolve().then(
@@ -88828,22 +101505,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function () {
             /** @type {?} */
-            var hasActiveLinks = _this114.hasActiveLinks();
+            var hasActiveLinks = _this158.hasActiveLinks();
 
-            if (_this114.isActive !== hasActiveLinks) {
+            if (_this158.isActive !== hasActiveLinks) {
               /** @type {?} */
-              _this114.isActive = hasActiveLinks;
+              _this158.isActive = hasActiveLinks;
 
-              _this114.classes.forEach(
+              _this158.classes.forEach(
               /**
               * @param {?} c
               * @return {?}
               */
               function (c) {
                 if (hasActiveLinks) {
-                  _this114.renderer.addClass(_this114.element.nativeElement, c);
+                  _this158.renderer.addClass(_this158.element.nativeElement, c);
                 } else {
-                  _this114.renderer.removeClass(_this114.element.nativeElement, c);
+                  _this158.renderer.removeClass(_this158.element.nativeElement, c);
                 }
               });
             }
@@ -88858,7 +101535,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "isLinkActive",
         value: function isLinkActive(router) {
-          var _this115 = this;
+          var _this159 = this;
 
           return (
             /**
@@ -88866,7 +101543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             * @return {?}
             */
             function (link) {
-              return router.isActive(link.urlTree, _this115.routerLinkActiveOptions.exact);
+              return router.isActive(link.urlTree, _this159.routerLinkActiveOptions.exact);
             }
           );
         }
@@ -89557,7 +102234,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterPreloader, [{
         key: "setUpPreloading",
         value: function setUpPreloading() {
-          var _this116 = this;
+          var _this160 = this;
 
           this.subscription = this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(
           /**
@@ -89571,7 +102248,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           * @return {?}
           */
           function () {
-            return _this116.preload();
+            return _this160.preload();
           })).subscribe(
           /**
           * @return {?}
@@ -89613,13 +102290,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function processRoutes(ngModule, routes) {
           /** @type {?} */
           var res = [];
-          var _iteratorNormalCompletion22 = true;
-          var _didIteratorError22 = false;
-          var _iteratorError22 = undefined;
+          var _iteratorNormalCompletion23 = true;
+          var _didIteratorError23 = false;
+          var _iteratorError23 = undefined;
 
           try {
-            for (var _iterator22 = routes[Symbol.iterator](), _step22; !(_iteratorNormalCompletion22 = (_step22 = _iterator22.next()).done); _iteratorNormalCompletion22 = true) {
-              var route = _step22.value;
+            for (var _iterator23 = routes[Symbol.iterator](), _step23; !(_iteratorNormalCompletion23 = (_step23 = _iterator23.next()).done); _iteratorNormalCompletion23 = true) {
+              var route = _step23.value;
 
               // we already have the config loaded, just recurse
               if (route.loadChildren && !route.canLoad && route._loadedConfig) {
@@ -89633,16 +102310,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
             }
           } catch (err) {
-            _didIteratorError22 = true;
-            _iteratorError22 = err;
+            _didIteratorError23 = true;
+            _iteratorError23 = err;
           } finally {
             try {
-              if (!_iteratorNormalCompletion22 && _iterator22.return != null) {
-                _iterator22.return();
+              if (!_iteratorNormalCompletion23 && _iterator23.return != null) {
+                _iterator23.return();
               }
             } finally {
-              if (_didIteratorError22) {
-                throw _iteratorError22;
+              if (_didIteratorError23) {
+                throw _iteratorError23;
               }
             }
           }
@@ -89666,7 +102343,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "preloadConfig",
         value: function preloadConfig(ngModule, route) {
-          var _this117 = this;
+          var _this161 = this;
 
           return this.preloadingStrategy.preload(route,
           /**
@@ -89674,7 +102351,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           */
           function () {
             /** @type {?} */
-            var loaded$ = _this117.loader.load(ngModule.injector, route);
+            var loaded$ = _this161.loader.load(ngModule.injector, route);
 
             return loaded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(
             /**
@@ -89683,7 +102360,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             */
             function (config) {
               route._loadedConfig = config;
-              return _this117.processRoutes(config.module, config.routes);
+              return _this161.processRoutes(config.module, config.routes);
             }));
           });
         }
@@ -89768,7 +102445,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createScrollEvents",
         value: function createScrollEvents() {
-          var _this118 = this;
+          var _this162 = this;
 
           return this.router.events.subscribe(
           /**
@@ -89778,13 +102455,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           function (e) {
             if (e instanceof NavigationStart) {
               // store the scroll position of the current stable navigations.
-              _this118.store[_this118.lastId] = _this118.viewportScroller.getScrollPosition();
-              _this118.lastSource = e.navigationTrigger;
-              _this118.restoredId = e.restoredState ? e.restoredState.navigationId : 0;
+              _this162.store[_this162.lastId] = _this162.viewportScroller.getScrollPosition();
+              _this162.lastSource = e.navigationTrigger;
+              _this162.restoredId = e.restoredState ? e.restoredState.navigationId : 0;
             } else if (e instanceof NavigationEnd) {
-              _this118.lastId = e.id;
+              _this162.lastId = e.id;
 
-              _this118.scheduleScrollEvent(e, _this118.router.parseUrl(e.urlAfterRedirects).fragment);
+              _this162.scheduleScrollEvent(e, _this162.router.parseUrl(e.urlAfterRedirects).fragment);
             }
           });
         }
@@ -89796,7 +102473,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "consumeScrollEvents",
         value: function consumeScrollEvents() {
-          var _this119 = this;
+          var _this163 = this;
 
           return this.router.events.subscribe(
           /**
@@ -89807,17 +102484,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (!(e instanceof Scroll)) return; // a popstate event. The pop state event will always ignore anchor scrolling.
 
             if (e.position) {
-              if (_this119.options.scrollPositionRestoration === 'top') {
-                _this119.viewportScroller.scrollToPosition([0, 0]);
-              } else if (_this119.options.scrollPositionRestoration === 'enabled') {
-                _this119.viewportScroller.scrollToPosition(e.position);
+              if (_this163.options.scrollPositionRestoration === 'top') {
+                _this163.viewportScroller.scrollToPosition([0, 0]);
+              } else if (_this163.options.scrollPositionRestoration === 'enabled') {
+                _this163.viewportScroller.scrollToPosition(e.position);
               } // imperative navigation "forward"
 
             } else {
-              if (e.anchor && _this119.options.anchorScrolling === 'enabled') {
-                _this119.viewportScroller.scrollToAnchor(e.anchor);
-              } else if (_this119.options.scrollPositionRestoration !== 'disabled') {
-                _this119.viewportScroller.scrollToPosition([0, 0]);
+              if (e.anchor && _this163.options.anchorScrolling === 'enabled') {
+                _this163.viewportScroller.scrollToAnchor(e.anchor);
+              } else if (_this163.options.scrollPositionRestoration !== 'disabled') {
+                _this163.viewportScroller.scrollToPosition([0, 0]);
               }
             }
           });
@@ -90262,7 +102939,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass2(RouterInitializer, [{
         key: "appInitializer",
         value: function appInitializer() {
-          var _this120 = this;
+          var _this164 = this;
 
           /** @type {?} */
           var p = this.injector.get(_angular_common__WEBPACK_IMPORTED_MODULE_0__["LOCATION_INITIALIZED"], Promise.resolve(null));
@@ -90287,13 +102964,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             });
             /** @type {?} */
 
-            var router = _this120.injector.get(Router);
+            var router = _this164.injector.get(Router);
             /** @type {?} */
 
 
-            var opts = _this120.injector.get(ROUTER_CONFIGURATION);
+            var opts = _this164.injector.get(ROUTER_CONFIGURATION);
 
-            if (_this120.isLegacyDisabled(opts) || _this120.isLegacyEnabled(opts)) {
+            if (_this164.isLegacyDisabled(opts) || _this164.isLegacyEnabled(opts)) {
               resolve(true);
             } else if (opts.initialNavigation === 'disabled') {
               router.setUpLocationChangeListener();
@@ -90305,10 +102982,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               */
               function () {
                 // only the initial navigation should be delayed
-                if (!_this120.initNavigation) {
-                  _this120.initNavigation = true;
+                if (!_this164.initNavigation) {
+                  _this164.initNavigation = true;
                   resolve(true);
-                  return _this120.resultOfPreactivationDone; // subsequent navigations should not be delayed
+                  return _this164.resultOfPreactivationDone; // subsequent navigations should not be delayed
                 } else {
                   return (
                     /** @type {?} */
@@ -90581,6 +103258,5267 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var ɵangular_packages_router_router_lNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("ng-component", _angular_router__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_router_router_l"], View_ɵangular_packages_router_router_l_Host_0, {}, {}, []);
     /***/
 
+  },
+
+  /***/
+  "./node_modules/@firebase/app/dist/index.cjs.js":
+  /*!******************************************************!*\
+    !*** ./node_modules/@firebase/app/dist/index.cjs.js ***!
+    \******************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesFirebaseAppDistIndexCjsJs(module, exports, __webpack_require__) {
+    "use strict";
+
+    Object.defineProperty(exports, '__esModule', {
+      value: true
+    });
+
+    var tslib = __webpack_require__(
+    /*! tslib */
+    "./node_modules/@firebase/app/node_modules/tslib/tslib.es6.js");
+
+    var util = __webpack_require__(
+    /*! @firebase/util */
+    "./node_modules/@firebase/util/dist/index.cjs.js");
+
+    var component = __webpack_require__(
+    /*! @firebase/component */
+    "./node_modules/@firebase/component/dist/index.cjs.js");
+
+    var logger$1 = __webpack_require__(
+    /*! @firebase/logger */
+    "./node_modules/@firebase/logger/dist/index.esm.js");
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var _a;
+
+    var ERRORS = (_a = {}, _a["no-app"
+    /* NO_APP */
+    ] = "No Firebase App '{$appName}' has been created - " + 'call Firebase App.initializeApp()', _a["bad-app-name"
+    /* BAD_APP_NAME */
+    ] = "Illegal App name: '{$appName}", _a["duplicate-app"
+    /* DUPLICATE_APP */
+    ] = "Firebase App named '{$appName}' already exists", _a["app-deleted"
+    /* APP_DELETED */
+    ] = "Firebase App named '{$appName}' already deleted", _a["invalid-app-argument"
+    /* INVALID_APP_ARGUMENT */
+    ] = 'firebase.{$appName}() takes either no argument or a ' + 'Firebase App instance.', _a["invalid-log-argument"
+    /* INVALID_LOG_ARGUMENT */
+    ] = 'First argument to `onLog` must be null or a function.', _a);
+    var ERROR_FACTORY = new util.ErrorFactory('app', 'Firebase', ERRORS);
+    var name$1 = "@firebase/app";
+    var version = "0.6.0";
+    var name$2 = "@firebase/analytics";
+    var name$3 = "@firebase/auth";
+    var name$4 = "@firebase/database";
+    var name$5 = "@firebase/functions";
+    var name$6 = "@firebase/installations";
+    var name$7 = "@firebase/messaging";
+    var name$8 = "@firebase/performance";
+    var name$9 = "@firebase/remote-config";
+    var name$a = "@firebase/storage";
+    var name$b = "@firebase/firestore";
+    var name$c = "firebase-wrapper";
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    var _a$1;
+
+    var DEFAULT_ENTRY_NAME = '[DEFAULT]';
+    var PLATFORM_LOG_STRING = (_a$1 = {}, _a$1[name$1] = 'fire-core', _a$1[name$2] = 'fire-analytics', _a$1[name$3] = 'fire-auth', _a$1[name$4] = 'fire-rtdb', _a$1[name$5] = 'fire-fn', _a$1[name$6] = 'fire-iid', _a$1[name$7] = 'fire-fcm', _a$1[name$8] = 'fire-perf', _a$1[name$9] = 'fire-rc', _a$1[name$a] = 'fire-gcs', _a$1[name$b] = 'fire-fst', _a$1['fire-js'] = 'fire-js', _a$1[name$c] = 'fire-js-all', _a$1);
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    var logger = new logger$1.Logger('@firebase/app');
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Global context object for a collection of services using
+     * a shared authentication state.
+     */
+
+    var FirebaseAppImpl =
+    /** @class */
+    function () {
+      function FirebaseAppImpl(options, config, firebase_) {
+        var e_1, _a;
+
+        var _this = this;
+
+        this.firebase_ = firebase_;
+        this.isDeleted_ = false;
+        this.name_ = config.name;
+        this.automaticDataCollectionEnabled_ = config.automaticDataCollectionEnabled || false;
+        this.options_ = util.deepCopy(options);
+        this.container = new component.ComponentContainer(config.name); // add itself to container
+
+        this._addComponent(new component.Component('app', function () {
+          return _this;
+        }, "PUBLIC"
+        /* PUBLIC */
+        ));
+
+        try {
+          // populate ComponentContainer with existing components
+          for (var _b = tslib.__values(this.firebase_.INTERNAL.components.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            var component$1 = _c.value;
+
+            this._addComponent(component$1);
+          }
+        } catch (e_1_1) {
+          e_1 = {
+            error: e_1_1
+          };
+        } finally {
+          try {
+            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+          } finally {
+            if (e_1) throw e_1.error;
+          }
+        }
+      }
+
+      Object.defineProperty(FirebaseAppImpl.prototype, "automaticDataCollectionEnabled", {
+        get: function get() {
+          this.checkDestroyed_();
+          return this.automaticDataCollectionEnabled_;
+        },
+        set: function set(val) {
+          this.checkDestroyed_();
+          this.automaticDataCollectionEnabled_ = val;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      Object.defineProperty(FirebaseAppImpl.prototype, "name", {
+        get: function get() {
+          this.checkDestroyed_();
+          return this.name_;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      Object.defineProperty(FirebaseAppImpl.prototype, "options", {
+        get: function get() {
+          this.checkDestroyed_();
+          return this.options_;
+        },
+        enumerable: true,
+        configurable: true
+      });
+
+      FirebaseAppImpl.prototype.delete = function () {
+        var _this = this;
+
+        return new Promise(function (resolve) {
+          _this.checkDestroyed_();
+
+          resolve();
+        }).then(function () {
+          _this.firebase_.INTERNAL.removeApp(_this.name_);
+
+          return Promise.all(_this.container.getProviders().map(function (provider) {
+            return provider.delete();
+          }));
+        }).then(function () {
+          _this.isDeleted_ = true;
+        });
+      };
+      /**
+       * Return a service instance associated with this app (creating it
+       * on demand), identified by the passed instanceIdentifier.
+       *
+       * NOTE: Currently storage and functions are the only ones that are leveraging this
+       * functionality. They invoke it by calling:
+       *
+       * ```javascript
+       * firebase.app().storage('STORAGE BUCKET ID')
+       * ```
+       *
+       * The service name is passed to this already
+       * @internal
+       */
+
+
+      FirebaseAppImpl.prototype._getService = function (name, instanceIdentifier) {
+        if (instanceIdentifier === void 0) {
+          instanceIdentifier = DEFAULT_ENTRY_NAME;
+        }
+
+        this.checkDestroyed_(); // getImmediate will always succeed because _getService is only called for registered components.
+
+        return this.container.getProvider(name).getImmediate({
+          identifier: instanceIdentifier
+        });
+      };
+      /**
+       * Remove a service instance from the cache, so we will create a new instance for this service
+       * when people try to get this service again.
+       *
+       * NOTE: currently only firestore is using this functionality to support firestore shutdown.
+       *
+       * @param name The service name
+       * @param instanceIdentifier instance identifier in case multiple instances are allowed
+       * @internal
+       */
+
+
+      FirebaseAppImpl.prototype._removeServiceInstance = function (name, instanceIdentifier) {
+        if (instanceIdentifier === void 0) {
+          instanceIdentifier = DEFAULT_ENTRY_NAME;
+        } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+        this.container.getProvider(name).clearInstance(instanceIdentifier);
+      };
+      /**
+       * @param component the component being added to this app's container
+       */
+
+
+      FirebaseAppImpl.prototype._addComponent = function (component) {
+        try {
+          this.container.addComponent(component);
+        } catch (e) {
+          logger.debug("Component " + component.name + " failed to register with FirebaseApp " + this.name, e);
+        }
+      };
+
+      FirebaseAppImpl.prototype._addOrOverwriteComponent = function (component) {
+        this.container.addOrOverwriteComponent(component);
+      };
+      /**
+       * This function will throw an Error if the App has already been deleted -
+       * use before performing API actions on the App.
+       */
+
+
+      FirebaseAppImpl.prototype.checkDestroyed_ = function () {
+        if (this.isDeleted_) {
+          throw ERROR_FACTORY.create("app-deleted"
+          /* APP_DELETED */
+          , {
+            appName: this.name_
+          });
+        }
+      };
+
+      return FirebaseAppImpl;
+    }(); // Prevent dead-code elimination of these methods w/o invalid property
+    // copying.
+
+
+    FirebaseAppImpl.prototype.name && FirebaseAppImpl.prototype.options || FirebaseAppImpl.prototype.delete || console.log('dc');
+    var version$1 = "7.12.0";
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Because auth can't share code with other components, we attach the utility functions
+     * in an internal namespace to share code.
+     * This function return a firebase namespace object without
+     * any utility functions, so it can be shared between the regular firebaseNamespace and
+     * the lite version.
+     */
+
+    function createFirebaseNamespaceCore(firebaseAppImpl) {
+      var apps = {}; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+      var components = new Map(); // A namespace is a plain JavaScript Object.
+
+      var namespace = {
+        // Hack to prevent Babel from modifying the object returned
+        // as the firebase namespace.
+        // @ts-ignore
+        __esModule: true,
+        initializeApp: initializeApp,
+        // @ts-ignore
+        app: app,
+        registerVersion: registerVersion,
+        setLogLevel: logger$1.setLogLevel,
+        onLog: onLog,
+        // @ts-ignore
+        apps: null,
+        SDK_VERSION: version$1,
+        INTERNAL: {
+          registerComponent: registerComponent,
+          removeApp: removeApp,
+          components: components,
+          useAsService: useAsService
+        }
+      }; // Inject a circular default export to allow Babel users who were previously
+      // using:
+      //
+      //   import firebase from 'firebase';
+      //   which becomes: var firebase = require('firebase').default;
+      //
+      // instead of
+      //
+      //   import * as firebase from 'firebase';
+      //   which becomes: var firebase = require('firebase');
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+      namespace['default'] = namespace; // firebase.apps is a read-only getter.
+
+      Object.defineProperty(namespace, 'apps', {
+        get: getApps
+      });
+      /**
+       * Called by App.delete() - but before any services associated with the App
+       * are deleted.
+       */
+
+      function removeApp(name) {
+        delete apps[name];
+      }
+      /**
+       * Get the App object for a given name (or DEFAULT).
+       */
+
+
+      function app(name) {
+        name = name || DEFAULT_ENTRY_NAME;
+
+        if (!util.contains(apps, name)) {
+          throw ERROR_FACTORY.create("no-app"
+          /* NO_APP */
+          , {
+            appName: name
+          });
+        }
+
+        return apps[name];
+      } // @ts-ignore
+
+
+      app['App'] = firebaseAppImpl;
+
+      function initializeApp(options, rawConfig) {
+        if (rawConfig === void 0) {
+          rawConfig = {};
+        }
+
+        if (typeof rawConfig !== 'object' || rawConfig === null) {
+          var name_1 = rawConfig;
+          rawConfig = {
+            name: name_1
+          };
+        }
+
+        var config = rawConfig;
+
+        if (config.name === undefined) {
+          config.name = DEFAULT_ENTRY_NAME;
+        }
+
+        var name = config.name;
+
+        if (typeof name !== 'string' || !name) {
+          throw ERROR_FACTORY.create("bad-app-name"
+          /* BAD_APP_NAME */
+          , {
+            appName: String(name)
+          });
+        }
+
+        if (util.contains(apps, name)) {
+          throw ERROR_FACTORY.create("duplicate-app"
+          /* DUPLICATE_APP */
+          , {
+            appName: name
+          });
+        }
+
+        var app = new firebaseAppImpl(options, config, namespace);
+        apps[name] = app;
+        return app;
+      }
+      /*
+       * Return an array of all the non-deleted FirebaseApps.
+       */
+
+
+      function getApps() {
+        // Make a copy so caller cannot mutate the apps list.
+        return Object.keys(apps).map(function (name) {
+          return apps[name];
+        });
+      }
+
+      function registerComponent(component) {
+        var e_1, _a;
+
+        var componentName = component.name;
+
+        if (components.has(componentName)) {
+          logger.debug("There were multiple attempts to register component " + componentName + ".");
+          return component.type === "PUBLIC"
+          /* PUBLIC */
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          namespace[componentName] : null;
+        }
+
+        components.set(componentName, component); // create service namespace for public components
+
+        if (component.type === "PUBLIC"
+        /* PUBLIC */
+        ) {
+            // The Service namespace is an accessor function ...
+            var serviceNamespace = function serviceNamespace(appArg) {
+              if (appArg === void 0) {
+                appArg = app();
+              } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+              if (typeof appArg[componentName] !== 'function') {
+                // Invalid argument.
+                // This happens in the following case: firebase.storage('gs:/')
+                throw ERROR_FACTORY.create("invalid-app-argument"
+                /* INVALID_APP_ARGUMENT */
+                , {
+                  appName: componentName
+                });
+              } // Forward service instance lookup to the FirebaseApp.
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+              return appArg[componentName]();
+            }; // ... and a container for service-level properties.
+
+
+            if (component.serviceProps !== undefined) {
+              util.deepExtend(serviceNamespace, component.serviceProps);
+            } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+            namespace[componentName] = serviceNamespace; // Patch the FirebaseAppImpl prototype
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+            firebaseAppImpl.prototype[componentName] = // TODO: The eslint disable can be removed and the 'ignoreRestArgs'
+            // option added to the no-explicit-any rule when ESlint releases it.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            function () {
+              var args = [];
+
+              for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+              }
+
+              var serviceFxn = this._getService.bind(this, componentName);
+
+              return serviceFxn.apply(this, component.multipleInstances ? args : []);
+            };
+          }
+
+        try {
+          // add the component to existing app instances
+          for (var _b = tslib.__values(Object.keys(apps)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            var appName = _c.value;
+
+            apps[appName]._addComponent(component);
+          }
+        } catch (e_1_1) {
+          e_1 = {
+            error: e_1_1
+          };
+        } finally {
+          try {
+            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+          } finally {
+            if (e_1) throw e_1.error;
+          }
+        }
+
+        return component.type === "PUBLIC"
+        /* PUBLIC */
+        ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        namespace[componentName] : null;
+      }
+
+      function registerVersion(libraryKeyOrName, version, variant) {
+        var _a; // TODO: We can use this check to whitelist strings when/if we set up
+        // a good whitelist system.
+
+
+        var library = (_a = PLATFORM_LOG_STRING[libraryKeyOrName]) !== null && _a !== void 0 ? _a : libraryKeyOrName;
+
+        if (variant) {
+          library += "-" + variant;
+        }
+
+        var libraryMismatch = library.match(/\s|\//);
+        var versionMismatch = version.match(/\s|\//);
+
+        if (libraryMismatch || versionMismatch) {
+          var warning = ["Unable to register library \"" + library + "\" with version \"" + version + "\":"];
+
+          if (libraryMismatch) {
+            warning.push("library name \"" + library + "\" contains illegal characters (whitespace or \"/\")");
+          }
+
+          if (libraryMismatch && versionMismatch) {
+            warning.push('and');
+          }
+
+          if (versionMismatch) {
+            warning.push("version name \"" + version + "\" contains illegal characters (whitespace or \"/\")");
+          }
+
+          logger.warn(warning.join(' '));
+          return;
+        }
+
+        registerComponent(new component.Component(library + "-version", function () {
+          return {
+            library: library,
+            version: version
+          };
+        }, "VERSION"
+        /* VERSION */
+        ));
+      }
+
+      function onLog(logCallback, options) {
+        if (logCallback !== null && typeof logCallback !== 'function') {
+          throw ERROR_FACTORY.create("invalid-log-argument"
+          /* INVALID_LOG_ARGUMENT */
+          , {
+            appName: name
+          });
+        }
+
+        logger$1.setUserLogHandler(logCallback, options);
+      } // Map the requested service to a registered service name
+      // (used to map auth to serverAuth service when needed).
+
+
+      function useAsService(app, name) {
+        if (name === 'serverAuth') {
+          return null;
+        }
+
+        var useService = name;
+        return useService;
+      }
+
+      return namespace;
+    }
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Return a firebase namespace object.
+     *
+     * In production, this will be called exactly once and the result
+     * assigned to the 'firebase' global.  It may be called multiple times
+     * in unit tests.
+     */
+
+
+    function createFirebaseNamespace() {
+      var namespace = createFirebaseNamespaceCore(FirebaseAppImpl);
+      namespace.INTERNAL = tslib.__assign(tslib.__assign({}, namespace.INTERNAL), {
+        createFirebaseNamespace: createFirebaseNamespace,
+        extendNamespace: extendNamespace,
+        createSubscribe: util.createSubscribe,
+        ErrorFactory: util.ErrorFactory,
+        deepExtend: util.deepExtend
+      });
+      /**
+       * Patch the top-level firebase namespace with additional properties.
+       *
+       * firebase.INTERNAL.extendNamespace()
+       */
+
+      function extendNamespace(props) {
+        util.deepExtend(namespace, props);
+      }
+
+      return namespace;
+    }
+
+    var firebase = createFirebaseNamespace();
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    var PlatformLoggerService =
+    /** @class */
+    function () {
+      function PlatformLoggerService(container) {
+        this.container = container;
+      } // In initial implementation, this will be called by installations on
+      // auth token refresh, and installations will send this string.
+
+
+      PlatformLoggerService.prototype.getPlatformInfoString = function () {
+        var providers = this.container.getProviders(); // Loop through providers and get library/version pairs from any that are
+        // version components.
+
+        return providers.map(function (provider) {
+          if (isVersionServiceProvider(provider)) {
+            var service = provider.getImmediate();
+            return service.library + "/" + service.version;
+          } else {
+            return null;
+          }
+        }).filter(function (logString) {
+          return logString;
+        }).join(' ');
+      };
+
+      return PlatformLoggerService;
+    }();
+    /**
+     *
+     * @param provider check if this provider provides a VersionService
+     *
+     * NOTE: Using Provider<'app-version'> is a hack to indicate that the provider
+     * provides VersionService. The provider is not necessarily a 'app-version'
+     * provider.
+     */
+
+
+    function isVersionServiceProvider(provider) {
+      var component = provider.getComponent();
+      return (component === null || component === void 0 ? void 0 : component.type) === "VERSION"
+      /* VERSION */
+      ;
+    }
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    function registerCoreComponents(firebase, variant) {
+      firebase.INTERNAL.registerComponent(new component.Component('platform-logger', function (container) {
+        return new PlatformLoggerService(container);
+      }, "PRIVATE"
+      /* PRIVATE */
+      )); // Register `app` package.
+
+      firebase.registerVersion(name$1, version, variant); // Register platform SDK identifier (no version).
+
+      firebase.registerVersion('fire-js', '');
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    // Firebase Lite detection
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+
+    if (util.isBrowser() && self.firebase !== undefined) {
+      logger.warn("\n    Warning: Firebase is already defined in the global scope. Please make sure\n    Firebase library is only loaded once.\n  "); // eslint-disable-next-line
+
+      var sdkVersion = self.firebase.SDK_VERSION;
+
+      if (sdkVersion && sdkVersion.indexOf('LITE') >= 0) {
+        logger.warn("\n    Warning: You are trying to load Firebase while using Firebase Performance standalone script.\n    You should load Firebase Performance with this instance of Firebase to avoid loading duplicate code.\n    ");
+      }
+    }
+
+    var initializeApp = firebase.initializeApp; // TODO: This disable can be removed and the 'ignoreRestArgs' option added to
+    // the no-explicit-any rule when ESlint releases it.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    firebase.initializeApp = function () {
+      var args = [];
+
+      for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+      } // Environment check before initializing app
+      // Do the check in initializeApp, so people have a chance to disable it by setting logLevel
+      // in @firebase/logger
+
+
+      if (util.isNode()) {
+        logger.warn("\n      Warning: This is a browser-targeted Firebase bundle but it appears it is being\n      run in a Node environment.  If running in a Node environment, make sure you\n      are using the bundle specified by the \"main\" field in package.json.\n      \n      If you are using Webpack, you can specify \"main\" as the first item in\n      \"resolve.mainFields\":\n      https://webpack.js.org/configuration/resolve/#resolvemainfields\n      \n      If using Rollup, use the rollup-plugin-node-resolve plugin and specify \"main\"\n      as the first item in \"mainFields\", e.g. ['main', 'module'].\n      https://github.com/rollup/rollup-plugin-node-resolve\n      ");
+      }
+
+      return initializeApp.apply(undefined, args);
+    };
+
+    var firebase$1 = firebase;
+    registerCoreComponents(firebase$1);
+    exports.default = firebase$1;
+    exports.firebase = firebase$1; //# sourceMappingURL=index.cjs.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@firebase/app/node_modules/tslib/tslib.es6.js":
+  /*!********************************************************************!*\
+    !*** ./node_modules/@firebase/app/node_modules/tslib/tslib.es6.js ***!
+    \********************************************************************/
+
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+  /***/
+  function node_modulesFirebaseAppNode_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__extends", function () {
+      return __extends;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__assign", function () {
+      return _assign;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__rest", function () {
+      return __rest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+      return __decorate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__param", function () {
+      return __param;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+      return __metadata;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+      return __awaiter;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__generator", function () {
+      return __generator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+      return __exportStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__values", function () {
+      return __values;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__read", function () {
+      return __read;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spread", function () {
+      return __spread;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+      return __spreadArrays;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__await", function () {
+      return __await;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+      return __asyncGenerator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+      return __asyncDelegator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+      return __asyncValues;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+      return __makeTemplateObject;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+      return __importStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+      return __importDefault;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
+      return __classPrivateFieldGet;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
+      return __classPrivateFieldSet;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+    
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+    /* global Reflect, Promise */
+
+
+    var _extendStatics = function extendStatics(d, b) {
+      _extendStatics = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+      } || function (d, b) {
+        for (var p in b) {
+          if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+      };
+
+      return _extendStatics(d, b);
+    };
+
+    function __extends(d, b) {
+      _extendStatics(d, b);
+
+      function __() {
+        this.constructor = d;
+      }
+
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var _assign = function __assign() {
+      _assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+
+        return t;
+      };
+
+      return _assign.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+      var t = {};
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+      }
+
+      if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+      }
+      return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+      function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+          resolve(value);
+        });
+      }
+
+      return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+          try {
+            step(generator.next(value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function rejected(value) {
+          try {
+            step(generator["throw"](value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function step(result) {
+          result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+      });
+    }
+
+    function __generator(thisArg, body) {
+      var _ = {
+        label: 0,
+        sent: function sent() {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: []
+      },
+          f,
+          y,
+          t,
+          g;
+      return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+      }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+      }), g;
+
+      function verb(n) {
+        return function (v) {
+          return step([n, v]);
+        };
+      }
+
+      function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+
+        while (_) {
+          try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+
+            switch (op[0]) {
+              case 0:
+              case 1:
+                t = op;
+                break;
+
+              case 4:
+                _.label++;
+                return {
+                  value: op[1],
+                  done: false
+                };
+
+              case 5:
+                _.label++;
+                y = op[1];
+                op = [0];
+                continue;
+
+              case 7:
+                op = _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+
+              default:
+                if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                  _ = 0;
+                  continue;
+                }
+
+                if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                  _.label = op[1];
+                  break;
+                }
+
+                if (op[0] === 6 && _.label < t[1]) {
+                  _.label = t[1];
+                  t = op;
+                  break;
+                }
+
+                if (t && _.label < t[2]) {
+                  _.label = t[2];
+
+                  _.ops.push(op);
+
+                  break;
+                }
+
+                if (t[2]) _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+            }
+
+            op = body.call(thisArg, _);
+          } catch (e) {
+            op = [6, e];
+            y = 0;
+          } finally {
+            f = t = 0;
+          }
+        }
+
+        if (op[0] & 5) throw op[1];
+        return {
+          value: op[0] ? op[1] : void 0,
+          done: true
+        };
+      }
+    }
+
+    function __exportStar(m, exports) {
+      for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+      }
+    }
+
+    function __values(o) {
+      var s = typeof Symbol === "function" && Symbol.iterator,
+          m = s && o[s],
+          i = 0;
+      if (m) return m.call(o);
+      if (o && typeof o.length === "number") return {
+        next: function next() {
+          if (o && i >= o.length) o = void 0;
+          return {
+            value: o && o[i++],
+            done: !o
+          };
+        }
+      };
+      throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
+    function __read(o, n) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m) return o;
+      var i = m.call(o),
+          r,
+          ar = [],
+          e;
+
+      try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+          ar.push(r.value);
+        }
+      } catch (error) {
+        e = {
+          error: error
+        };
+      } finally {
+        try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+          if (e) throw e.error;
+        }
+      }
+
+      return ar;
+    }
+
+    function __spread() {
+      for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+      }
+
+      return ar;
+    }
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+
+    ;
+
+    function __await(v) {
+      return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var g = generator.apply(thisArg, _arguments || []),
+          i,
+          q = [];
+      return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n) {
+        if (g[n]) i[n] = function (v) {
+          return new Promise(function (a, b) {
+            q.push([n, v, a, b]) > 1 || resume(n, v);
+          });
+        };
+      }
+
+      function resume(n, v) {
+        try {
+          step(g[n](v));
+        } catch (e) {
+          settle(q[0][3], e);
+        }
+      }
+
+      function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+      }
+
+      function fulfill(value) {
+        resume("next", value);
+      }
+
+      function reject(value) {
+        resume("throw", value);
+      }
+
+      function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+      }
+    }
+
+    function __asyncDelegator(o) {
+      var i, p;
+      return i = {}, verb("next"), verb("throw", function (e) {
+        throw e;
+      }), verb("return"), i[Symbol.iterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n, f) {
+        i[n] = o[n] ? function (v) {
+          return (p = !p) ? {
+            value: __await(o[n](v)),
+            done: n === "return"
+          } : f ? f(v) : v;
+        } : f;
+      }
+    }
+
+    function __asyncValues(o) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var m = o[Symbol.asyncIterator],
+          i;
+      return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i);
+
+      function verb(n) {
+        i[n] = o[n] && function (v) {
+          return new Promise(function (resolve, reject) {
+            v = o[n](v), settle(resolve, reject, v.done, v.value);
+          });
+        };
+      }
+
+      function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function (v) {
+          resolve({
+            value: v,
+            done: d
+          });
+        }, reject);
+      }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+      if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+          value: raw
+        });
+      } else {
+        cooked.raw = raw;
+      }
+
+      return cooked;
+    }
+
+    ;
+
+    function __importStar(mod) {
+      if (mod && mod.__esModule) return mod;
+      var result = {};
+      if (mod != null) for (var k in mod) {
+        if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+      }
+      result.default = mod;
+      return result;
+    }
+
+    function __importDefault(mod) {
+      return mod && mod.__esModule ? mod : {
+        default: mod
+      };
+    }
+
+    function __classPrivateFieldGet(receiver, privateMap) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+      }
+
+      return privateMap.get(receiver);
+    }
+
+    function __classPrivateFieldSet(receiver, privateMap, value) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+      }
+
+      privateMap.set(receiver, value);
+      return value;
+    }
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@firebase/component/dist/index.cjs.js":
+  /*!************************************************************!*\
+    !*** ./node_modules/@firebase/component/dist/index.cjs.js ***!
+    \************************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesFirebaseComponentDistIndexCjsJs(module, exports, __webpack_require__) {
+    "use strict";
+
+    Object.defineProperty(exports, '__esModule', {
+      value: true
+    });
+
+    var tslib = __webpack_require__(
+    /*! tslib */
+    "./node_modules/@firebase/component/node_modules/tslib/tslib.es6.js");
+
+    var util = __webpack_require__(
+    /*! @firebase/util */
+    "./node_modules/@firebase/util/dist/index.cjs.js");
+    /**
+     * Component for service name T, e.g. `auth`, `auth-internal`
+     */
+
+
+    var Component =
+    /** @class */
+    function () {
+      /**
+       *
+       * @param name The public service name, e.g. app, auth, firestore, database
+       * @param instanceFactory Service factory responsible for creating the public interface
+       * @param type whether the service provided by the component is public or private
+       */
+      function Component(name, instanceFactory, type) {
+        this.name = name;
+        this.instanceFactory = instanceFactory;
+        this.type = type;
+        this.multipleInstances = false;
+        /**
+         * Properties to be added to the service namespace
+         */
+
+        this.serviceProps = {};
+        this.instantiationMode = "LAZY"
+        /* LAZY */
+        ;
+      }
+
+      Component.prototype.setInstantiationMode = function (mode) {
+        this.instantiationMode = mode;
+        return this;
+      };
+
+      Component.prototype.setMultipleInstances = function (multipleInstances) {
+        this.multipleInstances = multipleInstances;
+        return this;
+      };
+
+      Component.prototype.setServiceProps = function (props) {
+        this.serviceProps = props;
+        return this;
+      };
+
+      return Component;
+    }();
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var DEFAULT_ENTRY_NAME = '[DEFAULT]';
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Provider for instance for service name T, e.g. 'auth', 'auth-internal'
+     * NameServiceMapping[T] is an alias for the type of the instance
+     */
+
+    var Provider =
+    /** @class */
+    function () {
+      function Provider(name, container) {
+        this.name = name;
+        this.container = container;
+        this.component = null;
+        this.instances = new Map();
+        this.instancesDeferred = new Map();
+      }
+      /**
+       * @param identifier A provider can provide mulitple instances of a service
+       * if this.component.multipleInstances is true.
+       */
+
+
+      Provider.prototype.get = function (identifier) {
+        if (identifier === void 0) {
+          identifier = DEFAULT_ENTRY_NAME;
+        } // if multipleInstances is not supported, use the default name
+
+
+        var normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
+
+        if (!this.instancesDeferred.has(normalizedIdentifier)) {
+          var deferred = new util.Deferred();
+          this.instancesDeferred.set(normalizedIdentifier, deferred); // If the service instance is available, resolve the promise with it immediately
+
+          try {
+            var instance = this.getOrInitializeService(normalizedIdentifier);
+
+            if (instance) {
+              deferred.resolve(instance);
+            }
+          } catch (e) {// when the instance factory throws an exception during get(), it should not cause
+            // a fatal error. We just return the unresolved promise in this case.
+          }
+        }
+
+        return this.instancesDeferred.get(normalizedIdentifier).promise;
+      };
+
+      Provider.prototype.getImmediate = function (options) {
+        var _a = tslib.__assign({
+          identifier: DEFAULT_ENTRY_NAME,
+          optional: false
+        }, options),
+            identifier = _a.identifier,
+            optional = _a.optional; // if multipleInstances is not supported, use the default name
+
+
+        var normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
+
+        try {
+          var instance = this.getOrInitializeService(normalizedIdentifier);
+
+          if (!instance) {
+            if (optional) {
+              return null;
+            }
+
+            throw Error("Service " + this.name + " is not available");
+          }
+
+          return instance;
+        } catch (e) {
+          if (optional) {
+            return null;
+          } else {
+            throw e;
+          }
+        }
+      };
+
+      Provider.prototype.getComponent = function () {
+        return this.component;
+      };
+
+      Provider.prototype.setComponent = function (component) {
+        var e_1, _a;
+
+        if (component.name !== this.name) {
+          throw Error("Mismatching Component " + component.name + " for Provider " + this.name + ".");
+        }
+
+        if (this.component) {
+          throw Error("Component for " + this.name + " has already been provided");
+        }
+
+        this.component = component; // if the service is eager, initialize the default instance
+
+        if (isComponentEager(component)) {
+          try {
+            this.getOrInitializeService(DEFAULT_ENTRY_NAME);
+          } catch (e) {// when the instance factory for an eager Component throws an exception during the eager
+            // initialization, it should not cause a fatal error.
+            // TODO: Investigate if we need to make it configurable, because some component may want to cause
+            // a fatal error in this case?
+          }
+        }
+
+        try {
+          // Create service instances for the pending promises and resolve them
+          // NOTE: if this.multipleInstances is false, only the default instance will be created
+          // and all promises with resolve with it regardless of the identifier.
+          for (var _b = tslib.__values(this.instancesDeferred.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            var _d = tslib.__read(_c.value, 2),
+                instanceIdentifier = _d[0],
+                instanceDeferred = _d[1];
+
+            var normalizedIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
+
+            try {
+              // `getOrInitializeService()` should always return a valid instance since a component is guaranteed. use ! to make typescript happy.
+              var instance = this.getOrInitializeService(normalizedIdentifier);
+              instanceDeferred.resolve(instance);
+            } catch (e) {// when the instance factory throws an exception, it should not cause
+              // a fatal error. We just leave the promise unresolved.
+            }
+          }
+        } catch (e_1_1) {
+          e_1 = {
+            error: e_1_1
+          };
+        } finally {
+          try {
+            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+          } finally {
+            if (e_1) throw e_1.error;
+          }
+        }
+      };
+
+      Provider.prototype.clearInstance = function (identifier) {
+        if (identifier === void 0) {
+          identifier = DEFAULT_ENTRY_NAME;
+        }
+
+        this.instancesDeferred.delete(identifier);
+        this.instances.delete(identifier);
+      }; // app.delete() will call this method on every provider to delete the services
+      // TODO: should we mark the provider as deleted?
+
+
+      Provider.prototype.delete = function () {
+        return tslib.__awaiter(this, void 0, void 0, function () {
+          var services;
+          return tslib.__generator(this, function (_a) {
+            switch (_a.label) {
+              case 0:
+                services = Array.from(this.instances.values());
+                return [4
+                /*yield*/
+                , Promise.all(services.filter(function (service) {
+                  return 'INTERNAL' in service;
+                }) // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                .map(function (service) {
+                  return service.INTERNAL.delete();
+                }))];
+
+              case 1:
+                _a.sent();
+
+                return [2
+                /*return*/
+                ];
+            }
+          });
+        });
+      };
+
+      Provider.prototype.isComponentSet = function () {
+        return this.component != null;
+      };
+
+      Provider.prototype.getOrInitializeService = function (identifier) {
+        var instance = this.instances.get(identifier);
+
+        if (!instance && this.component) {
+          instance = this.component.instanceFactory(this.container, normalizeIdentifierForFactory(identifier));
+          this.instances.set(identifier, instance);
+        }
+
+        return instance || null;
+      };
+
+      Provider.prototype.normalizeInstanceIdentifier = function (identifier) {
+        if (this.component) {
+          return this.component.multipleInstances ? identifier : DEFAULT_ENTRY_NAME;
+        } else {
+          return identifier; // assume multiple instances are supported before the component is provided.
+        }
+      };
+
+      return Provider;
+    }(); // undefined should be passed to the service factory for the default instance
+
+
+    function normalizeIdentifierForFactory(identifier) {
+      return identifier === DEFAULT_ENTRY_NAME ? undefined : identifier;
+    }
+
+    function isComponentEager(component) {
+      return component.instantiationMode === "EAGER"
+      /* EAGER */
+      ;
+    }
+    /**
+     * @license
+     * Copyright 2019 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * ComponentContainer that provides Providers for service name T, e.g. `auth`, `auth-internal`
+     */
+
+
+    var ComponentContainer =
+    /** @class */
+    function () {
+      function ComponentContainer(name) {
+        this.name = name;
+        this.providers = new Map();
+      }
+      /**
+       *
+       * @param component Component being added
+       * @param overwrite When a component with the same name has already been registered,
+       * if overwrite is true: overwrite the existing component with the new component and create a new
+       * provider with the new component. It can be useful in tests where you want to use different mocks
+       * for different tests.
+       * if overwrite is false: throw an exception
+       */
+
+
+      ComponentContainer.prototype.addComponent = function (component) {
+        var provider = this.getProvider(component.name);
+
+        if (provider.isComponentSet()) {
+          throw new Error("Component " + component.name + " has already been registered with " + this.name);
+        }
+
+        provider.setComponent(component);
+      };
+
+      ComponentContainer.prototype.addOrOverwriteComponent = function (component) {
+        var provider = this.getProvider(component.name);
+
+        if (provider.isComponentSet()) {
+          // delete the existing provider from the container, so we can register the new component
+          this.providers.delete(component.name);
+        }
+
+        this.addComponent(component);
+      };
+      /**
+       * getProvider provides a type safe interface where it can only be called with a field name
+       * present in NameServiceMapping interface.
+       *
+       * Firebase SDKs providing services should extend NameServiceMapping interface to register
+       * themselves.
+       */
+
+
+      ComponentContainer.prototype.getProvider = function (name) {
+        if (this.providers.has(name)) {
+          return this.providers.get(name);
+        } // create a Provider for a service that hasn't registered with Firebase
+
+
+        var provider = new Provider(name, this);
+        this.providers.set(name, provider);
+        return provider;
+      };
+
+      ComponentContainer.prototype.getProviders = function () {
+        return Array.from(this.providers.values());
+      };
+
+      return ComponentContainer;
+    }();
+
+    exports.Component = Component;
+    exports.ComponentContainer = ComponentContainer;
+    exports.Provider = Provider; //# sourceMappingURL=index.cjs.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@firebase/component/node_modules/tslib/tslib.es6.js":
+  /*!**************************************************************************!*\
+    !*** ./node_modules/@firebase/component/node_modules/tslib/tslib.es6.js ***!
+    \**************************************************************************/
+
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+  /***/
+  function node_modulesFirebaseComponentNode_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__extends", function () {
+      return __extends;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__assign", function () {
+      return _assign2;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__rest", function () {
+      return __rest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+      return __decorate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__param", function () {
+      return __param;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+      return __metadata;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+      return __awaiter;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__generator", function () {
+      return __generator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+      return __exportStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__values", function () {
+      return __values;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__read", function () {
+      return __read;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spread", function () {
+      return __spread;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+      return __spreadArrays;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__await", function () {
+      return __await;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+      return __asyncGenerator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+      return __asyncDelegator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+      return __asyncValues;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+      return __makeTemplateObject;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+      return __importStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+      return __importDefault;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
+      return __classPrivateFieldGet;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
+      return __classPrivateFieldSet;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+    
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+    /* global Reflect, Promise */
+
+
+    var _extendStatics2 = function extendStatics(d, b) {
+      _extendStatics2 = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+      } || function (d, b) {
+        for (var p in b) {
+          if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+      };
+
+      return _extendStatics2(d, b);
+    };
+
+    function __extends(d, b) {
+      _extendStatics2(d, b);
+
+      function __() {
+        this.constructor = d;
+      }
+
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var _assign2 = function __assign() {
+      _assign2 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+
+        return t;
+      };
+
+      return _assign2.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+      var t = {};
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+      }
+
+      if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+      }
+      return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+      function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+          resolve(value);
+        });
+      }
+
+      return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+          try {
+            step(generator.next(value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function rejected(value) {
+          try {
+            step(generator["throw"](value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function step(result) {
+          result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+      });
+    }
+
+    function __generator(thisArg, body) {
+      var _ = {
+        label: 0,
+        sent: function sent() {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: []
+      },
+          f,
+          y,
+          t,
+          g;
+      return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+      }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+      }), g;
+
+      function verb(n) {
+        return function (v) {
+          return step([n, v]);
+        };
+      }
+
+      function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+
+        while (_) {
+          try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+
+            switch (op[0]) {
+              case 0:
+              case 1:
+                t = op;
+                break;
+
+              case 4:
+                _.label++;
+                return {
+                  value: op[1],
+                  done: false
+                };
+
+              case 5:
+                _.label++;
+                y = op[1];
+                op = [0];
+                continue;
+
+              case 7:
+                op = _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+
+              default:
+                if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                  _ = 0;
+                  continue;
+                }
+
+                if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                  _.label = op[1];
+                  break;
+                }
+
+                if (op[0] === 6 && _.label < t[1]) {
+                  _.label = t[1];
+                  t = op;
+                  break;
+                }
+
+                if (t && _.label < t[2]) {
+                  _.label = t[2];
+
+                  _.ops.push(op);
+
+                  break;
+                }
+
+                if (t[2]) _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+            }
+
+            op = body.call(thisArg, _);
+          } catch (e) {
+            op = [6, e];
+            y = 0;
+          } finally {
+            f = t = 0;
+          }
+        }
+
+        if (op[0] & 5) throw op[1];
+        return {
+          value: op[0] ? op[1] : void 0,
+          done: true
+        };
+      }
+    }
+
+    function __exportStar(m, exports) {
+      for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+      }
+    }
+
+    function __values(o) {
+      var s = typeof Symbol === "function" && Symbol.iterator,
+          m = s && o[s],
+          i = 0;
+      if (m) return m.call(o);
+      if (o && typeof o.length === "number") return {
+        next: function next() {
+          if (o && i >= o.length) o = void 0;
+          return {
+            value: o && o[i++],
+            done: !o
+          };
+        }
+      };
+      throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
+    function __read(o, n) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m) return o;
+      var i = m.call(o),
+          r,
+          ar = [],
+          e;
+
+      try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+          ar.push(r.value);
+        }
+      } catch (error) {
+        e = {
+          error: error
+        };
+      } finally {
+        try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+          if (e) throw e.error;
+        }
+      }
+
+      return ar;
+    }
+
+    function __spread() {
+      for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+      }
+
+      return ar;
+    }
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+
+    ;
+
+    function __await(v) {
+      return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var g = generator.apply(thisArg, _arguments || []),
+          i,
+          q = [];
+      return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n) {
+        if (g[n]) i[n] = function (v) {
+          return new Promise(function (a, b) {
+            q.push([n, v, a, b]) > 1 || resume(n, v);
+          });
+        };
+      }
+
+      function resume(n, v) {
+        try {
+          step(g[n](v));
+        } catch (e) {
+          settle(q[0][3], e);
+        }
+      }
+
+      function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+      }
+
+      function fulfill(value) {
+        resume("next", value);
+      }
+
+      function reject(value) {
+        resume("throw", value);
+      }
+
+      function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+      }
+    }
+
+    function __asyncDelegator(o) {
+      var i, p;
+      return i = {}, verb("next"), verb("throw", function (e) {
+        throw e;
+      }), verb("return"), i[Symbol.iterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n, f) {
+        i[n] = o[n] ? function (v) {
+          return (p = !p) ? {
+            value: __await(o[n](v)),
+            done: n === "return"
+          } : f ? f(v) : v;
+        } : f;
+      }
+    }
+
+    function __asyncValues(o) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var m = o[Symbol.asyncIterator],
+          i;
+      return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i);
+
+      function verb(n) {
+        i[n] = o[n] && function (v) {
+          return new Promise(function (resolve, reject) {
+            v = o[n](v), settle(resolve, reject, v.done, v.value);
+          });
+        };
+      }
+
+      function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function (v) {
+          resolve({
+            value: v,
+            done: d
+          });
+        }, reject);
+      }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+      if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+          value: raw
+        });
+      } else {
+        cooked.raw = raw;
+      }
+
+      return cooked;
+    }
+
+    ;
+
+    function __importStar(mod) {
+      if (mod && mod.__esModule) return mod;
+      var result = {};
+      if (mod != null) for (var k in mod) {
+        if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+      }
+      result.default = mod;
+      return result;
+    }
+
+    function __importDefault(mod) {
+      return mod && mod.__esModule ? mod : {
+        default: mod
+      };
+    }
+
+    function __classPrivateFieldGet(receiver, privateMap) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+      }
+
+      return privateMap.get(receiver);
+    }
+
+    function __classPrivateFieldSet(receiver, privateMap, value) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+      }
+
+      privateMap.set(receiver, value);
+      return value;
+    }
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@firebase/logger/dist/index.esm.js":
+  /*!*********************************************************!*\
+    !*** ./node_modules/@firebase/logger/dist/index.esm.js ***!
+    \*********************************************************/
+
+  /*! exports provided: LogLevel, Logger, setLogLevel, setUserLogHandler */
+
+  /***/
+  function node_modulesFirebaseLoggerDistIndexEsmJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "LogLevel", function () {
+      return LogLevel;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Logger", function () {
+      return Logger;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "setLogLevel", function () {
+      return setLogLevel;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "setUserLogHandler", function () {
+      return setUserLogHandler;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+    
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var _a;
+    /**
+     * A container for all of the Logger instances
+     */
+
+
+    var instances = [];
+    /**
+     * The JS SDK supports 5 log levels and also allows a user the ability to
+     * silence the logs altogether.
+     *
+     * The order is a follows:
+     * DEBUG < VERBOSE < INFO < WARN < ERROR
+     *
+     * All of the log types above the current log level will be captured (i.e. if
+     * you set the log level to `INFO`, errors will still be logged, but `DEBUG` and
+     * `VERBOSE` logs will not)
+     */
+
+    var LogLevel;
+
+    (function (LogLevel) {
+      LogLevel[LogLevel["DEBUG"] = 0] = "DEBUG";
+      LogLevel[LogLevel["VERBOSE"] = 1] = "VERBOSE";
+      LogLevel[LogLevel["INFO"] = 2] = "INFO";
+      LogLevel[LogLevel["WARN"] = 3] = "WARN";
+      LogLevel[LogLevel["ERROR"] = 4] = "ERROR";
+      LogLevel[LogLevel["SILENT"] = 5] = "SILENT";
+    })(LogLevel || (LogLevel = {}));
+
+    var levelStringToEnum = {
+      'debug': LogLevel.DEBUG,
+      'verbose': LogLevel.VERBOSE,
+      'info': LogLevel.INFO,
+      'warn': LogLevel.WARN,
+      'error': LogLevel.ERROR,
+      'silent': LogLevel.SILENT
+    };
+    /**
+     * The default log level
+     */
+
+    var defaultLogLevel = LogLevel.INFO;
+    /**
+     * By default, `console.debug` is not displayed in the developer console (in
+     * chrome). To avoid forcing users to have to opt-in to these logs twice
+     * (i.e. once for firebase, and once in the console), we are sending `DEBUG`
+     * logs to the `console.log` function.
+     */
+
+    var ConsoleMethod = (_a = {}, _a[LogLevel.DEBUG] = 'log', _a[LogLevel.VERBOSE] = 'log', _a[LogLevel.INFO] = 'info', _a[LogLevel.WARN] = 'warn', _a[LogLevel.ERROR] = 'error', _a);
+    /**
+     * The default log handler will forward DEBUG, VERBOSE, INFO, WARN, and ERROR
+     * messages on to their corresponding console counterparts (if the log method
+     * is supported by the current log level)
+     */
+
+    var defaultLogHandler = function defaultLogHandler(instance, logType) {
+      var args = [];
+
+      for (var _i = 2; _i < arguments.length; _i++) {
+        args[_i - 2] = arguments[_i];
+      }
+
+      if (logType < instance.logLevel) {
+        return;
+      }
+
+      var now = new Date().toISOString();
+      var method = ConsoleMethod[logType];
+
+      if (method) {
+        console[method].apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
+      } else {
+        throw new Error("Attempted to log a message with an invalid logType (value: " + logType + ")");
+      }
+    };
+
+    var Logger =
+    /** @class */
+    function () {
+      /**
+       * Gives you an instance of a Logger to capture messages according to
+       * Firebase's logging scheme.
+       *
+       * @param name The name that the logs will be associated with
+       */
+      function Logger(name) {
+        this.name = name;
+        /**
+         * The log level of the given Logger instance.
+         */
+
+        this._logLevel = defaultLogLevel;
+        /**
+         * The main (internal) log handler for the Logger instance.
+         * Can be set to a new function in internal package code but not by user.
+         */
+
+        this._logHandler = defaultLogHandler;
+        /**
+         * The optional, additional, user-defined log handler for the Logger instance.
+         */
+
+        this._userLogHandler = null;
+        /**
+         * Capture the current instance for later use
+         */
+
+        instances.push(this);
+      }
+
+      Object.defineProperty(Logger.prototype, "logLevel", {
+        get: function get() {
+          return this._logLevel;
+        },
+        set: function set(val) {
+          if (!(val in LogLevel)) {
+            throw new TypeError('Invalid value assigned to `logLevel`');
+          }
+
+          this._logLevel = val;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      Object.defineProperty(Logger.prototype, "logHandler", {
+        get: function get() {
+          return this._logHandler;
+        },
+        set: function set(val) {
+          if (typeof val !== 'function') {
+            throw new TypeError('Value assigned to `logHandler` must be a function');
+          }
+
+          this._logHandler = val;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      Object.defineProperty(Logger.prototype, "userLogHandler", {
+        get: function get() {
+          return this._userLogHandler;
+        },
+        set: function set(val) {
+          this._userLogHandler = val;
+        },
+        enumerable: true,
+        configurable: true
+      });
+      /**
+       * The functions below are all based on the `console` interface
+       */
+
+      Logger.prototype.debug = function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.DEBUG], args));
+
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.DEBUG], args));
+      };
+
+      Logger.prototype.log = function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.VERBOSE], args));
+
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.VERBOSE], args));
+      };
+
+      Logger.prototype.info = function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.INFO], args));
+
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.INFO], args));
+      };
+
+      Logger.prototype.warn = function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.WARN], args));
+
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.WARN], args));
+      };
+
+      Logger.prototype.error = function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.ERROR], args));
+
+        this._logHandler.apply(this, __spreadArrays([this, LogLevel.ERROR], args));
+      };
+
+      return Logger;
+    }();
+
+    function setLogLevel(level) {
+      var newLevel = typeof level === 'string' ? levelStringToEnum[level] : level;
+      instances.forEach(function (inst) {
+        inst.logLevel = newLevel;
+      });
+    }
+
+    function setUserLogHandler(logCallback, options) {
+      var _loop_1 = function _loop_1(instance) {
+        var customLogLevel = null;
+
+        if (options && options.level) {
+          customLogLevel = levelStringToEnum[options.level];
+        }
+
+        if (logCallback === null) {
+          instance.userLogHandler = null;
+        } else {
+          instance.userLogHandler = function (instance, level) {
+            var args = [];
+
+            for (var _i = 2; _i < arguments.length; _i++) {
+              args[_i - 2] = arguments[_i];
+            }
+
+            var message = args.map(function (arg) {
+              if (arg == null) {
+                return null;
+              } else if (typeof arg === 'string') {
+                return arg;
+              } else if (typeof arg === 'number' || typeof arg === 'boolean') {
+                return arg.toString();
+              } else if (arg instanceof Error) {
+                return arg.message;
+              } else {
+                try {
+                  return JSON.stringify(arg);
+                } catch (ignored) {
+                  return null;
+                }
+              }
+            }).filter(function (arg) {
+              return arg;
+            }).join(' ');
+
+            if (level >= (customLogLevel !== null && customLogLevel !== void 0 ? customLogLevel : instance.logLevel)) {
+              logCallback({
+                level: LogLevel[level].toLowerCase(),
+                message: message,
+                args: args,
+                type: instance.name
+              });
+            }
+          };
+        }
+      };
+
+      for (var _i = 0, instances_1 = instances; _i < instances_1.length; _i++) {
+        var instance = instances_1[_i];
+
+        _loop_1(instance);
+      }
+    } //# sourceMappingURL=index.esm.js.map
+
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/@firebase/util/dist/index.cjs.js":
+  /*!*******************************************************!*\
+    !*** ./node_modules/@firebase/util/dist/index.cjs.js ***!
+    \*******************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesFirebaseUtilDistIndexCjsJs(module, exports, __webpack_require__) {
+    "use strict";
+
+    Object.defineProperty(exports, '__esModule', {
+      value: true
+    });
+
+    var tslib = __webpack_require__(
+    /*! tslib */
+    "./node_modules/@firebase/util/node_modules/tslib/tslib.es6.js");
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * @fileoverview Firebase constants.  Some of these (@defines) can be overridden at compile-time.
+     */
+
+
+    var CONSTANTS = {
+      /**
+       * @define {boolean} Whether this is the client Node.js SDK.
+       */
+      NODE_CLIENT: false,
+
+      /**
+       * @define {boolean} Whether this is the Admin Node.js SDK.
+       */
+      NODE_ADMIN: false,
+
+      /**
+       * Firebase SDK Version
+       */
+      SDK_VERSION: '${JSCORE_VERSION}'
+    };
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Throws an error if the provided assertion is falsy
+     */
+
+    var assert = function assert(assertion, message) {
+      if (!assertion) {
+        throw assertionError(message);
+      }
+    };
+    /**
+     * Returns an Error object suitable for throwing.
+     */
+
+
+    var assertionError = function assertionError(message) {
+      return new Error('Firebase Database (' + CONSTANTS.SDK_VERSION + ') INTERNAL ASSERT FAILED: ' + message);
+    };
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var stringToByteArray = function stringToByteArray(str) {
+      // TODO(user): Use native implementations if/when available
+      var out = [];
+      var p = 0;
+
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charCodeAt(i);
+
+        if (c < 128) {
+          out[p++] = c;
+        } else if (c < 2048) {
+          out[p++] = c >> 6 | 192;
+          out[p++] = c & 63 | 128;
+        } else if ((c & 0xfc00) === 0xd800 && i + 1 < str.length && (str.charCodeAt(i + 1) & 0xfc00) === 0xdc00) {
+          // Surrogate Pair
+          c = 0x10000 + ((c & 0x03ff) << 10) + (str.charCodeAt(++i) & 0x03ff);
+          out[p++] = c >> 18 | 240;
+          out[p++] = c >> 12 & 63 | 128;
+          out[p++] = c >> 6 & 63 | 128;
+          out[p++] = c & 63 | 128;
+        } else {
+          out[p++] = c >> 12 | 224;
+          out[p++] = c >> 6 & 63 | 128;
+          out[p++] = c & 63 | 128;
+        }
+      }
+
+      return out;
+    };
+    /**
+     * Turns an array of numbers into the string given by the concatenation of the
+     * characters to which the numbers correspond.
+     * @param bytes Array of numbers representing characters.
+     * @return Stringification of the array.
+     */
+
+
+    var byteArrayToString = function byteArrayToString(bytes) {
+      // TODO(user): Use native implementations if/when available
+      var out = [];
+      var pos = 0,
+          c = 0;
+
+      while (pos < bytes.length) {
+        var c1 = bytes[pos++];
+
+        if (c1 < 128) {
+          out[c++] = String.fromCharCode(c1);
+        } else if (c1 > 191 && c1 < 224) {
+          var c2 = bytes[pos++];
+          out[c++] = String.fromCharCode((c1 & 31) << 6 | c2 & 63);
+        } else if (c1 > 239 && c1 < 365) {
+          // Surrogate Pair
+          var c2 = bytes[pos++];
+          var c3 = bytes[pos++];
+          var c4 = bytes[pos++];
+          var u = ((c1 & 7) << 18 | (c2 & 63) << 12 | (c3 & 63) << 6 | c4 & 63) - 0x10000;
+          out[c++] = String.fromCharCode(0xd800 + (u >> 10));
+          out[c++] = String.fromCharCode(0xdc00 + (u & 1023));
+        } else {
+          var c2 = bytes[pos++];
+          var c3 = bytes[pos++];
+          out[c++] = String.fromCharCode((c1 & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+        }
+      }
+
+      return out.join('');
+    }; // We define it as an object literal instead of a class because a class compiled down to es5 can't
+    // be treeshaked. https://github.com/rollup/rollup/issues/1691
+    // Static lookup maps, lazily populated by init_()
+
+
+    var base64 = {
+      /**
+       * Maps bytes to characters.
+       */
+      byteToCharMap_: null,
+
+      /**
+       * Maps characters to bytes.
+       */
+      charToByteMap_: null,
+
+      /**
+       * Maps bytes to websafe characters.
+       * @private
+       */
+      byteToCharMapWebSafe_: null,
+
+      /**
+       * Maps websafe characters to bytes.
+       * @private
+       */
+      charToByteMapWebSafe_: null,
+
+      /**
+       * Our default alphabet, shared between
+       * ENCODED_VALS and ENCODED_VALS_WEBSAFE
+       */
+      ENCODED_VALS_BASE: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcdefghijklmnopqrstuvwxyz' + '0123456789',
+
+      /**
+       * Our default alphabet. Value 64 (=) is special; it means "nothing."
+       */
+      get ENCODED_VALS() {
+        return this.ENCODED_VALS_BASE + '+/=';
+      },
+
+      /**
+       * Our websafe alphabet.
+       */
+      get ENCODED_VALS_WEBSAFE() {
+        return this.ENCODED_VALS_BASE + '-_.';
+      },
+
+      /**
+       * Whether this browser supports the atob and btoa functions. This extension
+       * started at Mozilla but is now implemented by many browsers. We use the
+       * ASSUME_* variables to avoid pulling in the full useragent detection library
+       * but still allowing the standard per-browser compilations.
+       *
+       */
+      HAS_NATIVE_SUPPORT: typeof atob === 'function',
+
+      /**
+       * Base64-encode an array of bytes.
+       *
+       * @param input An array of bytes (numbers with
+       *     value in [0, 255]) to encode.
+       * @param webSafe Boolean indicating we should use the
+       *     alternative alphabet.
+       * @return The base64 encoded string.
+       */
+      encodeByteArray: function encodeByteArray(input, webSafe) {
+        if (!Array.isArray(input)) {
+          throw Error('encodeByteArray takes an array as a parameter');
+        }
+
+        this.init_();
+        var byteToCharMap = webSafe ? this.byteToCharMapWebSafe_ : this.byteToCharMap_;
+        var output = [];
+
+        for (var i = 0; i < input.length; i += 3) {
+          var byte1 = input[i];
+          var haveByte2 = i + 1 < input.length;
+          var byte2 = haveByte2 ? input[i + 1] : 0;
+          var haveByte3 = i + 2 < input.length;
+          var byte3 = haveByte3 ? input[i + 2] : 0;
+          var outByte1 = byte1 >> 2;
+          var outByte2 = (byte1 & 0x03) << 4 | byte2 >> 4;
+          var outByte3 = (byte2 & 0x0f) << 2 | byte3 >> 6;
+          var outByte4 = byte3 & 0x3f;
+
+          if (!haveByte3) {
+            outByte4 = 64;
+
+            if (!haveByte2) {
+              outByte3 = 64;
+            }
+          }
+
+          output.push(byteToCharMap[outByte1], byteToCharMap[outByte2], byteToCharMap[outByte3], byteToCharMap[outByte4]);
+        }
+
+        return output.join('');
+      },
+
+      /**
+       * Base64-encode a string.
+       *
+       * @param input A string to encode.
+       * @param webSafe If true, we should use the
+       *     alternative alphabet.
+       * @return The base64 encoded string.
+       */
+      encodeString: function encodeString(input, webSafe) {
+        // Shortcut for Mozilla browsers that implement
+        // a native base64 encoder in the form of "btoa/atob"
+        if (this.HAS_NATIVE_SUPPORT && !webSafe) {
+          return btoa(input);
+        }
+
+        return this.encodeByteArray(stringToByteArray(input), webSafe);
+      },
+
+      /**
+       * Base64-decode a string.
+       *
+       * @param input to decode.
+       * @param webSafe True if we should use the
+       *     alternative alphabet.
+       * @return string representing the decoded value.
+       */
+      decodeString: function decodeString(input, webSafe) {
+        // Shortcut for Mozilla browsers that implement
+        // a native base64 encoder in the form of "btoa/atob"
+        if (this.HAS_NATIVE_SUPPORT && !webSafe) {
+          return atob(input);
+        }
+
+        return byteArrayToString(this.decodeStringToByteArray(input, webSafe));
+      },
+
+      /**
+       * Base64-decode a string.
+       *
+       * In base-64 decoding, groups of four characters are converted into three
+       * bytes.  If the encoder did not apply padding, the input length may not
+       * be a multiple of 4.
+       *
+       * In this case, the last group will have fewer than 4 characters, and
+       * padding will be inferred.  If the group has one or two characters, it decodes
+       * to one byte.  If the group has three characters, it decodes to two bytes.
+       *
+       * @param input Input to decode.
+       * @param webSafe True if we should use the web-safe alphabet.
+       * @return bytes representing the decoded value.
+       */
+      decodeStringToByteArray: function decodeStringToByteArray(input, webSafe) {
+        this.init_();
+        var charToByteMap = webSafe ? this.charToByteMapWebSafe_ : this.charToByteMap_;
+        var output = [];
+
+        for (var i = 0; i < input.length;) {
+          var byte1 = charToByteMap[input.charAt(i++)];
+          var haveByte2 = i < input.length;
+          var byte2 = haveByte2 ? charToByteMap[input.charAt(i)] : 0;
+          ++i;
+          var haveByte3 = i < input.length;
+          var byte3 = haveByte3 ? charToByteMap[input.charAt(i)] : 64;
+          ++i;
+          var haveByte4 = i < input.length;
+          var byte4 = haveByte4 ? charToByteMap[input.charAt(i)] : 64;
+          ++i;
+
+          if (byte1 == null || byte2 == null || byte3 == null || byte4 == null) {
+            throw Error();
+          }
+
+          var outByte1 = byte1 << 2 | byte2 >> 4;
+          output.push(outByte1);
+
+          if (byte3 !== 64) {
+            var outByte2 = byte2 << 4 & 0xf0 | byte3 >> 2;
+            output.push(outByte2);
+
+            if (byte4 !== 64) {
+              var outByte3 = byte3 << 6 & 0xc0 | byte4;
+              output.push(outByte3);
+            }
+          }
+        }
+
+        return output;
+      },
+
+      /**
+       * Lazy static initialization function. Called before
+       * accessing any of the static map variables.
+       * @private
+       */
+      init_: function init_() {
+        if (!this.byteToCharMap_) {
+          this.byteToCharMap_ = {};
+          this.charToByteMap_ = {};
+          this.byteToCharMapWebSafe_ = {};
+          this.charToByteMapWebSafe_ = {}; // We want quick mappings back and forth, so we precompute two maps.
+
+          for (var i = 0; i < this.ENCODED_VALS.length; i++) {
+            this.byteToCharMap_[i] = this.ENCODED_VALS.charAt(i);
+            this.charToByteMap_[this.byteToCharMap_[i]] = i;
+            this.byteToCharMapWebSafe_[i] = this.ENCODED_VALS_WEBSAFE.charAt(i);
+            this.charToByteMapWebSafe_[this.byteToCharMapWebSafe_[i]] = i; // Be forgiving when decoding and correctly decode both encodings.
+
+            if (i >= this.ENCODED_VALS_BASE.length) {
+              this.charToByteMap_[this.ENCODED_VALS_WEBSAFE.charAt(i)] = i;
+              this.charToByteMapWebSafe_[this.ENCODED_VALS.charAt(i)] = i;
+            }
+          }
+        }
+      }
+    };
+    /**
+     * URL-safe base64 encoding
+     */
+
+    var base64Encode = function base64Encode(str) {
+      var utf8Bytes = stringToByteArray(str);
+      return base64.encodeByteArray(utf8Bytes, true);
+    };
+    /**
+     * URL-safe base64 decoding
+     *
+     * NOTE: DO NOT use the global atob() function - it does NOT support the
+     * base64Url variant encoding.
+     *
+     * @param str To be decoded
+     * @return Decoded result, if possible
+     */
+
+
+    var base64Decode = function base64Decode(str) {
+      try {
+        return base64.decodeString(str, true);
+      } catch (e) {
+        console.error('base64Decode failed: ', e);
+      }
+
+      return null;
+    };
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Do a deep-copy of basic JavaScript Objects or Arrays.
+     */
+
+
+    function deepCopy(value) {
+      return deepExtend(undefined, value);
+    }
+    /**
+     * Copy properties from source to target (recursively allows extension
+     * of Objects and Arrays).  Scalar values in the target are over-written.
+     * If target is undefined, an object of the appropriate type will be created
+     * (and returned).
+     *
+     * We recursively copy all child properties of plain Objects in the source- so
+     * that namespace- like dictionaries are merged.
+     *
+     * Note that the target can be a function, in which case the properties in
+     * the source Object are copied onto it as static properties of the Function.
+     */
+
+
+    function deepExtend(target, source) {
+      if (!(source instanceof Object)) {
+        return source;
+      }
+
+      switch (source.constructor) {
+        case Date:
+          // Treat Dates like scalars; if the target date object had any child
+          // properties - they will be lost!
+          var dateValue = source;
+          return new Date(dateValue.getTime());
+
+        case Object:
+          if (target === undefined) {
+            target = {};
+          }
+
+          break;
+
+        case Array:
+          // Always copy the array source and overwrite the target.
+          target = [];
+          break;
+
+        default:
+          // Not a plain Object - treat it as a scalar.
+          return source;
+      }
+
+      for (var prop in source) {
+        if (!source.hasOwnProperty(prop)) {
+          continue;
+        }
+
+        target[prop] = deepExtend(target[prop], source[prop]);
+      }
+
+      return target;
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var Deferred =
+    /** @class */
+    function () {
+      function Deferred() {
+        var _this = this;
+
+        this.reject = function () {};
+
+        this.resolve = function () {};
+
+        this.promise = new Promise(function (resolve, reject) {
+          _this.resolve = resolve;
+          _this.reject = reject;
+        });
+      }
+      /**
+       * Our API internals are not promiseified and cannot because our callback APIs have subtle expectations around
+       * invoking promises inline, which Promises are forbidden to do. This method accepts an optional node-style callback
+       * and returns a node-style callback which will resolve or reject the Deferred's promise.
+       */
+
+
+      Deferred.prototype.wrapCallback = function (callback) {
+        var _this = this;
+
+        return function (error, value) {
+          if (error) {
+            _this.reject(error);
+          } else {
+            _this.resolve(value);
+          }
+
+          if (typeof callback === 'function') {
+            // Attaching noop handler just in case developer wasn't expecting
+            // promises
+            _this.promise.catch(function () {}); // Some of our callbacks don't expect a value and our own tests
+            // assert that the parameter length is 1
+
+
+            if (callback.length === 1) {
+              callback(error);
+            } else {
+              callback(error, value);
+            }
+          }
+        };
+      };
+
+      return Deferred;
+    }();
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Returns navigator.userAgent string or '' if it's not defined.
+     * @return user agent string
+     */
+
+
+    function getUA() {
+      if (typeof navigator !== 'undefined' && typeof navigator['userAgent'] === 'string') {
+        return navigator['userAgent'];
+      } else {
+        return '';
+      }
+    }
+    /**
+     * Detect Cordova / PhoneGap / Ionic frameworks on a mobile device.
+     *
+     * Deliberately does not rely on checking `file://` URLs (as this fails PhoneGap
+     * in the Ripple emulator) nor Cordova `onDeviceReady`, which would normally
+     * wait for a callback.
+     */
+
+
+    function isMobileCordova() {
+      return typeof window !== 'undefined' && // @ts-ignore Setting up an broadly applicable index signature for Window
+      // just to deal with this case would probably be a bad idea.
+      !!(window['cordova'] || window['phonegap'] || window['PhoneGap']) && /ios|iphone|ipod|ipad|android|blackberry|iemobile/i.test(getUA());
+    }
+    /**
+     * Detect Node.js.
+     *
+     * @return true if Node.js environment is detected.
+     */
+    // Node detection logic from: https://github.com/iliakan/detect-node/
+
+
+    function isNode() {
+      try {
+        return Object.prototype.toString.call(global.process) === '[object process]';
+      } catch (e) {
+        return false;
+      }
+    }
+    /**
+     * Detect Browser Environment
+     */
+
+
+    function isBrowser() {
+      return typeof self === 'object' && self.self === self;
+    }
+
+    function isBrowserExtension() {
+      var runtime = typeof chrome === 'object' ? chrome.runtime : typeof browser === 'object' ? browser.runtime : undefined;
+      return typeof runtime === 'object' && runtime.id !== undefined;
+    }
+    /**
+     * Detect React Native.
+     *
+     * @return true if ReactNative environment is detected.
+     */
+
+
+    function isReactNative() {
+      return typeof navigator === 'object' && navigator['product'] === 'ReactNative';
+    }
+    /** Detects Electron apps. */
+
+
+    function isElectron() {
+      return getUA().indexOf('Electron/') >= 0;
+    }
+    /** Detects Internet Explorer. */
+
+
+    function isIE() {
+      var ua = getUA();
+      return ua.indexOf('MSIE ') >= 0 || ua.indexOf('Trident/') >= 0;
+    }
+    /** Detects Universal Windows Platform apps. */
+
+
+    function isUWP() {
+      return getUA().indexOf('MSAppHost/') >= 0;
+    }
+    /**
+     * Detect whether the current SDK build is the Node version.
+     *
+     * @return true if it's the Node SDK build.
+     */
+
+
+    function isNodeSdk() {
+      return CONSTANTS.NODE_CLIENT === true || CONSTANTS.NODE_ADMIN === true;
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    var ERROR_NAME = 'FirebaseError'; // Based on code from:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Custom_Error_Types
+
+    var FirebaseError =
+    /** @class */
+    function (_super) {
+      tslib.__extends(FirebaseError, _super);
+
+      function FirebaseError(code, message) {
+        var _this = _super.call(this, message) || this;
+
+        _this.code = code;
+        _this.name = ERROR_NAME; // Fix For ES5
+        // https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work
+
+        Object.setPrototypeOf(_this, FirebaseError.prototype); // Maintains proper stack trace for where our error was thrown.
+        // Only available on V8.
+
+        if (Error.captureStackTrace) {
+          Error.captureStackTrace(_this, ErrorFactory.prototype.create);
+        }
+
+        return _this;
+      }
+
+      return FirebaseError;
+    }(Error);
+
+    var ErrorFactory =
+    /** @class */
+    function () {
+      function ErrorFactory(service, serviceName, errors) {
+        this.service = service;
+        this.serviceName = serviceName;
+        this.errors = errors;
+      }
+
+      ErrorFactory.prototype.create = function (code) {
+        var data = [];
+
+        for (var _i = 1; _i < arguments.length; _i++) {
+          data[_i - 1] = arguments[_i];
+        }
+
+        var customData = data[0] || {};
+        var fullCode = this.service + "/" + code;
+        var template = this.errors[code];
+        var message = template ? replaceTemplate(template, customData) : 'Error'; // Service Name: Error message (service/code).
+
+        var fullMessage = this.serviceName + ": " + message + " (" + fullCode + ").";
+        var error = new FirebaseError(fullCode, fullMessage); // Keys with an underscore at the end of their name are not included in
+        // error.data for some reason.
+        // TODO: Replace with Object.entries when lib is updated to es2017.
+
+        for (var _a = 0, _b = Object.keys(customData); _a < _b.length; _a++) {
+          var key = _b[_a];
+
+          if (key.slice(-1) !== '_') {
+            if (key in error) {
+              console.warn("Overwriting FirebaseError base field \"" + key + "\" can cause unexpected behavior.");
+            }
+
+            error[key] = customData[key];
+          }
+        }
+
+        return error;
+      };
+
+      return ErrorFactory;
+    }();
+
+    function replaceTemplate(template, data) {
+      return template.replace(PATTERN, function (_, key) {
+        var value = data[key];
+        return value != null ? value.toString() : "<" + key + "?>";
+      });
+    }
+
+    var PATTERN = /\{\$([^}]+)}/g;
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Evaluates a JSON string into a javascript object.
+     *
+     * @param {string} str A string containing JSON.
+     * @return {*} The javascript object representing the specified JSON.
+     */
+
+    function jsonEval(str) {
+      return JSON.parse(str);
+    }
+    /**
+     * Returns JSON representing a javascript object.
+     * @param {*} data Javascript object to be stringified.
+     * @return {string} The JSON contents of the object.
+     */
+
+
+    function stringify(data) {
+      return JSON.stringify(data);
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Decodes a Firebase auth. token into constituent parts.
+     *
+     * Notes:
+     * - May return with invalid / incomplete claims if there's no native base64 decoding support.
+     * - Doesn't check if the token is actually valid.
+     */
+
+
+    var decode = function decode(token) {
+      var header = {},
+          claims = {},
+          data = {},
+          signature = '';
+
+      try {
+        var parts = token.split('.');
+        header = jsonEval(base64Decode(parts[0]) || '');
+        claims = jsonEval(base64Decode(parts[1]) || '');
+        signature = parts[2];
+        data = claims['d'] || {};
+        delete claims['d'];
+      } catch (e) {}
+
+      return {
+        header: header,
+        claims: claims,
+        data: data,
+        signature: signature
+      };
+    };
+    /**
+     * Decodes a Firebase auth. token and checks the validity of its time-based claims. Will return true if the
+     * token is within the time window authorized by the 'nbf' (not-before) and 'iat' (issued-at) claims.
+     *
+     * Notes:
+     * - May return a false negative if there's no native base64 decoding support.
+     * - Doesn't check if the token is actually valid.
+     */
+
+
+    var isValidTimestamp = function isValidTimestamp(token) {
+      var claims = decode(token).claims;
+      var now = Math.floor(new Date().getTime() / 1000);
+      var validSince = 0,
+          validUntil = 0;
+
+      if (typeof claims === 'object') {
+        if (claims.hasOwnProperty('nbf')) {
+          validSince = claims['nbf'];
+        } else if (claims.hasOwnProperty('iat')) {
+          validSince = claims['iat'];
+        }
+
+        if (claims.hasOwnProperty('exp')) {
+          validUntil = claims['exp'];
+        } else {
+          // token will expire after 24h by default
+          validUntil = validSince + 86400;
+        }
+      }
+
+      return !!now && !!validSince && !!validUntil && now >= validSince && now <= validUntil;
+    };
+    /**
+     * Decodes a Firebase auth. token and returns its issued at time if valid, null otherwise.
+     *
+     * Notes:
+     * - May return null if there's no native base64 decoding support.
+     * - Doesn't check if the token is actually valid.
+     */
+
+
+    var issuedAtTime = function issuedAtTime(token) {
+      var claims = decode(token).claims;
+
+      if (typeof claims === 'object' && claims.hasOwnProperty('iat')) {
+        return claims['iat'];
+      }
+
+      return null;
+    };
+    /**
+     * Decodes a Firebase auth. token and checks the validity of its format. Expects a valid issued-at time.
+     *
+     * Notes:
+     * - May return a false negative if there's no native base64 decoding support.
+     * - Doesn't check if the token is actually valid.
+     */
+
+
+    var isValidFormat = function isValidFormat(token) {
+      var decoded = decode(token),
+          claims = decoded.claims;
+      return !!claims && typeof claims === 'object' && claims.hasOwnProperty('iat');
+    };
+    /**
+     * Attempts to peer into an auth token and determine if it's an admin auth token by looking at the claims portion.
+     *
+     * Notes:
+     * - May return a false negative if there's no native base64 decoding support.
+     * - Doesn't check if the token is actually valid.
+     */
+
+
+    var isAdmin = function isAdmin(token) {
+      var claims = decode(token).claims;
+      return typeof claims === 'object' && claims['admin'] === true;
+    };
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+
+    function contains(obj, key) {
+      return Object.prototype.hasOwnProperty.call(obj, key);
+    }
+
+    function safeGet(obj, key) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        return obj[key];
+      } else {
+        return undefined;
+      }
+    }
+
+    function isEmpty(obj) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function map(obj, fn, contextObj) {
+      var res = {};
+
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          res[key] = fn.call(contextObj, obj[key], key, obj);
+        }
+      }
+
+      return res;
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Returns a querystring-formatted string (e.g. &arg=val&arg2=val2) from a
+     * params object (e.g. {arg: 'val', arg2: 'val2'})
+     * Note: You must prepend it with ? when adding it to a URL.
+     */
+
+
+    function querystring(querystringParams) {
+      var params = [];
+
+      var _loop_1 = function _loop_1(key, value) {
+        if (Array.isArray(value)) {
+          value.forEach(function (arrayVal) {
+            params.push(encodeURIComponent(key) + '=' + encodeURIComponent(arrayVal));
+          });
+        } else {
+          params.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+        }
+      };
+
+      for (var _i = 0, _a = Object.entries(querystringParams); _i < _a.length; _i++) {
+        var _b = _a[_i],
+            key = _b[0],
+            value = _b[1];
+
+        _loop_1(key, value);
+      }
+
+      return params.length ? '&' + params.join('&') : '';
+    }
+    /**
+     * Decodes a querystring (e.g. ?arg=val&arg2=val2) into a params object
+     * (e.g. {arg: 'val', arg2: 'val2'})
+     */
+
+
+    function querystringDecode(querystring) {
+      var obj = {};
+      var tokens = querystring.replace(/^\?/, '').split('&');
+      tokens.forEach(function (token) {
+        if (token) {
+          var key = token.split('=');
+          obj[key[0]] = key[1];
+        }
+      });
+      return obj;
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * @fileoverview SHA-1 cryptographic hash.
+     * Variable names follow the notation in FIPS PUB 180-3:
+     * http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf.
+     *
+     * Usage:
+     *   var sha1 = new sha1();
+     *   sha1.update(bytes);
+     *   var hash = sha1.digest();
+     *
+     * Performance:
+     *   Chrome 23:   ~400 Mbit/s
+     *   Firefox 16:  ~250 Mbit/s
+     *
+     */
+
+    /**
+     * SHA-1 cryptographic hash constructor.
+     *
+     * The properties declared here are discussed in the above algorithm document.
+     * @constructor
+     * @final
+     * @struct
+     */
+
+
+    var Sha1 =
+    /** @class */
+    function () {
+      function Sha1() {
+        /**
+         * Holds the previous values of accumulated variables a-e in the compress_
+         * function.
+         * @private
+         */
+        this.chain_ = [];
+        /**
+         * A buffer holding the partially computed hash result.
+         * @private
+         */
+
+        this.buf_ = [];
+        /**
+         * An array of 80 bytes, each a part of the message to be hashed.  Referred to
+         * as the message schedule in the docs.
+         * @private
+         */
+
+        this.W_ = [];
+        /**
+         * Contains data needed to pad messages less than 64 bytes.
+         * @private
+         */
+
+        this.pad_ = [];
+        /**
+         * @private {number}
+         */
+
+        this.inbuf_ = 0;
+        /**
+         * @private {number}
+         */
+
+        this.total_ = 0;
+        this.blockSize = 512 / 8;
+        this.pad_[0] = 128;
+
+        for (var i = 1; i < this.blockSize; ++i) {
+          this.pad_[i] = 0;
+        }
+
+        this.reset();
+      }
+
+      Sha1.prototype.reset = function () {
+        this.chain_[0] = 0x67452301;
+        this.chain_[1] = 0xefcdab89;
+        this.chain_[2] = 0x98badcfe;
+        this.chain_[3] = 0x10325476;
+        this.chain_[4] = 0xc3d2e1f0;
+        this.inbuf_ = 0;
+        this.total_ = 0;
+      };
+      /**
+       * Internal compress helper function.
+       * @param buf Block to compress.
+       * @param offset Offset of the block in the buffer.
+       * @private
+       */
+
+
+      Sha1.prototype.compress_ = function (buf, offset) {
+        if (!offset) {
+          offset = 0;
+        }
+
+        var W = this.W_; // get 16 big endian words
+
+        if (typeof buf === 'string') {
+          for (var i = 0; i < 16; i++) {
+            // TODO(user): [bug 8140122] Recent versions of Safari for Mac OS and iOS
+            // have a bug that turns the post-increment ++ operator into pre-increment
+            // during JIT compilation.  We have code that depends heavily on SHA-1 for
+            // correctness and which is affected by this bug, so I've removed all uses
+            // of post-increment ++ in which the result value is used.  We can revert
+            // this change once the Safari bug
+            // (https://bugs.webkit.org/show_bug.cgi?id=109036) has been fixed and
+            // most clients have been updated.
+            W[i] = buf.charCodeAt(offset) << 24 | buf.charCodeAt(offset + 1) << 16 | buf.charCodeAt(offset + 2) << 8 | buf.charCodeAt(offset + 3);
+            offset += 4;
+          }
+        } else {
+          for (var i = 0; i < 16; i++) {
+            W[i] = buf[offset] << 24 | buf[offset + 1] << 16 | buf[offset + 2] << 8 | buf[offset + 3];
+            offset += 4;
+          }
+        } // expand to 80 words
+
+
+        for (var i = 16; i < 80; i++) {
+          var t = W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16];
+          W[i] = (t << 1 | t >>> 31) & 0xffffffff;
+        }
+
+        var a = this.chain_[0];
+        var b = this.chain_[1];
+        var c = this.chain_[2];
+        var d = this.chain_[3];
+        var e = this.chain_[4];
+        var f, k; // TODO(user): Try to unroll this loop to speed up the computation.
+
+        for (var i = 0; i < 80; i++) {
+          if (i < 40) {
+            if (i < 20) {
+              f = d ^ b & (c ^ d);
+              k = 0x5a827999;
+            } else {
+              f = b ^ c ^ d;
+              k = 0x6ed9eba1;
+            }
+          } else {
+            if (i < 60) {
+              f = b & c | d & (b | c);
+              k = 0x8f1bbcdc;
+            } else {
+              f = b ^ c ^ d;
+              k = 0xca62c1d6;
+            }
+          }
+
+          var t = (a << 5 | a >>> 27) + f + e + k + W[i] & 0xffffffff;
+          e = d;
+          d = c;
+          c = (b << 30 | b >>> 2) & 0xffffffff;
+          b = a;
+          a = t;
+        }
+
+        this.chain_[0] = this.chain_[0] + a & 0xffffffff;
+        this.chain_[1] = this.chain_[1] + b & 0xffffffff;
+        this.chain_[2] = this.chain_[2] + c & 0xffffffff;
+        this.chain_[3] = this.chain_[3] + d & 0xffffffff;
+        this.chain_[4] = this.chain_[4] + e & 0xffffffff;
+      };
+
+      Sha1.prototype.update = function (bytes, length) {
+        // TODO(johnlenz): tighten the function signature and remove this check
+        if (bytes == null) {
+          return;
+        }
+
+        if (length === undefined) {
+          length = bytes.length;
+        }
+
+        var lengthMinusBlock = length - this.blockSize;
+        var n = 0; // Using local instead of member variables gives ~5% speedup on Firefox 16.
+
+        var buf = this.buf_;
+        var inbuf = this.inbuf_; // The outer while loop should execute at most twice.
+
+        while (n < length) {
+          // When we have no data in the block to top up, we can directly process the
+          // input buffer (assuming it contains sufficient data). This gives ~25%
+          // speedup on Chrome 23 and ~15% speedup on Firefox 16, but requires that
+          // the data is provided in large chunks (or in multiples of 64 bytes).
+          if (inbuf === 0) {
+            while (n <= lengthMinusBlock) {
+              this.compress_(bytes, n);
+              n += this.blockSize;
+            }
+          }
+
+          if (typeof bytes === 'string') {
+            while (n < length) {
+              buf[inbuf] = bytes.charCodeAt(n);
+              ++inbuf;
+              ++n;
+
+              if (inbuf === this.blockSize) {
+                this.compress_(buf);
+                inbuf = 0; // Jump to the outer loop so we use the full-block optimization.
+
+                break;
+              }
+            }
+          } else {
+            while (n < length) {
+              buf[inbuf] = bytes[n];
+              ++inbuf;
+              ++n;
+
+              if (inbuf === this.blockSize) {
+                this.compress_(buf);
+                inbuf = 0; // Jump to the outer loop so we use the full-block optimization.
+
+                break;
+              }
+            }
+          }
+        }
+
+        this.inbuf_ = inbuf;
+        this.total_ += length;
+      };
+      /** @override */
+
+
+      Sha1.prototype.digest = function () {
+        var digest = [];
+        var totalBits = this.total_ * 8; // Add pad 0x80 0x00*.
+
+        if (this.inbuf_ < 56) {
+          this.update(this.pad_, 56 - this.inbuf_);
+        } else {
+          this.update(this.pad_, this.blockSize - (this.inbuf_ - 56));
+        } // Add # bits.
+
+
+        for (var i = this.blockSize - 1; i >= 56; i--) {
+          this.buf_[i] = totalBits & 255;
+          totalBits /= 256; // Don't use bit-shifting here!
+        }
+
+        this.compress_(this.buf_);
+        var n = 0;
+
+        for (var i = 0; i < 5; i++) {
+          for (var j = 24; j >= 0; j -= 8) {
+            digest[n] = this.chain_[i] >> j & 255;
+            ++n;
+          }
+        }
+
+        return digest;
+      };
+
+      return Sha1;
+    }();
+    /**
+     * Helper to make a Subscribe function (just like Promise helps make a
+     * Thenable).
+     *
+     * @param executor Function which can make calls to a single Observer
+     *     as a proxy.
+     * @param onNoObservers Callback when count of Observers goes to zero.
+     */
+
+
+    function createSubscribe(executor, onNoObservers) {
+      var proxy = new ObserverProxy(executor, onNoObservers);
+      return proxy.subscribe.bind(proxy);
+    }
+    /**
+     * Implement fan-out for any number of Observers attached via a subscribe
+     * function.
+     */
+
+
+    var ObserverProxy =
+    /** @class */
+    function () {
+      /**
+       * @param executor Function which can make calls to a single Observer
+       *     as a proxy.
+       * @param onNoObservers Callback when count of Observers goes to zero.
+       */
+      function ObserverProxy(executor, onNoObservers) {
+        var _this = this;
+
+        this.observers = [];
+        this.unsubscribes = [];
+        this.observerCount = 0; // Micro-task scheduling by calling task.then().
+
+        this.task = Promise.resolve();
+        this.finalized = false;
+        this.onNoObservers = onNoObservers; // Call the executor asynchronously so subscribers that are called
+        // synchronously after the creation of the subscribe function
+        // can still receive the very first value generated in the executor.
+
+        this.task.then(function () {
+          executor(_this);
+        }).catch(function (e) {
+          _this.error(e);
+        });
+      }
+
+      ObserverProxy.prototype.next = function (value) {
+        this.forEachObserver(function (observer) {
+          observer.next(value);
+        });
+      };
+
+      ObserverProxy.prototype.error = function (error) {
+        this.forEachObserver(function (observer) {
+          observer.error(error);
+        });
+        this.close(error);
+      };
+
+      ObserverProxy.prototype.complete = function () {
+        this.forEachObserver(function (observer) {
+          observer.complete();
+        });
+        this.close();
+      };
+      /**
+       * Subscribe function that can be used to add an Observer to the fan-out list.
+       *
+       * - We require that no event is sent to a subscriber sychronously to their
+       *   call to subscribe().
+       */
+
+
+      ObserverProxy.prototype.subscribe = function (nextOrObserver, error, complete) {
+        var _this = this;
+
+        var observer;
+
+        if (nextOrObserver === undefined && error === undefined && complete === undefined) {
+          throw new Error('Missing Observer.');
+        } // Assemble an Observer object when passed as callback functions.
+
+
+        if (implementsAnyMethods(nextOrObserver, ['next', 'error', 'complete'])) {
+          observer = nextOrObserver;
+        } else {
+          observer = {
+            next: nextOrObserver,
+            error: error,
+            complete: complete
+          };
+        }
+
+        if (observer.next === undefined) {
+          observer.next = noop;
+        }
+
+        if (observer.error === undefined) {
+          observer.error = noop;
+        }
+
+        if (observer.complete === undefined) {
+          observer.complete = noop;
+        }
+
+        var unsub = this.unsubscribeOne.bind(this, this.observers.length); // Attempt to subscribe to a terminated Observable - we
+        // just respond to the Observer with the final error or complete
+        // event.
+
+        if (this.finalized) {
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
+          this.task.then(function () {
+            try {
+              if (_this.finalError) {
+                observer.error(_this.finalError);
+              } else {
+                observer.complete();
+              }
+            } catch (e) {// nothing
+            }
+
+            return;
+          });
+        }
+
+        this.observers.push(observer);
+        return unsub;
+      }; // Unsubscribe is synchronous - we guarantee that no events are sent to
+      // any unsubscribed Observer.
+
+
+      ObserverProxy.prototype.unsubscribeOne = function (i) {
+        if (this.observers === undefined || this.observers[i] === undefined) {
+          return;
+        }
+
+        delete this.observers[i];
+        this.observerCount -= 1;
+
+        if (this.observerCount === 0 && this.onNoObservers !== undefined) {
+          this.onNoObservers(this);
+        }
+      };
+
+      ObserverProxy.prototype.forEachObserver = function (fn) {
+        if (this.finalized) {
+          // Already closed by previous event....just eat the additional values.
+          return;
+        } // Since sendOne calls asynchronously - there is no chance that
+        // this.observers will become undefined.
+
+
+        for (var i = 0; i < this.observers.length; i++) {
+          this.sendOne(i, fn);
+        }
+      }; // Call the Observer via one of it's callback function. We are careful to
+      // confirm that the observe has not been unsubscribed since this asynchronous
+      // function had been queued.
+
+
+      ObserverProxy.prototype.sendOne = function (i, fn) {
+        var _this = this; // Execute the callback asynchronously
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
+
+        this.task.then(function () {
+          if (_this.observers !== undefined && _this.observers[i] !== undefined) {
+            try {
+              fn(_this.observers[i]);
+            } catch (e) {
+              // Ignore exceptions raised in Observers or missing methods of an
+              // Observer.
+              // Log error to console. b/31404806
+              if (typeof console !== 'undefined' && console.error) {
+                console.error(e);
+              }
+            }
+          }
+        });
+      };
+
+      ObserverProxy.prototype.close = function (err) {
+        var _this = this;
+
+        if (this.finalized) {
+          return;
+        }
+
+        this.finalized = true;
+
+        if (err !== undefined) {
+          this.finalError = err;
+        } // Proxy is no longer needed - garbage collect references
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
+
+        this.task.then(function () {
+          _this.observers = undefined;
+          _this.onNoObservers = undefined;
+        });
+      };
+
+      return ObserverProxy;
+    }();
+    /** Turn synchronous function into one called asynchronously. */
+
+
+    function async(fn, onError) {
+      return function () {
+        var args = [];
+
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+
+        Promise.resolve(true).then(function () {
+          fn.apply(void 0, args);
+        }).catch(function (error) {
+          if (onError) {
+            onError(error);
+          }
+        });
+      };
+    }
+    /**
+     * Return true if the object passed in implements any of the named methods.
+     */
+
+
+    function implementsAnyMethods(obj, methods) {
+      if (typeof obj !== 'object' || obj === null) {
+        return false;
+      }
+
+      for (var _i = 0, methods_1 = methods; _i < methods_1.length; _i++) {
+        var method = methods_1[_i];
+
+        if (method in obj && typeof obj[method] === 'function') {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function noop() {} // do nothing
+
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    /**
+     * Check to make sure the appropriate number of arguments are provided for a public function.
+     * Throws an error if it fails.
+     *
+     * @param fnName The function name
+     * @param minCount The minimum number of arguments to allow for the function call
+     * @param maxCount The maximum number of argument to allow for the function call
+     * @param argCount The actual number of arguments provided.
+     */
+
+
+    var validateArgCount = function validateArgCount(fnName, minCount, maxCount, argCount) {
+      var argError;
+
+      if (argCount < minCount) {
+        argError = 'at least ' + minCount;
+      } else if (argCount > maxCount) {
+        argError = maxCount === 0 ? 'none' : 'no more than ' + maxCount;
+      }
+
+      if (argError) {
+        var error = fnName + ' failed: Was called with ' + argCount + (argCount === 1 ? ' argument.' : ' arguments.') + ' Expects ' + argError + '.';
+        throw new Error(error);
+      }
+    };
+    /**
+     * Generates a string to prefix an error message about failed argument validation
+     *
+     * @param fnName The function name
+     * @param argumentNumber The index of the argument
+     * @param optional Whether or not the argument is optional
+     * @return The prefix to add to the error thrown for validation.
+     */
+
+
+    function errorPrefix(fnName, argumentNumber, optional) {
+      var argName = '';
+
+      switch (argumentNumber) {
+        case 1:
+          argName = optional ? 'first' : 'First';
+          break;
+
+        case 2:
+          argName = optional ? 'second' : 'Second';
+          break;
+
+        case 3:
+          argName = optional ? 'third' : 'Third';
+          break;
+
+        case 4:
+          argName = optional ? 'fourth' : 'Fourth';
+          break;
+
+        default:
+          throw new Error('errorPrefix called with argumentNumber > 4.  Need to update it?');
+      }
+
+      var error = fnName + ' failed: ';
+      error += argName + ' argument ';
+      return error;
+    }
+    /**
+     * @param fnName
+     * @param argumentNumber
+     * @param namespace
+     * @param optional
+     */
+
+
+    function validateNamespace(fnName, argumentNumber, namespace, optional) {
+      if (optional && !namespace) {
+        return;
+      }
+
+      if (typeof namespace !== 'string') {
+        //TODO: I should do more validation here. We only allow certain chars in namespaces.
+        throw new Error(errorPrefix(fnName, argumentNumber, optional) + 'must be a valid firebase namespace.');
+      }
+    }
+
+    function validateCallback(fnName, argumentNumber, callback, optional) {
+      if (optional && !callback) {
+        return;
+      }
+
+      if (typeof callback !== 'function') {
+        throw new Error(errorPrefix(fnName, argumentNumber, optional) + 'must be a valid function.');
+      }
+    }
+
+    function validateContextObject(fnName, argumentNumber, context, optional) {
+      if (optional && !context) {
+        return;
+      }
+
+      if (typeof context !== 'object' || context === null) {
+        throw new Error(errorPrefix(fnName, argumentNumber, optional) + 'must be a valid context object.');
+      }
+    }
+    /**
+     * @license
+     * Copyright 2017 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+    // Code originally came from goog.crypt.stringToUtf8ByteArray, but for some reason they
+    // automatically replaced '\r\n' with '\n', and they didn't handle surrogate pairs,
+    // so it's been modified.
+    // Note that not all Unicode characters appear as single characters in JavaScript strings.
+    // fromCharCode returns the UTF-16 encoding of a character - so some Unicode characters
+    // use 2 characters in Javascript.  All 4-byte UTF-8 characters begin with a first
+    // character in the range 0xD800 - 0xDBFF (the first character of a so-called surrogate
+    // pair).
+    // See http://www.ecma-international.org/ecma-262/5.1/#sec-15.1.3
+
+    /**
+     * @param {string} str
+     * @return {Array}
+     */
+
+
+    var stringToByteArray$1 = function stringToByteArray$1(str) {
+      var out = [];
+      var p = 0;
+
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charCodeAt(i); // Is this the lead surrogate in a surrogate pair?
+
+        if (c >= 0xd800 && c <= 0xdbff) {
+          var high = c - 0xd800; // the high 10 bits.
+
+          i++;
+          assert(i < str.length, 'Surrogate pair missing trail surrogate.');
+          var low = str.charCodeAt(i) - 0xdc00; // the low 10 bits.
+
+          c = 0x10000 + (high << 10) + low;
+        }
+
+        if (c < 128) {
+          out[p++] = c;
+        } else if (c < 2048) {
+          out[p++] = c >> 6 | 192;
+          out[p++] = c & 63 | 128;
+        } else if (c < 65536) {
+          out[p++] = c >> 12 | 224;
+          out[p++] = c >> 6 & 63 | 128;
+          out[p++] = c & 63 | 128;
+        } else {
+          out[p++] = c >> 18 | 240;
+          out[p++] = c >> 12 & 63 | 128;
+          out[p++] = c >> 6 & 63 | 128;
+          out[p++] = c & 63 | 128;
+        }
+      }
+
+      return out;
+    };
+    /**
+     * Calculate length without actually converting; useful for doing cheaper validation.
+     * @param {string} str
+     * @return {number}
+     */
+
+
+    var stringLength = function stringLength(str) {
+      var p = 0;
+
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charCodeAt(i);
+
+        if (c < 128) {
+          p++;
+        } else if (c < 2048) {
+          p += 2;
+        } else if (c >= 0xd800 && c <= 0xdbff) {
+          // Lead surrogate of a surrogate pair.  The pair together will take 4 bytes to represent.
+          p += 4;
+          i++; // skip trail surrogate.
+        } else {
+          p += 3;
+        }
+      }
+
+      return p;
+    };
+
+    exports.CONSTANTS = CONSTANTS;
+    exports.Deferred = Deferred;
+    exports.ErrorFactory = ErrorFactory;
+    exports.FirebaseError = FirebaseError;
+    exports.Sha1 = Sha1;
+    exports.assert = assert;
+    exports.assertionError = assertionError;
+    exports.async = async;
+    exports.base64 = base64;
+    exports.base64Decode = base64Decode;
+    exports.base64Encode = base64Encode;
+    exports.contains = contains;
+    exports.createSubscribe = createSubscribe;
+    exports.decode = decode;
+    exports.deepCopy = deepCopy;
+    exports.deepExtend = deepExtend;
+    exports.errorPrefix = errorPrefix;
+    exports.getUA = getUA;
+    exports.isAdmin = isAdmin;
+    exports.isBrowser = isBrowser;
+    exports.isBrowserExtension = isBrowserExtension;
+    exports.isElectron = isElectron;
+    exports.isEmpty = isEmpty;
+    exports.isIE = isIE;
+    exports.isMobileCordova = isMobileCordova;
+    exports.isNode = isNode;
+    exports.isNodeSdk = isNodeSdk;
+    exports.isReactNative = isReactNative;
+    exports.isUWP = isUWP;
+    exports.isValidFormat = isValidFormat;
+    exports.isValidTimestamp = isValidTimestamp;
+    exports.issuedAtTime = issuedAtTime;
+    exports.jsonEval = jsonEval;
+    exports.map = map;
+    exports.querystring = querystring;
+    exports.querystringDecode = querystringDecode;
+    exports.safeGet = safeGet;
+    exports.stringLength = stringLength;
+    exports.stringToByteArray = stringToByteArray$1;
+    exports.stringify = stringify;
+    exports.validateArgCount = validateArgCount;
+    exports.validateCallback = validateCallback;
+    exports.validateContextObject = validateContextObject;
+    exports.validateNamespace = validateNamespace; //# sourceMappingURL=index.cjs.js.map
+
+    /***/
+  },
+
+  /***/
+  "./node_modules/@firebase/util/node_modules/tslib/tslib.es6.js":
+  /*!*********************************************************************!*\
+    !*** ./node_modules/@firebase/util/node_modules/tslib/tslib.es6.js ***!
+    \*********************************************************************/
+
+  /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+  /***/
+  function node_modulesFirebaseUtilNode_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__extends", function () {
+      return __extends;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__assign", function () {
+      return _assign3;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__rest", function () {
+      return __rest;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+      return __decorate;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__param", function () {
+      return __param;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+      return __metadata;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+      return __awaiter;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__generator", function () {
+      return __generator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+      return __exportStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__values", function () {
+      return __values;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__read", function () {
+      return __read;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spread", function () {
+      return __spread;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+      return __spreadArrays;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__await", function () {
+      return __await;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+      return __asyncGenerator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+      return __asyncDelegator;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+      return __asyncValues;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+      return __makeTemplateObject;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+      return __importStar;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+      return __importDefault;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
+      return __classPrivateFieldGet;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
+      return __classPrivateFieldSet;
+    });
+    /*! *****************************************************************************
+    Copyright (c) Microsoft Corporation. All rights reserved.
+    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+    this file except in compliance with the License. You may obtain a copy of the
+    License at http://www.apache.org/licenses/LICENSE-2.0
+    
+    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    
+    See the Apache Version 2.0 License for specific language governing permissions
+    and limitations under the License.
+    ***************************************************************************** */
+
+    /* global Reflect, Promise */
+
+
+    var _extendStatics3 = function extendStatics(d, b) {
+      _extendStatics3 = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (d, b) {
+        d.__proto__ = b;
+      } || function (d, b) {
+        for (var p in b) {
+          if (b.hasOwnProperty(p)) d[p] = b[p];
+        }
+      };
+
+      return _extendStatics3(d, b);
+    };
+
+    function __extends(d, b) {
+      _extendStatics3(d, b);
+
+      function __() {
+        this.constructor = d;
+      }
+
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    }
+
+    var _assign3 = function __assign() {
+      _assign3 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+
+          for (var p in s) {
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+          }
+        }
+
+        return t;
+      };
+
+      return _assign3.apply(this, arguments);
+    };
+
+    function __rest(s, e) {
+      var t = {};
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+      }
+
+      if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+      }
+      return t;
+    }
+
+    function __decorate(decorators, target, key, desc) {
+      var c = arguments.length,
+          r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+          d;
+      if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+        if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+      }
+      return c > 3 && r && Object.defineProperty(target, key, r), r;
+    }
+
+    function __param(paramIndex, decorator) {
+      return function (target, key) {
+        decorator(target, key, paramIndex);
+      };
+    }
+
+    function __metadata(metadataKey, metadataValue) {
+      if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    }
+
+    function __awaiter(thisArg, _arguments, P, generator) {
+      function adopt(value) {
+        return value instanceof P ? value : new P(function (resolve) {
+          resolve(value);
+        });
+      }
+
+      return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) {
+          try {
+            step(generator.next(value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function rejected(value) {
+          try {
+            step(generator["throw"](value));
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        function step(result) {
+          result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+      });
+    }
+
+    function __generator(thisArg, body) {
+      var _ = {
+        label: 0,
+        sent: function sent() {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: []
+      },
+          f,
+          y,
+          t,
+          g;
+      return g = {
+        next: verb(0),
+        "throw": verb(1),
+        "return": verb(2)
+      }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+        return this;
+      }), g;
+
+      function verb(n) {
+        return function (v) {
+          return step([n, v]);
+        };
+      }
+
+      function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+
+        while (_) {
+          try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+
+            switch (op[0]) {
+              case 0:
+              case 1:
+                t = op;
+                break;
+
+              case 4:
+                _.label++;
+                return {
+                  value: op[1],
+                  done: false
+                };
+
+              case 5:
+                _.label++;
+                y = op[1];
+                op = [0];
+                continue;
+
+              case 7:
+                op = _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+
+              default:
+                if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                  _ = 0;
+                  continue;
+                }
+
+                if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                  _.label = op[1];
+                  break;
+                }
+
+                if (op[0] === 6 && _.label < t[1]) {
+                  _.label = t[1];
+                  t = op;
+                  break;
+                }
+
+                if (t && _.label < t[2]) {
+                  _.label = t[2];
+
+                  _.ops.push(op);
+
+                  break;
+                }
+
+                if (t[2]) _.ops.pop();
+
+                _.trys.pop();
+
+                continue;
+            }
+
+            op = body.call(thisArg, _);
+          } catch (e) {
+            op = [6, e];
+            y = 0;
+          } finally {
+            f = t = 0;
+          }
+        }
+
+        if (op[0] & 5) throw op[1];
+        return {
+          value: op[0] ? op[1] : void 0,
+          done: true
+        };
+      }
+    }
+
+    function __exportStar(m, exports) {
+      for (var p in m) {
+        if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+      }
+    }
+
+    function __values(o) {
+      var s = typeof Symbol === "function" && Symbol.iterator,
+          m = s && o[s],
+          i = 0;
+      if (m) return m.call(o);
+      if (o && typeof o.length === "number") return {
+        next: function next() {
+          if (o && i >= o.length) o = void 0;
+          return {
+            value: o && o[i++],
+            done: !o
+          };
+        }
+      };
+      throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+    }
+
+    function __read(o, n) {
+      var m = typeof Symbol === "function" && o[Symbol.iterator];
+      if (!m) return o;
+      var i = m.call(o),
+          r,
+          ar = [],
+          e;
+
+      try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+          ar.push(r.value);
+        }
+      } catch (error) {
+        e = {
+          error: error
+        };
+      } finally {
+        try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+        } finally {
+          if (e) throw e.error;
+        }
+      }
+
+      return ar;
+    }
+
+    function __spread() {
+      for (var ar = [], i = 0; i < arguments.length; i++) {
+        ar = ar.concat(__read(arguments[i]));
+      }
+
+      return ar;
+    }
+
+    function __spreadArrays() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+        s += arguments[i].length;
+      }
+
+      for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+          r[k] = a[j];
+        }
+      }
+
+      return r;
+    }
+
+    ;
+
+    function __await(v) {
+      return this instanceof __await ? (this.v = v, this) : new __await(v);
+    }
+
+    function __asyncGenerator(thisArg, _arguments, generator) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var g = generator.apply(thisArg, _arguments || []),
+          i,
+          q = [];
+      return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n) {
+        if (g[n]) i[n] = function (v) {
+          return new Promise(function (a, b) {
+            q.push([n, v, a, b]) > 1 || resume(n, v);
+          });
+        };
+      }
+
+      function resume(n, v) {
+        try {
+          step(g[n](v));
+        } catch (e) {
+          settle(q[0][3], e);
+        }
+      }
+
+      function step(r) {
+        r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+      }
+
+      function fulfill(value) {
+        resume("next", value);
+      }
+
+      function reject(value) {
+        resume("throw", value);
+      }
+
+      function settle(f, v) {
+        if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+      }
+    }
+
+    function __asyncDelegator(o) {
+      var i, p;
+      return i = {}, verb("next"), verb("throw", function (e) {
+        throw e;
+      }), verb("return"), i[Symbol.iterator] = function () {
+        return this;
+      }, i;
+
+      function verb(n, f) {
+        i[n] = o[n] ? function (v) {
+          return (p = !p) ? {
+            value: __await(o[n](v)),
+            done: n === "return"
+          } : f ? f(v) : v;
+        } : f;
+      }
+    }
+
+    function __asyncValues(o) {
+      if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+      var m = o[Symbol.asyncIterator],
+          i;
+      return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+        return this;
+      }, i);
+
+      function verb(n) {
+        i[n] = o[n] && function (v) {
+          return new Promise(function (resolve, reject) {
+            v = o[n](v), settle(resolve, reject, v.done, v.value);
+          });
+        };
+      }
+
+      function settle(resolve, reject, d, v) {
+        Promise.resolve(v).then(function (v) {
+          resolve({
+            value: v,
+            done: d
+          });
+        }, reject);
+      }
+    }
+
+    function __makeTemplateObject(cooked, raw) {
+      if (Object.defineProperty) {
+        Object.defineProperty(cooked, "raw", {
+          value: raw
+        });
+      } else {
+        cooked.raw = raw;
+      }
+
+      return cooked;
+    }
+
+    ;
+
+    function __importStar(mod) {
+      if (mod && mod.__esModule) return mod;
+      var result = {};
+      if (mod != null) for (var k in mod) {
+        if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+      }
+      result.default = mod;
+      return result;
+    }
+
+    function __importDefault(mod) {
+      return mod && mod.__esModule ? mod : {
+        default: mod
+      };
+    }
+
+    function __classPrivateFieldGet(receiver, privateMap) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+      }
+
+      return privateMap.get(receiver);
+    }
+
+    function __classPrivateFieldSet(receiver, privateMap, value) {
+      if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+      }
+
+      privateMap.set(receiver, value);
+      return value;
+    }
+    /***/
+
+  },
+
+  /***/
+  "./node_modules/firebase/app/dist/index.cjs.js":
+  /*!*****************************************************!*\
+    !*** ./node_modules/firebase/app/dist/index.cjs.js ***!
+    \*****************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesFirebaseAppDistIndexCjsJs(module, exports, __webpack_require__) {
+    "use strict";
+
+    function _interopDefault(ex) {
+      return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
+    }
+
+    var firebase = _interopDefault(__webpack_require__(
+    /*! @firebase/app */
+    "./node_modules/@firebase/app/dist/index.cjs.js"));
+
+    var name = "firebase";
+    var version = "7.13.1";
+    /**
+     * @license
+     * Copyright 2018 Google Inc.
+     *
+     * Licensed under the Apache License, Version 2.0 (the "License");
+     * you may not use this file except in compliance with the License.
+     * You may obtain a copy of the License at
+     *
+     *   http://www.apache.org/licenses/LICENSE-2.0
+     *
+     * Unless required by applicable law or agreed to in writing, software
+     * distributed under the License is distributed on an "AS IS" BASIS,
+     * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     * See the License for the specific language governing permissions and
+     * limitations under the License.
+     */
+
+    firebase.registerVersion(name, version, 'app');
+    module.exports = firebase; //# sourceMappingURL=index.cjs.js.map
+
+    /***/
   },
 
   /***/
@@ -91299,15 +109237,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncSubject, _Subject__WEBPACK_IMP);
 
       function AsyncSubject() {
-        var _this121;
+        var _this165;
 
         _classCallCheck(this, AsyncSubject);
 
-        _this121 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncSubject).apply(this, arguments));
-        _this121.value = null;
-        _this121.hasNext = false;
-        _this121.hasCompleted = false;
-        return _this121;
+        _this165 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncSubject).apply(this, arguments));
+        _this165.value = null;
+        _this165.hasNext = false;
+        _this165.hasCompleted = false;
+        return _this165;
       }
 
       _createClass2(AsyncSubject, [{
@@ -91397,13 +109335,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BehaviorSubject, _Subject__WEBPACK_IMP2);
 
       function BehaviorSubject(_value) {
-        var _this122;
+        var _this166;
 
         _classCallCheck(this, BehaviorSubject);
 
-        _this122 = _possibleConstructorReturn(this, _getPrototypeOf(BehaviorSubject).call(this));
-        _this122._value = _value;
-        return _this122;
+        _this166 = _possibleConstructorReturn(this, _getPrototypeOf(BehaviorSubject).call(this));
+        _this166._value = _value;
+        return _this166;
       }
 
       _createClass2(BehaviorSubject, [{
@@ -91479,16 +109417,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(InnerSubscriber, _Subscriber__WEBPACK_);
 
       function InnerSubscriber(parent, outerValue, outerIndex) {
-        var _this123;
+        var _this167;
 
         _classCallCheck(this, InnerSubscriber);
 
-        _this123 = _possibleConstructorReturn(this, _getPrototypeOf(InnerSubscriber).call(this));
-        _this123.parent = parent;
-        _this123.outerValue = outerValue;
-        _this123.outerIndex = outerIndex;
-        _this123.index = 0;
-        return _this123;
+        _this167 = _possibleConstructorReturn(this, _getPrototypeOf(InnerSubscriber).call(this));
+        _this167.parent = parent;
+        _this167.outerValue = outerValue;
+        _this167.outerIndex = outerIndex;
+        _this167.index = 0;
+        return _this167;
       }
 
       _createClass2(InnerSubscriber, [{
@@ -91784,12 +109722,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "forEach",
         value: function forEach(next, promiseCtor) {
-          var _this124 = this;
+          var _this168 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var subscription;
-            subscription = _this124.subscribe(function (value) {
+            subscription = _this168.subscribe(function (value) {
               try {
                 next(value);
               } catch (err) {
@@ -91816,8 +109754,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "pipe",
         value: function pipe() {
-          for (var _len14 = arguments.length, operations = new Array(_len14), _key14 = 0; _key14 < _len14; _key14++) {
-            operations[_key14] = arguments[_key14];
+          for (var _len15 = arguments.length, operations = new Array(_len15), _key15 = 0; _key15 < _len15; _key15++) {
+            operations[_key15] = arguments[_key15];
           }
 
           if (operations.length === 0) {
@@ -91829,13 +109767,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "toPromise",
         value: function toPromise(promiseCtor) {
-          var _this125 = this;
+          var _this169 = this;
 
           promiseCtor = getPromiseCtor(promiseCtor);
           return new promiseCtor(function (resolve, reject) {
             var value;
 
-            _this125.subscribe(function (x) {
+            _this169.subscribe(function (x) {
               return value = x;
             }, function (err) {
               return reject(err);
@@ -92040,7 +109978,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ReplaySubject, _Subject__WEBPACK_IMP3);
 
       function ReplaySubject() {
-        var _this126;
+        var _this170;
 
         var bufferSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Number.POSITIVE_INFINITY;
         var windowTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
@@ -92048,21 +109986,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _classCallCheck(this, ReplaySubject);
 
-        _this126 = _possibleConstructorReturn(this, _getPrototypeOf(ReplaySubject).call(this));
-        _this126.scheduler = scheduler;
-        _this126._events = [];
-        _this126._infiniteTimeWindow = false;
-        _this126._bufferSize = bufferSize < 1 ? 1 : bufferSize;
-        _this126._windowTime = windowTime < 1 ? 1 : windowTime;
+        _this170 = _possibleConstructorReturn(this, _getPrototypeOf(ReplaySubject).call(this));
+        _this170.scheduler = scheduler;
+        _this170._events = [];
+        _this170._infiniteTimeWindow = false;
+        _this170._bufferSize = bufferSize < 1 ? 1 : bufferSize;
+        _this170._windowTime = windowTime < 1 ? 1 : windowTime;
 
         if (windowTime === Number.POSITIVE_INFINITY) {
-          _this126._infiniteTimeWindow = true;
-          _this126.next = _this126.nextInfiniteTimeWindow;
+          _this170._infiniteTimeWindow = true;
+          _this170.next = _this170.nextInfiniteTimeWindow;
         } else {
-          _this126.next = _this126.nextTimeWindow;
+          _this170.next = _this170.nextTimeWindow;
         }
 
-        return _this126;
+        return _this170;
       }
 
       _createClass2(ReplaySubject, [{
@@ -92116,8 +110054,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subscriber.next(_events[i]);
             }
           } else {
-            for (var _i22 = 0; _i22 < len && !subscriber.closed; _i22++) {
-              subscriber.next(_events[_i22].value);
+            for (var _i26 = 0; _i26 < len && !subscriber.closed; _i26++) {
+              subscriber.next(_events[_i26].value);
             }
           }
 
@@ -92305,13 +110243,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubjectSubscriber, _Subscriber__WEBPACK_3);
 
       function SubjectSubscriber(destination) {
-        var _this127;
+        var _this171;
 
         _classCallCheck(this, SubjectSubscriber);
 
-        _this127 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscriber).call(this, destination));
-        _this127.destination = destination;
-        return _this127;
+        _this171 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscriber).call(this, destination));
+        _this171.destination = destination;
+        return _this171;
       }
 
       return SubjectSubscriber;
@@ -92323,17 +110261,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(Subject, _Observable__WEBPACK_);
 
       function Subject() {
-        var _this128;
+        var _this172;
 
         _classCallCheck(this, Subject);
 
-        _this128 = _possibleConstructorReturn(this, _getPrototypeOf(Subject).call(this));
-        _this128.observers = [];
-        _this128.closed = false;
-        _this128.isStopped = false;
-        _this128.hasError = false;
-        _this128.thrownError = null;
-        return _this128;
+        _this172 = _possibleConstructorReturn(this, _getPrototypeOf(Subject).call(this));
+        _this172.observers = [];
+        _this172.closed = false;
+        _this172.isStopped = false;
+        _this172.hasError = false;
+        _this172.thrownError = null;
+        return _this172;
       }
 
       _createClass2(Subject, [{
@@ -92357,10 +110295,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           if (!this.isStopped) {
             var observers = this.observers;
-            var _len15 = observers.length;
+            var _len16 = observers.length;
             var copy = observers.slice();
 
-            for (var i = 0; i < _len15; i++) {
+            for (var i = 0; i < _len16; i++) {
               copy[i].next(value);
             }
           }
@@ -92457,14 +110395,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AnonymousSubject, _Subject);
 
       function AnonymousSubject(destination, source) {
-        var _this129;
+        var _this173;
 
         _classCallCheck(this, AnonymousSubject);
 
-        _this129 = _possibleConstructorReturn(this, _getPrototypeOf(AnonymousSubject).call(this));
-        _this129.destination = destination;
-        _this129.source = source;
-        return _this129;
+        _this173 = _possibleConstructorReturn(this, _getPrototypeOf(AnonymousSubject).call(this));
+        _this173.destination = destination;
+        _this173.source = source;
+        return _this173;
       }
 
       _createClass2(AnonymousSubject, [{
@@ -92546,15 +110484,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubjectSubscription, _Subscription__WEBPAC);
 
       function SubjectSubscription(subject, subscriber) {
-        var _this130;
+        var _this174;
 
         _classCallCheck(this, SubjectSubscription);
 
-        _this130 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscription).call(this));
-        _this130.subject = subject;
-        _this130.subscriber = subscriber;
-        _this130.closed = false;
-        return _this130;
+        _this174 = _possibleConstructorReturn(this, _getPrototypeOf(SubjectSubscription).call(this));
+        _this174.subject = subject;
+        _this174.subscriber = subscriber;
+        _this174.closed = false;
+        return _this174;
       }
 
       _createClass2(SubjectSubscription, [{
@@ -92656,47 +110594,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(Subscriber, _Subscription__WEBPAC2);
 
       function Subscriber(destinationOrNext, error, complete) {
-        var _this131;
+        var _this175;
 
         _classCallCheck(this, Subscriber);
 
-        _this131 = _possibleConstructorReturn(this, _getPrototypeOf(Subscriber).call(this));
-        _this131.syncErrorValue = null;
-        _this131.syncErrorThrown = false;
-        _this131.syncErrorThrowable = false;
-        _this131.isStopped = false;
+        _this175 = _possibleConstructorReturn(this, _getPrototypeOf(Subscriber).call(this));
+        _this175.syncErrorValue = null;
+        _this175.syncErrorThrown = false;
+        _this175.syncErrorThrowable = false;
+        _this175.isStopped = false;
 
         switch (arguments.length) {
           case 0:
-            _this131.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+            _this175.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
             break;
 
           case 1:
             if (!destinationOrNext) {
-              _this131.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
+              _this175.destination = _Observer__WEBPACK_IMPORTED_MODULE_1__["empty"];
               break;
             }
 
             if (typeof destinationOrNext === 'object') {
               if (destinationOrNext instanceof Subscriber) {
-                _this131.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
-                _this131.destination = destinationOrNext;
-                destinationOrNext.add(_assertThisInitialized(_this131));
+                _this175.syncErrorThrowable = destinationOrNext.syncErrorThrowable;
+                _this175.destination = destinationOrNext;
+                destinationOrNext.add(_assertThisInitialized(_this175));
               } else {
-                _this131.syncErrorThrowable = true;
-                _this131.destination = new SafeSubscriber(_assertThisInitialized(_this131), destinationOrNext);
+                _this175.syncErrorThrowable = true;
+                _this175.destination = new SafeSubscriber(_assertThisInitialized(_this175), destinationOrNext);
               }
 
               break;
             }
 
           default:
-            _this131.syncErrorThrowable = true;
-            _this131.destination = new SafeSubscriber(_assertThisInitialized(_this131), destinationOrNext, error, complete);
+            _this175.syncErrorThrowable = true;
+            _this175.destination = new SafeSubscriber(_assertThisInitialized(_this175), destinationOrNext, error, complete);
             break;
         }
 
-        return _this131;
+        return _this175;
       }
 
       _createClass2(Subscriber, [{
@@ -92786,15 +110724,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SafeSubscriber, _Subscriber);
 
       function SafeSubscriber(_parentSubscriber, observerOrNext, error, complete) {
-        var _this132;
+        var _this176;
 
         _classCallCheck(this, SafeSubscriber);
 
-        _this132 = _possibleConstructorReturn(this, _getPrototypeOf(SafeSubscriber).call(this));
-        _this132._parentSubscriber = _parentSubscriber;
+        _this176 = _possibleConstructorReturn(this, _getPrototypeOf(SafeSubscriber).call(this));
+        _this176._parentSubscriber = _parentSubscriber;
         var next;
 
-        var context = _assertThisInitialized(_this132);
+        var context = _assertThisInitialized(_this176);
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(observerOrNext)) {
           next = observerOrNext;
@@ -92807,18 +110745,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             context = Object.create(observerOrNext);
 
             if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_0__["isFunction"])(context.unsubscribe)) {
-              _this132.add(context.unsubscribe.bind(context));
+              _this176.add(context.unsubscribe.bind(context));
             }
 
-            context.unsubscribe = _this132.unsubscribe.bind(_assertThisInitialized(_this132));
+            context.unsubscribe = _this176.unsubscribe.bind(_assertThisInitialized(_this176));
           }
         }
 
-        _this132._context = context;
-        _this132._next = next;
-        _this132._error = error;
-        _this132._complete = complete;
-        return _this132;
+        _this176._context = context;
+        _this176._next = next;
+        _this176._error = error;
+        _this176._complete = complete;
+        return _this176;
       }
 
       _createClass2(SafeSubscriber, [{
@@ -92874,14 +110812,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "complete",
         value: function complete() {
-          var _this133 = this;
+          var _this177 = this;
 
           if (!this.isStopped) {
             var _parentSubscriber = this._parentSubscriber;
 
             if (this._complete) {
               var wrappedComplete = function wrappedComplete() {
-                return _this133._complete.call(_this133._context);
+                return _this177._complete.call(_this177._context);
               };
 
               if (!_config__WEBPACK_IMPORTED_MODULE_4__["config"].useDeprecatedSynchronousErrorHandling || !_parentSubscriber.syncErrorThrowable) {
@@ -93048,9 +110986,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if (Object(_util_isArray__WEBPACK_IMPORTED_MODULE_0__["isArray"])(_subscriptions)) {
             var _index2 = -1;
 
-            var _len16 = _subscriptions.length;
+            var _len17 = _subscriptions.length;
 
-            while (++_index2 < _len16) {
+            while (++_index2 < _len17) {
               var sub = _subscriptions[_index2];
 
               if (Object(_util_isObject__WEBPACK_IMPORTED_MODULE_1__["isObject"])(sub)) {
@@ -93272,16 +111210,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ConnectableObservable, _Observable__WEBPACK_2);
 
       function ConnectableObservable(source, subjectFactory) {
-        var _this134;
+        var _this178;
 
         _classCallCheck(this, ConnectableObservable);
 
-        _this134 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableObservable).call(this));
-        _this134.source = source;
-        _this134.subjectFactory = subjectFactory;
-        _this134._refCount = 0;
-        _this134._isComplete = false;
-        return _this134;
+        _this178 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableObservable).call(this));
+        _this178.source = source;
+        _this178.subjectFactory = subjectFactory;
+        _this178._refCount = 0;
+        _this178._isComplete = false;
+        return _this178;
       }
 
       _createClass2(ConnectableObservable, [{
@@ -93371,13 +111309,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ConnectableSubscriber, _Subject__WEBPACK_IMP4);
 
       function ConnectableSubscriber(destination, connectable) {
-        var _this135;
+        var _this179;
 
         _classCallCheck(this, ConnectableSubscriber);
 
-        _this135 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableSubscriber).call(this, destination));
-        _this135.connectable = connectable;
-        return _this135;
+        _this179 = _possibleConstructorReturn(this, _getPrototypeOf(ConnectableSubscriber).call(this, destination));
+        _this179.connectable = connectable;
+        return _this179;
       }
 
       _createClass2(ConnectableSubscriber, [{
@@ -93452,13 +111390,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_4);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this136;
+        var _this180;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this136 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
-        _this136.connectable = connectable;
-        return _this136;
+        _this180 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
+        _this180.connectable = connectable;
+        return _this180;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -93547,27 +111485,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscribeOnObservable, _Observable__WEBPACK_3);
 
       function SubscribeOnObservable(source) {
-        var _this137;
+        var _this181;
 
         var delayTime = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
         var scheduler = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
 
         _classCallCheck(this, SubscribeOnObservable);
 
-        _this137 = _possibleConstructorReturn(this, _getPrototypeOf(SubscribeOnObservable).call(this));
-        _this137.source = source;
-        _this137.delayTime = delayTime;
-        _this137.scheduler = scheduler;
+        _this181 = _possibleConstructorReturn(this, _getPrototypeOf(SubscribeOnObservable).call(this));
+        _this181.source = source;
+        _this181.delayTime = delayTime;
+        _this181.scheduler = scheduler;
 
         if (!Object(_util_isNumeric__WEBPACK_IMPORTED_MODULE_2__["isNumeric"])(delayTime) || delayTime < 0) {
-          _this137.delayTime = 0;
+          _this181.delayTime = 0;
         }
 
         if (!scheduler || typeof scheduler.schedule !== 'function') {
-          _this137.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
+          _this181.scheduler = _scheduler_asap__WEBPACK_IMPORTED_MODULE_1__["asap"];
         }
 
-        return _this137;
+        return _this181;
       }
 
       _createClass2(SubscribeOnObservable, [{
@@ -93674,8 +111612,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       return function () {
-        for (var _len17 = arguments.length, args = new Array(_len17), _key15 = 0; _key15 < _len17; _key15++) {
-          args[_key15] = arguments[_key15];
+        for (var _len18 = arguments.length, args = new Array(_len18), _key16 = 0; _key16 < _len18; _key16++) {
+          args[_key16] = arguments[_key16];
         }
 
         var context = this;
@@ -93692,8 +111630,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
               var handler = function handler() {
-                for (var _len18 = arguments.length, innerArgs = new Array(_len18), _key16 = 0; _key16 < _len18; _key16++) {
-                  innerArgs[_key16] = arguments[_key16];
+                for (var _len19 = arguments.length, innerArgs = new Array(_len19), _key17 = 0; _key17 < _len19; _key17++) {
+                  innerArgs[_key17] = arguments[_key17];
                 }
 
                 subject.next(innerArgs.length <= 1 ? innerArgs[0] : innerArgs);
@@ -93725,7 +111663,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this138 = this;
+      var _this182 = this;
 
       var self = this;
       var args = state.args,
@@ -93740,13 +111678,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
         var handler = function handler() {
-          for (var _len19 = arguments.length, innerArgs = new Array(_len19), _key17 = 0; _key17 < _len19; _key17++) {
-            innerArgs[_key17] = arguments[_key17];
+          for (var _len20 = arguments.length, innerArgs = new Array(_len20), _key18 = 0; _key18 < _len20; _key18++) {
+            innerArgs[_key18] = arguments[_key18];
           }
 
           var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-          _this138.add(scheduler.schedule(dispatchNext, 0, {
+          _this182.add(scheduler.schedule(dispatchNext, 0, {
             value: value,
             subject: subject
           }));
@@ -93849,8 +111787,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       return function () {
-        for (var _len20 = arguments.length, args = new Array(_len20), _key18 = 0; _key18 < _len20; _key18++) {
-          args[_key18] = arguments[_key18];
+        for (var _len21 = arguments.length, args = new Array(_len21), _key19 = 0; _key19 < _len21; _key19++) {
+          args[_key19] = arguments[_key19];
         }
 
         var params = {
@@ -93869,8 +111807,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
               var handler = function handler() {
-                for (var _len21 = arguments.length, innerArgs = new Array(_len21), _key19 = 0; _key19 < _len21; _key19++) {
-                  innerArgs[_key19] = arguments[_key19];
+                for (var _len22 = arguments.length, innerArgs = new Array(_len22), _key20 = 0; _key20 < _len22; _key20++) {
+                  innerArgs[_key20] = arguments[_key20];
                 }
 
                 var err = innerArgs.shift();
@@ -93908,7 +111846,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function dispatch(state) {
-      var _this139 = this;
+      var _this183 = this;
 
       var params = state.params,
           subscriber = state.subscriber,
@@ -93922,21 +111860,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         subject = params.subject = new _AsyncSubject__WEBPACK_IMPORTED_MODULE_1__["AsyncSubject"]();
 
         var handler = function handler() {
-          for (var _len22 = arguments.length, innerArgs = new Array(_len22), _key20 = 0; _key20 < _len22; _key20++) {
-            innerArgs[_key20] = arguments[_key20];
+          for (var _len23 = arguments.length, innerArgs = new Array(_len23), _key21 = 0; _key21 < _len23; _key21++) {
+            innerArgs[_key21] = arguments[_key21];
           }
 
           var err = innerArgs.shift();
 
           if (err) {
-            _this139.add(scheduler.schedule(dispatchError, 0, {
+            _this183.add(scheduler.schedule(dispatchError, 0, {
               err: err,
               subject: subject
             }));
           } else {
             var value = innerArgs.length <= 1 ? innerArgs[0] : innerArgs;
 
-            _this139.add(scheduler.schedule(dispatchNext, 0, {
+            _this183.add(scheduler.schedule(dispatchNext, 0, {
               value: value,
               subject: subject
             }));
@@ -94038,8 +111976,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var NONE = {};
 
     function combineLatest() {
-      for (var _len23 = arguments.length, observables = new Array(_len23), _key21 = 0; _key21 < _len23; _key21++) {
-        observables[_key21] = arguments[_key21];
+      for (var _len24 = arguments.length, observables = new Array(_len24), _key22 = 0; _key22 < _len24; _key22++) {
+        observables[_key22] = arguments[_key22];
       }
 
       var resultSelector = null;
@@ -94085,16 +112023,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CombineLatestSubscriber, _OuterSubscriber__WEB);
 
       function CombineLatestSubscriber(destination, resultSelector) {
-        var _this140;
+        var _this184;
 
         _classCallCheck(this, CombineLatestSubscriber);
 
-        _this140 = _possibleConstructorReturn(this, _getPrototypeOf(CombineLatestSubscriber).call(this, destination));
-        _this140.resultSelector = resultSelector;
-        _this140.active = 0;
-        _this140.values = [];
-        _this140.observables = [];
-        return _this140;
+        _this184 = _possibleConstructorReturn(this, _getPrototypeOf(CombineLatestSubscriber).call(this, destination));
+        _this184.resultSelector = resultSelector;
+        _this184.active = 0;
+        _this184.values = [];
+        _this184.observables = [];
+        return _this184;
       }
 
       _createClass2(CombineLatestSubscriber, [{
@@ -94368,8 +112306,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/from.js");
 
     function forkJoin() {
-      for (var _len24 = arguments.length, sources = new Array(_len24), _key22 = 0; _key22 < _len24; _key22++) {
-        sources[_key22] = arguments[_key22];
+      for (var _len25 = arguments.length, sources = new Array(_len25), _key23 = 0; _key23 < _len25; _key23++) {
+        sources[_key23] = arguments[_key23];
       }
 
       if (sources.length === 1) {
@@ -94654,7 +112592,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return _source2.removeListener(eventName, handler);
         };
       } else if (sourceObj && sourceObj.length) {
-        for (var i = 0, _len25 = sourceObj.length; i < _len25; i++) {
+        for (var i = 0, _len26 = sourceObj.length; i < _len26; i++) {
           setupSubscription(sourceObj[i], eventName, handler, subscriber, options);
         }
       } else {
@@ -94733,8 +112671,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       return new _Observable__WEBPACK_IMPORTED_MODULE_0__["Observable"](function (subscriber) {
         var handler = function handler() {
-          for (var _len26 = arguments.length, e = new Array(_len26), _key23 = 0; _key23 < _len26; _key23++) {
-            e[_key23] = arguments[_key23];
+          for (var _len27 = arguments.length, e = new Array(_len27), _key24 = 0; _key24 < _len27; _key24++) {
+            e[_key24] = arguments[_key24];
           }
 
           return subscriber.next(e.length === 1 ? e[0] : e);
@@ -95111,8 +113049,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       var concurrent = Number.POSITIVE_INFINITY;
       var scheduler = null;
 
-      for (var _len27 = arguments.length, observables = new Array(_len27), _key24 = 0; _key24 < _len27; _key24++) {
-        observables[_key24] = arguments[_key24];
+      for (var _len28 = arguments.length, observables = new Array(_len28), _key25 = 0; _key25 < _len28; _key25++) {
+        observables[_key25] = arguments[_key25];
       }
 
       var last = observables[observables.length - 1];
@@ -95225,8 +113163,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/scheduled/scheduleArray.js");
 
     function of() {
-      for (var _len28 = arguments.length, args = new Array(_len28), _key25 = 0; _key25 < _len28; _key25++) {
-        args[_key25] = arguments[_key25];
+      for (var _len29 = arguments.length, args = new Array(_len29), _key26 = 0; _key26 < _len29; _key26++) {
+        args[_key26] = arguments[_key26];
       }
 
       var scheduler = args[args.length - 1];
@@ -95288,8 +113226,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/empty.js");
 
     function onErrorResumeNext() {
-      for (var _len29 = arguments.length, sources = new Array(_len29), _key26 = 0; _key26 < _len29; _key26++) {
-        sources[_key26] = arguments[_key26];
+      for (var _len30 = arguments.length, sources = new Array(_len30), _key27 = 0; _key27 < _len30; _key27++) {
+        sources[_key27] = arguments[_key27];
       }
 
       if (sources.length === 0) {
@@ -95528,8 +113466,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function race() {
-      for (var _len30 = arguments.length, observables = new Array(_len30), _key27 = 0; _key27 < _len30; _key27++) {
-        observables[_key27] = arguments[_key27];
+      for (var _len31 = arguments.length, observables = new Array(_len31), _key28 = 0; _key28 < _len31; _key28++) {
+        observables[_key28] = arguments[_key28];
       }
 
       if (observables.length === 1) {
@@ -95566,15 +113504,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RaceSubscriber, _OuterSubscriber__WEB2);
 
       function RaceSubscriber(destination) {
-        var _this141;
+        var _this185;
 
         _classCallCheck(this, RaceSubscriber);
 
-        _this141 = _possibleConstructorReturn(this, _getPrototypeOf(RaceSubscriber).call(this, destination));
-        _this141.hasFirst = false;
-        _this141.observables = [];
-        _this141.subscriptions = [];
-        return _this141;
+        _this185 = _possibleConstructorReturn(this, _getPrototypeOf(RaceSubscriber).call(this, destination));
+        _this185.hasFirst = false;
+        _this185.observables = [];
+        _this185.subscriptions = [];
+        return _this185;
       }
 
       _createClass2(RaceSubscriber, [{
@@ -96014,8 +113952,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/symbol/iterator.js");
 
     function zip() {
-      for (var _len31 = arguments.length, observables = new Array(_len31), _key28 = 0; _key28 < _len31; _key28++) {
-        observables[_key28] = arguments[_key28];
+      for (var _len32 = arguments.length, observables = new Array(_len32), _key29 = 0; _key29 < _len32; _key29++) {
+        observables[_key29] = arguments[_key29];
       }
 
       var resultSelector = observables[observables.length - 1];
@@ -96052,18 +113990,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ZipSubscriber, _Subscriber__WEBPACK_5);
 
       function ZipSubscriber(destination, resultSelector) {
-        var _this142;
+        var _this186;
 
         var values = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Object.create(null);
 
         _classCallCheck(this, ZipSubscriber);
 
-        _this142 = _possibleConstructorReturn(this, _getPrototypeOf(ZipSubscriber).call(this, destination));
-        _this142.iterators = [];
-        _this142.active = 0;
-        _this142.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
-        _this142.values = values;
-        return _this142;
+        _this186 = _possibleConstructorReturn(this, _getPrototypeOf(ZipSubscriber).call(this, destination));
+        _this186.iterators = [];
+        _this186.active = 0;
+        _this186.resultSelector = typeof resultSelector === 'function' ? resultSelector : null;
+        _this186.values = values;
+        return _this186;
       }
 
       _createClass2(ZipSubscriber, [{
@@ -96131,12 +114069,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var shouldComplete = false;
           var args = [];
 
-          for (var _i23 = 0; _i23 < len; _i23++) {
-            var _iterator23 = iterators[_i23];
+          for (var _i27 = 0; _i27 < len; _i27++) {
+            var _iterator24 = iterators[_i27];
 
-            var result = _iterator23.next();
+            var result = _iterator24.next();
 
-            if (_iterator23.hasCompleted()) {
+            if (_iterator24.hasCompleted()) {
               shouldComplete = true;
             }
 
@@ -96261,17 +114199,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ZipBufferIterator, _OuterSubscriber__WEB3);
 
       function ZipBufferIterator(destination, parent, observable) {
-        var _this143;
+        var _this187;
 
         _classCallCheck(this, ZipBufferIterator);
 
-        _this143 = _possibleConstructorReturn(this, _getPrototypeOf(ZipBufferIterator).call(this, destination));
-        _this143.parent = parent;
-        _this143.observable = observable;
-        _this143.stillUnsubscribed = true;
-        _this143.buffer = [];
-        _this143.isComplete = false;
-        return _this143;
+        _this187 = _possibleConstructorReturn(this, _getPrototypeOf(ZipBufferIterator).call(this, destination));
+        _this187.parent = parent;
+        _this187.observable = observable;
+        _this187.stillUnsubscribed = true;
+        _this187.buffer = [];
+        _this187.isComplete = false;
+        return _this187;
       }
 
       _createClass2(ZipBufferIterator, [{
@@ -96399,14 +114337,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AuditSubscriber, _OuterSubscriber__WEB4);
 
       function AuditSubscriber(destination, durationSelector) {
-        var _this144;
+        var _this188;
 
         _classCallCheck(this, AuditSubscriber);
 
-        _this144 = _possibleConstructorReturn(this, _getPrototypeOf(AuditSubscriber).call(this, destination));
-        _this144.durationSelector = durationSelector;
-        _this144.hasValue = false;
-        return _this144;
+        _this188 = _possibleConstructorReturn(this, _getPrototypeOf(AuditSubscriber).call(this, destination));
+        _this188.durationSelector = durationSelector;
+        _this188.hasValue = false;
+        return _this188;
       }
 
       _createClass2(AuditSubscriber, [{
@@ -96584,16 +114522,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferSubscriber, _OuterSubscriber__WEB5);
 
       function BufferSubscriber(destination, closingNotifier) {
-        var _this145;
+        var _this189;
 
         _classCallCheck(this, BufferSubscriber);
 
-        _this145 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSubscriber).call(this, destination));
-        _this145.buffer = [];
+        _this189 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSubscriber).call(this, destination));
+        _this189.buffer = [];
 
-        _this145.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this145), closingNotifier));
+        _this189.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this189), closingNotifier));
 
-        return _this145;
+        return _this189;
       }
 
       _createClass2(BufferSubscriber, [{
@@ -96682,14 +114620,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferCountSubscriber, _Subscriber__WEBPACK_6);
 
       function BufferCountSubscriber(destination, bufferSize) {
-        var _this146;
+        var _this190;
 
         _classCallCheck(this, BufferCountSubscriber);
 
-        _this146 = _possibleConstructorReturn(this, _getPrototypeOf(BufferCountSubscriber).call(this, destination));
-        _this146.bufferSize = bufferSize;
-        _this146.buffer = [];
-        return _this146;
+        _this190 = _possibleConstructorReturn(this, _getPrototypeOf(BufferCountSubscriber).call(this, destination));
+        _this190.bufferSize = bufferSize;
+        _this190.buffer = [];
+        return _this190;
       }
 
       _createClass2(BufferCountSubscriber, [{
@@ -96725,16 +114663,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferSkipCountSubscriber, _Subscriber__WEBPACK_7);
 
       function BufferSkipCountSubscriber(destination, bufferSize, startBufferEvery) {
-        var _this147;
+        var _this191;
 
         _classCallCheck(this, BufferSkipCountSubscriber);
 
-        _this147 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSkipCountSubscriber).call(this, destination));
-        _this147.bufferSize = bufferSize;
-        _this147.startBufferEvery = startBufferEvery;
-        _this147.buffers = [];
-        _this147.count = 0;
-        return _this147;
+        _this191 = _possibleConstructorReturn(this, _getPrototypeOf(BufferSkipCountSubscriber).call(this, destination));
+        _this191.bufferSize = bufferSize;
+        _this191.startBufferEvery = startBufferEvery;
+        _this191.buffers = [];
+        _this191.count = 0;
+        return _this191;
       }
 
       _createClass2(BufferSkipCountSubscriber, [{
@@ -96883,47 +114821,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferTimeSubscriber, _Subscriber__WEBPACK_8);
 
       function BufferTimeSubscriber(destination, bufferTimeSpan, bufferCreationInterval, maxBufferSize, scheduler) {
-        var _this148;
+        var _this192;
 
         _classCallCheck(this, BufferTimeSubscriber);
 
-        _this148 = _possibleConstructorReturn(this, _getPrototypeOf(BufferTimeSubscriber).call(this, destination));
-        _this148.bufferTimeSpan = bufferTimeSpan;
-        _this148.bufferCreationInterval = bufferCreationInterval;
-        _this148.maxBufferSize = maxBufferSize;
-        _this148.scheduler = scheduler;
-        _this148.contexts = [];
+        _this192 = _possibleConstructorReturn(this, _getPrototypeOf(BufferTimeSubscriber).call(this, destination));
+        _this192.bufferTimeSpan = bufferTimeSpan;
+        _this192.bufferCreationInterval = bufferCreationInterval;
+        _this192.maxBufferSize = maxBufferSize;
+        _this192.scheduler = scheduler;
+        _this192.contexts = [];
 
-        var context = _this148.openContext();
+        var context = _this192.openContext();
 
-        _this148.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
+        _this192.timespanOnly = bufferCreationInterval == null || bufferCreationInterval < 0;
 
-        if (_this148.timespanOnly) {
+        if (_this192.timespanOnly) {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this148),
+            subscriber: _assertThisInitialized(_this192),
             context: context,
             bufferTimeSpan: bufferTimeSpan
           };
 
-          _this148.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
+          _this192.add(context.closeAction = scheduler.schedule(dispatchBufferTimeSpanOnly, bufferTimeSpan, timeSpanOnlyState));
         } else {
           var closeState = {
-            subscriber: _assertThisInitialized(_this148),
+            subscriber: _assertThisInitialized(_this192),
             context: context
           };
           var creationState = {
             bufferTimeSpan: bufferTimeSpan,
             bufferCreationInterval: bufferCreationInterval,
-            subscriber: _assertThisInitialized(_this148),
+            subscriber: _assertThisInitialized(_this192),
             scheduler: scheduler
           };
 
-          _this148.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
+          _this192.add(context.closeAction = scheduler.schedule(dispatchBufferClose, bufferTimeSpan, closeState));
 
-          _this148.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
+          _this192.add(scheduler.schedule(dispatchBufferCreation, bufferCreationInterval, creationState));
         }
 
-        return _this148;
+        return _this192;
       }
 
       _createClass2(BufferTimeSubscriber, [{
@@ -97125,18 +115063,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferToggleSubscriber, _OuterSubscriber__WEB6);
 
       function BufferToggleSubscriber(destination, openings, closingSelector) {
-        var _this149;
+        var _this193;
 
         _classCallCheck(this, BufferToggleSubscriber);
 
-        _this149 = _possibleConstructorReturn(this, _getPrototypeOf(BufferToggleSubscriber).call(this, destination));
-        _this149.openings = openings;
-        _this149.closingSelector = closingSelector;
-        _this149.contexts = [];
+        _this193 = _possibleConstructorReturn(this, _getPrototypeOf(BufferToggleSubscriber).call(this, destination));
+        _this193.openings = openings;
+        _this193.closingSelector = closingSelector;
+        _this193.contexts = [];
 
-        _this149.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this149), openings));
+        _this193.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this193), openings));
 
-        return _this149;
+        return _this193;
       }
 
       _createClass2(BufferToggleSubscriber, [{
@@ -97319,17 +115257,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(BufferWhenSubscriber, _OuterSubscriber__WEB7);
 
       function BufferWhenSubscriber(destination, closingSelector) {
-        var _this150;
+        var _this194;
 
         _classCallCheck(this, BufferWhenSubscriber);
 
-        _this150 = _possibleConstructorReturn(this, _getPrototypeOf(BufferWhenSubscriber).call(this, destination));
-        _this150.closingSelector = closingSelector;
-        _this150.subscribing = false;
+        _this194 = _possibleConstructorReturn(this, _getPrototypeOf(BufferWhenSubscriber).call(this, destination));
+        _this194.closingSelector = closingSelector;
+        _this194.subscribing = false;
 
-        _this150.openBuffer();
+        _this194.openBuffer();
 
-        return _this150;
+        return _this194;
       }
 
       _createClass2(BufferWhenSubscriber, [{
@@ -97481,14 +115419,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CatchSubscriber, _OuterSubscriber__WEB8);
 
       function CatchSubscriber(destination, selector, caught) {
-        var _this151;
+        var _this195;
 
         _classCallCheck(this, CatchSubscriber);
 
-        _this151 = _possibleConstructorReturn(this, _getPrototypeOf(CatchSubscriber).call(this, destination));
-        _this151.selector = selector;
-        _this151.caught = caught;
-        return _this151;
+        _this195 = _possibleConstructorReturn(this, _getPrototypeOf(CatchSubscriber).call(this, destination));
+        _this195.selector = selector;
+        _this195.caught = caught;
+        return _this195;
       }
 
       _createClass2(CatchSubscriber, [{
@@ -97602,8 +115540,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var none = {};
 
     function combineLatest() {
-      for (var _len32 = arguments.length, observables = new Array(_len32), _key29 = 0; _key29 < _len32; _key29++) {
-        observables[_key29] = arguments[_key29];
+      for (var _len33 = arguments.length, observables = new Array(_len33), _key30 = 0; _key30 < _len33; _key30++) {
+        observables[_key30] = arguments[_key30];
       }
 
       var project = null;
@@ -97652,8 +115590,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/concat.js");
 
     function concat() {
-      for (var _len33 = arguments.length, observables = new Array(_len33), _key30 = 0; _key30 < _len33; _key30++) {
-        observables[_key30] = arguments[_key30];
+      for (var _len34 = arguments.length, observables = new Array(_len34), _key31 = 0; _key31 < _len34; _key31++) {
+        observables[_key31] = arguments[_key31];
       }
 
       return function (source) {
@@ -97827,16 +115765,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CountSubscriber, _Subscriber__WEBPACK_9);
 
       function CountSubscriber(destination, predicate, source) {
-        var _this152;
+        var _this196;
 
         _classCallCheck(this, CountSubscriber);
 
-        _this152 = _possibleConstructorReturn(this, _getPrototypeOf(CountSubscriber).call(this, destination));
-        _this152.predicate = predicate;
-        _this152.source = source;
-        _this152.count = 0;
-        _this152.index = 0;
-        return _this152;
+        _this196 = _possibleConstructorReturn(this, _getPrototypeOf(CountSubscriber).call(this, destination));
+        _this196.predicate = predicate;
+        _this196.source = source;
+        _this196.count = 0;
+        _this196.index = 0;
+        return _this196;
       }
 
       _createClass2(CountSubscriber, [{
@@ -97942,15 +115880,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DebounceSubscriber, _OuterSubscriber__WEB9);
 
       function DebounceSubscriber(destination, durationSelector) {
-        var _this153;
+        var _this197;
 
         _classCallCheck(this, DebounceSubscriber);
 
-        _this153 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceSubscriber).call(this, destination));
-        _this153.durationSelector = durationSelector;
-        _this153.hasValue = false;
-        _this153.durationSubscription = null;
-        return _this153;
+        _this197 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceSubscriber).call(this, destination));
+        _this197.durationSelector = durationSelector;
+        _this197.hasValue = false;
+        _this197.durationSubscription = null;
+        return _this197;
       }
 
       _createClass2(DebounceSubscriber, [{
@@ -98093,17 +116031,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DebounceTimeSubscriber, _Subscriber__WEBPACK_10);
 
       function DebounceTimeSubscriber(destination, dueTime, scheduler) {
-        var _this154;
+        var _this198;
 
         _classCallCheck(this, DebounceTimeSubscriber);
 
-        _this154 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceTimeSubscriber).call(this, destination));
-        _this154.dueTime = dueTime;
-        _this154.scheduler = scheduler;
-        _this154.debouncedSubscription = null;
-        _this154.lastValue = null;
-        _this154.hasValue = false;
-        return _this154;
+        _this198 = _possibleConstructorReturn(this, _getPrototypeOf(DebounceTimeSubscriber).call(this, destination));
+        _this198.dueTime = dueTime;
+        _this198.scheduler = scheduler;
+        _this198.debouncedSubscription = null;
+        _this198.lastValue = null;
+        _this198.hasValue = false;
+        return _this198;
       }
 
       _createClass2(DebounceTimeSubscriber, [{
@@ -98214,14 +116152,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DefaultIfEmptySubscriber, _Subscriber__WEBPACK_11);
 
       function DefaultIfEmptySubscriber(destination, defaultValue) {
-        var _this155;
+        var _this199;
 
         _classCallCheck(this, DefaultIfEmptySubscriber);
 
-        _this155 = _possibleConstructorReturn(this, _getPrototypeOf(DefaultIfEmptySubscriber).call(this, destination));
-        _this155.defaultValue = defaultValue;
-        _this155.isEmpty = true;
-        return _this155;
+        _this199 = _possibleConstructorReturn(this, _getPrototypeOf(DefaultIfEmptySubscriber).call(this, destination));
+        _this199.defaultValue = defaultValue;
+        _this199.isEmpty = true;
+        return _this199;
       }
 
       _createClass2(DefaultIfEmptySubscriber, [{
@@ -98327,17 +116265,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DelaySubscriber, _Subscriber__WEBPACK_12);
 
       function DelaySubscriber(destination, delay, scheduler) {
-        var _this156;
+        var _this200;
 
         _classCallCheck(this, DelaySubscriber);
 
-        _this156 = _possibleConstructorReturn(this, _getPrototypeOf(DelaySubscriber).call(this, destination));
-        _this156.delay = delay;
-        _this156.scheduler = scheduler;
-        _this156.queue = [];
-        _this156.active = false;
-        _this156.errored = false;
-        return _this156;
+        _this200 = _possibleConstructorReturn(this, _getPrototypeOf(DelaySubscriber).call(this, destination));
+        _this200.delay = delay;
+        _this200.scheduler = scheduler;
+        _this200.queue = [];
+        _this200.active = false;
+        _this200.errored = false;
+        return _this200;
       }
 
       _createClass2(DelaySubscriber, [{
@@ -98503,16 +116441,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DelayWhenSubscriber, _OuterSubscriber__WEB10);
 
       function DelayWhenSubscriber(destination, delayDurationSelector) {
-        var _this157;
+        var _this201;
 
         _classCallCheck(this, DelayWhenSubscriber);
 
-        _this157 = _possibleConstructorReturn(this, _getPrototypeOf(DelayWhenSubscriber).call(this, destination));
-        _this157.delayDurationSelector = delayDurationSelector;
-        _this157.completed = false;
-        _this157.delayNotifierSubscriptions = [];
-        _this157.index = 0;
-        return _this157;
+        _this201 = _possibleConstructorReturn(this, _getPrototypeOf(DelayWhenSubscriber).call(this, destination));
+        _this201.delayDurationSelector = delayDurationSelector;
+        _this201.completed = false;
+        _this201.delayNotifierSubscriptions = [];
+        _this201.index = 0;
+        return _this201;
       }
 
       _createClass2(DelayWhenSubscriber, [{
@@ -98601,14 +116539,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscriptionDelayObservable, _Observable__WEBPACK_4);
 
       function SubscriptionDelayObservable(source, subscriptionDelay) {
-        var _this158;
+        var _this202;
 
         _classCallCheck(this, SubscriptionDelayObservable);
 
-        _this158 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelayObservable).call(this));
-        _this158.source = source;
-        _this158.subscriptionDelay = subscriptionDelay;
-        return _this158;
+        _this202 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelayObservable).call(this));
+        _this202.source = source;
+        _this202.subscriptionDelay = subscriptionDelay;
+        return _this202;
       }
 
       _createClass2(SubscriptionDelayObservable, [{
@@ -98627,15 +116565,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SubscriptionDelaySubscriber, _Subscriber__WEBPACK_13);
 
       function SubscriptionDelaySubscriber(parent, source) {
-        var _this159;
+        var _this203;
 
         _classCallCheck(this, SubscriptionDelaySubscriber);
 
-        _this159 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelaySubscriber).call(this));
-        _this159.parent = parent;
-        _this159.source = source;
-        _this159.sourceSubscribed = false;
-        return _this159;
+        _this203 = _possibleConstructorReturn(this, _getPrototypeOf(SubscriptionDelaySubscriber).call(this));
+        _this203.parent = parent;
+        _this203.source = source;
+        _this203.sourceSubscribed = false;
+        return _this203;
       }
 
       _createClass2(SubscriptionDelaySubscriber, [{
@@ -98817,19 +116755,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DistinctSubscriber, _OuterSubscriber__WEB11);
 
       function DistinctSubscriber(destination, keySelector, flushes) {
-        var _this160;
+        var _this204;
 
         _classCallCheck(this, DistinctSubscriber);
 
-        _this160 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctSubscriber).call(this, destination));
-        _this160.keySelector = keySelector;
-        _this160.values = new Set();
+        _this204 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctSubscriber).call(this, destination));
+        _this204.keySelector = keySelector;
+        _this204.values = new Set();
 
         if (flushes) {
-          _this160.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this160), flushes));
+          _this204.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this204), flushes));
         }
 
-        return _this160;
+        return _this204;
       }
 
       _createClass2(DistinctSubscriber, [{
@@ -98943,19 +116881,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(DistinctUntilChangedSubscriber, _Subscriber__WEBPACK_15);
 
       function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
-        var _this161;
+        var _this205;
 
         _classCallCheck(this, DistinctUntilChangedSubscriber);
 
-        _this161 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctUntilChangedSubscriber).call(this, destination));
-        _this161.keySelector = keySelector;
-        _this161.hasKey = false;
+        _this205 = _possibleConstructorReturn(this, _getPrototypeOf(DistinctUntilChangedSubscriber).call(this, destination));
+        _this205.keySelector = keySelector;
+        _this205.hasKey = false;
 
         if (typeof compare === 'function') {
-          _this161.compare = compare;
+          _this205.compare = compare;
         }
 
-        return _this161;
+        return _this205;
       }
 
       _createClass2(DistinctUntilChangedSubscriber, [{
@@ -99140,8 +117078,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/of.js");
 
     function endWith() {
-      for (var _len34 = arguments.length, array = new Array(_len34), _key31 = 0; _key31 < _len34; _key31++) {
-        array[_key31] = arguments[_key31];
+      for (var _len35 = arguments.length, array = new Array(_len35), _key32 = 0; _key32 < _len35; _key32++) {
+        array[_key32] = arguments[_key32];
       }
 
       return function (source) {
@@ -99212,17 +117150,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(EverySubscriber, _Subscriber__WEBPACK_16);
 
       function EverySubscriber(destination, predicate, thisArg, source) {
-        var _this162;
+        var _this206;
 
         _classCallCheck(this, EverySubscriber);
 
-        _this162 = _possibleConstructorReturn(this, _getPrototypeOf(EverySubscriber).call(this, destination));
-        _this162.predicate = predicate;
-        _this162.thisArg = thisArg;
-        _this162.source = source;
-        _this162.index = 0;
-        _this162.thisArg = thisArg || _assertThisInitialized(_this162);
-        return _this162;
+        _this206 = _possibleConstructorReturn(this, _getPrototypeOf(EverySubscriber).call(this, destination));
+        _this206.predicate = predicate;
+        _this206.thisArg = thisArg;
+        _this206.source = source;
+        _this206.index = 0;
+        _this206.thisArg = thisArg || _assertThisInitialized(_this206);
+        return _this206;
       }
 
       _createClass2(EverySubscriber, [{
@@ -99322,14 +117260,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SwitchFirstSubscriber, _OuterSubscriber__WEB12);
 
       function SwitchFirstSubscriber(destination) {
-        var _this163;
+        var _this207;
 
         _classCallCheck(this, SwitchFirstSubscriber);
 
-        _this163 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchFirstSubscriber).call(this, destination));
-        _this163.hasCompleted = false;
-        _this163.hasSubscription = false;
-        return _this163;
+        _this207 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchFirstSubscriber).call(this, destination));
+        _this207.hasCompleted = false;
+        _this207.hasSubscription = false;
+        return _this207;
       }
 
       _createClass2(SwitchFirstSubscriber, [{
@@ -99459,16 +117397,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ExhaustMapSubscriber, _OuterSubscriber__WEB13);
 
       function ExhaustMapSubscriber(destination, project) {
-        var _this164;
+        var _this208;
 
         _classCallCheck(this, ExhaustMapSubscriber);
 
-        _this164 = _possibleConstructorReturn(this, _getPrototypeOf(ExhaustMapSubscriber).call(this, destination));
-        _this164.project = project;
-        _this164.hasSubscription = false;
-        _this164.hasCompleted = false;
-        _this164.index = 0;
-        return _this164;
+        _this208 = _possibleConstructorReturn(this, _getPrototypeOf(ExhaustMapSubscriber).call(this, destination));
+        _this208.project = project;
+        _this208.hasSubscription = false;
+        _this208.hasCompleted = false;
+        _this208.index = 0;
+        return _this208;
       }
 
       _createClass2(ExhaustMapSubscriber, [{
@@ -99628,23 +117566,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ExpandSubscriber, _OuterSubscriber__WEB14);
 
       function ExpandSubscriber(destination, project, concurrent, scheduler) {
-        var _this165;
+        var _this209;
 
         _classCallCheck(this, ExpandSubscriber);
 
-        _this165 = _possibleConstructorReturn(this, _getPrototypeOf(ExpandSubscriber).call(this, destination));
-        _this165.project = project;
-        _this165.concurrent = concurrent;
-        _this165.scheduler = scheduler;
-        _this165.index = 0;
-        _this165.active = 0;
-        _this165.hasCompleted = false;
+        _this209 = _possibleConstructorReturn(this, _getPrototypeOf(ExpandSubscriber).call(this, destination));
+        _this209.project = project;
+        _this209.concurrent = concurrent;
+        _this209.scheduler = scheduler;
+        _this209.index = 0;
+        _this209.active = 0;
+        _this209.hasCompleted = false;
 
         if (concurrent < Number.POSITIVE_INFINITY) {
-          _this165.buffer = [];
+          _this209.buffer = [];
         }
 
-        return _this165;
+        return _this209;
       }
 
       _createClass2(ExpandSubscriber, [{
@@ -99802,15 +117740,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FilterSubscriber, _Subscriber__WEBPACK_17);
 
       function FilterSubscriber(destination, predicate, thisArg) {
-        var _this166;
+        var _this210;
 
         _classCallCheck(this, FilterSubscriber);
 
-        _this166 = _possibleConstructorReturn(this, _getPrototypeOf(FilterSubscriber).call(this, destination));
-        _this166.predicate = predicate;
-        _this166.thisArg = thisArg;
-        _this166.count = 0;
-        return _this166;
+        _this210 = _possibleConstructorReturn(this, _getPrototypeOf(FilterSubscriber).call(this, destination));
+        _this210.predicate = predicate;
+        _this210.thisArg = thisArg;
+        _this210.count = 0;
+        return _this210;
       }
 
       _createClass2(FilterSubscriber, [{
@@ -99901,15 +117839,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FinallySubscriber, _Subscriber__WEBPACK_18);
 
       function FinallySubscriber(destination, callback) {
-        var _this167;
+        var _this211;
 
         _classCallCheck(this, FinallySubscriber);
 
-        _this167 = _possibleConstructorReturn(this, _getPrototypeOf(FinallySubscriber).call(this, destination));
+        _this211 = _possibleConstructorReturn(this, _getPrototypeOf(FinallySubscriber).call(this, destination));
 
-        _this167.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
+        _this211.add(new _Subscription__WEBPACK_IMPORTED_MODULE_1__["Subscription"](callback));
 
-        return _this167;
+        return _this211;
       }
 
       return FinallySubscriber;
@@ -99995,17 +117933,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(FindValueSubscriber, _Subscriber__WEBPACK_19);
 
       function FindValueSubscriber(destination, predicate, source, yieldIndex, thisArg) {
-        var _this168;
+        var _this212;
 
         _classCallCheck(this, FindValueSubscriber);
 
-        _this168 = _possibleConstructorReturn(this, _getPrototypeOf(FindValueSubscriber).call(this, destination));
-        _this168.predicate = predicate;
-        _this168.source = source;
-        _this168.yieldIndex = yieldIndex;
-        _this168.thisArg = thisArg;
-        _this168.index = 0;
-        return _this168;
+        _this212 = _possibleConstructorReturn(this, _getPrototypeOf(FindValueSubscriber).call(this, destination));
+        _this212.predicate = predicate;
+        _this212.source = source;
+        _this212.yieldIndex = yieldIndex;
+        _this212.thisArg = thisArg;
+        _this212.index = 0;
+        return _this212;
       }
 
       _createClass2(FindValueSubscriber, [{
@@ -100238,19 +118176,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupBySubscriber, _Subscriber__WEBPACK_20);
 
       function GroupBySubscriber(destination, keySelector, elementSelector, durationSelector, subjectSelector) {
-        var _this169;
+        var _this213;
 
         _classCallCheck(this, GroupBySubscriber);
 
-        _this169 = _possibleConstructorReturn(this, _getPrototypeOf(GroupBySubscriber).call(this, destination));
-        _this169.keySelector = keySelector;
-        _this169.elementSelector = elementSelector;
-        _this169.durationSelector = durationSelector;
-        _this169.subjectSelector = subjectSelector;
-        _this169.groups = null;
-        _this169.attemptedToUnsubscribe = false;
-        _this169.count = 0;
-        return _this169;
+        _this213 = _possibleConstructorReturn(this, _getPrototypeOf(GroupBySubscriber).call(this, destination));
+        _this213.keySelector = keySelector;
+        _this213.elementSelector = elementSelector;
+        _this213.durationSelector = durationSelector;
+        _this213.subjectSelector = subjectSelector;
+        _this213.groups = null;
+        _this213.attemptedToUnsubscribe = false;
+        _this213.count = 0;
+        return _this213;
       }
 
       _createClass2(GroupBySubscriber, [{
@@ -100368,15 +118306,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupDurationSubscriber, _Subscriber__WEBPACK_21);
 
       function GroupDurationSubscriber(key, group, parent) {
-        var _this170;
+        var _this214;
 
         _classCallCheck(this, GroupDurationSubscriber);
 
-        _this170 = _possibleConstructorReturn(this, _getPrototypeOf(GroupDurationSubscriber).call(this, group));
-        _this170.key = key;
-        _this170.group = group;
-        _this170.parent = parent;
-        return _this170;
+        _this214 = _possibleConstructorReturn(this, _getPrototypeOf(GroupDurationSubscriber).call(this, group));
+        _this214.key = key;
+        _this214.group = group;
+        _this214.parent = parent;
+        return _this214;
       }
 
       _createClass2(GroupDurationSubscriber, [{
@@ -100406,15 +118344,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(GroupedObservable, _Observable__WEBPACK_5);
 
       function GroupedObservable(key, groupSubject, refCountSubscription) {
-        var _this171;
+        var _this215;
 
         _classCallCheck(this, GroupedObservable);
 
-        _this171 = _possibleConstructorReturn(this, _getPrototypeOf(GroupedObservable).call(this));
-        _this171.key = key;
-        _this171.groupSubject = groupSubject;
-        _this171.refCountSubscription = refCountSubscription;
-        return _this171;
+        _this215 = _possibleConstructorReturn(this, _getPrototypeOf(GroupedObservable).call(this));
+        _this215.key = key;
+        _this215.groupSubject = groupSubject;
+        _this215.refCountSubscription = refCountSubscription;
+        return _this215;
       }
 
       _createClass2(GroupedObservable, [{
@@ -100442,14 +118380,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(InnerRefCountSubscription, _Subscription__WEBPAC3);
 
       function InnerRefCountSubscription(parent) {
-        var _this172;
+        var _this216;
 
         _classCallCheck(this, InnerRefCountSubscription);
 
-        _this172 = _possibleConstructorReturn(this, _getPrototypeOf(InnerRefCountSubscription).call(this));
-        _this172.parent = parent;
+        _this216 = _possibleConstructorReturn(this, _getPrototypeOf(InnerRefCountSubscription).call(this));
+        _this216.parent = parent;
         parent.count++;
-        return _this172;
+        return _this216;
       }
 
       _createClass2(InnerRefCountSubscription, [{
@@ -100773,15 +118711,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MapSubscriber, _Subscriber__WEBPACK_24);
 
       function MapSubscriber(destination, project, thisArg) {
-        var _this173;
+        var _this217;
 
         _classCallCheck(this, MapSubscriber);
 
-        _this173 = _possibleConstructorReturn(this, _getPrototypeOf(MapSubscriber).call(this, destination));
-        _this173.project = project;
-        _this173.count = 0;
-        _this173.thisArg = thisArg || _assertThisInitialized(_this173);
-        return _this173;
+        _this217 = _possibleConstructorReturn(this, _getPrototypeOf(MapSubscriber).call(this, destination));
+        _this217.project = project;
+        _this217.count = 0;
+        _this217.thisArg = thisArg || _assertThisInitialized(_this217);
+        return _this217;
       }
 
       _createClass2(MapSubscriber, [{
@@ -100864,13 +118802,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MapToSubscriber, _Subscriber__WEBPACK_25);
 
       function MapToSubscriber(destination, value) {
-        var _this174;
+        var _this218;
 
         _classCallCheck(this, MapToSubscriber);
 
-        _this174 = _possibleConstructorReturn(this, _getPrototypeOf(MapToSubscriber).call(this, destination));
-        _this174.value = value;
-        return _this174;
+        _this218 = _possibleConstructorReturn(this, _getPrototypeOf(MapToSubscriber).call(this, destination));
+        _this218.value = value;
+        return _this218;
       }
 
       _createClass2(MapToSubscriber, [{
@@ -101047,8 +118985,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/merge.js");
 
     function merge() {
-      for (var _len35 = arguments.length, observables = new Array(_len35), _key32 = 0; _key32 < _len35; _key32++) {
-        observables[_key32] = arguments[_key32];
+      for (var _len36 = arguments.length, observables = new Array(_len36), _key33 = 0; _key33 < _len36; _key33++) {
+        observables[_key33] = arguments[_key33];
       }
 
       return function (source) {
@@ -101211,20 +119149,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MergeMapSubscriber, _OuterSubscriber__WEB15);
 
       function MergeMapSubscriber(destination, project) {
-        var _this175;
+        var _this219;
 
         var concurrent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, MergeMapSubscriber);
 
-        _this175 = _possibleConstructorReturn(this, _getPrototypeOf(MergeMapSubscriber).call(this, destination));
-        _this175.project = project;
-        _this175.concurrent = concurrent;
-        _this175.hasCompleted = false;
-        _this175.buffer = [];
-        _this175.active = 0;
-        _this175.index = 0;
-        return _this175;
+        _this219 = _possibleConstructorReturn(this, _getPrototypeOf(MergeMapSubscriber).call(this, destination));
+        _this219.project = project;
+        _this219.concurrent = concurrent;
+        _this219.hasCompleted = false;
+        _this219.buffer = [];
+        _this219.active = 0;
+        _this219.index = 0;
+        return _this219;
       }
 
       _createClass2(MergeMapSubscriber, [{
@@ -101435,20 +119373,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(MergeScanSubscriber, _OuterSubscriber__WEB16);
 
       function MergeScanSubscriber(destination, accumulator, acc, concurrent) {
-        var _this176;
+        var _this220;
 
         _classCallCheck(this, MergeScanSubscriber);
 
-        _this176 = _possibleConstructorReturn(this, _getPrototypeOf(MergeScanSubscriber).call(this, destination));
-        _this176.accumulator = accumulator;
-        _this176.acc = acc;
-        _this176.concurrent = concurrent;
-        _this176.hasValue = false;
-        _this176.hasCompleted = false;
-        _this176.buffer = [];
-        _this176.active = 0;
-        _this176.index = 0;
-        return _this176;
+        _this220 = _possibleConstructorReturn(this, _getPrototypeOf(MergeScanSubscriber).call(this, destination));
+        _this220.accumulator = accumulator;
+        _this220.acc = acc;
+        _this220.concurrent = concurrent;
+        _this220.hasValue = false;
+        _this220.hasCompleted = false;
+        _this220.buffer = [];
+        _this220.active = 0;
+        _this220.index = 0;
+        return _this220;
       }
 
       _createClass2(MergeScanSubscriber, [{
@@ -101742,16 +119680,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ObserveOnSubscriber, _Subscriber__WEBPACK_27);
 
       function ObserveOnSubscriber(destination, scheduler) {
-        var _this177;
+        var _this221;
 
         var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
         _classCallCheck(this, ObserveOnSubscriber);
 
-        _this177 = _possibleConstructorReturn(this, _getPrototypeOf(ObserveOnSubscriber).call(this, destination));
-        _this177.scheduler = scheduler;
-        _this177.delay = delay;
-        return _this177;
+        _this221 = _possibleConstructorReturn(this, _getPrototypeOf(ObserveOnSubscriber).call(this, destination));
+        _this221.scheduler = scheduler;
+        _this221.delay = delay;
+        return _this221;
       }
 
       _createClass2(ObserveOnSubscriber, [{
@@ -101858,8 +119796,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function onErrorResumeNext() {
-      for (var _len36 = arguments.length, nextSources = new Array(_len36), _key33 = 0; _key33 < _len36; _key33++) {
-        nextSources[_key33] = arguments[_key33];
+      for (var _len37 = arguments.length, nextSources = new Array(_len37), _key34 = 0; _key34 < _len37; _key34++) {
+        nextSources[_key34] = arguments[_key34];
       }
 
       if (nextSources.length === 1 && Object(_util_isArray__WEBPACK_IMPORTED_MODULE_1__["isArray"])(nextSources[0])) {
@@ -101872,8 +119810,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function onErrorResumeNextStatic() {
-      for (var _len37 = arguments.length, nextSources = new Array(_len37), _key34 = 0; _key34 < _len37; _key34++) {
-        nextSources[_key34] = arguments[_key34];
+      for (var _len38 = arguments.length, nextSources = new Array(_len38), _key35 = 0; _key35 < _len38; _key35++) {
+        nextSources[_key35] = arguments[_key35];
       }
 
       var source = null;
@@ -101911,14 +119849,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(OnErrorResumeNextSubscriber, _OuterSubscriber__WEB17);
 
       function OnErrorResumeNextSubscriber(destination, nextSources) {
-        var _this178;
+        var _this222;
 
         _classCallCheck(this, OnErrorResumeNextSubscriber);
 
-        _this178 = _possibleConstructorReturn(this, _getPrototypeOf(OnErrorResumeNextSubscriber).call(this, destination));
-        _this178.destination = destination;
-        _this178.nextSources = nextSources;
-        return _this178;
+        _this222 = _possibleConstructorReturn(this, _getPrototypeOf(OnErrorResumeNextSubscriber).call(this, destination));
+        _this222.destination = destination;
+        _this222.nextSources = nextSources;
+        return _this222;
       }
 
       _createClass2(OnErrorResumeNextSubscriber, [{
@@ -102025,13 +119963,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(PairwiseSubscriber, _Subscriber__WEBPACK_28);
 
       function PairwiseSubscriber(destination) {
-        var _this179;
+        var _this223;
 
         _classCallCheck(this, PairwiseSubscriber);
 
-        _this179 = _possibleConstructorReturn(this, _getPrototypeOf(PairwiseSubscriber).call(this, destination));
-        _this179.hasPrev = false;
-        return _this179;
+        _this223 = _possibleConstructorReturn(this, _getPrototypeOf(PairwiseSubscriber).call(this, destination));
+        _this223.hasPrev = false;
+        return _this223;
       }
 
       _createClass2(PairwiseSubscriber, [{
@@ -102129,8 +120067,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/operators/map.js");
 
     function pluck() {
-      for (var _len38 = arguments.length, properties = new Array(_len38), _key35 = 0; _key35 < _len38; _key35++) {
-        properties[_key35] = arguments[_key35];
+      for (var _len39 = arguments.length, properties = new Array(_len39), _key36 = 0; _key36 < _len39; _key36++) {
+        properties[_key36] = arguments[_key36];
       }
 
       var length = properties.length;
@@ -102377,8 +120315,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/race.js");
 
     function race() {
-      for (var _len39 = arguments.length, observables = new Array(_len39), _key36 = 0; _key36 < _len39; _key36++) {
-        observables[_key36] = arguments[_key36];
+      for (var _len40 = arguments.length, observables = new Array(_len40), _key37 = 0; _key37 < _len40; _key37++) {
+        observables[_key37] = arguments[_key37];
       }
 
       return function raceOperatorFunction(source) {
@@ -102522,13 +120460,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RefCountSubscriber, _Subscriber__WEBPACK_29);
 
       function RefCountSubscriber(destination, connectable) {
-        var _this180;
+        var _this224;
 
         _classCallCheck(this, RefCountSubscriber);
 
-        _this180 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
-        _this180.connectable = connectable;
-        return _this180;
+        _this224 = _possibleConstructorReturn(this, _getPrototypeOf(RefCountSubscriber).call(this, destination));
+        _this224.connectable = connectable;
+        return _this224;
       }
 
       _createClass2(RefCountSubscriber, [{
@@ -102644,14 +120582,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RepeatSubscriber, _Subscriber__WEBPACK_30);
 
       function RepeatSubscriber(destination, count, source) {
-        var _this181;
+        var _this225;
 
         _classCallCheck(this, RepeatSubscriber);
 
-        _this181 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatSubscriber).call(this, destination));
-        _this181.count = count;
-        _this181.source = source;
-        return _this181;
+        _this225 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatSubscriber).call(this, destination));
+        _this225.count = count;
+        _this225.source = source;
+        return _this225;
       }
 
       _createClass2(RepeatSubscriber, [{
@@ -102748,15 +120686,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RepeatWhenSubscriber, _OuterSubscriber__WEB18);
 
       function RepeatWhenSubscriber(destination, notifier, source) {
-        var _this182;
+        var _this226;
 
         _classCallCheck(this, RepeatWhenSubscriber);
 
-        _this182 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatWhenSubscriber).call(this, destination));
-        _this182.notifier = notifier;
-        _this182.source = source;
-        _this182.sourceIsBeingSubscribedTo = true;
-        return _this182;
+        _this226 = _possibleConstructorReturn(this, _getPrototypeOf(RepeatWhenSubscriber).call(this, destination));
+        _this226.notifier = notifier;
+        _this226.source = source;
+        _this226.sourceIsBeingSubscribedTo = true;
+        return _this226;
       }
 
       _createClass2(RepeatWhenSubscriber, [{
@@ -102904,14 +120842,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RetrySubscriber, _Subscriber__WEBPACK_31);
 
       function RetrySubscriber(destination, count, source) {
-        var _this183;
+        var _this227;
 
         _classCallCheck(this, RetrySubscriber);
 
-        _this183 = _possibleConstructorReturn(this, _getPrototypeOf(RetrySubscriber).call(this, destination));
-        _this183.count = count;
-        _this183.source = source;
-        return _this183;
+        _this227 = _possibleConstructorReturn(this, _getPrototypeOf(RetrySubscriber).call(this, destination));
+        _this227.count = count;
+        _this227.source = source;
+        return _this227;
       }
 
       _createClass2(RetrySubscriber, [{
@@ -103009,14 +120947,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(RetryWhenSubscriber, _OuterSubscriber__WEB19);
 
       function RetryWhenSubscriber(destination, notifier, source) {
-        var _this184;
+        var _this228;
 
         _classCallCheck(this, RetryWhenSubscriber);
 
-        _this184 = _possibleConstructorReturn(this, _getPrototypeOf(RetryWhenSubscriber).call(this, destination));
-        _this184.notifier = notifier;
-        _this184.source = source;
-        return _this184;
+        _this228 = _possibleConstructorReturn(this, _getPrototypeOf(RetryWhenSubscriber).call(this, destination));
+        _this228.notifier = notifier;
+        _this228.source = source;
+        return _this228;
       }
 
       _createClass2(RetryWhenSubscriber, [{
@@ -103155,13 +121093,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SampleSubscriber, _OuterSubscriber__WEB20);
 
       function SampleSubscriber() {
-        var _this185;
+        var _this229;
 
         _classCallCheck(this, SampleSubscriber);
 
-        _this185 = _possibleConstructorReturn(this, _getPrototypeOf(SampleSubscriber).apply(this, arguments));
-        _this185.hasValue = false;
-        return _this185;
+        _this229 = _possibleConstructorReturn(this, _getPrototypeOf(SampleSubscriber).apply(this, arguments));
+        _this229.hasValue = false;
+        return _this229;
       }
 
       _createClass2(SampleSubscriber, [{
@@ -103262,21 +121200,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SampleTimeSubscriber, _Subscriber__WEBPACK_32);
 
       function SampleTimeSubscriber(destination, period, scheduler) {
-        var _this186;
+        var _this230;
 
         _classCallCheck(this, SampleTimeSubscriber);
 
-        _this186 = _possibleConstructorReturn(this, _getPrototypeOf(SampleTimeSubscriber).call(this, destination));
-        _this186.period = period;
-        _this186.scheduler = scheduler;
-        _this186.hasValue = false;
+        _this230 = _possibleConstructorReturn(this, _getPrototypeOf(SampleTimeSubscriber).call(this, destination));
+        _this230.period = period;
+        _this230.scheduler = scheduler;
+        _this230.hasValue = false;
 
-        _this186.add(scheduler.schedule(dispatchNotification, period, {
-          subscriber: _assertThisInitialized(_this186),
+        _this230.add(scheduler.schedule(dispatchNotification, period, {
+          subscriber: _assertThisInitialized(_this230),
           period: period
         }));
 
-        return _this186;
+        return _this230;
       }
 
       _createClass2(SampleTimeSubscriber, [{
@@ -103376,16 +121314,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ScanSubscriber, _Subscriber__WEBPACK_33);
 
       function ScanSubscriber(destination, accumulator, _seed, hasSeed) {
-        var _this187;
+        var _this231;
 
         _classCallCheck(this, ScanSubscriber);
 
-        _this187 = _possibleConstructorReturn(this, _getPrototypeOf(ScanSubscriber).call(this, destination));
-        _this187.accumulator = accumulator;
-        _this187._seed = _seed;
-        _this187.hasSeed = hasSeed;
-        _this187.index = 0;
-        return _this187;
+        _this231 = _possibleConstructorReturn(this, _getPrototypeOf(ScanSubscriber).call(this, destination));
+        _this231.accumulator = accumulator;
+        _this231._seed = _seed;
+        _this231.hasSeed = hasSeed;
+        _this231.index = 0;
+        return _this231;
       }
 
       _createClass2(ScanSubscriber, [{
@@ -103501,20 +121439,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SequenceEqualSubscriber, _Subscriber__WEBPACK_34);
 
       function SequenceEqualSubscriber(destination, compareTo, comparator) {
-        var _this188;
+        var _this232;
 
         _classCallCheck(this, SequenceEqualSubscriber);
 
-        _this188 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualSubscriber).call(this, destination));
-        _this188.compareTo = compareTo;
-        _this188.comparator = comparator;
-        _this188._a = [];
-        _this188._b = [];
-        _this188._oneComplete = false;
+        _this232 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualSubscriber).call(this, destination));
+        _this232.compareTo = compareTo;
+        _this232.comparator = comparator;
+        _this232._a = [];
+        _this232._b = [];
+        _this232._oneComplete = false;
 
-        _this188.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this188))));
+        _this232.destination.add(compareTo.subscribe(new SequenceEqualCompareToSubscriber(destination, _assertThisInitialized(_this232))));
 
-        return _this188;
+        return _this232;
       }
 
       _createClass2(SequenceEqualSubscriber, [{
@@ -103602,13 +121540,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SequenceEqualCompareToSubscriber, _Subscriber__WEBPACK_35);
 
       function SequenceEqualCompareToSubscriber(destination, parent) {
-        var _this189;
+        var _this233;
 
         _classCallCheck(this, SequenceEqualCompareToSubscriber);
 
-        _this189 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualCompareToSubscriber).call(this, destination));
-        _this189.parent = parent;
-        return _this189;
+        _this233 = _possibleConstructorReturn(this, _getPrototypeOf(SequenceEqualCompareToSubscriber).call(this, destination));
+        _this233.parent = parent;
+        return _this233;
       }
 
       _createClass2(SequenceEqualCompareToSubscriber, [{
@@ -103850,16 +121788,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SingleSubscriber, _Subscriber__WEBPACK_36);
 
       function SingleSubscriber(destination, predicate, source) {
-        var _this190;
+        var _this234;
 
         _classCallCheck(this, SingleSubscriber);
 
-        _this190 = _possibleConstructorReturn(this, _getPrototypeOf(SingleSubscriber).call(this, destination));
-        _this190.predicate = predicate;
-        _this190.source = source;
-        _this190.seenValue = false;
-        _this190.index = 0;
-        return _this190;
+        _this234 = _possibleConstructorReturn(this, _getPrototypeOf(SingleSubscriber).call(this, destination));
+        _this234.predicate = predicate;
+        _this234.source = source;
+        _this234.seenValue = false;
+        _this234.index = 0;
+        return _this234;
       }
 
       _createClass2(SingleSubscriber, [{
@@ -103972,14 +121910,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipSubscriber, _Subscriber__WEBPACK_37);
 
       function SkipSubscriber(destination, total) {
-        var _this191;
+        var _this235;
 
         _classCallCheck(this, SkipSubscriber);
 
-        _this191 = _possibleConstructorReturn(this, _getPrototypeOf(SkipSubscriber).call(this, destination));
-        _this191.total = total;
-        _this191.count = 0;
-        return _this191;
+        _this235 = _possibleConstructorReturn(this, _getPrototypeOf(SkipSubscriber).call(this, destination));
+        _this235.total = total;
+        _this235.count = 0;
+        return _this235;
       }
 
       _createClass2(SkipSubscriber, [{
@@ -104069,15 +122007,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipLastSubscriber, _Subscriber__WEBPACK_38);
 
       function SkipLastSubscriber(destination, _skipCount) {
-        var _this192;
+        var _this236;
 
         _classCallCheck(this, SkipLastSubscriber);
 
-        _this192 = _possibleConstructorReturn(this, _getPrototypeOf(SkipLastSubscriber).call(this, destination));
-        _this192._skipCount = _skipCount;
-        _this192._count = 0;
-        _this192._ring = new Array(_skipCount);
-        return _this192;
+        _this236 = _possibleConstructorReturn(this, _getPrototypeOf(SkipLastSubscriber).call(this, destination));
+        _this236._skipCount = _skipCount;
+        _this236._count = 0;
+        _this236._ring = new Array(_skipCount);
+        return _this236;
       }
 
       _createClass2(SkipLastSubscriber, [{
@@ -104174,26 +122112,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipUntilSubscriber, _OuterSubscriber__WEB21);
 
       function SkipUntilSubscriber(destination, notifier) {
-        var _this193;
+        var _this237;
 
         _classCallCheck(this, SkipUntilSubscriber);
 
-        _this193 = _possibleConstructorReturn(this, _getPrototypeOf(SkipUntilSubscriber).call(this, destination));
-        _this193.hasValue = false;
-        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this193), undefined, undefined);
+        _this237 = _possibleConstructorReturn(this, _getPrototypeOf(SkipUntilSubscriber).call(this, destination));
+        _this237.hasValue = false;
+        var innerSubscriber = new _InnerSubscriber__WEBPACK_IMPORTED_MODULE_1__["InnerSubscriber"](_assertThisInitialized(_this237), undefined, undefined);
 
-        _this193.add(innerSubscriber);
+        _this237.add(innerSubscriber);
 
-        _this193.innerSubscription = innerSubscriber;
-        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this193), notifier, undefined, undefined, innerSubscriber);
+        _this237.innerSubscription = innerSubscriber;
+        var innerSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_2__["subscribeToResult"])(_assertThisInitialized(_this237), notifier, undefined, undefined, innerSubscriber);
 
         if (innerSubscription !== innerSubscriber) {
-          _this193.add(innerSubscription);
+          _this237.add(innerSubscription);
 
-          _this193.innerSubscription = innerSubscription;
+          _this237.innerSubscription = innerSubscription;
         }
 
-        return _this193;
+        return _this237;
       }
 
       _createClass2(SkipUntilSubscriber, [{
@@ -104281,15 +122219,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SkipWhileSubscriber, _Subscriber__WEBPACK_39);
 
       function SkipWhileSubscriber(destination, predicate) {
-        var _this194;
+        var _this238;
 
         _classCallCheck(this, SkipWhileSubscriber);
 
-        _this194 = _possibleConstructorReturn(this, _getPrototypeOf(SkipWhileSubscriber).call(this, destination));
-        _this194.predicate = predicate;
-        _this194.skipping = true;
-        _this194.index = 0;
-        return _this194;
+        _this238 = _possibleConstructorReturn(this, _getPrototypeOf(SkipWhileSubscriber).call(this, destination));
+        _this238.predicate = predicate;
+        _this238.skipping = true;
+        _this238.index = 0;
+        return _this238;
       }
 
       _createClass2(SkipWhileSubscriber, [{
@@ -104357,8 +122295,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/isScheduler.js");
 
     function startWith() {
-      for (var _len40 = arguments.length, array = new Array(_len40), _key37 = 0; _key37 < _len40; _key37++) {
-        array[_key37] = arguments[_key37];
+      for (var _len41 = arguments.length, array = new Array(_len41), _key38 = 0; _key38 < _len41; _key38++) {
+        array[_key38] = arguments[_key38];
       }
 
       var scheduler = array[array.length - 1];
@@ -104567,14 +122505,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(SwitchMapSubscriber, _OuterSubscriber__WEB22);
 
       function SwitchMapSubscriber(destination, project) {
-        var _this195;
+        var _this239;
 
         _classCallCheck(this, SwitchMapSubscriber);
 
-        _this195 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchMapSubscriber).call(this, destination));
-        _this195.project = project;
-        _this195.index = 0;
-        return _this195;
+        _this239 = _possibleConstructorReturn(this, _getPrototypeOf(SwitchMapSubscriber).call(this, destination));
+        _this239.project = project;
+        _this239.index = 0;
+        return _this239;
       }
 
       _createClass2(SwitchMapSubscriber, [{
@@ -104766,14 +122704,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeSubscriber, _Subscriber__WEBPACK_40);
 
       function TakeSubscriber(destination, total) {
-        var _this196;
+        var _this240;
 
         _classCallCheck(this, TakeSubscriber);
 
-        _this196 = _possibleConstructorReturn(this, _getPrototypeOf(TakeSubscriber).call(this, destination));
-        _this196.total = total;
-        _this196.count = 0;
-        return _this196;
+        _this240 = _possibleConstructorReturn(this, _getPrototypeOf(TakeSubscriber).call(this, destination));
+        _this240.total = total;
+        _this240.count = 0;
+        return _this240;
       }
 
       _createClass2(TakeSubscriber, [{
@@ -104877,15 +122815,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeLastSubscriber, _Subscriber__WEBPACK_41);
 
       function TakeLastSubscriber(destination, total) {
-        var _this197;
+        var _this241;
 
         _classCallCheck(this, TakeLastSubscriber);
 
-        _this197 = _possibleConstructorReturn(this, _getPrototypeOf(TakeLastSubscriber).call(this, destination));
-        _this197.total = total;
-        _this197.ring = new Array();
-        _this197.count = 0;
-        return _this197;
+        _this241 = _possibleConstructorReturn(this, _getPrototypeOf(TakeLastSubscriber).call(this, destination));
+        _this241.total = total;
+        _this241.ring = new Array();
+        _this241.count = 0;
+        return _this241;
       }
 
       _createClass2(TakeLastSubscriber, [{
@@ -105000,13 +122938,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeUntilSubscriber, _OuterSubscriber__WEB23);
 
       function TakeUntilSubscriber(destination) {
-        var _this198;
+        var _this242;
 
         _classCallCheck(this, TakeUntilSubscriber);
 
-        _this198 = _possibleConstructorReturn(this, _getPrototypeOf(TakeUntilSubscriber).call(this, destination));
-        _this198.seenValue = false;
-        return _this198;
+        _this242 = _possibleConstructorReturn(this, _getPrototypeOf(TakeUntilSubscriber).call(this, destination));
+        _this242.seenValue = false;
+        return _this242;
       }
 
       _createClass2(TakeUntilSubscriber, [{
@@ -105086,15 +123024,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TakeWhileSubscriber, _Subscriber__WEBPACK_42);
 
       function TakeWhileSubscriber(destination, predicate, inclusive) {
-        var _this199;
+        var _this243;
 
         _classCallCheck(this, TakeWhileSubscriber);
 
-        _this199 = _possibleConstructorReturn(this, _getPrototypeOf(TakeWhileSubscriber).call(this, destination));
-        _this199.predicate = predicate;
-        _this199.inclusive = inclusive;
-        _this199.index = 0;
-        return _this199;
+        _this243 = _possibleConstructorReturn(this, _getPrototypeOf(TakeWhileSubscriber).call(this, destination));
+        _this243.predicate = predicate;
+        _this243.inclusive = inclusive;
+        _this243.index = 0;
+        return _this243;
       }
 
       _createClass2(TakeWhileSubscriber, [{
@@ -105207,28 +123145,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TapSubscriber, _Subscriber__WEBPACK_43);
 
       function TapSubscriber(destination, observerOrNext, error, complete) {
-        var _this200;
+        var _this244;
 
         _classCallCheck(this, TapSubscriber);
 
-        _this200 = _possibleConstructorReturn(this, _getPrototypeOf(TapSubscriber).call(this, destination));
-        _this200._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this200._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this200._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this200._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-        _this200._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this244 = _possibleConstructorReturn(this, _getPrototypeOf(TapSubscriber).call(this, destination));
+        _this244._tapNext = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this244._tapError = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this244._tapComplete = _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this244._tapError = error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+        _this244._tapComplete = complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
 
         if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(observerOrNext)) {
-          _this200._context = _assertThisInitialized(_this200);
-          _this200._tapNext = observerOrNext;
+          _this244._context = _assertThisInitialized(_this244);
+          _this244._tapNext = observerOrNext;
         } else if (observerOrNext) {
-          _this200._context = observerOrNext;
-          _this200._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this200._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
-          _this200._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this244._context = observerOrNext;
+          _this244._tapNext = observerOrNext.next || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this244._tapError = observerOrNext.error || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
+          _this244._tapComplete = observerOrNext.complete || _util_noop__WEBPACK_IMPORTED_MODULE_1__["noop"];
         }
 
-        return _this200;
+        return _this244;
       }
 
       _createClass2(TapSubscriber, [{
@@ -105353,17 +123291,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrottleSubscriber, _OuterSubscriber__WEB24);
 
       function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-        var _this201;
+        var _this245;
 
         _classCallCheck(this, ThrottleSubscriber);
 
-        _this201 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleSubscriber).call(this, destination));
-        _this201.destination = destination;
-        _this201.durationSelector = durationSelector;
-        _this201._leading = _leading;
-        _this201._trailing = _trailing;
-        _this201._hasValue = false;
-        return _this201;
+        _this245 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleSubscriber).call(this, destination));
+        _this245.destination = destination;
+        _this245.durationSelector = durationSelector;
+        _this245._leading = _leading;
+        _this245._trailing = _trailing;
+        _this245._hasValue = false;
+        return _this245;
       }
 
       _createClass2(ThrottleSubscriber, [{
@@ -105522,18 +123460,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrottleTimeSubscriber, _Subscriber__WEBPACK_44);
 
       function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-        var _this202;
+        var _this246;
 
         _classCallCheck(this, ThrottleTimeSubscriber);
 
-        _this202 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleTimeSubscriber).call(this, destination));
-        _this202.duration = duration;
-        _this202.scheduler = scheduler;
-        _this202.leading = leading;
-        _this202.trailing = trailing;
-        _this202._hasTrailingValue = false;
-        _this202._trailingValue = null;
-        return _this202;
+        _this246 = _possibleConstructorReturn(this, _getPrototypeOf(ThrottleTimeSubscriber).call(this, destination));
+        _this246.duration = duration;
+        _this246.scheduler = scheduler;
+        _this246.leading = leading;
+        _this246.trailing = trailing;
+        _this246._hasTrailingValue = false;
+        _this246._trailingValue = null;
+        return _this246;
       }
 
       _createClass2(ThrottleTimeSubscriber, [{
@@ -105662,14 +123600,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(ThrowIfEmptySubscriber, _Subscriber__WEBPACK_45);
 
       function ThrowIfEmptySubscriber(destination, errorFactory) {
-        var _this203;
+        var _this247;
 
         _classCallCheck(this, ThrowIfEmptySubscriber);
 
-        _this203 = _possibleConstructorReturn(this, _getPrototypeOf(ThrowIfEmptySubscriber).call(this, destination));
-        _this203.errorFactory = errorFactory;
-        _this203.hasValue = false;
-        return _this203;
+        _this247 = _possibleConstructorReturn(this, _getPrototypeOf(ThrowIfEmptySubscriber).call(this, destination));
+        _this247.errorFactory = errorFactory;
+        _this247.hasValue = false;
+        return _this247;
       }
 
       _createClass2(ThrowIfEmptySubscriber, [{
@@ -105928,20 +123866,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(TimeoutWithSubscriber, _OuterSubscriber__WEB25);
 
       function TimeoutWithSubscriber(destination, absoluteTimeout, waitFor, withObservable, scheduler) {
-        var _this204;
+        var _this248;
 
         _classCallCheck(this, TimeoutWithSubscriber);
 
-        _this204 = _possibleConstructorReturn(this, _getPrototypeOf(TimeoutWithSubscriber).call(this, destination));
-        _this204.absoluteTimeout = absoluteTimeout;
-        _this204.waitFor = waitFor;
-        _this204.withObservable = withObservable;
-        _this204.scheduler = scheduler;
-        _this204.action = null;
+        _this248 = _possibleConstructorReturn(this, _getPrototypeOf(TimeoutWithSubscriber).call(this, destination));
+        _this248.absoluteTimeout = absoluteTimeout;
+        _this248.waitFor = waitFor;
+        _this248.withObservable = withObservable;
+        _this248.scheduler = scheduler;
+        _this248.action = null;
 
-        _this204.scheduleTimeout();
+        _this248.scheduleTimeout();
 
-        return _this204;
+        return _this248;
       }
 
       _createClass2(TimeoutWithSubscriber, [{
@@ -106164,14 +124102,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowSubscriber, _OuterSubscriber__WEB26);
 
       function WindowSubscriber(destination) {
-        var _this205;
+        var _this249;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this205 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
-        _this205.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
-        destination.next(_this205.window);
-        return _this205;
+        _this249 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
+        _this249.window = new _Subject__WEBPACK_IMPORTED_MODULE_0__["Subject"]();
+        destination.next(_this249.window);
+        return _this249;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -106298,18 +124236,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowCountSubscriber, _Subscriber__WEBPACK_46);
 
       function WindowCountSubscriber(destination, windowSize, startWindowEvery) {
-        var _this206;
+        var _this250;
 
         _classCallCheck(this, WindowCountSubscriber);
 
-        _this206 = _possibleConstructorReturn(this, _getPrototypeOf(WindowCountSubscriber).call(this, destination));
-        _this206.destination = destination;
-        _this206.windowSize = windowSize;
-        _this206.startWindowEvery = startWindowEvery;
-        _this206.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
-        _this206.count = 0;
-        destination.next(_this206.windows[0]);
-        return _this206;
+        _this250 = _possibleConstructorReturn(this, _getPrototypeOf(WindowCountSubscriber).call(this, destination));
+        _this250.destination = destination;
+        _this250.windowSize = windowSize;
+        _this250.startWindowEvery = startWindowEvery;
+        _this250.windows = [new _Subject__WEBPACK_IMPORTED_MODULE_1__["Subject"]()];
+        _this250.count = 0;
+        destination.next(_this250.windows[0]);
+        return _this250;
       }
 
       _createClass2(WindowCountSubscriber, [{
@@ -106483,13 +124421,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(CountedSubject, _Subject__WEBPACK_IMP5);
 
       function CountedSubject() {
-        var _this207;
+        var _this251;
 
         _classCallCheck(this, CountedSubject);
 
-        _this207 = _possibleConstructorReturn(this, _getPrototypeOf(CountedSubject).apply(this, arguments));
-        _this207._numberOfNextedValues = 0;
-        return _this207;
+        _this251 = _possibleConstructorReturn(this, _getPrototypeOf(CountedSubject).apply(this, arguments));
+        _this251._numberOfNextedValues = 0;
+        return _this251;
       }
 
       _createClass2(CountedSubject, [{
@@ -106515,47 +124453,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowTimeSubscriber, _Subscriber__WEBPACK_47);
 
       function WindowTimeSubscriber(destination, windowTimeSpan, windowCreationInterval, maxWindowSize, scheduler) {
-        var _this208;
+        var _this252;
 
         _classCallCheck(this, WindowTimeSubscriber);
 
-        _this208 = _possibleConstructorReturn(this, _getPrototypeOf(WindowTimeSubscriber).call(this, destination));
-        _this208.destination = destination;
-        _this208.windowTimeSpan = windowTimeSpan;
-        _this208.windowCreationInterval = windowCreationInterval;
-        _this208.maxWindowSize = maxWindowSize;
-        _this208.scheduler = scheduler;
-        _this208.windows = [];
+        _this252 = _possibleConstructorReturn(this, _getPrototypeOf(WindowTimeSubscriber).call(this, destination));
+        _this252.destination = destination;
+        _this252.windowTimeSpan = windowTimeSpan;
+        _this252.windowCreationInterval = windowCreationInterval;
+        _this252.maxWindowSize = maxWindowSize;
+        _this252.scheduler = scheduler;
+        _this252.windows = [];
 
-        var window = _this208.openWindow();
+        var window = _this252.openWindow();
 
         if (windowCreationInterval !== null && windowCreationInterval >= 0) {
           var closeState = {
-            subscriber: _assertThisInitialized(_this208),
+            subscriber: _assertThisInitialized(_this252),
             window: window,
             context: null
           };
           var creationState = {
             windowTimeSpan: windowTimeSpan,
             windowCreationInterval: windowCreationInterval,
-            subscriber: _assertThisInitialized(_this208),
+            subscriber: _assertThisInitialized(_this252),
             scheduler: scheduler
           };
 
-          _this208.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
+          _this252.add(scheduler.schedule(dispatchWindowClose, windowTimeSpan, closeState));
 
-          _this208.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
+          _this252.add(scheduler.schedule(dispatchWindowCreation, windowCreationInterval, creationState));
         } else {
           var timeSpanOnlyState = {
-            subscriber: _assertThisInitialized(_this208),
+            subscriber: _assertThisInitialized(_this252),
             window: window,
             windowTimeSpan: windowTimeSpan
           };
 
-          _this208.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
+          _this252.add(scheduler.schedule(dispatchWindowTimeSpanOnly, windowTimeSpan, timeSpanOnlyState));
         }
 
-        return _this208;
+        return _this252;
       }
 
       _createClass2(WindowTimeSubscriber, [{
@@ -106749,18 +124687,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowToggleSubscriber, _OuterSubscriber__WEB27);
 
       function WindowToggleSubscriber(destination, openings, closingSelector) {
-        var _this209;
+        var _this253;
 
         _classCallCheck(this, WindowToggleSubscriber);
 
-        _this209 = _possibleConstructorReturn(this, _getPrototypeOf(WindowToggleSubscriber).call(this, destination));
-        _this209.openings = openings;
-        _this209.closingSelector = closingSelector;
-        _this209.contexts = [];
+        _this253 = _possibleConstructorReturn(this, _getPrototypeOf(WindowToggleSubscriber).call(this, destination));
+        _this253.openings = openings;
+        _this253.closingSelector = closingSelector;
+        _this253.contexts = [];
 
-        _this209.add(_this209.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this209), openings, openings));
+        _this253.add(_this253.openSubscription = Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_3__["subscribeToResult"])(_assertThisInitialized(_this253), openings, openings));
 
-        return _this209;
+        return _this253;
       }
 
       _createClass2(WindowToggleSubscriber, [{
@@ -106769,9 +124707,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var contexts = this.contexts;
 
           if (contexts) {
-            var _len41 = contexts.length;
+            var _len42 = contexts.length;
 
-            for (var i = 0; i < _len41; i++) {
+            for (var i = 0; i < _len42; i++) {
               contexts[i].window.next(value);
             }
           }
@@ -106783,10 +124721,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len42 = contexts.length;
+            var _len43 = contexts.length;
             var index = -1;
 
-            while (++index < _len42) {
+            while (++index < _len43) {
               var context = contexts[index];
               context.window.error(err);
               context.subscription.unsubscribe();
@@ -106802,10 +124740,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len43 = contexts.length;
+            var _len44 = contexts.length;
             var index = -1;
 
-            while (++index < _len43) {
+            while (++index < _len44) {
               var context = contexts[index];
               context.window.complete();
               context.subscription.unsubscribe();
@@ -106821,10 +124759,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.contexts = null;
 
           if (contexts) {
-            var _len44 = contexts.length;
+            var _len45 = contexts.length;
             var index = -1;
 
-            while (++index < _len44) {
+            while (++index < _len45) {
               var context = contexts[index];
               context.window.unsubscribe();
               context.subscription.unsubscribe();
@@ -106971,17 +124909,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WindowSubscriber, _OuterSubscriber__WEB28);
 
       function WindowSubscriber(destination, closingSelector) {
-        var _this210;
+        var _this254;
 
         _classCallCheck(this, WindowSubscriber);
 
-        _this210 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
-        _this210.destination = destination;
-        _this210.closingSelector = closingSelector;
+        _this254 = _possibleConstructorReturn(this, _getPrototypeOf(WindowSubscriber).call(this, destination));
+        _this254.destination = destination;
+        _this254.closingSelector = closingSelector;
 
-        _this210.openWindow();
+        _this254.openWindow();
 
-        return _this210;
+        return _this254;
       }
 
       _createClass2(WindowSubscriber, [{
@@ -107098,8 +125036,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/subscribeToResult.js");
 
     function withLatestFrom() {
-      for (var _len45 = arguments.length, args = new Array(_len45), _key38 = 0; _key38 < _len45; _key38++) {
-        args[_key38] = arguments[_key38];
+      for (var _len46 = arguments.length, args = new Array(_len46), _key39 = 0; _key39 < _len46; _key39++) {
+        args[_key39] = arguments[_key39];
       }
 
       return function (source) {
@@ -107140,28 +125078,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(WithLatestFromSubscriber, _OuterSubscriber__WEB29);
 
       function WithLatestFromSubscriber(destination, observables, project) {
-        var _this211;
+        var _this255;
 
         _classCallCheck(this, WithLatestFromSubscriber);
 
-        _this211 = _possibleConstructorReturn(this, _getPrototypeOf(WithLatestFromSubscriber).call(this, destination));
-        _this211.observables = observables;
-        _this211.project = project;
-        _this211.toRespond = [];
+        _this255 = _possibleConstructorReturn(this, _getPrototypeOf(WithLatestFromSubscriber).call(this, destination));
+        _this255.observables = observables;
+        _this255.project = project;
+        _this255.toRespond = [];
         var len = observables.length;
-        _this211.values = new Array(len);
+        _this255.values = new Array(len);
 
         for (var i = 0; i < len; i++) {
-          _this211.toRespond.push(i);
+          _this255.toRespond.push(i);
         }
 
-        for (var _i24 = 0; _i24 < len; _i24++) {
-          var observable = observables[_i24];
+        for (var _i28 = 0; _i28 < len; _i28++) {
+          var observable = observables[_i28];
 
-          _this211.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this211), observable, observable, _i24));
+          _this255.add(Object(_util_subscribeToResult__WEBPACK_IMPORTED_MODULE_1__["subscribeToResult"])(_assertThisInitialized(_this255), observable, observable, _i28));
         }
 
-        return _this211;
+        return _this255;
       }
 
       _createClass2(WithLatestFromSubscriber, [{
@@ -107244,8 +125182,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/observable/zip.js");
 
     function zip() {
-      for (var _len46 = arguments.length, observables = new Array(_len46), _key39 = 0; _key39 < _len46; _key39++) {
-        observables[_key39] = arguments[_key39];
+      for (var _len47 = arguments.length, observables = new Array(_len47), _key40 = 0; _key40 < _len47; _key40++) {
+        observables[_key40] = arguments[_key40];
       }
 
       return function zipOperatorFunction(source) {
@@ -107734,14 +125672,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AnimationFrameAction, _AsyncAction__WEBPACK);
 
       function AnimationFrameAction(scheduler, work) {
-        var _this212;
+        var _this256;
 
         _classCallCheck(this, AnimationFrameAction);
 
-        _this212 = _possibleConstructorReturn(this, _getPrototypeOf(AnimationFrameAction).call(this, scheduler, work));
-        _this212.scheduler = scheduler;
-        _this212.work = work;
-        return _this212;
+        _this256 = _possibleConstructorReturn(this, _getPrototypeOf(AnimationFrameAction).call(this, scheduler, work));
+        _this256.scheduler = scheduler;
+        _this256.work = work;
+        return _this256;
       }
 
       _createClass2(AnimationFrameAction, [{
@@ -107894,14 +125832,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsapAction, _AsyncAction__WEBPACK2);
 
       function AsapAction(scheduler, work) {
-        var _this213;
+        var _this257;
 
         _classCallCheck(this, AsapAction);
 
-        _this213 = _possibleConstructorReturn(this, _getPrototypeOf(AsapAction).call(this, scheduler, work));
-        _this213.scheduler = scheduler;
-        _this213.work = work;
-        return _this213;
+        _this257 = _possibleConstructorReturn(this, _getPrototypeOf(AsapAction).call(this, scheduler, work));
+        _this257.scheduler = scheduler;
+        _this257.work = work;
+        return _this257;
       }
 
       _createClass2(AsapAction, [{
@@ -108047,15 +125985,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncAction, _Action__WEBPACK_IMPO);
 
       function AsyncAction(scheduler, work) {
-        var _this214;
+        var _this258;
 
         _classCallCheck(this, AsyncAction);
 
-        _this214 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncAction).call(this, scheduler, work));
-        _this214.scheduler = scheduler;
-        _this214.work = work;
-        _this214.pending = false;
-        return _this214;
+        _this258 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncAction).call(this, scheduler, work));
+        _this258.scheduler = scheduler;
+        _this258.work = work;
+        _this258.pending = false;
+        return _this258;
       }
 
       _createClass2(AsyncAction, [{
@@ -108196,23 +126134,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(AsyncScheduler, _Scheduler__WEBPACK_I);
 
       function AsyncScheduler(SchedulerAction) {
-        var _this215;
+        var _this259;
 
         var now = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _Scheduler__WEBPACK_IMPORTED_MODULE_0__["Scheduler"].now;
 
         _classCallCheck(this, AsyncScheduler);
 
-        _this215 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncScheduler).call(this, SchedulerAction, function () {
-          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this215)) {
+        _this259 = _possibleConstructorReturn(this, _getPrototypeOf(AsyncScheduler).call(this, SchedulerAction, function () {
+          if (AsyncScheduler.delegate && AsyncScheduler.delegate !== _assertThisInitialized(_this259)) {
             return AsyncScheduler.delegate.now();
           } else {
             return now();
           }
         }));
-        _this215.actions = [];
-        _this215.active = false;
-        _this215.scheduled = undefined;
-        return _this215;
+        _this259.actions = [];
+        _this259.active = false;
+        _this259.scheduled = undefined;
+        return _this259;
       }
 
       _createClass2(AsyncScheduler, [{
@@ -108297,14 +126235,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(QueueAction, _AsyncAction__WEBPACK3);
 
       function QueueAction(scheduler, work) {
-        var _this216;
+        var _this260;
 
         _classCallCheck(this, QueueAction);
 
-        _this216 = _possibleConstructorReturn(this, _getPrototypeOf(QueueAction).call(this, scheduler, work));
-        _this216.scheduler = scheduler;
-        _this216.work = work;
-        return _this216;
+        _this260 = _possibleConstructorReturn(this, _getPrototypeOf(QueueAction).call(this, scheduler, work));
+        _this260.scheduler = scheduler;
+        _this260.work = work;
+        return _this260;
       }
 
       _createClass2(QueueAction, [{
@@ -108434,20 +126372,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(VirtualTimeScheduler, _AsyncScheduler__WEBP4);
 
       function VirtualTimeScheduler() {
-        var _this217;
+        var _this261;
 
         var SchedulerAction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : VirtualAction;
         var maxFrames = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Number.POSITIVE_INFINITY;
 
         _classCallCheck(this, VirtualTimeScheduler);
 
-        _this217 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualTimeScheduler).call(this, SchedulerAction, function () {
-          return _this217.frame;
+        _this261 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualTimeScheduler).call(this, SchedulerAction, function () {
+          return _this261.frame;
         }));
-        _this217.maxFrames = maxFrames;
-        _this217.frame = 0;
-        _this217.index = -1;
-        return _this217;
+        _this261.maxFrames = maxFrames;
+        _this261.frame = 0;
+        _this261.index = -1;
+        return _this261;
       }
 
       _createClass2(VirtualTimeScheduler, [{
@@ -108487,19 +126425,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _inherits(VirtualAction, _AsyncAction__WEBPACK4);
 
       function VirtualAction(scheduler, work) {
-        var _this218;
+        var _this262;
 
         var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : scheduler.index += 1;
 
         _classCallCheck(this, VirtualAction);
 
-        _this218 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualAction).call(this, scheduler, work));
-        _this218.scheduler = scheduler;
-        _this218.work = work;
-        _this218.index = index;
-        _this218.active = true;
-        _this218.index = scheduler.index = index;
-        return _this218;
+        _this262 = _possibleConstructorReturn(this, _getPrototypeOf(VirtualAction).call(this, scheduler, work));
+        _this262.scheduler = scheduler;
+        _this262.work = work;
+        _this262.index = index;
+        _this262.active = true;
+        _this262.index = scheduler.index = index;
+        return _this262;
       }
 
       _createClass2(VirtualAction, [{
@@ -109609,8 +127547,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/internal/util/noop.js");
 
     function pipe() {
-      for (var _len47 = arguments.length, fns = new Array(_len47), _key40 = 0; _key40 < _len47; _key40++) {
-        fns[_key40] = arguments[_key40];
+      for (var _len48 = arguments.length, fns = new Array(_len48), _key41 = 0; _key41 < _len48; _key41++) {
+        fns[_key41] = arguments[_key41];
       }
 
       return pipeFromArray(fns);
@@ -109752,7 +127690,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var subscribeToArray = function subscribeToArray(array) {
       return function (subscriber) {
-        for (var i = 0, _len48 = array.length; i < _len48 && !subscriber.closed; i++) {
+        for (var i = 0, _len49 = array.length; i < _len49 && !subscriber.closed; i++) {
           subscriber.next(array[i]);
         }
 

@@ -11,7 +11,10 @@ namespace ImageProcessor
   {
     static void Main(string[] args)
     {
-      CreateHostedBuilder(args).Build().Run();
+      
+        CreateHostedBuilder(args).Build().Run();
+      
+      
 
     }
 

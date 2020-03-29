@@ -12,6 +12,7 @@ using EventBusRabbitMQ.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Gateaway.Controllers
 {
@@ -55,16 +56,16 @@ namespace Gateaway.Controllers
 
             ImageToProcessDto queueModel = new ImageToProcessDto() { Base64Image = imageBase64, ImageFileName = fileName, MailAddressToSend = testMailAddress, CacheKey = hashValue };
             var value = await this.CacheService.GetValue<string>(hashValue);
+
             if (string.IsNullOrWhiteSpace(value))
             {
               EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
               //Cache set will be done in MailSender Worker
               //await this.CacheService.SetValue(hashValue, dbPath);
+              return Ok(JsonConvert.SerializeObject(queueModel.CleanKey));
             }
-            //EventBus.Publish(queueModel, QueueNameEnum.ImageToCompress);
-
+            return Ok(JsonConvert.SerializeObject(value));
           }
-          return Ok("your image is processing");
         }
         else
         {

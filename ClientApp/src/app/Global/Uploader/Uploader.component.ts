@@ -2,6 +2,8 @@ import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/co
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { FirebaseService } from 'src/app/Core/Services/Firebase.service';
+import { take, filter, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-Uploader',
@@ -17,8 +19,9 @@ export class UploaderComponent {
   fileToUpload: File = null;
   progress: number;
   message: string;
+  resultImageUrl: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private firebaseService: FirebaseService) {
     this.formImport = new FormGroup({
       importFile: new FormControl('', Validators.required)
     });
@@ -37,7 +40,7 @@ export class UploaderComponent {
 
   }
 
-  import(): void {
+  Upload(): void {
     if (this.fileToUpload == null) {
       return;
     }
@@ -48,10 +51,25 @@ export class UploaderComponent {
 
     this.http.post(url, formData, { reportProgress: true, observe: 'events' })
       .subscribe(event => {
-        if (event.type === HttpEventType.UploadProgress)
+
+        if (event.type === HttpEventType.UploadProgress) {
           this.progress = Math.round(100 * event.loaded / event.total);
+        }
+
         else if (event.type === HttpEventType.Response) {
-          this.message = 'Upload success.';
+          var result = event.body.toString();
+          if (result.startsWith('http')) { // direct image url
+            this.resultImageUrl = result;
+            this.message = "Your image is succesffully processed";
+            return;
+          }
+          this.firebaseService.getObject(`${environment.firebase.imagesKey}/${result}`)
+            .pipe(filter(x => x != null), take(1))
+            .subscribe(result => {
+              this.resultImageUrl = result.url;
+              this.message = "Your image is succesffully processed";
+            });
+          this.message = "Your image is being processed";
         }
       });
   }

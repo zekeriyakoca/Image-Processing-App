@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using EventBusRabbitMQ.Dtos;
 using EventBusRabbitMQ.Interfaces;
 using Firebase.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -19,17 +20,19 @@ namespace ImageProcessor
   {
     private readonly ILogger<Worker> logger;
 
-    public Worker(ILogger<Worker> logger, IEventBus eventBus, IImageProcessService imageProcessingService, IFirebaseService firebaseService)
+    public Worker(ILogger<Worker> logger, IEventBus eventBus, IImageProcessService imageProcessingService, IFirebaseService firebaseService, IConfiguration configuration)
     {
       this.logger = logger;
       EventBus = eventBus;
       ImageProcessingService = imageProcessingService;
       FirebaseService = firebaseService;
+      Configuration = configuration;
     }
 
     public IEventBus EventBus { get; }
     public IImageProcessService ImageProcessingService { get; }
     public IFirebaseService FirebaseService { get; }
+    public IConfiguration Configuration { get; }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -45,13 +48,11 @@ namespace ImageProcessor
 
         try
         {
-          var processedImage = ImageProcessingService.ResizeImageKeepingAspectRatio(image, 1080, 1080);
+          Image processedImage = await ProcessImage(image);
 
-          var imageUrl = await FirebaseService.PutImage(new Bitmap(processedImage), $"{queueModel.ImageFileName}-{DateTime.Now}", "Processed");
+          string imageUrl = await CreateImageRecords(queueModel, processedImage);
 
-          var imageReadyToMail = new ImageReadyToMailDto() { Id = queueModel.Id, ImageUrl = imageUrl, MailAddressToSend = queueModel.MailAddressToSend ,CacheKey = queueModel.CacheKey};
-          EventBus.Publish(imageReadyToMail, QueueNameEnum.ImageReadyToMail,true);
-
+          SendMailToUser(queueModel, imageUrl);
         }
         catch (Exception ex)
         {
@@ -66,6 +67,28 @@ namespace ImageProcessor
 
     }
 
+    private void SendMailToUser(ImageToProcessDto queueModel, string imageUrl)
+    {
+      var imageReadyToMail = new ImageReadyToMailDto() { Id = queueModel.Id, ImageUrl = imageUrl, MailAddressToSend = queueModel.MailAddressToSend, CacheKey = queueModel.CacheKey };
+      EventBus.Publish(imageReadyToMail, QueueNameEnum.ImageReadyToMail, true);
+    }
 
+    private async Task<string> CreateImageRecords(ImageToProcessDto queueModel, Image processedImage)
+    {
+      var imageUrl = await FirebaseService.PutImage(new Bitmap(processedImage), $"{queueModel.ImageFileName}-{DateTime.Now}", "Processed");
+
+      var result = await FirebaseService.AddRecord(new { url = imageUrl }, $"images/{queueModel.CleanKey}.json");
+      if (!result)
+        throw new Exception($"Unable to save imageUrl to Realtime Database. image id(cleanKey) :{queueModel.CleanKey}");
+      return imageUrl;
+    }
+
+    private async Task<Image> ProcessImage(Image image)
+    {
+      var processedImage = ImageProcessingService.ResizeImageKeepingAspectRatio(image, 1080, 1080);
+      var logoImage = await ImageProcessingService.GetImageFromUrl(Configuration["LogoUrl"].ToString());
+      processedImage = ImageProcessingService.MergeTwoImages(logoImage, processedImage);
+      return processedImage;
+    }
   }
 }

@@ -10,5 +10,6 @@ namespace Firebase.Interfaces
   {
     Task<string> PutImage(Bitmap image, string fileName, string folderName = "all");
     Task<string> GetImage(string fileName, string folderName = "all");
+    Task<bool> AddRecord(object data, string path);
   }
 }

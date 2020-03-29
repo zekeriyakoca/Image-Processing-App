@@ -575,25 +575,31 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _app_header_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _app_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./app-header.component */
     "./src/app/Core/Layout/app-header/app-header.component.ts");
     /* harmony import */
 
 
-    var _Authentication_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _Authentication_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../Authentication/user.service */
     "./src/app/Core/Authentication/user.service.ts");
     /* harmony import */
 
 
-    var _Services_core_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _Services_core_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../Services/core.service */
     "./src/app/Core/Services/core.service.ts");
     /* harmony import */
 
 
-    var _Services_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _Services_modal_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../Services/modal.service */
     "./src/app/Core/Services/modal.service.ts");
     /**
@@ -613,16 +619,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     });
 
     function View_AppHeaderComponent_0(_l) {
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [], null, null);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 12, "nav", [["class", "navbar navbar-expand-lg navbar-dark bg-primary py-0 px-0 mb-0"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 2, "a", [["class", "navbar-brand py-0 px-3"], ["href", "#"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 1, "img", [["height", "50px"]], [[8, "src", 4]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpid"](131072, _angular_common__WEBPACK_IMPORTED_MODULE_2__["AsyncPipe"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]]), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 1, "button", [["aria-controls", "navbarsExampleDefault"], ["aria-expanded", "false"], ["aria-label", "Toggle navigation"], ["class", "navbar-toggler"], ["data-target", "#navbarsExampleDefault"], ["data-toggle", "collapse"], ["type", "button"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 0, "span", [["class", "navbar-toggler-icon"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 6, "div", [["class", "collapse navbar-collapse"], ["id", "navbarsExampleDefault"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 3, "ul", [["class", "navbar-nav mr-auto"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](8, 0, null, null, 2, "li", [["class", "nav-item active"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](9, 0, null, null, 1, "a", [["class", "nav-link"], ["href", "#"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Image Processing"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](11, 0, null, null, 1, "div", [["class", "float-right pr-3"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](12, 0, null, null, 0, "span", [["class", "navbar-text text-white"]], null, null, null, null, null))], null, function (_ck, _v) {
+        var _co = _v.component;
+
+        var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 2, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 3).transform(_co.mainLogoPath));
+
+        _ck(_v, 2, 0, currVal_0);
+      });
     }
 
     function View_AppHeaderComponent_Host_0(_l) {
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-header", [], null, null, null, View_AppHeaderComponent_0, RenderType_AppHeaderComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 8503296, null, 0, _app_header_component__WEBPACK_IMPORTED_MODULE_2__["AppHeaderComponent"], [_Authentication_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _Services_core_service__WEBPACK_IMPORTED_MODULE_4__["CoreService"], _Services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"]], null, null)], function (_ck, _v) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-header", [], null, null, null, View_AppHeaderComponent_0, RenderType_AppHeaderComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 8503296, null, 0, _app_header_component__WEBPACK_IMPORTED_MODULE_3__["AppHeaderComponent"], [_Authentication_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _Services_core_service__WEBPACK_IMPORTED_MODULE_5__["CoreService"], _Services_modal_service__WEBPACK_IMPORTED_MODULE_6__["ModalService"]], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
       }, null);
     }
 
-    var AppHeaderComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-header", _app_header_component__WEBPACK_IMPORTED_MODULE_2__["AppHeaderComponent"], View_AppHeaderComponent_Host_0, {}, {}, []);
+    var AppHeaderComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-header", _app_header_component__WEBPACK_IMPORTED_MODULE_3__["AppHeaderComponent"], View_AppHeaderComponent_Host_0, {}, {}, []);
     /***/
 
   },
@@ -863,6 +875,69 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/Core/Services/Messaging.service.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/Core/Services/Messaging.service.ts ***!
+    \****************************************************/
+
+  /*! exports provided: MessagingService */
+
+  /***/
+  function srcAppCoreServicesMessagingServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MessagingService", function () {
+      return MessagingService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/fire/messaging */
+    "./node_modules/@angular/fire/messaging/es2015/index.js");
+
+    var MessagingService = function MessagingService(fireMessaging) {
+      var _this3 = this;
+
+      _classCallCheck(this, MessagingService);
+
+      this.fireMessaging = fireMessaging;
+
+      this.requestPermission = function () {
+        return _this3.fireMessaging.requestToken;
+      };
+
+      this.receiveMessage = function () {
+        return _this3.fireMessaging.messages;
+      };
+
+      this.fireMessaging.messaging.subscribe(function (messagingContext) {
+        messagingContext.onMessage = messagingContext.onMessage.bind(messagingContext);
+        messagingContext.onTokenRefresh = messagingContext.onTokenRefresh.bind(messagingContext);
+      });
+    };
+
+    MessagingService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      factory: function MessagingService_Factory() {
+        return new MessagingService(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_fire_messaging__WEBPACK_IMPORTED_MODULE_1__["AngularFireMessaging"]));
+      },
+      token: MessagingService,
+      providedIn: "root"
+    });
+    /***/
+  },
+
+  /***/
   "./src/app/Core/Services/api.service.ts":
   /*!**********************************************!*\
     !*** ./src/app/Core/Services/api.service.ts ***!
@@ -1052,7 +1127,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "fetchInitialInfo",
         value: function fetchInitialInfo() {
-          var _this3 = this;
+          var _this4 = this;
 
           //bypassing data initialization
           return Object(rxjs__WEBPACK_IMPORTED_MODULE_0__["of"])(true); // Code not removed for later usage
@@ -1060,11 +1135,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return this.apiService.post("Corporate/Dbs/GetInitialInfo", {}).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["take"])(1), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) {
             if (data == null) return false;
 
-            _this3.appVersion$.next(data.AppVersion);
+            _this4.appVersion$.next(data.AppVersion);
 
-            _this3.auths$.next(data.Auths);
+            _this4.auths$.next(data.Auths);
 
-            _this3.checkIfInitialDataFetched();
+            _this4.checkIfInitialDataFetched();
 
             return true;
           }, function (error) {
@@ -1403,6 +1478,423 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/Global/Global.module.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/Global/Global.module.ts ***!
+    \*****************************************/
+
+  /*! exports provided: GlobalModule */
+
+  /***/
+  function srcAppGlobalGlobalModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "GlobalModule", function () {
+      return GlobalModule;
+    });
+
+    var GlobalModule = function GlobalModule() {
+      _classCallCheck(this, GlobalModule);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/Global/Uploader/Uploader.component.css.shim.ngstyle.js":
+  /*!************************************************************************!*\
+    !*** ./src/app/Global/Uploader/Uploader.component.css.shim.ngstyle.js ***!
+    \************************************************************************/
+
+  /*! exports provided: styles */
+
+  /***/
+  function srcAppGlobalUploaderUploaderComponentCssShimNgstyleJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "styles", function () {
+      return styles;
+    });
+    /**
+     * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+     *
+     * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+     * tslint:disable
+     */
+
+
+    var styles = [".image-preview[_ngcontent-%COMP%]{\r\n    max-width: 300px;\r\n    padding: 20px;\r\n    -webkit-box-align: cente;\r\n            align-items: cente;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvR2xvYmFsL1VwbG9hZGVyL1VwbG9hZGVyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxnQkFBZ0I7SUFDaEIsYUFBYTtJQUNiLHdCQUFrQjtZQUFsQixrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9HbG9iYWwvVXBsb2FkZXIvVXBsb2FkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1wcmV2aWV3e1xyXG4gICAgbWF4LXdpZHRoOiAzMDBweDtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGU7XHJcbn0iXX0= */"];
+    /***/
+  },
+
+  /***/
+  "./src/app/Global/Uploader/Uploader.component.ngfactory.js":
+  /*!*****************************************************************!*\
+    !*** ./src/app/Global/Uploader/Uploader.component.ngfactory.js ***!
+    \*****************************************************************/
+
+  /*! exports provided: RenderType_UploaderComponent, View_UploaderComponent_0, View_UploaderComponent_Host_0, UploaderComponentNgFactory */
+
+  /***/
+  function srcAppGlobalUploaderUploaderComponentNgfactoryJs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "RenderType_UploaderComponent", function () {
+      return RenderType_UploaderComponent;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "View_UploaderComponent_0", function () {
+      return View_UploaderComponent_0;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "View_UploaderComponent_Host_0", function () {
+      return View_UploaderComponent_Host_0;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UploaderComponentNgFactory", function () {
+      return UploaderComponentNgFactory;
+    });
+    /* harmony import */
+
+
+    var _Uploader_component_css_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./Uploader.component.css.shim.ngstyle */
+    "./src/app/Global/Uploader/Uploader.component.css.shim.ngstyle.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _Uploader_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./Uploader.component */
+    "./src/app/Global/Uploader/Uploader.component.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /**
+     * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+     *
+     * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
+     * tslint:disable
+     */
+
+
+    var styles_UploaderComponent = [_Uploader_component_css_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
+
+    var RenderType_UploaderComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({
+      encapsulation: 0,
+      styles: styles_UploaderComponent,
+      data: {}
+    });
+
+    function View_UploaderComponent_1(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, "img", [["alt", ""], ["class", "image-preview"]], [[8, "src", 4]], null, null, null, null))], null, function (_ck, _v) {
+        var _co = _v.component;
+
+        var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinlineInterpolate"](1, "", _co.resultImageUrl, "");
+
+        _ck(_v, 0, 0, currVal_0);
+      });
+    }
+
+    function View_UploaderComponent_2(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "span", [["class", "upload"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](1, null, [" ", "% "]))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.progress;
+
+        _ck(_v, 1, 0, currVal_0);
+      });
+    }
+
+    function View_UploaderComponent_3(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "span", [["class", "upload"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](1, null, [" ", " "]))], null, function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.message;
+
+        _ck(_v, 1, 0, currVal_0);
+      });
+    }
+
+    function View_UploaderComponent_0(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵqud"](402653184, 1, {
+        labelImport: 0
+      }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 32, "div", [["class", "card"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_UploaderComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](3, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
+        ngIf: [0, "ngIf"]
+      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 1, "div", [["class", "card-header"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Form"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 27, "div", [["class", "card-body"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](7, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Select Your File "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](9, 0, null, null, 24, "form", [["novalidate", ""]], [[2, "ng-untouched", null], [2, "ng-touched", null], [2, "ng-pristine", null], [2, "ng-dirty", null], [2, "ng-valid", null], [2, "ng-invalid", null], [2, "ng-pending", null]], [[null, "submit"], [null, "reset"]], function (_v, en, $event) {
+        var ad = true;
+
+        if ("submit" === en) {
+          var pd_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 11).onSubmit($event) !== false;
+          ad = pd_0 && ad;
+        }
+
+        if ("reset" === en) {
+          var pd_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 11).onReset() !== false;
+          ad = pd_1 && ad;
+        }
+
+        return ad;
+      }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](10, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_z"], [], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](11, 540672, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroupDirective"], [[8, null], [8, null]], {
+        form: [0, "form"]
+      }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroupDirective"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](13, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"]]], null, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](14, 0, null, null, 10, "div", [["class", "input-group mb-3"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](15, 0, null, null, 9, "div", [["class", "custom-file"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](16, 0, null, null, 5, "input", [["class", "custom-file-input"], ["formControlName", "importFile"], ["id", "importFile"], ["multiple", ""], ["type", "file"]], [[2, "ng-untouched", null], [2, "ng-touched", null], [2, "ng-pristine", null], [2, "ng-dirty", null], [2, "ng-valid", null], [2, "ng-invalid", null], [2, "ng-pending", null]], [[null, "change"], [null, "input"], [null, "blur"], [null, "compositionstart"], [null, "compositionend"]], function (_v, en, $event) {
+        var ad = true;
+        var _co = _v.component;
+
+        if ("input" === en) {
+          var pd_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 17)._handleInput($event.target.value) !== false;
+          ad = pd_0 && ad;
+        }
+
+        if ("blur" === en) {
+          var pd_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 17).onTouched() !== false;
+          ad = pd_1 && ad;
+        }
+
+        if ("compositionstart" === en) {
+          var pd_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 17)._compositionStart() !== false;
+          ad = pd_2 && ad;
+        }
+
+        if ("compositionend" === en) {
+          var pd_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 17)._compositionEnd($event.target.value) !== false;
+          ad = pd_3 && ad;
+        }
+
+        if ("change" === en) {
+          var pd_4 = _co.onFileChange($event.target.files) !== false;
+          ad = pd_4 && ad;
+        }
+
+        return ad;
+      }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](17, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["COMPOSITION_BUFFER_MODE"]]], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](1024, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"], function (p0_0) {
+        return [p0_0];
+      }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](19, 671744, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"], [[3, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"]], [8, null], [8, null], [6, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"]], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_q"]]], {
+        name: [0, "name"]
+      }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](21, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"]]], null, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](22, 0, [[1, 0], ["labelImport", 1]], null, 2, "label", [["class", "custom-file-label"], ["for", "importFile"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](23, 0, null, null, 0, "i", [["class", "fas fa-search"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Choose file"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](25, 0, null, null, 4, "div", [["class", "input-group"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_UploaderComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](27, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
+        ngIf: [0, "ngIf"]
+      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_UploaderComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](29, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
+        ngIf: [0, "ngIf"]
+      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](30, 0, null, null, 3, "div", [["class", "form-group"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](31, 0, null, null, 2, "button", [["class", "btn btn-outline-secondary"], ["type", "button"]], null, [[null, "click"]], function (_v, en, $event) {
+        var ad = true;
+        var _co = _v.component;
+
+        if ("click" === en) {
+          var pd_0 = _co.import() !== false;
+          ad = pd_0 && ad;
+        }
+
+        return ad;
+      }, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](32, 0, null, null, 0, "i", [["class", "fas fa-file-import"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Upload "]))], function (_ck, _v) {
+        var _co = _v.component;
+        var currVal_0 = _co.resultImageUrl;
+
+        _ck(_v, 3, 0, currVal_0);
+
+        var currVal_8 = _co.formImport;
+
+        _ck(_v, 11, 0, currVal_8);
+
+        var currVal_16 = "importFile";
+
+        _ck(_v, 19, 0, currVal_16);
+
+        var currVal_17 = _co.progress > 0;
+
+        _ck(_v, 27, 0, currVal_17);
+
+        var currVal_18 = _co.message;
+
+        _ck(_v, 29, 0, currVal_18);
+      }, function (_ck, _v) {
+        var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassUntouched;
+
+        var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassTouched;
+
+        var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassPristine;
+
+        var currVal_4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassDirty;
+
+        var currVal_5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassValid;
+
+        var currVal_6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassInvalid;
+
+        var currVal_7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassPending;
+
+        _ck(_v, 9, 0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7);
+
+        var currVal_9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassUntouched;
+
+        var currVal_10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassTouched;
+
+        var currVal_11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassPristine;
+
+        var currVal_12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassDirty;
+
+        var currVal_13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassValid;
+
+        var currVal_14 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassInvalid;
+
+        var currVal_15 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 21).ngClassPending;
+
+        _ck(_v, 16, 0, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13, currVal_14, currVal_15);
+      });
+    }
+
+    function View_UploaderComponent_Host_0(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-Uploader", [], null, null, null, View_UploaderComponent_0, RenderType_UploaderComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 49152, null, 0, _Uploader_component__WEBPACK_IMPORTED_MODULE_4__["UploaderComponent"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]], null, null)], null, null);
+    }
+
+    var UploaderComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-Uploader", _Uploader_component__WEBPACK_IMPORTED_MODULE_4__["UploaderComponent"], View_UploaderComponent_Host_0, {}, {}, []);
+    /***/
+
+  },
+
+  /***/
+  "./src/app/Global/Uploader/Uploader.component.ts":
+  /*!*******************************************************!*\
+    !*** ./src/app/Global/Uploader/Uploader.component.ts ***!
+    \*******************************************************/
+
+  /*! exports provided: UploaderComponent */
+
+  /***/
+  function srcAppGlobalUploaderUploaderComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UploaderComponent", function () {
+      return UploaderComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var UploaderComponent =
+    /*#__PURE__*/
+    function () {
+      function UploaderComponent(http) {
+        _classCallCheck(this, UploaderComponent);
+
+        this.http = http;
+        this.fileToUpload = null;
+        this.formImport = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+          importFile: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required)
+        });
+      }
+
+      _createClass(UploaderComponent, [{
+        key: "onFileChange",
+        value: function onFileChange(files) {
+          this.fileToUpload = files.item(0);
+
+          if (this.fileToUpload.type.split('/')[0] !== 'image') {
+            alert("You can only upload image!");
+            return;
+          }
+
+          this.labelImport.nativeElement.innerText = Array.from(files).map(function (f) {
+            return f.name;
+          }).join(', ');
+        }
+      }, {
+        key: "import",
+        value: function _import() {
+          var _this5 = this;
+
+          if (this.fileToUpload == null) {
+            return;
+          }
+
+          var formData = new FormData();
+          formData.append('file', this.fileToUpload, this.fileToUpload.name);
+          var url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].backEndUrl + "/api/image/process";
+          this.http.post(url, formData, {
+            reportProgress: true,
+            observe: 'events'
+          }).subscribe(function (event) {
+            if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].UploadProgress) _this5.progress = Math.round(100 * event.loaded / event.total);else if (event.type === _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpEventType"].Response) {
+              var resultMessage = event.body.toString();
+
+              if (resultMessage.startsWith('http')) {
+                _this5.resultImageUrl = resultMessage;
+                _this5.message = "Your image is processed";
+                return;
+              }
+
+              _this5.message = resultMessage;
+            }
+          });
+        }
+      }]);
+
+      return UploaderComponent;
+    }();
+    /***/
+
+  },
+
+  /***/
   "./src/app/Modules/Home/home.module.ts":
   /*!*********************************************!*\
     !*** ./src/app/Modules/Home/home.module.ts ***!
@@ -1481,9 +1973,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _Global_Uploader_Uploader_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../../../Global/Uploader/Uploader.component.ngfactory */
+    "./src/app/Global/Uploader/Uploader.component.ngfactory.js");
+    /* harmony import */
+
+
+    var _Global_Uploader_Uploader_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../Global/Uploader/Uploader.component */
+    "./src/app/Global/Uploader/Uploader.component.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./home.component */
     "./src/app/Modules/Home/pages/home/home.component.ts");
+    /* harmony import */
+
+
+    var _Core_Services_Messaging_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../../../../Core/Services/Messaging.service */
+    "./src/app/Core/Services/Messaging.service.ts");
     /**
      * @fileoverview This file was generated by the Angular template compiler. Do not edit.
      *
@@ -1501,16 +2017,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     });
 
     function View_HomeComponent_0(_l) {
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["home-page works!"]))], null, null);
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "container"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "app-Uploader", [], null, null, null, _Global_Uploader_Uploader_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_UploaderComponent_0"], _Global_Uploader_Uploader_component_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_UploaderComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 49152, null, 0, _Global_Uploader_Uploader_component__WEBPACK_IMPORTED_MODULE_3__["UploaderComponent"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]], null, null)], null, null);
     }
 
     function View_HomeComponent_Host_0(_l) {
-      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], [], null, null)], function (_ck, _v) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], [_Core_Services_Messaging_service__WEBPACK_IMPORTED_MODULE_6__["MessagingService"]], null, null)], function (_ck, _v) {
         _ck(_v, 1, 0);
       }, null);
     }
 
-    var HomeComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-home", _home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], View_HomeComponent_Host_0, {}, {}, []);
+    var HomeComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-home", _home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], View_HomeComponent_Host_0, {}, {}, []);
     /***/
 
   },
@@ -1575,13 +2091,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var HomeComponent =
     /*#__PURE__*/
     function () {
-      function HomeComponent() {
+      function HomeComponent(messagingService) {
         _classCallCheck(this, HomeComponent);
+
+        this.messagingService = messagingService;
       }
 
       _createClass(HomeComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.messagingService.requestPermission().subscribe();
+          this.messagingService.receiveMessage().subscribe(function (payload) {
+            console.error(JSON.stringify('test'));
+          });
+        }
       }]);
 
       return HomeComponent;
@@ -1851,115 +2374,145 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _angular_fire__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @angular/fire */
+    "./node_modules/@angular/fire/es2015/index.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
-    var _Core_Interceptors_backend_interpretter_interceptor__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _Core_Interceptors_backend_interpretter_interceptor__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./Core/Interceptors/backend-interpretter.interceptor */
     "./src/app/Core/Interceptors/backend-interpretter.interceptor.ts");
     /* harmony import */
 
 
-    var _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! @angular/fire/messaging */
+    "./node_modules/@angular/fire/messaging/es2015/index.js");
+    /* harmony import */
+
+
+    var _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./Core/Services/api.service */
     "./src/app/Core/Services/api.service.ts");
     /* harmony import */
 
 
-    var _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./Core/Authentication/jwt.service */
     "./src/app/Core/Authentication/jwt.service.ts");
     /* harmony import */
 
 
-    var _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
     /*! ./Core/Authentication/user.service */
     "./src/app/Core/Authentication/user.service.ts");
     /* harmony import */
 
 
-    var _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    var _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./Core/Services/core.service */
     "./src/app/Core/Services/core.service.ts");
     /* harmony import */
 
 
-    var _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./Core/Guards/Auth/auth.guard.service */
     "./src/app/Core/Guards/Auth/auth.guard.service.ts");
     /* harmony import */
 
 
-    var _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    var _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./Core/Resolvers/redirection-resolver.service */
     "./src/app/Core/Resolvers/redirection-resolver.service.ts");
     /* harmony import */
 
 
-    var _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    var _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! ./Core/Resolvers/data-init-resolver.service */
     "./src/app/Core/Resolvers/data-init-resolver.service.ts");
     /* harmony import */
 
 
-    var _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    var _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
     /*! ./Core/Services/dom.service */
     "./src/app/Core/Services/dom.service.ts");
     /* harmony import */
 
 
-    var _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    var _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! ./Core/Services/modal.service */
     "./src/app/Core/Services/modal.service.ts");
     /* harmony import */
 
 
-    var _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    var _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
     /*! ./Core/Services/logger.service */
     "./src/app/Core/Services/logger.service.ts");
     /* harmony import */
 
 
-    var _Core_Services_globalErrorHandler_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    var _Core_Services_Messaging_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    /*! ./Core/Services/Messaging.service */
+    "./src/app/Core/Services/Messaging.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _Core_Services_globalErrorHandler_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
     /*! ./Core/Services/globalErrorHandler.service */
     "./src/app/Core/Services/globalErrorHandler.service.ts");
     /* harmony import */
 
 
-    var _Core_loweCaseUrlSerializer__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    var _Core_loweCaseUrlSerializer__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
     /*! ./Core/loweCaseUrlSerializer */
     "./src/app/Core/loweCaseUrlSerializer.ts");
     /* harmony import */
 
 
-    var _main_main_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    var _main_main_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
     /*! ./main/main.component */
     "./src/app/main/main.component.ts");
     /* harmony import */
 
 
-    var _Modules_Home_pages_home_home_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    var _Modules_Home_pages_home_home_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
     /*! ./Modules/Home/pages/home/home.component */
     "./src/app/Modules/Home/pages/home/home.component.ts");
     /* harmony import */
 
 
-    var _app_routing_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    var _app_routing_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
     /*! ./app-routing.module */
     "./src/app/app-routing.module.ts");
     /* harmony import */
 
 
-    var _Core_core_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    var _Core_core_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
     /*! ./Core/core.module */
     "./src/app/Core/core.module.ts");
     /* harmony import */
 
 
-    var _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+    var _Global_Global_module__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
+    /*! ./Global/Global.module */
+    "./src/app/Global/Global.module.ts");
+    /* harmony import */
+
+
+    var _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
     /*! ./Modules/Home/home.module */
     "./src/app/Modules/Home/home.module.ts");
     /**
@@ -1975,22 +2528,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return [new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomEventsPlugin"](p0_0, p0_1, p0_2), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵKeyEventsPlugin"](p1_0), new _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵHammerGesturesPlugin"](p2_0, p2_1, p2_2, p2_3)];
       }, [_angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["HAMMER_GESTURE_CONFIG"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"], [2, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["HAMMER_LOADER"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["EventManager"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["EVENT_MANAGER_PLUGINS"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomSharedStylesHost"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomSharedStylesHost"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomRendererFactory2"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomRendererFactory2"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["EventManager"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomSharedStylesHost"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_core__WEBPACK_IMPORTED_MODULE_0__["RendererFactory2"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomRendererFactory2"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵSharedStylesHost"], null, [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵDomSharedStylesHost"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Testability"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_g"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_9__["NoPreloading"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["NoPreloading"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_router__WEBPACK_IMPORTED_MODULE_9__["PreloadingStrategy"], null, [_angular_router__WEBPACK_IMPORTED_MODULE_9__["NoPreloading"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterPreloader"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterPreloader"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["PreloadingStrategy"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_router__WEBPACK_IMPORTED_MODULE_9__["PreloadAllModules"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["PreloadAllModules"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_o"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_c"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["ViewportScroller"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_INITIALIZER"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_j"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_BOOTSTRAP_LISTENER"], function (p0_0) {
         return [p0_0];
-      }, [_angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_INITIALIZER"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_g"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_e"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_f"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HTTP_INTERCEPTORS"], function (p0_0) {
-        return [p0_0, new _Core_Interceptors_backend_interpretter_interceptor__WEBPACK_IMPORTED_MODULE_11__["BackendInterceptor"]()];
-      }, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["XhrFactory"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_d"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["XhrFactory"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpBackend"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpXhrBackend"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpHandler"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵHttpInterceptingHandler"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpBackend"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpHandler"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_12__["ApiService"], _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_12__["ApiService"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClient"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_13__["JwtService"], _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_13__["JwtService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"], [_Core_Services_api_service__WEBPACK_IMPORTED_MODULE_12__["ApiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_15__["CoreService"], _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_15__["CoreService"], [_Core_Services_api_service__WEBPACK_IMPORTED_MODULE_12__["ApiService"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"], _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_16__["AuthGuard"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_17__["RedirectionResolver"], _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_17__["RedirectionResolver"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_18__["DataInitResolver"], _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_18__["DataInitResolver"], [_Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_14__["UserService"], _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_15__["CoreService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_19__["DomService"], _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_19__["DomService"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_20__["ModalService"], _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_20__["ModalService"], [_Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_19__["DomService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_21__["LoggerService"], _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_21__["LoggerService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common__WEBPACK_IMPORTED_MODULE_7__["CommonModule"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["CommonModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _Core_Services_globalErrorHandler_service__WEBPACK_IMPORTED_MODULE_22__["GlobalErrorHandler"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"], function () {
+      }, [_angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_INITIALIZER"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseApp"], _angular_fire__WEBPACK_IMPORTED_MODULE_10__["_firebaseAppFactory"], [_angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseOptionsToken"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], [2, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseNameOrConfigToken"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_g"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_e"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_h"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_h"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpXsrfTokenExtractor"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_f"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](5120, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HTTP_INTERCEPTORS"], function (p0_0) {
+        return [p0_0, new _Core_Interceptors_backend_interpretter_interceptor__WEBPACK_IMPORTED_MODULE_12__["BackendInterceptor"]()];
+      }, [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_d"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_d"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["XhrFactory"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_d"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpXhrBackend"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpXhrBackend"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["XhrFactory"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](6144, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpBackend"], null, [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpXhrBackend"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpHandler"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵHttpInterceptingHandler"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpBackend"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpHandler"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__["AngularFireMessaging"], _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__["AngularFireMessaging"], [_angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseOptionsToken"], [2, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseNameOrConfigToken"]], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_14__["ApiService"], _Core_Services_api_service__WEBPACK_IMPORTED_MODULE_14__["ApiService"], [_angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClient"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_15__["JwtService"], _Core_Authentication_jwt_service__WEBPACK_IMPORTED_MODULE_15__["JwtService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], [_Core_Services_api_service__WEBPACK_IMPORTED_MODULE_14__["ApiService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](135680, _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_17__["CoreService"], _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_17__["CoreService"], [_Core_Services_api_service__WEBPACK_IMPORTED_MODULE_14__["ApiService"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"], _Core_Guards_Auth_auth_guard_service__WEBPACK_IMPORTED_MODULE_18__["AuthGuard"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_19__["RedirectionResolver"], _Core_Resolvers_redirection_resolver_service__WEBPACK_IMPORTED_MODULE_19__["RedirectionResolver"], [_angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_20__["DataInitResolver"], _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_20__["DataInitResolver"], [_Core_Authentication_user_service__WEBPACK_IMPORTED_MODULE_16__["UserService"], _Core_Services_core_service__WEBPACK_IMPORTED_MODULE_17__["CoreService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_21__["DomService"], _Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_21__["DomService"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_22__["ModalService"], _Core_Services_modal_service__WEBPACK_IMPORTED_MODULE_22__["ModalService"], [_Core_Services_dom_service__WEBPACK_IMPORTED_MODULE_21__["DomService"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_23__["LoggerService"], _Core_Services_logger_service__WEBPACK_IMPORTED_MODULE_23__["LoggerService"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _Core_Services_Messaging_service__WEBPACK_IMPORTED_MODULE_24__["MessagingService"], _Core_Services_Messaging_service__WEBPACK_IMPORTED_MODULE_24__["MessagingService"], [_angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__["AngularFireMessaging"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ɵangular_packages_forms_forms_o"], _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ɵangular_packages_forms_forms_o"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_forms__WEBPACK_IMPORTED_MODULE_25__["FormBuilder"], _angular_forms__WEBPACK_IMPORTED_MODULE_25__["FormBuilder"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common__WEBPACK_IMPORTED_MODULE_7__["CommonModule"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["CommonModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _Core_Services_globalErrorHandler_service__WEBPACK_IMPORTED_MODULE_26__["GlobalErrorHandler"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"], function () {
         return [_angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_b"]()];
       }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_h"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_h"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"], function (p0_0, p1_0) {
         return [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["ɵangular_packages_platform_browser_platform_browser_j"](p0_0), _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_i"](p1_0)];
-      }, [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"]], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](131584, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"], [[3, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_a"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_e"], [[3, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlSerializer"], _Core_loweCaseUrlSerializer__WEBPACK_IMPORTED_MODULE_23__["LowerCaseUrlSerializer"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"], {}, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_common__WEBPACK_IMPORTED_MODULE_7__["LocationStrategy"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_d"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["PlatformLocation"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_7__["APP_BASE_HREF"]], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["LocationStrategy"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["PlatformLocation"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoader"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoaderConfig"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTES"], function () {
+      }, [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgProbeToken"]], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_h"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"], [[2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["APP_INITIALIZER"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](131584, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵConsole"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ErrorHandler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationInitStatus"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationModule"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"], [[3, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__["BrowserModule"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_a"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_e"], [[3, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlSerializer"], _Core_loweCaseUrlSerializer__WEBPACK_IMPORTED_MODULE_27__["LowerCaseUrlSerializer"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"], {}, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_common__WEBPACK_IMPORTED_MODULE_7__["LocationStrategy"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_d"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["PlatformLocation"], [2, _angular_common__WEBPACK_IMPORTED_MODULE_7__["APP_BASE_HREF"]], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], [_angular_common__WEBPACK_IMPORTED_MODULE_7__["LocationStrategy"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["PlatformLocation"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoader"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], [2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["SystemJsNgModuleLoaderConfig"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTES"], function () {
         return [[{
           path: "",
           redirectTo: "home",
           pathMatch: "full"
         }, {
           path: "home",
-          component: _main_main_component__WEBPACK_IMPORTED_MODULE_24__["MainComponent"],
+          component: _main_main_component__WEBPACK_IMPORTED_MODULE_28__["MainComponent"],
           resolve: {
-            initialDataFetched: _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_18__["DataInitResolver"]
+            initialDataFetched: _Core_Resolvers_data_init_resolver_service__WEBPACK_IMPORTED_MODULE_20__["DataInitResolver"]
           },
           children: [{
             path: "",
@@ -1998,9 +2551,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }]
         }], [{
           path: "",
-          component: _Modules_Home_pages_home_home_component__WEBPACK_IMPORTED_MODULE_25__["HomeComponent"]
+          component: _Modules_Home_pages_home_home_component__WEBPACK_IMPORTED_MODULE_29__["HomeComponent"]
         }]];
-      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_f"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_26__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_26__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientXsrfModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientXsrfModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _Core_core_module__WEBPACK_IMPORTED_MODULE_27__["CoreModule"], _Core_core_module__WEBPACK_IMPORTED_MODULE_27__["CoreModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_28__["HomeModule"], _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_28__["HomeModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", [])]);
+      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_f"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ApplicationRef"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_30__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_30__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientXsrfModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientXsrfModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__["AngularFireMessagingModule"], _angular_fire_messaging__WEBPACK_IMPORTED_MODULE_13__["AngularFireMessagingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _Core_core_module__WEBPACK_IMPORTED_MODULE_31__["CoreModule"], _Core_core_module__WEBPACK_IMPORTED_MODULE_31__["CoreModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ɵangular_packages_forms_forms_d"], _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ɵangular_packages_forms_forms_d"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_25__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_25__["FormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_25__["ReactiveFormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _Global_Global_module__WEBPACK_IMPORTED_MODULE_32__["GlobalModule"], _Global_Global_module__WEBPACK_IMPORTED_MODULE_32__["GlobalModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_33__["HomeModule"], _Modules_Home_home_module__WEBPACK_IMPORTED_MODULE_33__["HomeModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵAPP_ROOT"], true, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseOptionsToken"], {
+        apiKey: "AIzaSyDhVyh4zEobt49oneT5fi6ohlz3nqLvyhs",
+        authDomain: "imageproc-kodilist.firebaseapp.com",
+        databaseURL: "https://imageproc-kodilist.firebaseio.com",
+        projectId: "imageproc-kodilist",
+        storageBucket: "imageproc-kodilist.appspot.com",
+        messagingSenderId: "318349712429",
+        appId: "1:318349712429:web:f0b695db5c91e68b78aca4"
+      }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_fire__WEBPACK_IMPORTED_MODULE_10__["FirebaseNameOrConfigToken"], "imageProc", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", [])]);
     });
     /***/
 
@@ -2256,7 +2817,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function MainComponent(router, modalService, meta, title) {
-        var _this4 = this;
+        var _this6 = this;
 
         _classCallCheck(this, MainComponent);
 
@@ -2276,7 +2837,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]);
         this.router.events.subscribe(function (event) {
           if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
-            _this4.currentUrl = event.url;
+            _this6.currentUrl = event.url;
           }
         });
       }
@@ -2322,8 +2883,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      backEndUrl: 'http://localhost:62119/',
-      mainAppBaseUrl: 'http://localhost:62119/'
+      backEndUrl: 'https://localhost:44372',
+      mainAppBaseUrl: 'http://localhost:62119/',
+      firebase: {
+        apiKey: "AIzaSyDhVyh4zEobt49oneT5fi6ohlz3nqLvyhs",
+        authDomain: "imageproc-kodilist.firebaseapp.com",
+        databaseURL: "https://imageproc-kodilist.firebaseio.com",
+        projectId: "imageproc-kodilist",
+        storageBucket: "imageproc-kodilist.appspot.com",
+        messagingSenderId: "318349712429",
+        appId: "1:318349712429:web:f0b695db5c91e68b78aca4"
+      }
     };
     /*
      * For easier debugging in development mode, you can import the following file

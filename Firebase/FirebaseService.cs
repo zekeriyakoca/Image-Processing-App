@@ -1,6 +1,7 @@
 ﻿using Firebase.Interfaces;
 using Firebase.Storage;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -54,6 +55,22 @@ namespace Firebase
       // await the task to wait until upload completes and get the download url
       var downloadUrl = await task; 
       return downloadUrl;
+    }
+
+
+    public async Task<bool> AddRecord(object data, string path)
+    {
+      try
+      {
+        var result = await client.PutAsync(path, new StringContent(JsonConvert.SerializeObject(data)));
+        result.EnsureSuccessStatusCode();
+        return true;
+      }
+      catch 
+      {
+        return false;
+      }
+   
     }
 
 

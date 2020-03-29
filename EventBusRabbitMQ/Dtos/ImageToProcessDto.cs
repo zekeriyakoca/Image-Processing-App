@@ -10,5 +10,12 @@ namespace EventBusRabbitMQ.Dtos
     public string CacheKey { get; set; }
     public string ImageFileName { get; set; }
     public string MailAddressToSend { get; set; }
+    public string CleanKey
+    {
+      get
+      {
+        return Id.ToString().Replace("-", "");
+      }
+    }
   }
 }

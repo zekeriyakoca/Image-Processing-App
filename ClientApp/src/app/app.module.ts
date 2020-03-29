@@ -1,6 +1,8 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +11,7 @@ import { HomeModule } from './Modules/Home/home.module';
 import { GlobalErrorHandler } from './Core/Services/globalErrorHandler.service';
 import { UrlSerializer } from '@angular/router';
 import { LowerCaseUrlSerializer } from './Core/loweCaseUrlSerializer';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -20,6 +23,8 @@ import { LowerCaseUrlSerializer } from './Core/loweCaseUrlSerializer';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase,'imageProc'),
+    AngularFireDatabaseModule,
     CoreModule,
     HomeModule
   ],
