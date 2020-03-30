@@ -19,7 +19,7 @@ namespace Firebase
 
     public FirebaseService(HttpClient client, IConfiguration config)
     {
-      this.client = client;
+      this.client = client ?? throw new ArgumentNullException(nameof(client));
       client.BaseAddress = new Uri(config["Firebase:BaseUrl"].ToString());
       client.DefaultRequestHeaders.Add("Accept", "application/json");
       this.FireStorageBucketName = config["Firebase:BucketName"] != null ? config["Firebase:BucketName"].ToString() : "Default";

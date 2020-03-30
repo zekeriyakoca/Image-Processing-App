@@ -12,7 +12,7 @@ namespace MailSender
     public MailSendingWorkerService(IConfiguration configuration, IMailService mailService)
     {
       this.configuration = configuration;
-      MailService = mailService;
+      MailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
     }
 
     public IConfiguration configuration { get; }

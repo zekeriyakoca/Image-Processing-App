@@ -67,7 +67,7 @@ namespace ImageProcessor
     private void SendMailToUser(ImageToProcessDto queueModel, string imageUrl)
     {
       var imageReadyToMail = new ImageReadyToMailDto() { Id = queueModel.Id, ImageUrl = imageUrl, MailAddressToSend = queueModel.MailAddressToSend, CacheKey = queueModel.CacheKey };
-      EventBus.Publish(imageReadyToMail, QueueNameEnum.ImageReadyToMail, true);
+      EventBus.Publish(imageReadyToMail, QueueNameEnum.ImageReadyToMail);
     }
 
     private async Task<string> CreateImageRecords(ImageToProcessDto queueModel, Image processedImage)

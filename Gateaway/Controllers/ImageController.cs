@@ -21,9 +21,9 @@ namespace Gateaway.Controllers
 
     public ImageController(ILogger<ImageController> logger, ICacheService cacheService, IEventBus eventBus)
     {
-      Logger = logger;
-      CacheService = cacheService;
-      EventBus = eventBus;
+      Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+      CacheService = cacheService ?? throw new ArgumentNullException(nameof(cacheService));
+      EventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
     }
 
     public IEventBus EventBus { get; }

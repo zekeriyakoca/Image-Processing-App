@@ -48,7 +48,7 @@ namespace MailSender
           await this.CacheService.SetValue(queueModel.CacheKey, queueModel.ImageUrl);
 
           var mailSent = new MailSentDto() { Id = queueModel.Id, message = "Mail successfully sent." };
-          EventBus.Publish(mailSent, QueueNameEnum.MailSent, true);
+          EventBus.Publish(mailSent, QueueNameEnum.MailSent);
 
         }
         catch (Exception ex)

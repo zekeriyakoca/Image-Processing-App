@@ -22,7 +22,7 @@ namespace EventBusRabbitMQ
     private readonly ILogger<RabbitMQBus> _logger;
 
     private readonly int _retryCount;
-    private bool initialQueuesInitialized = false;
+    private bool queuesInitialized = false;
     private IModel _consumerChannel;
 
     public RabbitMQBus(IRabbitMQPersistentConnection persistentConnection, ILogger<RabbitMQBus> logger,
@@ -46,11 +46,13 @@ namespace EventBusRabbitMQ
       {
         CreateInitialQueues(channel);
       }
-      initialQueuesInitialized = true;
     }
 
     private void CreateInitialQueues(IModel channel)
     {
+      if (queuesInitialized)
+        return;
+
       _logger.LogTrace("Declaring RabbitMQ exchange to publish event");
 
       channel.ExchangeDeclare(exchange: BROKER_NAME, type: "direct");
@@ -60,6 +62,8 @@ namespace EventBusRabbitMQ
       CreateQueue(QueueNameEnum.ImageToCompress, channel);
       CreateQueue(QueueNameEnum.ImageReadyToMail, channel);
       CreateQueue(QueueNameEnum.MailSent, channel);
+
+      queuesInitialized = true;
     }
 
     public void CreateQueue(QueueNameEnum queueName, IModel channel)
@@ -72,7 +76,7 @@ namespace EventBusRabbitMQ
                                  autoDelete: false,
                                  arguments: null);
 
-      channel.QueueBind(queueName.Value, BROKER_NAME, queueName.Value);
+      channel.QueueBind(queueName.Value, BROKER_NAME, routingKey: queueName.Value);
     }
     private IModel CreateConsumerChannel()
     {
@@ -98,13 +102,13 @@ namespace EventBusRabbitMQ
       return channel;
     }
 
-    public void Publish(BaseQueueItemDto item, QueueNameEnum queueName, bool callingInsideSubscribe = false)
+    public void Publish(BaseQueueItemDto item, QueueNameEnum queueName)
     {
-      if (!_persistentConnection.IsConnected || callingInsideSubscribe)
+      if (!_persistentConnection.IsConnected)
       {
         _persistentConnection.TryConnect();
       }
-      _persistentConnection.TryConnect();
+
       var policy = RetryPolicy.Handle<BrokerUnreachableException>()
           .Or<SocketException>()
           .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
@@ -123,6 +127,8 @@ namespace EventBusRabbitMQ
         {
           var properties = channel.CreateBasicProperties();
           properties.DeliveryMode = 2; // persistent
+          //properties.ContentType = "text/plain"; // text/plain is default
+          //properties.Expiration = "36000000";
 
           _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", item.Id);
 
@@ -138,7 +144,7 @@ namespace EventBusRabbitMQ
 
     public void Subscribe(QueueNameEnum queueName, AsyncEventHandler<BasicDeliverEventArgs> onMessageReceived)
     {
-      if (!initialQueuesInitialized)
+      if (!queuesInitialized)
         InitializeQueue();
 
       StartBasicConsume(queueName, onMessageReceived);
@@ -167,17 +173,18 @@ namespace EventBusRabbitMQ
                                  exclusive: false,
                                  autoDelete: false,
                                  arguments: null);
+
       var consumer = new AsyncEventingBasicConsumer(_consumerChannel);
 
       consumer.Received += onMessageReceived;
 
-      _consumerChannel.BasicConsume(
+      var consumerTag  = _consumerChannel.BasicConsume(
           queue: queueName.Value,
           autoAck: false,
           consumer: consumer);
     }
 
-    // This event handler is for test
+    // This event handler is for testing
     private async Task Consumer_Received(object sender, BasicDeliverEventArgs eventArgs)
     {
       var eventName = eventArgs.RoutingKey;

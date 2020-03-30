@@ -6,7 +6,9 @@ using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace EventBusRabbitMQ
 {
@@ -41,24 +43,7 @@ namespace EventBusRabbitMQ
       {
         throw new InvalidOperationException("No RabbitMQ connections are available to perform this action");
       }
-      _connection.CreateModel();
       return _connection.CreateModel();
-    }
-
-    public void Dispose()
-    {
-      if (_disposed) return;
-
-      _disposed = true;
-
-      try
-      {
-        _connection.Dispose();
-      }
-      catch (IOException ex)
-      {
-        _logger.LogCritical(ex.ToString());
-      }
     }
 
     public bool TryConnect()
@@ -77,8 +62,15 @@ namespace EventBusRabbitMQ
 
         policy.Execute(() =>
         {
-          _connection = _connectionFactory
-                .CreateConnection();
+          try
+          {
+            _connection = _connectionFactory.CreateConnection();
+          }
+          catch (RabbitMQ.Client.Exceptions.BrokerUnreachableException ex)
+          {
+            Thread.Sleep(10);
+            TryConnect();
+          }
         });
 
         if (IsConnected)
@@ -97,6 +89,23 @@ namespace EventBusRabbitMQ
 
           return false;
         }
+      }
+    }
+
+
+    public void Dispose()
+    {
+      if (_disposed) return;
+
+      _disposed = true;
+
+      try
+      {
+        _connection.Dispose();
+      }
+      catch (IOException ex)
+      {
+        _logger.LogCritical(ex.ToString());
       }
     }
 

@@ -1,5 +1,5 @@
 ﻿
-*** Mail application using this class library should include following Json data in appsettings.*.json
+*** Application, using this class library, should include following Json data in appsettings.*.json
 
 {
 	"Mail":{

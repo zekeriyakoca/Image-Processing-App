@@ -3,6 +3,7 @@ using EventBusRabbitMQ;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
+using System;
 
 namespace Microsoft.Extensions.DependencyInjection
 {

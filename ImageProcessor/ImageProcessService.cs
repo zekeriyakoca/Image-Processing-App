@@ -17,7 +17,7 @@ namespace ImageProcessor
   {
     public ImageProcessService(ILogger<ImageProcessService> logger)
     {
-      Logger = logger;
+      Logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public ILogger<ImageProcessService> Logger { get; }
