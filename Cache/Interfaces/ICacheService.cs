@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cache.Interfaces
+namespace Cache.Services
 {
   public interface ICacheService
   {

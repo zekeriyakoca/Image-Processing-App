@@ -1,5 +1,5 @@
 ﻿using Cache.Dtos;
-using Cache.Interfaces;
+using Cache;
 using Cache.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;

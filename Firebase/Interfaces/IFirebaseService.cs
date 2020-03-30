@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Firebase.Interfaces
+namespace Firebase
 {
   public interface IFirebaseService
   {

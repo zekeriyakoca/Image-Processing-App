@@ -1,5 +1,5 @@
 ﻿using EventBusRabbitMQ.Dtos;
-using EventBusRabbitMQ.Interfaces;
+using EventBusRabbitMQ;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Polly;

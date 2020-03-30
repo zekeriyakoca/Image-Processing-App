@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using EventBusRabbitMQ.Dtos;
-using EventBusRabbitMQ.Interfaces;
-using Firebase.Interfaces;
+using EventBusRabbitMQ;
+using Firebase;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

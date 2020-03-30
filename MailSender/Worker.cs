@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Cache.Interfaces;
+using Cache.Services;
 using EventBusRabbitMQ.Dtos;
-using EventBusRabbitMQ.Interfaces;
+using EventBusRabbitMQ;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EventBusRabbitMQ.Interfaces
+namespace EventBusRabbitMQ
 {
   public interface IEventBus
   {

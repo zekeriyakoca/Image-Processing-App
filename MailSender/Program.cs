@@ -2,8 +2,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Mail;
-using Mail.Interfaces;
-using Cache.Interfaces;
+using Cache;
 
 namespace MailSender
 {

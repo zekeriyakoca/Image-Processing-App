@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Firebase;
-using Firebase.Interfaces;
 using System.Net.Http;
 
 namespace ImageProcessor
